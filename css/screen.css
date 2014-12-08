@@ -310,7 +310,7 @@ margin on the iframe, cause it breaks stuff. */
 .inner {
     position: relative;
     width: 80%;
-    max-width: 830px;
+    max-width: 805px;
     margin: 0 auto;
 }
 
@@ -380,7 +380,7 @@ margin on the iframe, cause it breaks stuff. */
 .post {
     position: relative;
     width:80%;
-    max-width: 830px;
+    max-width: 805px;
     margin: 4rem auto;
     padding-bottom: 4rem;
     border-bottom: #ddd 1.5px solid;
@@ -816,7 +816,7 @@ pre .chunk {
 .pagination {
     position: relative;
     width: 80%;
-    max-width: 830px;
+    max-width: 805px;
     margin: 4rem auto;
     font-family: 'Open Sans', sans-serif;
     font-size: 1.3rem;
