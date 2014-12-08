@@ -617,7 +617,7 @@ margin on the iframe, cause it breaks stuff. */
 
 figure.highlight {
     background:#fff;
-    border-radius:0.3em;
+    border-radius:0.em;
     border:1px solid #e1e1e1;
     line-height:1.45em;
     font-size:.9em;
@@ -628,7 +628,7 @@ figure.highlight {
     word-wrap:normal;
 }
 figure.highlight figcaption {
-    padding: 7px 10px;
+    padding: 6px 10px;
     font-size: .8em;
 }
 figure.highlight table {
@@ -639,7 +639,7 @@ figure.highlight table > tbody > tr > td {
     background: #fff !important;
 }
 figure.highlight table > tbody > tr > td.gutter {
-    max-width: 40px;
+    max-width: 20px;
     text-align: right;
 }
 figure.highlight pre {
