@@ -43,6 +43,10 @@
                                 <div class="mp-scroll">
                                 
                                 <li class="search-archive-li mp-pjax">
+                                    <a href="/2014/12/10/通过源码学习hexo/">通过源码学习hexo</a>
+                                </li>
+                                
+                                <li class="search-archive-li mp-pjax">
                                     <a href="/2014/12/08/新的开始/">新的开始</a>
                                 </li>
                                 
@@ -63,6 +67,11 @@
                             </form>
                             <ul>
                                 <div class="mp-scroll">
+                                
+                                <li class="search-category-li mp-pjax">
+                                    <a href="/categories/hexo/">&nbsp;&nbsp;&nbsp;hexo</a>
+                                    <small>1</small>
+                                </li>
                                 
                                 <li class="search-category-li mp-pjax">
                                     <a href="/categories/日志/">&nbsp;&nbsp;&nbsp;日志</a>
@@ -92,6 +101,11 @@
                                 <div class="mp-scroll">
                                 
                                 <li class="search-tag-li mp-pjax">
+                                    <a href="/tags/hexo/">&nbsp;&nbsp;&nbsp;hexo</a>
+                                    <small>1</small>
+                                </li>
+                                
+                                <li class="search-tag-li mp-pjax">
                                     <a href="/tags/开始/">&nbsp;&nbsp;&nbsp;开始</a>
                                     <small>1</small>
                                 </li>
@@ -116,6 +130,16 @@
                         </div>
                     </li>
                     
+                    <li>
+                        <a class="fa fa-weibo" href="#"><i class="fa fa-angle-left"></i>&nbsp;&nbsp;Weibo Show</a>
+
+                        <div class="mp-level page-list">
+                            <h2 ><i class="fa fa-weibo"></i>
+                                Weibo Show</h2>
+                            <a class="mp-back" href="#">back</a>
+                        </div>
+                    </li>
+                    
                     <li class="mp-pjax"><a class="fa fa-user" href="/about">&nbsp;&nbsp;&nbsp;About me</a></li>
                     <li><a class="fa fa-github" href="https://github.com/KongnuanZhao/KongnuanZhao.github.io.git">&nbsp;&nbsp;&nbsp;Github</a></li>
 
@@ -126,13 +150,19 @@
         <div id="pjax">
             <div class="pjax-hidden" style="display: none">
                 
+                    <a  data-pjax href="/2014/12/10/通过源码学习hexo/">通过源码学习hexo</a>
+                
                     <a  data-pjax href="/2014/12/08/新的开始/">新的开始</a>
                 
+                
+                    <a data-pjax href="/categories/hexo/">&nbsp;&nbsp;hexo</a>
                 
                     <a data-pjax href="/categories/日志/">&nbsp;&nbsp;日志</a>
                 
                     <a data-pjax href="/categories/日志/第一天/">&nbsp;&nbsp;第一天</a>
                 
+                
+                    <a data-pjax href="/tags/hexo/">&nbsp;&nbsp;hexo</a>
                 
                     <a data-pjax href="/tags/开始/">&nbsp;&nbsp;开始</a>
                 
@@ -199,14 +229,17 @@
         <section class="post-content">
             <p>这是<strong>新的开始</strong>，我用hexo创建了第一篇文章。</p>
 <p>通过下面的命令，就可以创建新文章</p>
-<figure class="highlight {bash}"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">hexo <span class="keyword">new</span> 新的开始</div></pre></td></tr></table></figure>
+<figure class="highlight bash"><pre><div class="line">hexo new 新的开始</div></pre></figure>
+
+<p>通过下面的命令可以创建带图片的文章</p>
+<figure class="highlight bash"><pre><div class="line">hexo new photo 新的开始</div></pre></figure>
 
 
         </section>
         <hr/>
         <nav class="pagination" style="width:auto" role="pagination">
             
-            <a style="cursor:default" class="newer-posts" href="#">This is the First Post</a>
+            <a data-pjax class="newer-posts" href="/2014/12/10/通过源码学习hexo/">← Prev Post</a>
             
             <a class="share-button" data-original-title title>Share this Post</a>
             
@@ -263,6 +296,25 @@
 
 
 
+
+<link rel="stylesheet" href="/modules/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/modules/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+    (function($){
+
+        var wrapAll = function(q) {
+            $(q).each( function() {
+                var $img = $(this),
+                        href = $img.attr('src');
+                $img.wrap('<a rel="fancybox" href="' + href + '" title="' + $img.attr('alt') + '" class="link"></a>');
+            });
+        };
+
+        wrapAll('.post-content img');
+        wrapAll('.post-excerpt img');
+        $('[rel="fancybox"]').fancybox();
+    })(jQuery);
+</script>
 
 
 

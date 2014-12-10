@@ -4,7 +4,7 @@
 <head>
   <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" >
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
-  <title>Tag: 开始 | KongnuanZhao</title>
+  <title>通过源码学习hexo | KongnuanZhao</title>
   <meta name="description" content="" />
   <meta name="HandheldFriendly" content="True" />
   <meta name="MobileOptimized" content="320" />
@@ -182,7 +182,7 @@
                 
                 <div id="nav-container">
                     <div class="post-navbar" style="line-height: 63px;display:none">
-                        <li id="navbar-title"><a href="#">undefined</a></li>
+                        <li id="navbar-title"><a href="#">通过源码学习hexo</a></li>
                         <li id="navbar-toc" style="border-left: none">
                             <a style="padding-right: 15px">
                                 <span id="toc-content" >Introduction</span><i class="fa fa-chevron-down" ></i>
@@ -201,61 +201,131 @@
 
 
 <!-- -->
-<!--<body class="home-template">-->
+<!--<body class="post-template">-->
 <!---->
   
+
 <main class="content" role="main">
+    <article class="post" >
+    <span class="post-meta">
+                  <div class="tag-tile">
+                      
+                      
+                      <a data-pjax href='/tags/hexo/' style='color:#D5D5D5'>hexo</a>
+                      
+                      
+                  </div>
+                <h1 class="post-title" style="margin: 14px 0;color:#50585D">通过源码学习hexo</h1>
 
-    
-    <article class="post">
+                    <div class="post-meta">
+                        Post on<span class="fa fa-clock-o"></span>
+                        <time datetime="2014-12-10T04:46:12.000Z"
+                              itemprop="datePublished">Dec 10 2014</time>
+                    </div>
+    </span>
 
-        <header class="post-header">
-            <div class="tag-tile">
-                
-                
-                <a data-pjax href='/tags/开始/'>开始</a>
-                
-                <a data-pjax href='/tags/日志/'>日志</a>
-                
-                
-                <span class="fa fa-bookmark" style="float:right;color:#fa8072"></span>
-            </div>
-            <h1 class="post-title"><a data-pjax href="/2014/12/08/新的开始/">新的开始</a>
-            </h1>
+        <section class="post-content">
+            <h2 id="先序知识">先序知识</h2>
+<h3 id="模块">模块</h3>
+<ul>
+<li>参考阮一峰的<a href="http://www.ruanyifeng.com/blog/2014/09/package-management.html" target="_blank" rel="external">前端模块管理器简介</a></li>
+<li><a href="http://www.ruanyifeng.com/blog/2012/10/javascript_module.html" target="_blank" rel="external">Javascript模块化编程（一）：模块的写法</a></li>
+<li><a href="http://www.ruanyifeng.com/blog/2012/10/asynchronous_module_definition.html" target="_blank" rel="external">Javascript模块化编程（二）：AMD规范</a></li>
+<li><a href="http://www.ruanyifeng.com/blog/2012/11/require_js.html" target="_blank" rel="external">Javascript模块化编程（三）：require.js的用法</a></li>
+</ul>
+<h3 id="hexo是什么">hexo是什么</h3>
+<ul>
+<li>关于hexo的详细说明请移驾至<a href="http://hexo.io/docs/" target="_blank" rel="external">doc</a></li>
+<li>下载源码</li>
+</ul>
+<figure class="highlight bash"><pre><div class="line">git clone git@github.com:hexojs/hexo.git</div></pre></figure>
 
-            <div class="post-meta">
-                Post on<span class="fa fa-clock-o"></span>
-                <time datetime="2014-12-08T08:35:00.000Z"
-                      itemprop="datePublished">Dec 8 2014</time>
-            </div>
-        </header>
-        <section class="post-excerpt">
-            <p>
-                
-                这是新的开始，我用hexo创建了第一篇文章。
-通过下面的命令，就可以创建新文章
-hexo new 新的开始
+<p> 看到如下目录结构<br> <img src="/image/hexo1.png" alt="hexo1"></p>
+<ul>
+<li>assets<ul>
+<li>里面放着模板<ul>
+<li>scaffolds：layout模板文件目录，其中的md文件可以添加编辑</li>
+<li>source：文章资源目录，该目录下的markdown和html文件均会被hexo处理。image、404文件、favicon.ico文件，CNAME文件等都应该放这里。<ul>
+<li>_posts：发布的文章。</li>
+</ul>
+</li>
+<li>themes：主题文件目录。</li>
+<li>_config.yml：全局配置文件，详细配置请看<a href="http://hexo.io/docs/configuration.html" target="_blank" rel="external">官方文档</a>。</li>
+<li>package.json：关于hexo的一些信息，如版本等。 </li>
+</ul>
+</li>
+</ul>
+</li>
+<li>lib<ul>
+<li>hexo的核心代码</li>
+</ul>
+</li>
+<li>bin<ul>
+<li>只有一个文件hexo,安装后被放在系统环境变量中,终端输入的hexo即直接调用该文件。</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight bash"><pre><div class="line"><span class="comment">#!/usr/bin/env node</span></div><div class="line"></div><div class="line">var args = require(<span class="string">'minimist'</span>)(process.argv.slice(<span class="number">2</span>)),</div><div class="line">  fs = require(<span class="string">'graceful-fs'</span>),</div><div class="line">  path = require(<span class="string">'path'</span>),</div><div class="line">  async = require(<span class="string">'async'</span>),</div><div class="line">  init = require(<span class="string">'../lib/init'</span>),</div><div class="line">  cwd = process.cwd(),</div><div class="line">  lastCwd = cwd;</div><div class="line"></div><div class="line">// Find Hexo folder recursively</div><div class="line">async.doUntil(</div><div class="line">  function(next){</div><div class="line">    var configFile = path.join(cwd, <span class="string">'_config.yml'</span>);</div><div class="line"></div><div class="line">    fs.exists(configFile, function(exist){</div><div class="line">      <span class="keyword">if</span> (exist){</div><div class="line">        init(cwd, args);</div><div class="line">      } <span class="keyword">else</span> {</div><div class="line">        lastCwd = cwd;</div><div class="line">        cwd = path.dirname(cwd);</div><div class="line">        next();</div><div class="line">      }</div><div class="line">    });</div><div class="line">  },</div><div class="line">  <span class="function"><span class="title">function</span></span>(){</div><div class="line">    <span class="keyword">return</span> cwd === lastCwd;</div><div class="line">  },</div><div class="line">  <span class="function"><span class="title">function</span></span>(){</div><div class="line">    init(process.cwd(), args);</div><div class="line">  }</div><div class="line">);</div></pre></figure>
 
-通过下面的命令可以创建带图片的文章
-hexo new photo 新的开始
+<p>其中该文件调用了lib下的init.js文件<code>init = require(&#39;../lib/init&#39;)</code>进行一些初始化工作。<br>在init.js文件中</p>
+<figure class="highlight javascript"><pre><div class="line"><span class="keyword">var</span> async = <span class="built_in">require</span>(<span class="string">'async'</span>),</div><div class="line">  path = <span class="built_in">require</span>(<span class="string">'path'</span>),</div><div class="line">  Hexo = <span class="built_in">require</span>(<span class="string">'./core'</span>),</div><div class="line">  Logger = <span class="built_in">require</span>(<span class="string">'./logger'</span>);</div><div class="line"></div><div class="line"><span class="keyword">var</span> defaultCallback = <span class="function"><span class="keyword">function</span><span class="params">(err)</span></span>{</div><div class="line">  process.exit(err ? <span class="number">1</span> : <span class="number">0</span>);</div><div class="line">};</div><div class="line"></div><div class="line"><span class="built_in">module</span>.exports = <span class="function"><span class="keyword">function</span><span class="params">(cwd, args, callback)</span></span>{</div><div class="line">  <span class="keyword">if</span> (<span class="keyword">typeof</span> callback !== <span class="string">'function'</span>) callback = defaultCallback;</div><div class="line"></div><div class="line">  <span class="keyword">var</span> hexo = global.hexo = <span class="keyword">new</span> Hexo(),</div><div class="line">    configfile = args.config || <span class="string">'_config.yml'</span>;</div><div class="line"></div><div class="line">  hexo.bootstrap(cwd, args);</div><div class="line">  hexo.configfile = path.join(hexo.base_dir, configfile);</div><div class="line"></div><div class="line">  async.eachSeries([</div><div class="line">    <span class="string">'logger'</span>,</div><div class="line">    <span class="string">'extend'</span>,</div><div class="line">    <span class="string">'config'</span>,</div><div class="line">    <span class="string">'update'</span>,</div><div class="line">    <span class="string">'database'</span>,</div><div class="line">    <span class="string">'box'</span>,</div><div class="line">    <span class="string">'plugins'</span>,</div><div class="line">    <span class="string">'scripts'</span></div><div class="line">  ], <span class="function"><span class="keyword">function</span><span class="params">(name, next)</span></span>{</div><div class="line">    <span class="built_in">require</span>(<span class="string">'./loaders/'</span> + name)(next);</div><div class="line">  }, <span class="function"><span class="keyword">function</span><span class="params">(err)</span></span>{</div><div class="line">    <span class="keyword">if</span> (err){</div><div class="line">      <span class="keyword">if</span> (hexo.log != <span class="literal">null</span>){</div><div class="line">        <span class="keyword">return</span> hexo.log.e(err);</div><div class="line">      } <span class="keyword">else</span> {</div><div class="line">        <span class="keyword">throw</span> err;</div><div class="line">      }</div><div class="line">    }</div></pre></figure>
 
+<p>加载了anync ,async是一个用于流程处理的工具包，调用方法来处理有依赖关系的多个任务<code>async.eachSeries</code>的执行。有如下任务:</p>
+<ol>
+<li>logger :log的相关操作</li>
+<li>extend</li>
+<li>config :从_config.yml配置文件中加载博客配置信息</li>
+<li>update :更新package.json中的包依赖</li>
+<li>database :加载数据库 使用了Warehouse，这是hexo作者自己实现的一个基于JSON的数据库,详细参看<a href="http://hexo.io/api/warehouse/classes/Database.html" target="_blank" rel="external">Warehouse API</a> 实现代码点击这里<a href="https://github.com/tommy351/warehouse" target="_blank" rel="external">Warehouse</a></li>
+<li>box</li>
+<li>plugins :加载插件，这里的插件对应node_modules文件夹下面的一些node模块</li>
+<li><p>scripts :加载脚本，自动执行scripts文件夹下的JS文件，用来对hexo作扩展<br>这些都在lib文件夹下的对应目录下<br><img src="/image/hexo2.png" alt="hexo2"></p>
+<p>其中查看查看lib/plugins/console下的文件：</p>
+</li>
+</ol>
+<ul>
+<li>clean.js 清除Warehourse的缓存</li>
+<li>config.js 打印当前配置信息</li>
+<li>deploy.js 部署到线上，如在_config.yml配置了如下信息,则提交到github中</li>
+</ul>
+<figure class="highlight bash"><pre><div class="line">deploy:</div><div class="line">  <span class="built_in">type</span>: github</div><div class="line">  repository: git@github.com:KongnuanZhao/KongnuanZhao.github.io.git</div><div class="line">  branch: master</div></pre></figure>
 
-                
-            </p>
-            
-            <p>
-                <a data-pjax href="/2014/12/08/新的开始/"
-                   class="excerpt-link">Read More...</a>
-            </p>
-            
+<ul>
+<li>generate.js  生成静态文件 <code>hexo generate</code></li>
+<li>help.js 帮助</li>
+<li>index.js 这些文件都有对应的控制台命令，并通过index.js对外注册所有的命令，用于控制台的调用。</li>
+<li>init.js 初始化新的Hexo文件夹 <code>init</code></li>
+<li>migrate.js 从其他系统迁移到hexo的搬家命令，支持RSS，Jekyll，Octopress和WordPress <code>hexo migrate</code></li>
+<li>new.js  创建新文章，默认为post，可选参数为page（新页面）和 draft（草稿）<code>hexo new</code></li>
+<li>publish.js 将文章发布<code>hexo publish</code></li>
+<li>render.js 用于markdown文件渲染</li>
+<li>server.js 启动内置的本地服务器进行预览<code>hexo server</code></li>
+<li>version.js 显示当前系统版本<code>hexo version</code></li>
+</ul>
+<p>只需要几句命令就可以发布文章：</p>
+<figure class="highlight bash"><pre><div class="line">hexo n <span class="comment">#写文章</span></div><div class="line">hexo g <span class="comment">#生成</span></div><div class="line">hexo d <span class="comment">#部署 # 可与hexo g合并为 hexo d -g</span></div></pre></figure>
+
+<p>至此，先告一段落。</p>
+
         </section>
+        <hr/>
+        <nav class="pagination" style="width:auto" role="pagination">
+            
+            <a style="cursor:default" class="newer-posts" href="#">This is the First Post</a>
+            
+            <a class="share-button" data-original-title title>Share this Post</a>
+            
+            <a data-pjax class="older-posts" href="/2014/12/08/新的开始/">Next Post →</a>
+            
+        </nav>
+        <br/>
+        <br/>
+        <section id="comment">
+            <div id="comment-box"></div>
+        </section>
+
+
     </article>
-    
-    <nav class="pagination" role="pagination">
-        
-        <span class="page-number">Page  of </span>
-        
-    </nav>
 </main>
 
 
