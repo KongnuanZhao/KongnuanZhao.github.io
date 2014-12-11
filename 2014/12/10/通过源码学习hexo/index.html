@@ -220,9 +220,17 @@
 <li>参考阮一峰的<a href="http://www.ruanyifeng.com/blog/2014/09/package-management.html" target="_blank" rel="external">前端模块管理器简介</a></li>
 <li><a href="http://www.ruanyifeng.com/blog/2012/10/javascript_module.html" target="_blank" rel="external">Javascript模块化编程（一）：模块的写法</a></li>
 <li><a href="http://www.ruanyifeng.com/blog/2012/10/asynchronous_module_definition.html" target="_blank" rel="external">Javascript模块化编程（二）：AMD规范</a></li>
-<li><a href="http://www.ruanyifeng.com/blog/2012/11/require_js.html" target="_blank" rel="external">Javascript模块化编程（三）：require.js的用法</a><h3 id="NodeJS社区">NodeJS社区</h3>
-<img src="/image/nodejs.png" alt="nodejs"><h3 id="hexo是什么">hexo是什么</h3>
-</li>
+<li><a href="http://www.ruanyifeng.com/blog/2012/11/require_js.html" target="_blank" rel="external">Javascript模块化编程（三）：require.js的用法</a></li>
+</ul>
+<h3 id="NodeJS社区">NodeJS社区</h3>
+<p><img src="/image/nodejs.png" alt="nodejs"></p>
+<ul>
+<li>NodeJS 移步 → <a href="http://blog.fens.me/nodejs-roadmap/" target="_blank" rel="external">Nodejs学习路线图</a></li>
+<li>npm 移步 → <a href="http://blog.fens.me/nodejs-npm-package/" target="_blank" rel="external">快速创建基于npm的nodejs库</a></li>
+<li>RequireJS 移步 → <a href="http://blog.fens.me/nodejs-requirejs/" target="_blank" rel="external">RequireJS异步模块加载</a></li>
+</ul>
+<h3 id="hexo是什么">hexo是什么</h3>
+<ul>
 <li>关于hexo的详细说明请移驾至<a href="http://hexo.io/docs/" target="_blank" rel="external">doc</a></li>
 <li>下载源码</li>
 </ul>
@@ -258,7 +266,7 @@
 <p>其中该文件调用了lib下的init.js文件<code>init = require(&#39;../lib/init&#39;)</code>进行一些初始化工作。<br>在init.js文件中</p>
 <figure class="highlight javascript"><pre><div class="line"><span class="keyword">var</span> async = <span class="built_in">require</span>(<span class="string">'async'</span>),</div><div class="line">  path = <span class="built_in">require</span>(<span class="string">'path'</span>),</div><div class="line">  Hexo = <span class="built_in">require</span>(<span class="string">'./core'</span>),</div><div class="line">  Logger = <span class="built_in">require</span>(<span class="string">'./logger'</span>);</div><div class="line"></div><div class="line"><span class="keyword">var</span> defaultCallback = <span class="function"><span class="keyword">function</span><span class="params">(err)</span></span>{</div><div class="line">  process.exit(err ? <span class="number">1</span> : <span class="number">0</span>);</div><div class="line">};</div><div class="line"></div><div class="line"><span class="built_in">module</span>.exports = <span class="function"><span class="keyword">function</span><span class="params">(cwd, args, callback)</span></span>{</div><div class="line">  <span class="keyword">if</span> (<span class="keyword">typeof</span> callback !== <span class="string">'function'</span>) callback = defaultCallback;</div><div class="line"></div><div class="line">  <span class="keyword">var</span> hexo = global.hexo = <span class="keyword">new</span> Hexo(),</div><div class="line">    configfile = args.config || <span class="string">'_config.yml'</span>;</div><div class="line"></div><div class="line">  hexo.bootstrap(cwd, args);</div><div class="line">  hexo.configfile = path.join(hexo.base_dir, configfile);</div><div class="line"></div><div class="line">  async.eachSeries([</div><div class="line">    <span class="string">'logger'</span>,</div><div class="line">    <span class="string">'extend'</span>,</div><div class="line">    <span class="string">'config'</span>,</div><div class="line">    <span class="string">'update'</span>,</div><div class="line">    <span class="string">'database'</span>,</div><div class="line">    <span class="string">'box'</span>,</div><div class="line">    <span class="string">'plugins'</span>,</div><div class="line">    <span class="string">'scripts'</span></div><div class="line">  ], <span class="function"><span class="keyword">function</span><span class="params">(name, next)</span></span>{</div><div class="line">    <span class="built_in">require</span>(<span class="string">'./loaders/'</span> + name)(next);</div><div class="line">  }, <span class="function"><span class="keyword">function</span><span class="params">(err)</span></span>{</div><div class="line">    <span class="keyword">if</span> (err){</div><div class="line">      <span class="keyword">if</span> (hexo.log != <span class="literal">null</span>){</div><div class="line">        <span class="keyword">return</span> hexo.log.e(err);</div><div class="line">      } <span class="keyword">else</span> {</div><div class="line">        <span class="keyword">throw</span> err;</div><div class="line">      }</div><div class="line">    }</div></pre></figure>
 
-<p>加载了anync ,async是一个用于流程处理的工具包，调用方法来处理有依赖关系的多个任务<code>async.eachSeries</code>的执行。有如下任务:</p>
+<p>加载了anync ,async是一个用于流程处理的工具包，调用方法来处理有依赖关系的多个任务<code>async.eachSeries</code>的执行。详细移步<a href="http://blog.fens.me/nodejs-async/" target="_blank" rel="external">Nodejs异步流程控制Async</a>有如下任务:</p>
 <ol>
 <li>logger :log的相关操作</li>
 <li>extend</li>
