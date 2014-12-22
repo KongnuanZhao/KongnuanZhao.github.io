@@ -44,6 +44,10 @@
                                 <div class="mp-scroll">
                                 
                                 <li class="search-archive-li mp-pjax">
+                                    <a href="/2014/12/22/这些年上过的课/">这些年上过的课</a>
+                                </li>
+                                
+                                <li class="search-archive-li mp-pjax">
                                     <a href="/2014/12/21/熟悉的陌生人OS/">熟悉的陌生人OS</a>
                                 </li>
                                 
@@ -103,7 +107,7 @@
                                 
                                 <li class="search-category-li mp-pjax">
                                     <a href="/categories/点滴/">&nbsp;&nbsp;&nbsp;点滴</a>
-                                    <small>2</small>
+                                    <small>3</small>
                                 </li>
                                 
                                 <li class="search-category-li mp-pjax">
@@ -163,6 +167,11 @@
                                     <small>1</small>
                                 </li>
                                 
+                                <li class="search-tag-li mp-pjax">
+                                    <a href="/tags/点滴/">&nbsp;&nbsp;&nbsp;点滴</a>
+                                    <small>1</small>
+                                </li>
+                                
                                 </div>
                             </ul>
                         </div>
@@ -181,6 +190,8 @@
         </nav>
         <div id="pjax">
             <div class="pjax-hidden" style="display: none">
+                
+                    <a  data-pjax href="/2014/12/22/这些年上过的课/">这些年上过的课</a>
                 
                     <a  data-pjax href="/2014/12/21/熟悉的陌生人OS/">熟悉的陌生人OS</a>
                 
@@ -219,6 +230,8 @@
                     <a data-pjax href="/tags/日志/">&nbsp;&nbsp;日志</a>
                 
                     <a data-pjax href="/tags/测试/">&nbsp;&nbsp;测试</a>
+                
+                    <a data-pjax href="/tags/点滴/">&nbsp;&nbsp;点滴</a>
                 
                 <a data-pjax class="fa fa-user" href="/about">&nbsp;&nbsp;&nbsp;About me</a>
             </div>
@@ -286,7 +299,7 @@
 <p><img src="/image/syscall2.png" alt="syscall2"></p>
 <ul>
 <li>中断(来源于外设)：来自不同的硬件设备的计时器和网络的中断。和异常的区别，异常(来源于不良的应用程序)，非法指令或者其他坏的处理状态(如：内存出错) 。</li>
-<li>上下文切换：保存一个被挂起的任务的上下文 并在 任务恢复时 恢复其上下文的这个处理过程。CPU切换到另一个进程需要保存当前进程的状态并恢复另一个进程的状态：当前运行任务转为就绪（或者挂起、删除）状态，另一个被选定的就绪任务成为当前任务。上下文切换包括保存当前任务的运行环境，恢复将要运行任务的运行环境。</li>
+<li>上下文切换：保存一个被挂起的任务的上下文 并在 任务恢复时 恢复其上下文的这个处理过程。CPU切换到另一个进程需要保存当前进程的状态并恢复另一个进程的状态：当前运行任务转为就绪（或者挂起、删除）状态，另一个被选定的就绪任务成为当前任务。上下文切换包括保存当前任务的运行环境，恢复将要运行任务的运行环境。</li>
 </ul>
 <p>2.操作系统中的进程的概念和进程都有哪些状态</p>
 <ul>
@@ -318,7 +331,7 @@
         <hr/>
         <nav class="pagination" style="width:auto" role="pagination">
             
-            <a style="cursor:default" class="newer-posts" href="#">This is the First Post</a>
+            <a data-pjax class="newer-posts" href="/2014/12/22/这些年上过的课/">← Prev Post</a>
             
             <a class="share-button" data-original-title title>Share this Post</a>
             
