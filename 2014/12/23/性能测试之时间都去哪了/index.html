@@ -4,7 +4,7 @@
 <head>
   <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" >
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
-  <title>Tag: 抓包 | KongnuanZhao</title>
+  <title>性能测试之时间都去哪了 | KongnuanZhao</title>
   <meta name="description" content="" />
   <meta name="HandheldFriendly" content="True" />
   <meta name="MobileOptimized" content="320" />
@@ -263,7 +263,7 @@
                 
                 <div id="nav-container">
                     <div class="post-navbar" style="line-height: 63px;display:none">
-                        <li id="navbar-title"><a href="#">undefined</a></li>
+                        <li id="navbar-title"><a href="#">性能测试之时间都去哪了</a></li>
                         <li id="navbar-toc" style="border-left: none">
                             <a style="padding-right: 15px">
                                 <span id="toc-content" >Introduction</span><i class="fa fa-chevron-down" ></i>
@@ -282,66 +282,87 @@
 
 
 <!-- -->
-<!--<body class="home-template">-->
+<!--<body class="post-template">-->
 <!---->
   
+
 <main class="content" role="main">
+    <article class="post" >
+    <span class="post-meta">
+                  <div class="tag-tile">
+                      
+                      
+                      <a data-pjax href='/tags/性能测试/' style='color:#D5D5D5'>性能测试</a>
+                      
+                      
+                  </div>
+                <h1 class="post-title" style="margin: 14px 0;color:#50585D">性能测试之时间都去哪了</h1>
 
-    
-    <article class="post">
+                    <div class="post-meta">
+                        Post on<span class="fa fa-clock-o"></span>
+                        <time datetime="2014-12-23T03:04:16.000Z"
+                              itemprop="datePublished">Dec 23 2014</time>
+                        By 赵空暖
+                    </div>
+    </span>
 
-        <header class="post-header">
-            <div class="tag-tile">
-                
-                
-                <a data-pjax href='/tags/抓包/'>抓包</a>
-                
-                <a data-pjax href='/tags/测试/'>测试</a>
-                
-                <a data-pjax href='/tags/工具/'>工具</a>
-                
-                
-                <span class="fa fa-bookmark" style="float:right;color:#fa8072"></span>
-            </div>
-            <h1 class="post-title"><a data-pjax href="/2014/12/11/抓包/">抓包</a>
-            </h1>
+        <section class="post-content">
+            <blockquote>
+<p>只要数据流过的地方，都有可能成为制约其速度的可能。</p>
+</blockquote>
+<ul>
+<li><p>客户端<br>一个请求发出的过程<br>1.域名 -&gt; 2.<b>DNS lookup</b> -&gt; 3.返回ip -&gt; 4.通过网络TCP/IP三次握手进行连接的建立 -&gt; 接收解析代码……<br>2.1 浏览器查找缓存域名对应的ip<br>2.2 查找操作系统 ipconfig /dnsflush(清除操作系统缓存)<br>2.3 浏览器会向web服务提供商(比如电信ADSL)对常见DNS进行缓存<br>2.4 继续向国家的DNS服务器<br>2.5 国外的DNS服务器……一直问到分布在世界的几十个根服务器<br>(DNS劫持、代理服务器)</p>
+</li>
+<li><p>网络</p>
+<ul>
+<li>网络拓扑描述—三个层次<ul>
+<li>核心层：网络主干部分称为核心层，核心层的主要目的在于通过高速转发通信，可靠的骨干传输结构，因此核心层交换机应拥有更高的可靠性，性能和吞吐量。</li>
+<li>汇聚层：汇聚层交换层是多台接入层交换机的汇聚点，它必须能够处理来自接入层设备的所有通信量，并提供到核心层的上行链路，因此汇聚层交换机与接入层交换机比较，需要更高的性能，更少的接口和更高的交换速率。</li>
+<li>接入层：通常将网络中直接面向用户连接或访问网络的部分称为接入层,接入层目的是允许终端用户连接到网络，因此接入层交换机具有低成本和高端口密度特性<br><img src="/image/network.jpg" alt="network"></li>
+</ul>
+</li>
+<li>网络吞吐量</li>
+<li>网络设备连接</li>
+</ul>
+</li>
+</ul>
+<p>(玩游戏或者下载会有区分什么网络进什么区或者通道，比如电信大厅、网通通道，如果电信进入网通会比较慢原因是？)<br>以某公司为例，<br><img src="/image/company.jpg" alt="company"><br>首先要使自己的以机房为中心的小型网络连接在一起，然后自己的机房之间要实现互连，自己的机房和其他服务提供商的机房也要实现互连。由于服务提供商自己的机房之间的连接的带宽、连接数都要相对多一些，而网络中跳数越多2个节点间互连的性能就越发低下，如果你的家用电脑与网络游戏服务器同在一个服务提供商下那么连接性能就会更佳。</p>
+<ul>
+<li>应用服务器（Nginx、Apache、iis……)<ul>
+<li>程序的健壮，消耗资源合理</li>
+<li>启动压缩（压缩文本而非其他）</li>
+<li>缓存</li>
+<li>预热</li>
+<li>线程配置<br>比如 a.jsp的访问过程图片(晚上回来画:-D)</li>
+</ul>
+</li>
+<li>数据库(oracle、mysql、db2、sql server、nosql(memcached/hbase/radis……))<ul>
+<li>索引是都正常使用</li>
+<li>SGA等是否分配合理</li>
+<li>sql优化</li>
+</ul>
+</li>
+</ul>
 
-            <div class="post-meta">
-                Post on<span class="fa fa-clock-o"></span>
-                <time datetime="2014-12-11T13:36:24.000Z"
-                      itemprop="datePublished">Dec 11 2014</time>
-            </div>
-        </header>
-        <section class="post-excerpt">
-            <p>
-                
-                抓包工具之比较
-
-Httpwatch
-1）基本使用和技巧2）HTTP请求时间分段分析
-
-时间轴
-(图片点击放大)
-
-
-Blocked
-The Blocked time includes any pre-processing time (such as cache lookup) and the time spent waiting for a network connection to become available. Browser
-                
-            </p>
-            
-            <p>
-                <a data-pjax href="/2014/12/11/抓包/"
-                   class="excerpt-link">Read More...</a>
-            </p>
-            
         </section>
+        <hr/>
+        <nav class="pagination" style="width:auto" role="pagination">
+            
+            <a style="cursor:default" class="newer-posts" href="#">This is the First Post</a>
+            
+            <a class="share-button" data-original-title title>Share this Post</a>
+            
+            <a data-pjax class="older-posts" href="/2014/12/22/这些年上过的课/">Next Post →</a>
+            
+        </nav>
+        <br/>
+        <br/>
+        <section id="comment">
+            <div id="comment-box"></div>
+        </section>
+
+
     </article>
-    
-    <nav class="pagination" role="pagination">
-        
-        <span class="page-number">Page  of </span>
-        
-    </nav>
 </main>
 
 
