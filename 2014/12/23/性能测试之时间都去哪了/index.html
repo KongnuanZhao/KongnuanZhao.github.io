@@ -44,6 +44,10 @@
                                 <div class="mp-scroll">
                                 
                                 <li class="search-archive-li mp-pjax">
+                                    <a href="/2014/12/23/为什么只有13台dns根服务器/">为什么只有13台dns根服务器</a>
+                                </li>
+                                
+                                <li class="search-archive-li mp-pjax">
                                     <a href="/2014/12/23/性能测试之时间都去哪了/">性能测试之时间都去哪了</a>
                                 </li>
                                 
@@ -205,6 +209,8 @@
         <div id="pjax">
             <div class="pjax-hidden" style="display: none">
                 
+                    <a  data-pjax href="/2014/12/23/为什么只有13台dns根服务器/">为什么只有13台dns根服务器</a>
+                
                     <a  data-pjax href="/2014/12/23/性能测试之时间都去哪了/">性能测试之时间都去哪了</a>
                 
                     <a  data-pjax href="/2014/12/22/这些年上过的课/">这些年上过的课</a>
@@ -329,15 +335,17 @@
 </ul>
 <p>(玩游戏或者下载会有区分什么网络进什么区或者通道，比如电信大厅、网通通道，如果电信进入网通会比较慢原因是？)<br><img src="/image/net.jpg" alt="net"><br>以某公司为例，<br><img src="/image/company.jpg" alt="company"><br>首先要使自己的以机房为中心的小型网络连接在一起，然后自己的机房之间要实现互连，自己的机房和其他服务提供商的机房也要实现互连。由于服务提供商自己的机房之间的连接的带宽、连接数都要相对多一些，而网络中跳数越多2个节点间互连的性能就越发低下，如果你的家用电脑与网络游戏服务器同在一个服务提供商下那么连接性能就会更佳。</p>
 <ul>
-<li>应用服务器（Nginx、Apache、iis……)<ul>
+<li><p>应用服务器（Nginx、Apache、iis……)</p>
+<ul>
 <li>程序的健壮，消耗资源合理</li>
 <li>启动压缩（压缩文本而非其他）</li>
 <li>缓存</li>
 <li>预热</li>
-<li>线程配置<br>比如 a.jsp的访问过程图片(晚上回来画:-D)</li>
+<li>线程配置</li>
 </ul>
 </li>
-<li>数据库(oracle、mysql、db2、sql server、nosql(memcached/hbase/radis……))<ul>
+<li><p>数据库(oracle、mysql、db2、sql server、nosql(memcached/hbase/radis……))</p>
+<ul>
 <li>索引是都正常使用</li>
 <li>SGA等是否分配合理</li>
 <li>sql优化</li>
@@ -350,13 +358,16 @@
 <p>全球共有13台根逻辑域名服务器。这13台逻辑根域名服务器中名字分别为“A”至“M”，真实的根服务器在2014年1月25日的数据为386台，分布于全球各大洲。 -百度百科</p>
 <p>在根域名服务器中虽然没有每个域名的具体信息，但储存了负责每个域（如COM、NET、ORG等）的解析的域名服务器的地址信息，如同通过北京电信你问不到广州市某单位的电话号码，但是北京电信可以告诉你去查020114。世界上所有互联网访问者的浏览器都将域名转化为IP地址的请求（浏览器必须知道数字化的IP地址才能访问网站）理论上都要经过根服务器的指引后去该域名的权威域名服务器(authoritative name server） ，当然现实中提供接入服务的ISP的缓存域名服务器上可能已经有了这个对应关系（域名到IP地址）的缓存。</p>
 </blockquote>
-<p>2.网络拓扑结构一般分几层，具体叫什么？<br>三层：接入层、汇聚层、核心层<br>3.用自己的话简述一个请求所走过的路径和本节课的感受 </p>
+<h3 id="关于DNS根镜像服务器">关于DNS根镜像服务器</h3>
+<p>指的就是DNS根服务器的镜像服务器<br>镜像服务器(Mirror server)与主服务器的服务内容都是一样的，只是放在一个不同的地方，分担主机的负载。<br>简单来说就是和照镜子似的，能看，但不是原版的。在网上内容完全相同而且同步更新的两个或多个服务器，除主服务器外，其余的都被称为镜像服务器。</p>
+<p>2.网络拓扑结构一般分几层，具体叫什么？<br>三层：接入层、汇聚层、核心层<br>3.用自己的话简述一个请求所走过的路径和本节课的感受<br><img src="/image/request.png" alt="request"></p>
+<p>感受就是，一直在学校真正实践的机会不多，通过老师的课程能体会到些学即有用，扎实的基础很重要！</p>
 
         </section>
         <hr/>
         <nav class="pagination" style="width:auto" role="pagination">
             
-            <a style="cursor:default" class="newer-posts" href="#">This is the First Post</a>
+            <a data-pjax class="newer-posts" href="/2014/12/23/为什么只有13台dns根服务器/">← Prev Post</a>
             
             <a class="share-button" data-original-title title>Share this Post</a>
             
