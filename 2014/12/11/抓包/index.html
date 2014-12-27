@@ -311,10 +311,8 @@
 
         <section class="post-content">
             <h1 id="抓包工具之比较">抓包工具之比较</h1>
-<ul>
-<li><h2 id="Httpwatch">Httpwatch</h2>
-1）基本使用和技巧<br>2）HTTP请求时间分段分析</li>
-</ul>
+<h2 id="Httpwatch">Httpwatch</h2>
+<p>1）基本使用和技巧<br>2）HTTP请求时间分段分析</p>
 <h3 id="时间轴">时间轴</h3>
 <p>(图片点击放大)</p>
 <p><img src="/image/watch1.png" alt="watch1.png"></p>
@@ -328,7 +326,7 @@
 </blockquote>
 </li>
 <li>Connect<blockquote>
-<p>Connect is the time required to create a TCP connection to the web server (or proxy). If a secure HTTPS connection is being used this time includes the SSL handshake process unless a separate SSL Handshaketime is shown. Keep-Alive connections are often used to avoid the overhead of repeatedly connecting to the web server.</p>
+<p>Connect is the time required to create a TCP connection to the web server (or proxy). If a secure HTTPS connection is being used this time includes the SSL handshake process unless a separate SSL Handshaketime is shown. Keep-Alive connections are often used to avoid the overhead of repeatedly connecting to the web server.<br>参看文章<a href="http://.." target="_blank" rel="external">TCP三次握手及四次挥手详细图解</a></p>
 </blockquote>
 </li>
 <li>Send<blockquote>
@@ -343,10 +341,23 @@
 <p>Receive is the time taken to read the response message from the server. This value will depend on the size of the content returned, network bandwidth and whether HTTP compression was used.</p>
 </blockquote>
 </li>
-<li><h2 id="Fiddler">Fiddler</h2>
-1）Fiddler基本界面和操作<br>2）https的抓取<br>3）使用Fiddler构造自定义请求<br>4）使用Fiddler自定义服务器返回</li>
-<li><h2 id="firefox和firebug">firefox和firebug</h2>
-1)简单介绍firefox和功能强大的firebug</li>
+</ul>
+<h2 id="Fiddler">Fiddler</h2>
+<ul>
+<li>Fiddler是一个使用本地 127.0.0.1:8888 的 HTTP 代理，任何能够设置 HTTP 代理为 127.0.0.1:8888的浏览器和应用程序都可以使用 Fiddler。代理是指客户端的所有请求都要先经过Fiddler，然后转发到相应的服务器，反之，服务器端的所有响应，也都会先经过Fiddler然后发送到客户端。如下图：<br><img src="/image/FIDDLER.png" alt="fiddler"></li>
+<li>https的抓取 关于fiddler的更多详细介绍 → <a href="http://blog.csdn.net/ohmygirl/article/details/17846199" target="_blank" rel="external">Fiddler简介</a></li>
+<li><p>使用Fiddler构造自定义请求<br>composer面板下可以模拟向相应的服务器发送数据的过程。如下图：<br><img src="/image/composer.png" alt="composer"><br>修改User-Agent为zhaokongnuan<br>inspector面板下，提供headers、textview、hexview等多种方式查看单条http请求的请求报文的信息,查看刚刚发送的数据<br><img src="/image/inspectors.png" alt="inspector"></p>
+<blockquote>
+<p>在http协议里，头信息中有一个 User-Agent，它的作用是告诉服务器，用户客户端是什么浏览器，以及操作系统的信息的。在某些特殊的情况下，服务器根据浏览器的不同类型，输出不同的内容。以前很多网站都只显示给IE看，所以当时的opera浏览器还特别做了一个功能，可以把它的User-Agent换成IE的。所以user-agent是非常不可靠的，原因就是它是客户端自己决定并发送给服务器。通过修改User-Agent,可以完美的伪装操作系统、浏览器、蜘蛛、邮件客户端、链接检查、分析器、RSS 阅读器等客户端的信息。关于灌水机器人<a href="...">灌水机器人</a></p>
+</blockquote>
+</li>
+<li><p>使用Fiddler自定义服务器返回<br>AutoResponder面板， Fiddler比较重要且比较强大的功能之一，可用于拦截某一请求，并重定向到本地的资源，或者使用Fiddler的内置响应。可用于调试服务器端代码而无需修改服务器端的代码和配置，因为拦截和重定向后，实际上访问的是本地的文件或者得到的是Fiddler的内置响应。当勾选allow autoresponser 并设置相应的规则后,本例中的规则是将<a href="http://www.baidu.com/" target="_blank" rel="external">http://www.baidu.com/</a> 的请求拦截到本地的文件basic.html,<br>如下图所示<br><img src="/image/rules.png" alt="rules"><br>发出请求<a href="http://www.baidu.com/" target="_blank" rel="external">http://www.baidu.com/</a>  浏览器响应结果<br><img src="/image/response.png" alt="response"></p>
+</li>
+<li>另外的一个方便的功能即过滤功能，Filter标签则可以设置Fiddler的过滤规则，来达到过滤http请求的目的。最简单如：过滤内网http请求而只抓取http请求，或则过滤相应域名的http请求。Fiddler的过滤器非常强大，可以过滤特定http状态码的请求，可以过滤特定请求类型的http请求（如css请求，image请求，js请求等），可以过滤请求报文大于或则小于指定大小（byte）的请求。<br><img src="/image/filters.png" alt="filters"></li>
+</ul>
+<h2 id="firefox和firebug">firefox和firebug</h2>
+<p>1)简单介绍firefox和功能强大的firebug</p>
+<ul>
 <li><h2 id="科来网络分析工具的介绍">科来网络分析工具的介绍</h2>
 1）过滤器的使用和多种协议包的抓取</li>
 </ul>
