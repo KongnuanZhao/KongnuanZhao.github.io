@@ -922,12 +922,12 @@ span.ds-thread-count:after {
     background-position: center center;
     position: absolute;
     transition: .25s ease-in-out;
-    -moz-border-radius:10px;
-    -webkit-border-radius:10px;
-    border-radius:10px;
+    -moz-border-radius:12px;
+    -webkit-border-radius:12px;
+    border-radius:12px;
     border:1px solid ddd;
-    -webkit-box-shadow:0 0 12px black;
-    -moz-box-shadow:0 0 12px black;
+    -webkit-box-shadow:0 0 12px #9D9D9D;
+    -moz-box-shadow:0 0 12px #9D9D9D;
     padding:12px;
 }
 @-webkit-keyframes fadeIn {
