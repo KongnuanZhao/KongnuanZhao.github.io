@@ -4,7 +4,7 @@
 <head>
   <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" >
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
-  <title>抓包 | KongnuanZhao</title>
+  <title>Category: 读书有疑 | KongnuanZhao</title>
   <meta name="description" content="" />
   <meta name="HandheldFriendly" content="True" />
   <meta name="MobileOptimized" content="320" />
@@ -288,7 +288,7 @@
                 
                 <div id="nav-container">
                     <div class="post-navbar" style="line-height: 63px;display:none">
-                        <li id="navbar-title"><a href="#">抓包</a></li>
+                        <li id="navbar-title"><a href="#">undefined</a></li>
                         <li id="navbar-toc" style="border-left: none">
                             <a style="padding-right: 15px">
                                 <span id="toc-content" >Introduction</span><i class="fa fa-chevron-down" ></i>
@@ -307,113 +307,58 @@
 
 
 <!-- -->
-<!--<body class="post-template">-->
+<!--<body class="home-template">-->
 <!---->
   
-
 <main class="content" role="main">
-    <article class="post" >
-    <span class="post-meta">
-                  <div class="tag-tile">
-                      
-                      
-                      <a data-pjax href='/tags/抓包/' style='color:#D5D5D5'>抓包</a>
-                      
-                      <a data-pjax href='/tags/测试/' style='color:#D5D5D5'>测试</a>
-                      
-                      <a data-pjax href='/tags/工具/' style='color:#D5D5D5'>工具</a>
-                      
-                      
-                  </div>
-                <h1 class="post-title" style="margin: 14px 0;color:#50585D">抓包</h1>
 
-                    <div class="post-meta">
-                        Post on<span class="fa fa-clock-o"></span>
-                        <time datetime="2014-12-11T13:36:24.000Z"
-                              itemprop="datePublished">Dec 11 2014</time>
-                        By 赵空暖
-                    </div>
-    </span>
+    
+    <article class="post">
 
-        <section class="post-content">
-            <h1 id="抓包工具之比较">抓包工具之比较</h1>
-<h2 id="Httpwatch">Httpwatch</h2>
-<p>1）基本使用和技巧<br>2）HTTP请求时间分段分析</p>
-<h3 id="时间轴">时间轴</h3>
-<p>(图片点击放大)</p>
-<p><img src="/image/watch1.png" alt="watch1.png"></p>
-<ul>
-<li>Blocked<blockquote>
-<p>The Blocked time includes any pre-processing time (such as cache lookup) and the time spent waiting for a network connection to become available. Browsers limit the number of concurrent network connections per host name (i.e. www.microsoft.com) and will queue up requests if the limit has been reached. Often the Blocked time is the most significant factor in the download time of images embedded in a web page - particularly for older browsers that will only use a maximum of two connections per hostname. Modern browsers now allow up to six connections per hostname.</p>
-</blockquote>
-</li>
-<li>DNS Lookup<blockquote>
-<p>DNS Lookup is the time required to resolve a host name (e.g. www.google.com) into a numeric IP address (e.g. 216.239.59.99).</p>
-</blockquote>
-</li>
-<li>Connect<blockquote>
-<p>Connect is the time required to create a TCP connection to the web server (or proxy). If a secure HTTPS connection is being used this time includes the SSL handshake process unless a separate SSL Handshaketime is shown. Keep-Alive connections are often used to avoid the overhead of repeatedly connecting to the web server.<br>参看文章<a href="http://.." target="_blank" rel="external">关于TCP三次握手及四次挥手</a></p>
-</blockquote>
-</li>
-<li>Send<blockquote>
-<p>Send is the time required to send the HTTP request message to the server and will depend on the amount of data that is sent to the server. For example, long Send times will result from uploading files using an HTTP POST.</p>
-</blockquote>
-</li>
-<li>Wait<blockquote>
-<p>Wait is the idle time spent waiting for a response message from the server. This value includes delays introduced due to network latency and the time required to process the request on the web server.</p>
-</blockquote>
-</li>
-<li>Receive<blockquote>
-<p>Receive is the time taken to read the response message from the server. This value will depend on the size of the content returned, network bandwidth and whether HTTP compression was used.</p>
-</blockquote>
-</li>
-</ul>
-<h2 id="Fiddler">Fiddler</h2>
-<ul>
-<li>Fiddler是一个使用本地 127.0.0.1:8888 的 HTTP 代理，任何能够设置 HTTP 代理为 127.0.0.1:8888的浏览器和应用程序都可以使用 Fiddler。代理是指客户端的所有请求都要先经过Fiddler，然后转发到相应的服务器，反之，服务器端的所有响应，也都会先经过Fiddler然后发送到客户端。如下图：<br><img src="/image/FIDDLER.png" alt="fiddler"></li>
-<li>https的抓取 关于fiddler的更多详细介绍 → <a href="http://blog.csdn.net/ohmygirl/article/details/17846199" target="_blank" rel="external">Fiddler简介</a></li>
-<li><p>使用Fiddler构造自定义请求<br>composer面板下可以模拟向相应的服务器发送数据的过程。如下图：<br><img src="/image/composer.png" alt="composer"><br>修改User-Agent为zhaokongnuan<br>inspector面板下，提供headers、textview、hexview等多种方式查看单条http请求的请求报文的信息,查看刚刚发送的数据<br><img src="/image/inspectors.png" alt="inspector"></p>
-<blockquote>
-<p>在http协议里，头信息中有一个 User-Agent，它的作用是告诉服务器，用户客户端是什么浏览器，以及操作系统的信息的。在某些特殊的情况下，服务器根据浏览器的不同类型，输出不同的内容。以前很多网站都只显示给IE看，所以当时的opera浏览器还特别做了一个功能，可以把它的User-Agent换成IE的。所以user-agent是非常不可靠的，原因就是它是客户端自己决定并发送给服务器。通过修改User-Agent,可以完美的伪装操作系统、浏览器、蜘蛛、邮件客户端、链接检查、分析器、RSS 阅读器等客户端的信息。关于灌水机器人<a href="...">灌水机器人</a></p>
-</blockquote>
-</li>
-<li><p>使用Fiddler自定义服务器返回<br>AutoResponder面板， Fiddler比较重要且比较强大的功能之一，可用于拦截某一请求，并重定向到本地的资源，或者使用Fiddler的内置响应。可用于调试服务器端代码而无需修改服务器端的代码和配置，因为拦截和重定向后，实际上访问的是本地的文件或者得到的是Fiddler的内置响应。当勾选allow autoresponser 并设置相应的规则后,本例中的规则是将<a href="http://www.baidu.com/" target="_blank" rel="external">http://www.baidu.com/</a> 的请求拦截到本地的文件basic.html,<br>如下图所示<br><img src="/image/rules.png" alt="rules"><br>发出请求<a href="http://www.baidu.com/" target="_blank" rel="external">http://www.baidu.com/</a>  浏览器响应结果<br><img src="/image/response.png" alt="response"></p>
-</li>
-<li>另外的一个方便的功能即过滤功能，Filter标签则可以设置Fiddler的过滤规则，来达到过滤http请求的目的。最简单如：过滤内网http请求而只抓取http请求，或则过滤相应域名的http请求。Fiddler的过滤器非常强大，可以过滤特定http状态码的请求，可以过滤特定请求类型的http请求（如css请求，image请求，js请求等），可以过滤请求报文大于或则小于指定大小（byte）的请求。<br><img src="/image/filters.png" alt="filters"></li>
-</ul>
-<h2 id="firefox和firebug">firefox和firebug</h2>
-<p>1)简单介绍firefox和功能强大的firebug<br>参看<a href="http://jingyan.baidu.com/article/fd8044fa97e08c5030137a6c.html" target="_blank" rel="external">firebug详细使用方法</a></p>
-<h2 id="科来网络分析工具的介绍">科来网络分析工具的介绍</h2>
-<p>1）过滤器的使用和多种协议包的抓取<br>参看<a href="http://wenku.baidu.com/view/b94402fcf61fb7360b4c6589.html" target="_blank" rel="external">科来网络分析系统抓包简明教程</a></p>
-<h1 id="课程作业">课程作业</h1>
-<p>1.本课程介绍的4种抓包工具除了都能抓包外，他们各自都有什么独特的特点？</p>
-<ul>
-<li>Httpwatch：主要特点详细的时间轴</li>
-<li>Fiddler： 构造自定义请求和自定义服务器返回</li>
-<li>firebug: 它集HTML查看和编辑、Javascript控制台、网络状况监视器于一体，是开发 JavaScript、CSS、HTML和Ajax的得力助手。Firebug也是一个除错工具。用户可以利用它除错、编辑、甚至删改任何网站的 CSS、HTML、DOM以及JavaScript代码。具体操作可参看<a href="http://jingyan.baidu.com/article/fd8044fa97e08c5030137a6c.html" target="_blank" rel="external">firebug详细使用方法</a></li>
-<li>科来：通过直接捕获网络原始数据包，并进行从网络链路层到网络应用层的全面解码分析，透视网络运行全状况。</li>
-</ul>
-<p>2.简单说说抓包在你的工作中的使用场景（如果以前没有使用过，那就谈谈学习这节课后的感受）<br>没有使用过，感受到一个请求发出去之后是做了有DNS查找、TCP三次握手四次挥手等等一系列工作。 </p>
+        <header class="post-header">
+            <div class="tag-tile">
+                
+                
+                <a data-pjax href='/tags/读书有疑/'>读书有疑</a>
+                
+                
+                <span class="fa fa-bookmark" style="float:right;color:#fa8072"></span>
+            </div>
+            <h1 class="post-title"><a data-pjax href="/2014/12/28/一个人的碎碎读/">一个人的碎碎读</a>
+            </h1>
 
+            <div class="post-meta">
+                Post on<span class="fa fa-clock-o"></span>
+                <time datetime="2014-12-28T02:26:16.000Z"
+                      itemprop="datePublished">Dec 28 2014</time>
+            </div>
+        </header>
+        <section class="post-excerpt">
+            <p>
+                
+                
+
+暖暖的阳光 ，动听的音乐，慵懒的周末想要静静的整理一下读过的书，走过的路。
+
+翻看了一下图书馆的借阅历史，看到的第一本书是《计算机达人成长之路：憧憬与迷茫篇》
+
+豆瓣简介：学习计算机有太多的迷茫和无奈。也许有人急于设计出理想的程序，却发现在课堂上居然找不到实现梦想的方法，于是平添了迷茫。也许有人迷失于无忧无虑的大学生活中，沉溺于游戏而不能自拔，在曾经的憧憬和堕落的现实之中承受着冰与火的折磨。也许有人激情万丈，立志要精通计算机知识，但
+                
+            </p>
+            
+            <p>
+                <a data-pjax href="/2014/12/28/一个人的碎碎读/"
+                   class="excerpt-link">Read More...</a>
+            </p>
+            
         </section>
-        <hr/>
-        <nav class="pagination" style="width:auto" role="pagination">
-            
-            <a data-pjax class="newer-posts" href="/2014/12/15/记录总结这半学期/">← Prev Post</a>
-            
-            <a class="share-button" data-original-title title>Share this Post</a>
-            
-            <a data-pjax class="older-posts" href="/2014/12/10/通过源码学习hexo/">Next Post →</a>
-            
-        </nav>
-        <br/>
-        <br/>
-        <section id="comment">
-            <div id="comment-box"></div>
-        </section>
-
-
     </article>
+    
+    <nav class="pagination" role="pagination">
+        
+        <span class="page-number">Page  of </span>
+        
+    </nav>
 </main>
 
 

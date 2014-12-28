@@ -4,7 +4,7 @@
 <head>
   <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" >
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
-  <title>抓包 | KongnuanZhao</title>
+  <title>一个人的碎碎读 | KongnuanZhao</title>
   <meta name="description" content="" />
   <meta name="HandheldFriendly" content="True" />
   <meta name="MobileOptimized" content="320" />
@@ -288,7 +288,7 @@
                 
                 <div id="nav-container">
                     <div class="post-navbar" style="line-height: 63px;display:none">
-                        <li id="navbar-title"><a href="#">抓包</a></li>
+                        <li id="navbar-title"><a href="#">一个人的碎碎读</a></li>
                         <li id="navbar-toc" style="border-left: none">
                             <a style="padding-right: 15px">
                                 <span id="toc-content" >Introduction</span><i class="fa fa-chevron-down" ></i>
@@ -317,93 +317,71 @@
                   <div class="tag-tile">
                       
                       
-                      <a data-pjax href='/tags/抓包/' style='color:#D5D5D5'>抓包</a>
-                      
-                      <a data-pjax href='/tags/测试/' style='color:#D5D5D5'>测试</a>
-                      
-                      <a data-pjax href='/tags/工具/' style='color:#D5D5D5'>工具</a>
+                      <a data-pjax href='/tags/读书有疑/' style='color:#D5D5D5'>读书有疑</a>
                       
                       
                   </div>
-                <h1 class="post-title" style="margin: 14px 0;color:#50585D">抓包</h1>
+                <h1 class="post-title" style="margin: 14px 0;color:#50585D">一个人的碎碎读</h1>
 
                     <div class="post-meta">
                         Post on<span class="fa fa-clock-o"></span>
-                        <time datetime="2014-12-11T13:36:24.000Z"
-                              itemprop="datePublished">Dec 11 2014</time>
+                        <time datetime="2014-12-28T02:26:16.000Z"
+                              itemprop="datePublished">Dec 28 2014</time>
                         By 赵空暖
                     </div>
     </span>
 
         <section class="post-content">
-            <h1 id="抓包工具之比较">抓包工具之比较</h1>
-<h2 id="Httpwatch">Httpwatch</h2>
-<p>1）基本使用和技巧<br>2）HTTP请求时间分段分析</p>
-<h3 id="时间轴">时间轴</h3>
-<p>(图片点击放大)</p>
-<p><img src="/image/watch1.png" alt="watch1.png"></p>
-<ul>
-<li>Blocked<blockquote>
-<p>The Blocked time includes any pre-processing time (such as cache lookup) and the time spent waiting for a network connection to become available. Browsers limit the number of concurrent network connections per host name (i.e. www.microsoft.com) and will queue up requests if the limit has been reached. Often the Blocked time is the most significant factor in the download time of images embedded in a web page - particularly for older browsers that will only use a maximum of two connections per hostname. Modern browsers now allow up to six connections per hostname.</p>
-</blockquote>
-</li>
-<li>DNS Lookup<blockquote>
-<p>DNS Lookup is the time required to resolve a host name (e.g. www.google.com) into a numeric IP address (e.g. 216.239.59.99).</p>
-</blockquote>
-</li>
-<li>Connect<blockquote>
-<p>Connect is the time required to create a TCP connection to the web server (or proxy). If a secure HTTPS connection is being used this time includes the SSL handshake process unless a separate SSL Handshaketime is shown. Keep-Alive connections are often used to avoid the overhead of repeatedly connecting to the web server.<br>参看文章<a href="http://.." target="_blank" rel="external">关于TCP三次握手及四次挥手</a></p>
-</blockquote>
-</li>
-<li>Send<blockquote>
-<p>Send is the time required to send the HTTP request message to the server and will depend on the amount of data that is sent to the server. For example, long Send times will result from uploading files using an HTTP POST.</p>
-</blockquote>
-</li>
-<li>Wait<blockquote>
-<p>Wait is the idle time spent waiting for a response message from the server. This value includes delays introduced due to network latency and the time required to process the request on the web server.</p>
-</blockquote>
-</li>
-<li>Receive<blockquote>
-<p>Receive is the time taken to read the response message from the server. This value will depend on the size of the content returned, network bandwidth and whether HTTP compression was used.</p>
-</blockquote>
-</li>
-</ul>
-<h2 id="Fiddler">Fiddler</h2>
-<ul>
-<li>Fiddler是一个使用本地 127.0.0.1:8888 的 HTTP 代理，任何能够设置 HTTP 代理为 127.0.0.1:8888的浏览器和应用程序都可以使用 Fiddler。代理是指客户端的所有请求都要先经过Fiddler，然后转发到相应的服务器，反之，服务器端的所有响应，也都会先经过Fiddler然后发送到客户端。如下图：<br><img src="/image/FIDDLER.png" alt="fiddler"></li>
-<li>https的抓取 关于fiddler的更多详细介绍 → <a href="http://blog.csdn.net/ohmygirl/article/details/17846199" target="_blank" rel="external">Fiddler简介</a></li>
-<li><p>使用Fiddler构造自定义请求<br>composer面板下可以模拟向相应的服务器发送数据的过程。如下图：<br><img src="/image/composer.png" alt="composer"><br>修改User-Agent为zhaokongnuan<br>inspector面板下，提供headers、textview、hexview等多种方式查看单条http请求的请求报文的信息,查看刚刚发送的数据<br><img src="/image/inspectors.png" alt="inspector"></p>
+            <p><img src="/image/book.jpg" alt="book"></p>
 <blockquote>
-<p>在http协议里，头信息中有一个 User-Agent，它的作用是告诉服务器，用户客户端是什么浏览器，以及操作系统的信息的。在某些特殊的情况下，服务器根据浏览器的不同类型，输出不同的内容。以前很多网站都只显示给IE看，所以当时的opera浏览器还特别做了一个功能，可以把它的User-Agent换成IE的。所以user-agent是非常不可靠的，原因就是它是客户端自己决定并发送给服务器。通过修改User-Agent,可以完美的伪装操作系统、浏览器、蜘蛛、邮件客户端、链接检查、分析器、RSS 阅读器等客户端的信息。关于灌水机器人<a href="...">灌水机器人</a></p>
+<p>暖暖的阳光 ，动听的音乐，慵懒的周末想要静静的整理一下读过的书，走过的路。</p>
 </blockquote>
-</li>
-<li><p>使用Fiddler自定义服务器返回<br>AutoResponder面板， Fiddler比较重要且比较强大的功能之一，可用于拦截某一请求，并重定向到本地的资源，或者使用Fiddler的内置响应。可用于调试服务器端代码而无需修改服务器端的代码和配置，因为拦截和重定向后，实际上访问的是本地的文件或者得到的是Fiddler的内置响应。当勾选allow autoresponser 并设置相应的规则后,本例中的规则是将<a href="http://www.baidu.com/" target="_blank" rel="external">http://www.baidu.com/</a> 的请求拦截到本地的文件basic.html,<br>如下图所示<br><img src="/image/rules.png" alt="rules"><br>发出请求<a href="http://www.baidu.com/" target="_blank" rel="external">http://www.baidu.com/</a>  浏览器响应结果<br><img src="/image/response.png" alt="response"></p>
-</li>
-<li>另外的一个方便的功能即过滤功能，Filter标签则可以设置Fiddler的过滤规则，来达到过滤http请求的目的。最简单如：过滤内网http请求而只抓取http请求，或则过滤相应域名的http请求。Fiddler的过滤器非常强大，可以过滤特定http状态码的请求，可以过滤特定请求类型的http请求（如css请求，image请求，js请求等），可以过滤请求报文大于或则小于指定大小（byte）的请求。<br><img src="/image/filters.png" alt="filters"></li>
-</ul>
-<h2 id="firefox和firebug">firefox和firebug</h2>
-<p>1)简单介绍firefox和功能强大的firebug<br>参看<a href="http://jingyan.baidu.com/article/fd8044fa97e08c5030137a6c.html" target="_blank" rel="external">firebug详细使用方法</a></p>
-<h2 id="科来网络分析工具的介绍">科来网络分析工具的介绍</h2>
-<p>1）过滤器的使用和多种协议包的抓取<br>参看<a href="http://wenku.baidu.com/view/b94402fcf61fb7360b4c6589.html" target="_blank" rel="external">科来网络分析系统抓包简明教程</a></p>
-<h1 id="课程作业">课程作业</h1>
-<p>1.本课程介绍的4种抓包工具除了都能抓包外，他们各自都有什么独特的特点？</p>
-<ul>
-<li>Httpwatch：主要特点详细的时间轴</li>
-<li>Fiddler： 构造自定义请求和自定义服务器返回</li>
-<li>firebug: 它集HTML查看和编辑、Javascript控制台、网络状况监视器于一体，是开发 JavaScript、CSS、HTML和Ajax的得力助手。Firebug也是一个除错工具。用户可以利用它除错、编辑、甚至删改任何网站的 CSS、HTML、DOM以及JavaScript代码。具体操作可参看<a href="http://jingyan.baidu.com/article/fd8044fa97e08c5030137a6c.html" target="_blank" rel="external">firebug详细使用方法</a></li>
-<li>科来：通过直接捕获网络原始数据包，并进行从网络链路层到网络应用层的全面解码分析，透视网络运行全状况。</li>
-</ul>
-<p>2.简单说说抓包在你的工作中的使用场景（如果以前没有使用过，那就谈谈学习这节课后的感受）<br>没有使用过，感受到一个请求发出去之后是做了有DNS查找、TCP三次握手四次挥手等等一系列工作。 </p>
+<p>翻看了一下图书馆的借阅历史，看到的第一本书是《计算机达人成长之路：憧憬与迷茫篇》<br><img src="/image/book1.jpg" alt="book1"></p>
+<blockquote>
+<p>豆瓣简介：学习计算机有太多的迷茫和无奈。也许有人急于设计出理想的程序，却发现在课堂上居然找不到实现梦想的方法，于是平添了迷茫。也许有人迷失于无忧无虑的大学生活中，沉溺于游戏而不能自拔，在曾经的憧憬和堕落的现实之中承受着冰与火的折磨。也许有人激情万丈，立志要精通计算机知识，但教材一本厚过一本，学好计算机编程似乎成了一项不可能完成的任务。那么来吧，翻开《计算机达人成长之路——憧憬与迷茫篇》，有一个叫做“木鸿飞”的人也经历了憧憬与迷茫，也曾在理想与现实之间苦苦挣扎，但最终选择了奋进并腾飞，一步一步地迈上了计算机选人之路。让我们共同来回顾他的历程。</p>
+</blockquote>
+<p>估计那时大一的自己读这本书的时候，心里面也是很复杂的，所以才会去图书馆翻开这样一本书一口气读完，畅汗淋漓！其他的细节已记不得，翻开笔记有这样一段是当时自己印象深刻的。</p>
+<figure class="highlight bash"><pre><div class="line">为什么要开设这些课程？对于这个问题仁者见仁，智者见智，木鸿飞的回答是两个字：气质。即为了培养一种计算机的气质。</div><div class="line">所谓气质，表现在很多方面，比如有的人即使衣着朴素却仍然高雅，有的人在行走的姿势之中就融入了高贵，有的人一举一动就散发着自信，这些都是气质。</div><div class="line">气质是一种磁场，是一种看不见摸不着却又真真实实的存在。</div><div class="line">气质是一种自信，自信在举手投足间散发着无比的信心，坚信自己可以战胜一切的困难。正所谓天助自助者。拥有了自信，才能淋漓尽致的发挥才华，否则只能畏首畏尾。</div><div class="line">气质是一种能力，是一种综合素质，融合了广博的只是，精深的理论，坚定的自信，广阔的胸襟，以及许许多多其他的组成部分。冰冻三尺非一日之寒，气质的养成也并非一朝一夕之功，“三代出一个贵族”更多的是建立在大学三四年间扎实攻读的基础上，如果基础牢则如虎添翼，否则就是空中楼阁，揠苗助长。</div><div class="line">气质源于自信，自信源于能力，所谓艺高人胆大是也。要增强气质，归根结底要从培养能力入手。能力者知识的博深也。所谓博与深，就要既要能够深刻的了解某一领域的知识，成为该领域的专家，又要博览群书，充分摄取更多领域的知识，扩大认知面。</div><div class="line">气质源于自信，自信源于能力，而能力最初源于兴趣。</div><div class="line">                                                            --摘自计算机达人成长之路</div><div class="line">                                                                     <span class="number">2013.6</span></div></pre></figure>
+
+<p><img src="/image/book2.jpg" alt="book2"><br>想提这本书，不是因为自己离散数学学好了，而是想起了为了去邻班蹭课而每天晚上认真读认真做笔记的情景。同时这本书带给自己的还有就是勿以善小而不为，不要以为很多知识你认为很简单就认为是理所应当的不屑于去看，正是因为自己的不正确认知，错过了很多本应认真思考的机会。自然理解也不会深刻，忘记只是时间的问题。</p>
+<blockquote>
+<p>豆瓣简评：首先值得一说的是虽然本书包含了大量内容，但章节编排都相当合理：象从逻辑开始，逐步过度到定理的证明；从集合过度到函数，从函数过度到递归；从组合数学到概率，等等。整本书阅读起来很畅顺，当词典查阅也很方便。书中还穿插了众多数学家的生平八卦，让读者在有趣（或者，枯燥？）的阅读当中增添了几分轻松感觉。 </p>
+</blockquote>
+<p><img src="/image/book3.png" alt="book3"><br>对于自己这种一点基础没有的童鞋读这本书入门算是再合适不过了，一直很喜欢这种深入浅出读起来很轻松如行云流水一般的书籍！</p>
+<blockquote>
+<p>豆瓣简介：《计量经济学》（第二版）属于本科层面的融理论与实践于一体的优秀教科书，也可作为研究生层次的入门教材，国外院校普遍采用此书。本书充分利用实证分析的现实问题与数据，通过简洁明晰的处理方式架起统计方法与经济解释之间的桥梁，明确突出计量经济学的实用方法，帮助学生全面理解计量经济学的基本内容，不仅包括回归分析、最小二乘法、异方差、序列相关、工具变量等传统内容，还涉及弱工具变量、项目评估、面板数据方法、时间序列分析等最新计量经济学的研究成果。</p>
+</blockquote>
+<p><img src="/image/book4.jpg" alt="book4"></p>
+<blockquote>
+<p>百科简介：梦的解析（德语：Die Traumdeutung 英文：The Interpretation of Dreams），又译做《释梦》，经典的心理学书籍，是西格蒙德·弗洛伊德的一本著作，第一版出版于1899年11月。该书开创了弗洛伊德的“梦的解析”理论，被作者本人描述为“理解潜意识心理过程的捷径。”该书引入了本我概念，描述了弗洛伊德的潜意识理论，是用于解析梦，引深到心理学，解读人们的潜意识在梦中的表象。</p>
+</blockquote>
+<p>尽管书中的想法很多都不甚理解，但是，《梦的解析》第一次告诉曾经无知和充满疑惑的人们：梦是一个人与自己内心的真实对话，是自己向自己学习的过程，是另外一次与自己息息相关的人生。在隐秘的梦境中所看见、所感受到的一切，呼吸、眼泪、痛苦以及欢乐，并不是都没有意义的。这本书也在一定程度上解决了自己的疑惑，比如为什么睡觉的时候身上盖着一件衣服会觉得很沉压的喘不过气来，为什么做的梦很乱有儿时的伙伴，初中的教室，生活中的矛盾……</p>
+<blockquote>
+<p>弗洛伊德在《梦的解析》中还认为人在清醒的意识下面，还有一个潜在的心理活动在进行着，这种观点就是著名的潜意识理论。《梦的解析》的出版，像一把火炬照亮了人类心理生活的深穴，揭示了许多埋藏于人类心理深层的奥秘。该书不但为人类潜意识的学说奠定了稳固的基础，而且也建立了人类认识自己的新的里程碑。</p>
+</blockquote>
+<p><img src="/image/math.jpg" alt="math"><br>总有那么些书是值得花一年、两年时间，一遍、两遍去认真读和体会的。<br>捧着这本书，满是崇拜，书中密码学部分提到了《暗算》这部电视剧，二话不说一口气全部看完，无限感触的情景还历历在目。<br>伯特兰·罗素以下列文字来形容他对数学之美的感觉：</p>
+<blockquote>
+<p>Mathematics, rightly viewed, possesses not only truth, but supreme beauty — a beauty cold and austere, like that of sculpture, without appeal to any part of our weaker nature, without the gorgeous trappings of painting or music, yet sublimely pure, and capable of a stern perfection such as only the greatest art can show. The true spirit of delight, the exaltation, the sense of being more than Man, which is the touchstone of the highest excellence, is to be found in mathematics as surely as poetry. (The Study of Mathematics, in Mysticism and Logic, and Other Essays, ch. 4, London: Longmans, Green, 1918.) </p>
+</blockquote>
+<p>翻译：</p>
+<blockquote>
+<p>数学，如果正确地看它，则具有……至高无上的美——正像雕刻的美，是一种冷而严肃的美，这种美不是投合我们天性的微弱的方面，这种美没有绘画或音乐的那些华丽的装饰，它可以纯净到崇高的地步，能够达到严格的只有最伟大的艺术才能显示的那种完美的境地。一种真实的喜悦的精神，一种精神上的亢奋，一种觉得高于人的意识——这些是至善至美的标准，能够在诗里得到，也能够在数学里得到。（研究数学，在神秘主义和逻辑，与其他论文，概括。4、伦敦：中国政法大学，绿色，1918年。）</p>
+</blockquote>
+<p>来自豆瓣的评论：</p>
+<blockquote>
+<p>“道”是做事的原理和原则，“术”是具体的做事方法。吴军博士在书里的一段话使我深感认同：“这本书的目的是讲道而不是讲术。很多具体的搜索技术很快会从独门绝技到普及，再到落伍，追求术的人一辈子工作很辛苦。只有掌握了搜索的本质和精髓才能永远游刃有余。”回到这篇评论的开头，很多人希望躲开抽象和看似玄虚无用的道，直接掌握一门一劳永逸的术——可惜这样的捷径却是没有的，如果有的话，大概就是认真地去学习体会那些道，然后再用道来指导这些不断变动似乎永远难以追上潮流的术吧。<br>                                                                                     —来自: 花生 </p>
+</blockquote>
+<p>估计自己是没希望达到这种境界了，只是想要排除自己对事物的偏见，换种角度重新看一下周围的人、事、物。<br><img src="/image/oracle.jpg" alt="oracle"><br>读到这本书的时候觉得眼前一亮，以一种最轻松的方式，完成对Oracle数据库的整体认识，包括Oracle的物理体系结构、逻辑体系结构、表、索引以及表连接五大部分，梁敬彬老师的写作意图是让读者的收获，不止Oracle，自己读了这本书之后也确实能够体会老师想要读者领悟到的思考问题的方式以及解决问题的能力。<br>用心认真的人儿最美丽！</p>
 
         </section>
         <hr/>
         <nav class="pagination" style="width:auto" role="pagination">
             
-            <a data-pjax class="newer-posts" href="/2014/12/15/记录总结这半学期/">← Prev Post</a>
+            <a style="cursor:default" class="newer-posts" href="#">This is the First Post</a>
             
             <a class="share-button" data-original-title title>Share this Post</a>
             
-            <a data-pjax class="older-posts" href="/2014/12/10/通过源码学习hexo/">Next Post →</a>
+            <a data-pjax class="older-posts" href="/2014/12/27/关于TCP三次握手及四次挥手/">Next Post →</a>
             
         </nav>
         <br/>
