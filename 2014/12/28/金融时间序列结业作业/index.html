@@ -115,7 +115,7 @@
                                 
                                 <li class="search-category-li mp-pjax">
                                     <a href="/categories/R/">&nbsp;&nbsp;&nbsp;R</a>
-                                    <small>1</small>
+                                    <small>2</small>
                                 </li>
                                 
                                 <li class="search-category-li mp-pjax">
@@ -135,6 +135,11 @@
                                 
                                 <li class="search-category-li mp-pjax">
                                     <a href="/categories/R/数据分析/">&nbsp;&nbsp;&nbsp;数据分析</a>
+                                    <small>2</small>
+                                </li>
+                                
+                                <li class="search-category-li mp-pjax">
+                                    <a href="/categories/数据分析/">&nbsp;&nbsp;&nbsp;数据分析</a>
                                     <small>1</small>
                                 </li>
                                 
@@ -177,7 +182,7 @@
                                 
                                 <li class="search-tag-li mp-pjax">
                                     <a href="/tags/R/">&nbsp;&nbsp;&nbsp;R</a>
-                                    <small>1</small>
+                                    <small>2</small>
                                 </li>
                                 
                                 <li class="search-tag-li mp-pjax">
@@ -217,7 +222,7 @@
                                 
                                 <li class="search-tag-li mp-pjax">
                                     <a href="/tags/数据分析/">&nbsp;&nbsp;&nbsp;数据分析</a>
-                                    <small>1</small>
+                                    <small>3</small>
                                 </li>
                                 
                                 <li class="search-tag-li mp-pjax">
@@ -290,6 +295,8 @@
                     <a data-pjax href="/categories/操作系统/">&nbsp;&nbsp;操作系统</a>
                 
                     <a data-pjax href="/categories/R/数据分析/">&nbsp;&nbsp;数据分析</a>
+                
+                    <a data-pjax href="/categories/数据分析/">&nbsp;&nbsp;数据分析</a>
                 
                     <a data-pjax href="/categories/测试/">&nbsp;&nbsp;测试</a>
                 
@@ -381,7 +388,10 @@
 
         <section class="post-content">
             <h1 id="结业测试大作业">结业测试大作业</h1>
+<blockquote>
 <p>内容：使用在课程中学过的各种时间序列模型为某实际场景建模，并且诠释你的结果的意义。<br>要求：<br>1.要解决的问题有意义，业务背景要有详细的介绍与解释<br>2.数据真实，标明数据来源，可以使用参考书的数据，但不得与书上的例子一致，即可以使用书上的数据构建新的模型（注：新的模型是指另一个种类的模型，如AR（1）与AR（3）看做同一个模型）<br>3.数学建模和数学工具运用正确及有效，要求对同一数据尝试2种或以上的时间序列模型，或采用2种或以上的不同参数估计方法<br>4.使用R其它各种工具进行实际计算验证，程序和结果正确<br>5.对模型结果要结合业务背景进行详细解释，不得只有代码结果而没有相应解释 </p>
+</blockquote>
+<p>问题意义以及数据来源移步<a href="http://www.zhaokongnuan.com/2014/12/28/%E6%BD%8D%E5%9D%8A%E7%89%A9%E4%BB%B7%E4%BF%A1%E6%81%AF%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%E5%8F%8A%E5%B1%95%E7%8E%B0/" target="_blank" rel="external">这篇文章</a><br>这是在炼数成金上学完rapidminer这门课假期里完成的，那么这次作业要求对同一数据尝试两种以上的时间序列模型或两种以上的不同参数估计方法，所以还是用这里面抓取的数据，尝试使用R进行实际计算验证。</p>
 <h3 id="环境准备：">环境准备：</h3>
 <p>win7 64bit<br>R version 3.1.1 (2014-07-10)<br>mysqk Server version: 5.5.20-log MySQL Community Server (GPL)</p>
 <h2 id="通过ODBC进行R和mysql的连接">通过ODBC进行R和mysql的连接</h2>
@@ -394,13 +404,9 @@
 <figure class="highlight r"><pre><div class="line"><span class="keyword">attach</span>(data)</div><div class="line">time &lt;-as.Date(日期,<span class="string">"%Y/%m/%d"</span>)</div><div class="line">rownames(data)&lt;-time</div><div class="line">pic&lt;-eBar(data[,-<span class="number">1</span>],size = c(<span class="number">1040</span>,<span class="number">488</span>),title = <span class="string">'价格走势图'</span>,opt=list(dataZoom=list(show=<span class="literal">TRUE</span>,end=<span class="number">35</span>)),legend.orient=<span class="string">"vertical"</span>)</div><div class="line">plot(eBar(data[,-<span class="number">1</span>],size = c(<span class="number">1040</span>,<span class="number">488</span>),title = <span class="string">'价格走势图'</span>,opt=list(dataZoom=list(show=<span class="literal">TRUE</span>,end=<span class="number">35</span>)),legend.orient=<span class="string">"vertical"</span>))</div><div class="line">print(pic)</div></pre></figure>
 
 
-<!-- jsHeader --><br><script src="http://echarts.baidu.com/doc/example/www/js/echarts.js"></script><br><!-- jsHeader -->
-
-
-<p><!-- divChart --></p>
+<p>（如加载缓慢请重新刷新该页面）</p>
+<script src="http://echarts.baidu.com/doc/example/www/js/echarts.js"></script>
 <div id="eBarID197041c54b97" style="width:800px; height:450px; ;border:1px solid #ccc;padding:5px;"></div>
-
-<p><!-- jsChart --></p>
 <script>
 
    require.config({
@@ -1252,6 +1258,28 @@
     );
 </script>
 
+<p>使用R来分析预测大白菜数据<br>一、使用线性拟合</p>
+<figure class="highlight r"><pre><div class="line">&gt;cabb_lm&lt;- lm(cabbiage[,<span class="number">1</span>]~cabbiage[,<span class="number">2</span>])</div><div class="line">&gt;summary(cabb_lm)</div><div class="line"></div><div class="line">Call:</div><div class="line">lm(formula = cabbiage[, <span class="number">1</span>] ~ cabbiage[, <span class="number">2</span>])</div><div class="line"></div><div class="line">Residuals:</div><div class="line">     Min       1Q   Median       3Q      Max </div><div class="line">-<span class="number">0.41869</span> -<span class="number">0.14042</span>  <span class="number">0.00618</span>  <span class="number">0.06052</span>  <span class="number">0.67017</span> </div><div class="line"></div><div class="line">Coefficients:</div><div class="line">                Estimate Std. Error t value Pr(&gt;|t|)    </div><div class="line">(Intercept)   -<span class="number">3.123e+01</span>  <span class="number">3.314e+00</span>  -<span class="number">9.424</span>   &lt;<span class="number">2e-16</span> ***</div><div class="line">cabbiage[, <span class="number">2</span>]  <span class="number">2.288e-08</span>  <span class="number">2.374e-09</span>   <span class="number">9.639</span>   &lt;<span class="number">2e-16</span> ***</div><div class="line">---</div><div class="line">Signif. codes:  <span class="number">0</span> ‘***’ <span class="number">0.001</span> ‘**’ <span class="number">0.01</span> ‘*’ <span class="number">0.05</span> ‘.’ <span class="number">0.1</span> ‘ ’ <span class="number">1</span></div><div class="line"></div><div class="line">Residual standard error: <span class="number">0.2002</span> on <span class="number">172</span> degrees of freedom</div><div class="line">Multiple R-squared:  <span class="number">0.3507</span>,	Adjusted R-squared:  <span class="number">0.3469</span> </div><div class="line"><span class="literal">F</span>-statistic:  <span class="number">92.9</span> on <span class="number">1</span> and <span class="number">172</span> DF,  p-value: &lt; <span class="number">2.2e-16</span></div><div class="line">&gt;plot(cabbiage$采价日期,cabbiage$本期价格,type=<span class="string">"o"</span>)</div><div class="line">&gt;abline(cabb_lm)</div><div class="line"><span class="comment">#检验残差值是否为白噪声</span></div><div class="line">&gt;Box.test(residuals(cabb_lm))</div><div class="line">Box-Pierce test</div><div class="line"></div><div class="line">data:  residuals(cabb_lm)</div><div class="line">X-squared = <span class="number">121.2962</span>, df = <span class="number">1</span>, p-value &lt; <span class="number">2.2e-16</span></div><div class="line"><span class="comment">#可见不是白噪声</span></div></pre></figure>
+
+<p><img src="/image/line.png" alt="line"><br>二、ARIMA模型</p>
+<figure class="highlight r"><pre><div class="line">&gt; time1 &lt;- as.Date(cabbiage$采价日期)</div><div class="line">&gt; class(time1)</div><div class="line">[<span class="number">1</span>] <span class="string">"Date"</span></div><div class="line">&gt; data1 &lt;- cabbiage$本期价格</div><div class="line">&gt; cabb_zoo &lt;- zoo(data1,time1)</div><div class="line">&gt; plot(cabb_zoo)</div></pre></figure>
+
+<p><img src="/image/home1.png" alt="home1"></p>
+<figure class="highlight r"><pre><div class="line">&gt; <span class="comment">#不知道怎么转成合适的ts</span></div><div class="line">&gt; cabb_ts &lt;-ts(data = data1, start =<span class="number">1</span>, frequency = <span class="number">1</span>)</div><div class="line">&gt; ts.plot(cabb_ts)</div></pre></figure>
+
+<p><img src="/image/home2.png" alt="home2"></p>
+<figure class="highlight r"><pre><div class="line">&gt; <span class="comment">#查看自相关图</span></div><div class="line">&gt; acf(cabb_ts)</div></pre></figure>
+
+<p><img src="/image/home5.png" alt="home5"></p>
+<figure class="highlight r"><pre><div class="line">&gt; <span class="comment">#查看偏相关图</span></div><div class="line">&gt; pacf(cabb_ts)</div></pre></figure>
+
+<p><img src="/image/home6.png" alt="home6"></p>
+<figure class="highlight r"><pre><div class="line">&gt; <span class="comment">#可能有季节性，用MA来拟合</span></div><div class="line">&gt; <span class="comment">#趋势通过差分来消除</span></div><div class="line">&gt; <span class="comment">#季节性因素，确定相应的period</span></div><div class="line">&gt; cabb.fit &lt;- arima(cabb_ts,order=c(<span class="number">0</span>,<span class="number">1</span>,<span class="number">1</span>), seasonal=list(order=c(<span class="number">0</span>,<span class="number">1</span>,<span class="number">1</span>), period=<span class="number">12</span>))</div><div class="line">&gt; cabb.fit</div><div class="line">Series: cabb_ts </div><div class="line">ARIMA(<span class="number">0</span>,<span class="number">1</span>,<span class="number">1</span>)(<span class="number">0</span>,<span class="number">1</span>,<span class="number">1</span>)[<span class="number">12</span>]                    </div><div class="line"></div><div class="line">Coefficients:</div><div class="line">          ma1     sma1</div><div class="line">      -<span class="number">0.1694</span>  -<span class="number">1.0000</span></div><div class="line">s.e.   <span class="number">0.0935</span>   <span class="number">0.0863</span></div><div class="line"></div><div class="line">sigma^<span class="number">2</span> estimated as <span class="number">0.0121</span>:  log likelihood=<span class="number">110.93</span></div><div class="line">AIC=-<span class="number">215.85</span>   AICc=-<span class="number">215.7</span>   BIC=-<span class="number">206.61</span></div><div class="line">&gt; <span class="comment">#对结果进行诊断</span></div><div class="line">&gt; tsdiag(cabb.fit)</div></pre></figure>
+
+<p><img src="/image/home0.png" alt="home0"></p>
+<figure class="highlight r"><pre><div class="line">&gt; <span class="comment">#加载时间序列包</span></div><div class="line">&gt; <span class="keyword">library</span>(forecast)</div><div class="line">&gt; <span class="comment">#向前预测12期，默认情况下24期</span></div><div class="line">&gt; cabb.forecast &lt;- forecast(cabb.fit,<span class="number">12</span>)</div><div class="line">&gt; plot.forecast(cabb.forecast)</div></pre></figure>
+
+<p><img src="/image/home3.png" alt="home3"></p>
 
         </section>
         <hr/>
