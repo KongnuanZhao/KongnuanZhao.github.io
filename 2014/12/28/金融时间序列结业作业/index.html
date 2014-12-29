@@ -406,7 +406,7 @@
 
 <p>（如加载缓慢请重新刷新该页面）</p>
 <script src="http://echarts.baidu.com/doc/example/www/js/echarts.js"></script>
-<div id="eBarID197041c54b97" style="width:800px; height:450px; ;border:1px solid #ccc;padding:5px;"></div>
+<div id="eBarID197041c54b97" style="width:100%; height:450px;border:1px solid #ccc;padding:5px;"></div>
 <script>
 
    require.config({
@@ -752,7 +752,7 @@
 <figure class="highlight r"><pre><div class="line">&gt;cabb&lt;-odbcConnectExcel(<span class="string">"C:\\Users\\Administrator\\Desktop\\test.xls"</span>)</div><div class="line">&gt;cabbiage&lt;-sqlFetch(cabb,<span class="string">"Data"</span>)</div><div class="line">&gt;close(cabb)</div><div class="line">&gt;cabb2&lt;-data.frame(cabbiage$本期价格)</div><div class="line">&gt;rownames(cabb2) &lt;- cabbiage$采价日期</div><div class="line">&gt;head(cabb2)</div><div class="line">           cabbiage.本期价格</div><div class="line"><span class="number">2013</span>-<span class="number">11</span>-<span class="number">19</span>              <span class="number">0.49</span></div><div class="line"><span class="number">2013</span>-<span class="number">11</span>-<span class="number">20</span>              <span class="number">0.49</span></div><div class="line"><span class="number">2013</span>-<span class="number">11</span>-<span class="number">21</span>              <span class="number">0.59</span></div><div class="line"><span class="number">2013</span>-<span class="number">11</span>-<span class="number">22</span>              <span class="number">0.48</span></div><div class="line"><span class="number">2013</span>-<span class="number">11</span>-<span class="number">25</span>              <span class="number">0.59</span></div><div class="line"><span class="number">2013</span>-<span class="number">11</span>-<span class="number">26</span>              <span class="number">0.59</span></div><div class="line">&gt;pic2&lt;-eLine(cabb2,size = c(<span class="number">1040</span>,<span class="number">488</span>),title = <span class="string">'大白菜价格走势图'</span>,opt=list(dataZoom=list(show=<span class="literal">TRUE</span>,end=<span class="number">35</span>)),legend.orient=<span class="string">"vertical"</span>)</div><div class="line">&gt;plot(pic2)</div><div class="line">&gt;print(pic2)</div></pre></figure>
 
 <p><!-- divChart --></p>
-<div id="eLineID197051fc438e" style="width:800px; height:450px ;border:1px solid #ccc;padding:10px;"></div>
+<div id="eLineID197051fc438e" style="width:100%; height:450px ;border:1px solid #ccc;padding:10px;"></div>
 
 <p><!-- jsChart --></p>
 <script>
