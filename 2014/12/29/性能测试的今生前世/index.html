@@ -4,7 +4,7 @@
 <head>
   <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" >
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
-  <title>Category: R | KongnuanZhao</title>
+  <title>性能测试的今生前世 | KongnuanZhao</title>
   <meta name="description" content="" />
   <meta name="HandheldFriendly" content="True" />
   <meta name="MobileOptimized" content="320" />
@@ -347,7 +347,7 @@
                 
                 <div id="nav-container">
                     <div class="post-navbar" style="line-height: 63px;display:none">
-                        <li id="navbar-title"><a href="#">undefined</a></li>
+                        <li id="navbar-title"><a href="#">性能测试的今生前世</a></li>
                         <li id="navbar-toc" style="border-left: none">
                             <a style="padding-right: 15px">
                                 <span id="toc-content" >Introduction</span><i class="fa fa-chevron-down" ></i>
@@ -366,94 +366,107 @@
 
 
 <!-- -->
-<!--<body class="home-template">-->
+<!--<body class="post-template">-->
 <!---->
   
+
 <main class="content" role="main">
+    <article class="post" >
+    <span class="post-meta">
+                  <div class="tag-tile">
+                      
+                      
+                      <a data-pjax href='/tags/性能测试/' style='color:#D5D5D5'>性能测试</a>
+                      
+                      
+                  </div>
+                <h1 class="post-title" style="margin: 14px 0;color:#50585D">性能测试的今生前世</h1>
 
-    
-    <article class="post">
+                    <div class="post-meta">
+                        Post on<span class="fa fa-clock-o"></span>
+                        <time datetime="2014-12-29T11:35:15.000Z"
+                              itemprop="datePublished">Dec 29 2014</time>
+                        By 赵空暖
+                    </div>
+    </span>
 
-        <header class="post-header">
-            <div class="tag-tile">
-                
-                
-                <a data-pjax href='/tags/R/'>R</a>
-                
-                <a data-pjax href='/tags/数据分析/'>数据分析</a>
-                
-                
-                <span class="fa fa-bookmark" style="float:right;color:#fa8072"></span>
-            </div>
-            <h1 class="post-title"><a data-pjax href="/2014/12/28/论文数据分析/">论文数据分析</a>
-            </h1>
+        <section class="post-content">
+            <p><img src="/image/my.png" alt="my"></p>
+<h1 id="课堂笔记">课堂笔记</h1>
+<p>目的：构建起性能测试的基本概念和基本思想</p>
+<blockquote>
+<p>任何事物发展都有一个过程</p>
+</blockquote>
+<ul>
+<li>功能关注</li>
+<li>性能关注</li>
+<li>安全关注</li>
+</ul>
+<h2 id="软件性能">软件性能</h2>
+<ul>
+<li>用户视角：软件性能就是软件对用户操作的响应时间快，好用，舒服，交互性强。</li>
+<li>系统管理员：<ul>
+<li>系统的响应时间；</li>
+<li>系统运行时服务器的状态，如CPU利用情况、内存使用情况等；</li>
+<li>系统能否能够实现拓展；</li>
+<li>系统支持多少用户访问；</li>
+<li>系统性能可能的瓶颈在哪里；</li>
+<li>系统是否支持7*24小时的业务访问。</li>
+</ul>
+</li>
+<li>性能测试人员：全面的性能—全程性能→全程性能测试。从前台到后台，从现象到本质。</li>
+</ul>
+<h2 id="性能测试概念">性能测试概念</h2>
+<ul>
+<li>性能测试：在一定负载情况下，系统的响应时间等特性是否满足特定的性能需求。</li>
+<li>负载测试：通过测试系统在资源超负荷情况下的表现，以发现设计上的错误或验证系统的负载能力。</li>
+<li>压力测试：指被测系统在一定资源（CPU、内存）饱和的情况下，系统的运行情况。</li>
+<li>可靠性测试 ：被测系统在长时间运行下的运行情况。</li>
+<li><p>配置测试：通过调整被测试系统软硬件的不同配置，找到一个最适合被测系统的配置或者获得被测系统在不同配置下的运行情况。</p>
+<h2 id="性能测试的流程">性能测试的流程</h2>
+</li>
+<li><p>并发与并行<br>并行：真正的同时进行，比如多核CPU<br>并发：单CPU单核可以并发但不是真正意义上的并行。中断机制。</p>
+</li>
+<li>并发用户数和在线用户数<br>并发用户数：实际用户对系统造成负载施加压力的。<br>在线用户数：论坛在线用户数10万既包括在操作的人也包括挂着的人即没有对论坛进行操作。</li>
+<li>TPS（Transactions Per Second)和响应时间<br>TPS ：每秒事务数，每秒提交多少事务。<br>响应时间：全局来看，包括客户端、服务器端+网络等等</li>
+<li>点击数：不是鼠标点击了多少下，是指发送的请求数。</li>
+<li>吞吐量：单位时间内被系统处理的业务或请求的数量。</li>
+<li>资源使用率：</li>
+<li>PV和UV<br>PV：PageView:访问一个URL，产生一个PV（页面访问量），每日每个网站的PV量是形容一个网站规模的重要指标。<br>UV:Unique Visitor用户访问，作为一个独立的用户，访问站点的所有页面均算作一个UV。<h2 id="习惯和注意的事项">习惯和注意的事项</h2>
+</li>
+<li>切忌个人英雄主义，多沟通。</li>
+<li>遇到问题要冷静，先尝试独立分析，养成看日志的习惯。</li>
+<li>不要想当然，测（看）过才知道。</li>
+<li>分析问题要从多方面现象和数据入手，尽量通过更多的数据和现象推出结论。</li>
+<li>尽量在明确性能需求的情况下开始性能测试。</li>
+<li>性能调优的时候，不要一次改变多个配置和条件，一次变一个，这样能更清晰的判定问题的原因。<h1 id="课堂作业">课堂作业</h1>
+1.性能测试的概念是什么？负载测试、压力测试、配置测试呢？</li>
+<li>性能测试：在一定负载情况下，系统的响应时间等特性是否满足特定的性能需求。</li>
+<li>负载测试：通过测试系统在资源超负荷情况下的表现，以发现设计上的错误或验证系统的负载能力。</li>
+<li>压力测试：指被测系统在一定资源（CPU、内存）饱和的情况下，系统的运行情况。</li>
+<li>可靠性测试 ：被测系统在长时间运行下的运行情况。</li>
+<li>配置测试：通过调整被测试系统软硬件的不同配置，找到一个最适合被测系统的配置或者获得被测系统在不同配置下的运行情况。<br>2.用自己的话描述TPS、PV、UV的基本含义。<br>TPS ：每秒事务数，每秒提交多少事务。<br>PV：PageView:访问一个URL，产生一个PV（页面访问量），每日每个网站的PV量是形容一个网站规模的重要指标。<br>UV:Unique Visitor用户访问，作为一个独立的用户，访问站点的所有页面均算作一个UV。<br>另外UIP，全称Unique IP，可大致认为是访问者的数量，指的是访问网站的不同IP总数。<br>之前自己在新浪SAE上搭了自己的小应用结果现在因为云豆不足已关闭服务,但是可以看一下新浪提供的PV/UIP服务：<br><img src="image/pv.png" alt="pv"><br><img src="image/uip.png" alt="uip"><br>这数量增长的明显不正常，o(╯□╰)o<br>3.并发用户数和在线用户数的区别是什么？<br>并发用户数：实际用户对系统造成负载，真正操作对系统施加压力的。<br>在线用户数：论坛在线用户数10万既包括在操作的人也包括挂着的人即没有对论坛进行操作。</li>
+</ul>
 
-            <div class="post-meta">
-                Post on<span class="fa fa-clock-o"></span>
-                <time datetime="2014-12-28T10:20:28.000Z"
-                      itemprop="datePublished">Dec 28 2014</time>
-            </div>
-        </header>
-        <section class="post-excerpt">
-            <p>
-                
-                echarts源码 ：&nbsp;&nbsp;&nbsp;echartsrecharts源码：&nbsp;&nbsp;&nbsp;recharts以iris数据集做一简单示例
-head(iris)dat = ddply(iris, .(Species), colwise(mean)) dat[,1]rownames(dat) = dat[,1]dat = dat[, -1]plot(eBar(dat))print(eBar(dat))#
-                
-            </p>
-            
-            <p>
-                <a data-pjax href="/2014/12/28/论文数据分析/"
-                   class="excerpt-link">Read More...</a>
-            </p>
-            
         </section>
-    </article>
-    
-    <article class="post">
-
-        <header class="post-header">
-            <div class="tag-tile">
-                
-                
-                <a data-pjax href='/tags/R/'>R</a>
-                
-                <a data-pjax href='/tags/数据分析/'>数据分析</a>
-                
-                
-                <span class="fa fa-bookmark" style="float:right;color:#fa8072"></span>
-            </div>
-            <h1 class="post-title"><a data-pjax href="/2014/12/28/金融时间序列结业作业/">金融时间序列结业作业</a>
-            </h1>
-
-            <div class="post-meta">
-                Post on<span class="fa fa-clock-o"></span>
-                <time datetime="2014-12-28T05:55:36.000Z"
-                      itemprop="datePublished">Dec 28 2014</time>
-            </div>
-        </header>
-        <section class="post-excerpt">
-            <p>
-                
-                结业测试大作业
-
-内容：使用在课程中学过的各种时间序列模型为某实际场景建模，并且诠释你的结果的意义。要求：1.要解决的问题有意义，业务背景要有详细的介绍与解释2.数据真实，标明数据来源，可以使用参考书的数据，但不得与书上的例子一致，即可以使用书上的数据构建新的模型（注：新的模型是指另一个种类的模型，如AR（1）与AR（3）看做同一个模型）3.数学建模和数学工具运用正确及有效，要求对同一数据尝试2种或以上的时间序列模型，或采用2种或以上的
-                
-            </p>
+        <hr/>
+        <nav class="pagination" style="width:auto" role="pagination">
             
-            <p>
-                <a data-pjax href="/2014/12/28/金融时间序列结业作业/"
-                   class="excerpt-link">Read More...</a>
-            </p>
+            <a style="cursor:default" class="newer-posts" href="#">This is the First Post</a>
             
+            <a class="share-button" data-original-title title>Share this Post</a>
+            
+            <a data-pjax class="older-posts" href="/2014/12/28/潍坊物价信息数据分析及展现/">Next Post →</a>
+            
+        </nav>
+        <br/>
+        <br/>
+        <section id="comment">
+            <div id="comment-box"></div>
         </section>
+
+
     </article>
-    
-    <nav class="pagination" role="pagination">
-        
-        <span class="page-number">Page  of </span>
-        
-    </nav>
 </main>
 
 
