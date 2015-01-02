@@ -2,6 +2,11 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://yoursite.com/2014/12/27/%E5%85%B3%E4%BA%8ETCP%E4%B8%89%E6%AC%A1%E6%8F%A1%E6%89%8B%E5%8F%8A%E5%9B%9B%E6%AC%A1%E6%8C%A5%E6%89%8B/</loc>
+    <lastmod>2015-01-02T11:11:30.000Z</lastmod>
+  </url>
+  
+  <url>
     <loc>http://yoursite.com/2015/01/02/DNS%E5%AD%A6%E4%B9%A0%E6%89%8B%E8%AE%B0/</loc>
     <lastmod>2015-01-02T11:06:50.000Z</lastmod>
   </url>
@@ -34,11 +39,6 @@
   <url>
     <loc>http://yoursite.com/2014/12/28/%E4%B8%80%E4%B8%AA%E4%BA%BA%E7%9A%84%E7%A2%8E%E7%A2%8E%E8%AF%BB/</loc>
     <lastmod>2015-01-02T11:05:52.000Z</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://yoursite.com/2014/12/27/%E5%85%B3%E4%BA%8ETCP%E4%B8%89%E6%AC%A1%E6%8F%A1%E6%89%8B%E5%8F%8A%E5%9B%9B%E6%AC%A1%E6%8C%A5%E6%89%8B/</loc>
-    <lastmod>2015-01-02T11:05:28.000Z</lastmod>
   </url>
   
   <url>
