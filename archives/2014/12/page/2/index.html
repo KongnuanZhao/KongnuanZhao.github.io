@@ -44,6 +44,14 @@
                                 <div class="mp-scroll">
                                 
                                 <li class="search-archive-li mp-pjax">
+                                    <a href="/2015/01/02/DNS学习手记/">DNS学习手记</a>
+                                </li>
+                                
+                                <li class="search-archive-li mp-pjax">
+                                    <a href="/2014/12/30/域名系统等级结构解析流程/">域名系统等级结构解析流程</a>
+                                </li>
+                                
+                                <li class="search-archive-li mp-pjax">
                                     <a href="/2014/12/29/性能测试的今生前世/">性能测试的今生前世</a>
                                 </li>
                                 
@@ -138,13 +146,13 @@
                                 </li>
                                 
                                 <li class="search-category-li mp-pjax">
-                                    <a href="/categories/R/数据分析/">&nbsp;&nbsp;&nbsp;数据分析</a>
-                                    <small>2</small>
+                                    <a href="/categories/数据分析/">&nbsp;&nbsp;&nbsp;数据分析</a>
+                                    <small>1</small>
                                 </li>
                                 
                                 <li class="search-category-li mp-pjax">
-                                    <a href="/categories/数据分析/">&nbsp;&nbsp;&nbsp;数据分析</a>
-                                    <small>1</small>
+                                    <a href="/categories/R/数据分析/">&nbsp;&nbsp;&nbsp;数据分析</a>
+                                    <small>2</small>
                                 </li>
                                 
                                 <li class="search-category-li mp-pjax">
@@ -153,12 +161,17 @@
                                 </li>
                                 
                                 <li class="search-category-li mp-pjax">
+                                    <a href="/categories/读书有疑/点滴/">&nbsp;&nbsp;&nbsp;点滴</a>
+                                    <small>1</small>
+                                </li>
+                                
+                                <li class="search-category-li mp-pjax">
                                     <a href="/categories/点滴/">&nbsp;&nbsp;&nbsp;点滴</a>
                                     <small>3</small>
                                 </li>
                                 
                                 <li class="search-category-li mp-pjax">
-                                    <a href="/categories/读书有疑/点滴/">&nbsp;&nbsp;&nbsp;点滴</a>
+                                    <a href="/categories/计算机网路/">&nbsp;&nbsp;&nbsp;计算机网路</a>
                                     <small>1</small>
                                 </li>
                                 
@@ -240,6 +253,11 @@
                                 </li>
                                 
                                 <li class="search-tag-li mp-pjax">
+                                    <a href="/tags/计算机网络/">&nbsp;&nbsp;&nbsp;计算机网络</a>
+                                    <small>1</small>
+                                </li>
+                                
+                                <li class="search-tag-li mp-pjax">
                                     <a href="/tags/读书有疑/">&nbsp;&nbsp;&nbsp;读书有疑</a>
                                     <small>2</small>
                                 </li>
@@ -262,6 +280,10 @@
         </nav>
         <div id="pjax">
             <div class="pjax-hidden" style="display: none">
+                
+                    <a  data-pjax href="/2015/01/02/DNS学习手记/">DNS学习手记</a>
+                
+                    <a  data-pjax href="/2014/12/30/域名系统等级结构解析流程/">域名系统等级结构解析流程</a>
                 
                     <a  data-pjax href="/2014/12/29/性能测试的今生前世/">性能测试的今生前世</a>
                 
@@ -300,15 +322,17 @@
                 
                     <a data-pjax href="/categories/操作系统/">&nbsp;&nbsp;操作系统</a>
                 
-                    <a data-pjax href="/categories/R/数据分析/">&nbsp;&nbsp;数据分析</a>
-                
                     <a data-pjax href="/categories/数据分析/">&nbsp;&nbsp;数据分析</a>
+                
+                    <a data-pjax href="/categories/R/数据分析/">&nbsp;&nbsp;数据分析</a>
                 
                     <a data-pjax href="/categories/测试/">&nbsp;&nbsp;测试</a>
                 
+                    <a data-pjax href="/categories/读书有疑/点滴/">&nbsp;&nbsp;点滴</a>
+                
                     <a data-pjax href="/categories/点滴/">&nbsp;&nbsp;点滴</a>
                 
-                    <a data-pjax href="/categories/读书有疑/点滴/">&nbsp;&nbsp;点滴</a>
+                    <a data-pjax href="/categories/计算机网路/">&nbsp;&nbsp;计算机网路</a>
                 
                     <a data-pjax href="/categories/读书有疑/">&nbsp;&nbsp;读书有疑</a>
                 
@@ -334,6 +358,8 @@
                     <a data-pjax href="/tags/测试/">&nbsp;&nbsp;测试</a>
                 
                     <a data-pjax href="/tags/点滴/">&nbsp;&nbsp;点滴</a>
+                
+                    <a data-pjax href="/tags/计算机网络/">&nbsp;&nbsp;计算机网络</a>
                 
                     <a data-pjax href="/tags/读书有疑/">&nbsp;&nbsp;读书有疑</a>
                 
@@ -371,6 +397,46 @@
   
 <main class="content" role="main">
 
+    
+    <article class="post">
+
+        <header class="post-header">
+            <div class="tag-tile">
+                
+                
+                <a data-pjax href='/tags/操作系统/'>操作系统</a>
+                
+                
+                <span class="fa fa-bookmark" style="float:right;color:#fa8072"></span>
+            </div>
+            <h1 class="post-title"><a data-pjax href="/2014/12/21/熟悉的陌生人OS/">熟悉的陌生人OS</a>
+            </h1>
+
+            <div class="post-meta">
+                Post on<span class="fa fa-clock-o"></span>
+                <time datetime="2014-12-21T13:12:11.000Z"
+                      itemprop="datePublished">Dec 21 2014</time>
+            </div>
+        </header>
+        <section class="post-excerpt">
+            <p>
+                
+                1.阐述操作系统中的系统调用、中断、上下文切换这三个概念的含义
+
+系统调用 (来源于应用程序)：应用程序主动向操作系统发出服务请求。是操作系统向用户程序提供支持的接口，通过这些接口应用程序向操作系统请求服务，控制转向操作系统。而操作系统在完成服务后，将控制和结果返回给用户程序
+
+
+维基解释：在计算机中，系统调用（英语：systemcall），又称为系统呼叫，指运行在使用者空间的程序向操作系统内核请求需要&gt; 更高权限运行的服务。系统
+                
+            </p>
+            
+            <p>
+                <a data-pjax href="/2014/12/21/熟悉的陌生人OS/"
+                   class="excerpt-link">Read More...</a>
+            </p>
+            
+        </section>
+    </article>
     
     <article class="post">
 
