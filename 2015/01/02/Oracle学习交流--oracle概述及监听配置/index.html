@@ -4,7 +4,7 @@
 <head>
   <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" >
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
-  <title>Oracle学习交流 | KongnuanZhao</title>
+  <title>Oracle学习交流--oracle概述及监听配置 | KongnuanZhao</title>
   <meta name="description" content="" />
   <meta name="HandheldFriendly" content="True" />
   <meta name="MobileOptimized" content="320" />
@@ -44,7 +44,11 @@
                                 <div class="mp-scroll">
                                 
                                 <li class="search-archive-li mp-pjax">
-                                    <a href="/2015/01/02/Oracle学习交流/">Oracle学习交流</a>
+                                    <a href="/2015/01/03/Oracle学习交流（二）-oracle体系结构及启动流程/">Oracle学习交流（二）--oracle体系结构及启动流程</a>
+                                </li>
+                                
+                                <li class="search-archive-li mp-pjax">
+                                    <a href="/2015/01/02/Oracle学习交流--oracle概述及监听配置/">Oracle学习交流--oracle概述及监听配置</a>
                                 </li>
                                 
                                 <li class="search-archive-li mp-pjax">
@@ -169,13 +173,13 @@
                                 </li>
                                 
                                 <li class="search-category-li mp-pjax">
-                                    <a href="/categories/R/数据分析/">&nbsp;&nbsp;&nbsp;数据分析</a>
-                                    <small>2</small>
+                                    <a href="/categories/数据分析/">&nbsp;&nbsp;&nbsp;数据分析</a>
+                                    <small>1</small>
                                 </li>
                                 
                                 <li class="search-category-li mp-pjax">
-                                    <a href="/categories/数据分析/">&nbsp;&nbsp;&nbsp;数据分析</a>
-                                    <small>1</small>
+                                    <a href="/categories/R/数据分析/">&nbsp;&nbsp;&nbsp;数据分析</a>
+                                    <small>2</small>
                                 </li>
                                 
                                 <li class="search-category-li mp-pjax">
@@ -299,7 +303,9 @@
         <div id="pjax">
             <div class="pjax-hidden" style="display: none">
                 
-                    <a  data-pjax href="/2015/01/02/Oracle学习交流/">Oracle学习交流</a>
+                    <a  data-pjax href="/2015/01/03/Oracle学习交流（二）-oracle体系结构及启动流程/">Oracle学习交流（二）--oracle体系结构及启动流程</a>
+                
+                    <a  data-pjax href="/2015/01/02/Oracle学习交流--oracle概述及监听配置/">Oracle学习交流--oracle概述及监听配置</a>
                 
                     <a  data-pjax href="/2015/01/02/Nosql知多少/">Nosql知多少</a>
                 
@@ -350,9 +356,9 @@
                 
                     <a data-pjax href="/categories/操作系统/">&nbsp;&nbsp;操作系统</a>
                 
-                    <a data-pjax href="/categories/R/数据分析/">&nbsp;&nbsp;数据分析</a>
-                
                     <a data-pjax href="/categories/数据分析/">&nbsp;&nbsp;数据分析</a>
+                
+                    <a data-pjax href="/categories/R/数据分析/">&nbsp;&nbsp;数据分析</a>
                 
                     <a data-pjax href="/categories/测试/">&nbsp;&nbsp;测试</a>
                 
@@ -399,7 +405,7 @@
                 
                 <div id="nav-container">
                     <div class="post-navbar" style="line-height: 63px;display:none">
-                        <li id="navbar-title"><a href="#">Oracle学习交流</a></li>
+                        <li id="navbar-title"><a href="#">Oracle学习交流--oracle概述及监听配置</a></li>
                         <li id="navbar-toc" style="border-left: none">
                             <a style="padding-right: 15px">
                                 <span id="toc-content" >Introduction</span><i class="fa fa-chevron-down" ></i>
@@ -432,7 +438,7 @@
                       
                       
                   </div>
-                <h1 class="post-title" style="margin: 14px 0;color:#50585D">Oracle学习交流</h1>
+                <h1 class="post-title" style="margin: 14px 0;color:#50585D">Oracle学习交流--oracle概述及监听配置</h1>
 
                     <div class="post-meta">
                         Post on<span class="fa fa-clock-o"></span>
@@ -443,13 +449,129 @@
     </span>
 
         <section class="post-content">
-            <p><img src="/image/who.png" alt="who"><br>甚是怀念当时一点也不懂oracle然后一股脑认真学习，一笔一划做笔记的样子，所以决定重新一点一滴整理下学过的点点滴滴。<br>附：<br>ppt下载<a href="http://wenku.baidu.com/view/c8b0ffdeb9d528ea80c77950?fr=prin" target="_blank" rel="external">Oracle交流</a></p>
+            <p><img src="/image/who.png" alt="who"><br>甚是怀念当时一点也不懂oracle然后一股脑认真学习，一笔一划做笔记的样子，所以决定重新一点一滴整理下学过的点点滴滴。</p>
+<h1 id="Oracle初相识">Oracle初相识</h1>
+<p>Oracle Database 11g：“g”代表网格<br>全球网格论坛(GGF)<br>请访问<a href="http://www.gridforum.org" target="_blank" rel="external">GGF网站</a><br><img src="/image/oracle.png" alt="oracle"></p>
+<h2 id="数据库安装（略）">数据库安装（略）</h2>
+<h2 id="Oracle_服务">Oracle 服务</h2>
+<p>Oracle 在 windows 中安装完成后，会安装很多服务，下面介绍几个主要的服务。<br><img src="/image/oracle2.png" alt="oracle2"></p>
+<ul>
+<li>OracleService+服务名:该服务是数据库启动的基础，只有该服务启动了，Oracle 数据库才能正常启动。这是必须启动的服务。</li>
+<li>OracleOraDb11g_home1TNSListener:该服务是监听服务，只有该服务在服务器上正常启动，客户端才能连接到服务器。该监听服务服务器端为客户端提供的接收客户<br>端发出的请求，然后将请求传递给数据库服务器。一旦建立了连接，客户端和数据库服务器就能直接通信了。</li>
+<li>Oracle ORCL Vss Writer Service:Oracle卷映射拷贝写入服务，VSS（Volume Shadow Copy Service）能够让存储基础设备（比如磁盘，阵列等）创建高保真的时间点映像，即映射拷贝(shadow copy)。它可以在多卷或者单个卷上创建映射拷贝，同时不会影响到系统的系统性能。</li>
+<li>OracleJobSchedulerORCL：Oracle作业调度服务，ORCL是Oracle实例标识。此服务被默认设置为禁用状态。</li>
+<li>OracleMTSRecoveryService：服务端控制。该服务允许数据库充当一个微软事务服务器MTS、COM/COM+对象和分布式环境下的事务的资源管理器。（非必须启动）</li>
+</ul>
+<h2 id="Oracle_客户端工具">Oracle 客户端工具</h2>
+<p>Oracle 服务器安装成功后，就可以通过客户端工具连接 Oracle 服务器了，可以到 Oracle官方下载 Oracle 专用的客户端软件，大多客户端工具都是基于 Oracle 客户端软件的。接下来介绍几种常用的 Oracle 客户端工具。</p>
+<ul>
+<li>SQL*Plus 工具</li>
+<li>PL/SQL Developer 工具</li>
+<li>sqldevelepor<br>连接到 Oracle 服务器的命令是：<code>conn 用户名/密码 as 连接身份@服务器连接字符串</code>,客户端工具可以根据“服务器连接字符串”对服务器进行连接，有了连接字符串后客户端就可以像操作本机一样操作远程数据库，因此“服务器连接字符串”的配置也叫本地网络服务配置，如果 SQL*Plus 工具启动在服务器上，并且服务器上只有一个数据库实例的情况下，连接字符串可以缺省，在连接字符串中包括连接服务器的协议，服务器的地址，服务器的端口等设置， Oracle 服务名等，该配置文件在 Oracle安装目录下的：   <code>network/ ADMIN/ tnsnames.ora</code>。该文件是一个文本文件，用记事本打开我本地的文件<code>E:\app\Administrator\product\11.2.0\dbhome_1\NETWORK\ADMIN\listener.ora</code>后如下所示：</li>
+</ul>
+<figure class="highlight bash"><pre><div class="line"><span class="comment"># tnsnames.ora Network Configuration File: E:\app\Administrator\product\11.2.0\dbhome_1\network\admin\tnsnames.ora</span></div><div class="line"><span class="comment"># Generated by Oracle configuration tools.</span></div><div class="line"></div><div class="line">ZKN =</div><div class="line">  (DESCRIPTION =</div><div class="line">    (ADDRESS = (PROTOCOL = TCP)(HOST = localhost)(PORT = <span class="number">1521</span>))</div><div class="line">    (CONNECT_DATA =</div><div class="line">      (SERVER = DEDICATED)</div><div class="line">      (SERVICE_NAME = ZKN)</div><div class="line">    )</div><div class="line">  )</div><div class="line"></div><div class="line">LISTENER_ORCL =</div><div class="line">  (ADDRESS = (PROTOCOL = TCP)(HOST = localhost)(PORT = <span class="number">1521</span>))</div><div class="line"></div><div class="line"></div><div class="line">ORACLR_CONNECTION_DATA =</div><div class="line">  (DESCRIPTION =</div><div class="line">    (ADDRESS_LIST =</div><div class="line">      (ADDRESS = (PROTOCOL = IPC)(KEY = EXTPROC1521))</div><div class="line">    )</div><div class="line">    (CONNECT_DATA =</div><div class="line">      (SID = CLRExtProc)</div><div class="line">      (PRESENTATION = RO)</div><div class="line">    )</div><div class="line">  )</div><div class="line"></div><div class="line">ORCL =</div><div class="line">  (DESCRIPTION =</div><div class="line">    (ADDRESS = (PROTOCOL = TCP)(HOST = localhost)(PORT = <span class="number">1521</span>))</div><div class="line">    (CONNECT_DATA =</div><div class="line">      (SERVER = DEDICATED)</div><div class="line">      (SERVICE_NAME = orcl)</div><div class="line">    )</div><div class="line">  )</div></pre></figure>
+
+
+<ul>
+<li>PORT：数据库侦听正在侦听的端口，可以察看服务器端的<code>listener.ora</code>文件或在数据库侦听所在的机器的命令提示符下通过<code>lnsrctl status</code>命令察看。此处Port的值一定要与数据库侦听正在侦听的端口一样。 </li>
+<li>SERVICE_NAME：在服务器端，用system用户登陆后，<code>sqlplus&gt; show parameter service_name</code>命令察看。　　 </li>
+</ul>
+<p><img src="/image/oracle3.png" alt="oracle3"></p>
+<h2 id="用于管理Oracle_数据库的工具">用于管理Oracle 数据库的工具</h2>
+<p><img src="/image/oracle4.png" alt="oracle4"></p>
+<ul>
+<li>Oracle Universal Installer (OUI)：Oracle Universal Installer 用于安装Oracle 软件和选件。它可以自动启动Database Configuration Assistant (DBCA) 来创建数据库。</li>
+<li>Database Configuration Assistant (DBCA)：DBCA会根据Oracle提供的模板创建数据库。因此，可以复制预配置的种子数据库，或者，也可以创建自己的数据库和模板。</li>
+<li>Database Upgrade Assistant (DBUA)：该工具可以指导您将现有数据库升级至Oracle新版本。</li>
+<li>Net Manager :该工具用于配置Oracle 数据库与应用程序的网络连接。</li>
+<li>Oracle Enterprise Manager (EM):将图形控制台、代理、公用服务和相关工具组合在一起，为管理Oracle产品提供了一个集成的综合性系统管理平台。在安装<br>Oracle 软件、创建或升级数据库及配置网络之后，可以将Oracle Enterprise Manager作为管理数据库的单一接口。它除了提供基于Web 的用户界面来执行SQL 命令外,还提供与管理数据库的其它Oracle 组件（例如，Recovery Manager 和Scheduler）的无缝接口。</li>
+<li>SQL<em>Plus 和iSQL</em>Plus :SQL<em>Plus是管理数据库的标准命令行接口。iSQL</em>Plus 是一个基于浏览器的接口，它可连到Oracle 数据库。</li>
+<li>Recovery Manager (RMAN)：RMAN 是一款可以提供完整解决方案的Oracle工具，可用来备份、还原和恢复整个数据库或特定的数据库文件。</li>
+<li>Oracle Secure Backup :为Oracle Ecosystem 提供了磁带备份管理，其中包括：<ul>
+<li>通过与Recovery Manager 集成，保护磁带上的Oracle 数据库</li>
+<li>无缝支持Oracle Real Application Clusters (RAC) </li>
+<li>对分布式客户机和介质服务器（包括Oracle Application Server、Oracle Collaboration Suite、Oracle 主目录和二进制文件）进行集中式管理。</li>
+</ul>
+</li>
+<li>数据泵:使用数据泵可以在数据库之间高速传输数据。<ul>
+<li>用于替代老的exp/imp,速度更快，机制上不同于老的 exp/imp，提供更多的功能。</li>
+<li>始于Oracle10g,从Oracle11g开始，不再提供老的imp/exp的支持。</li>
+<li>expdp差不多2倍于传统的exp操作，impdp差不多15-40倍与传统的imp操作。</li>
+<li>如果启用并行操作，性能会更好。更好的利用并行技术，具有对大量数据处理的优势。</li>
+<li>全部操作在server端完成，避免了数据在网络上的传输。</li>
+<li>导出文件的格式更接近于数据库本身文件的格式，避免了数据写入文件时的转换。</li>
+<li>直接路径的加载，使效率更高。</li>
+<li>元数据和数据在导出过程中可以重叠进行，提高导出的效率。</li>
+</ul>
+</li>
+<li>SQL<em>Loader :使用SQL</em>Loader 实用程序可以将来自外部文件的数据加载到Oracle 数据库。</li>
+<li>命令行工具</li>
+</ul>
+<h2 id="ORACLE监听服务">ORACLE监听服务</h2>
+<p>Oracle监听器Listener是一个重要的数据库服务器组件，在整个Oracle体系结构中，扮演着重要的作用。它负责管理 Oracle 数据库和客户端之间的通讯，它在一个特定的网卡端口（默认是TCP 1521端口）上监听连接请求，并将连接转发给数据库。</p>
+<h3 id="几个重要功能：">几个重要功能：</h3>
+<ul>
+<li>监听客户端请求。监听器在服务器指定端口（默认为：1521），监听客户端的请求。</li>
+<li>为客户端请求分配服务进程。</li>
+<li>注册实例服务。Listener 是建立实例和客户端进程之间联系的桥梁。Listener 与实例之间的联系，就是通过注册的过程来实现的。注册的过程就是实例告诉监听器，它的数据库数据库实例名称 <code>instance_name</code> 和服务名<code>service_names</code>。监听器注册上这样的信息，对客户端请求根据监听注册信息，找到正确的服务实例名称。目前 Oracle 版本中，提供动态注册和静态注册两种方式。</li>
+</ul>
+<h3 id="ORACLE监听服务-命令">ORACLE监听服务-命令</h3>
+<figure class="highlight bash"><pre><div class="line">lsnrctl status：查看监听服务的状态。</div><div class="line">lsnrctl start：启动监听</div><div class="line">lsnrctl stop：关闭监听</div><div class="line">lsnrctl service：查看监听详细信息</div><div class="line">lsnrctl reload:重新启动</div><div class="line">lsnrctl show：查看监听参数信息</div></pre></figure>
+
+<p><img src="/image/lsnrctl.png" alt="lsnrctl"></p>
+<h3 id="ORACLE监听服务-静态注册">ORACLE监听服务-静态注册</h3>
+<ul>
+<li>什么是注册？<br>注册就是将数据库作为一个服务注册到监听程序。客户端不需要知道数据库名和实例名，只需要知道该数据库对外提供的服务名就可以申请连接到数据库。这个服务名可能与实例名一样，也有可能不一样。</li>
+<li>什么是静态注册？<br>就是实例启动时读取<code>listener.ora</code>文件的配置，将实例和服务注册到监听程序。无论何时启动一个数据库，默认地都有两条信息注册到监听器中：数据库对应的实例和服务。</li>
+<li>静态注册的好处：<ul>
+<li>不需要担心数据库重启后，注册不上</li>
+<li>监听不需要最早就打开</li>
+<li>ORACLE实例还没有打开，即可注册成功</li>
+</ul>
+</li>
+</ul>
+<h3 id="ORACLE监听服务-动态注册">ORACLE监听服务-动态注册</h3>
+<ul>
+<li>动态注册是在instance启动的时候PMON(Process Monitor进程监视器)进程根据INIT.ORA中的instance_name,service_name两个参数将实例和服务注册到监听器中。</li>
+</ul>
+<figure class="highlight bash"><pre><div class="line">//file:E:\app\Administrator\product\<span class="number">11.2</span>.<span class="number">0</span>\dbhome_1\database\INITorcl.ORA</div><div class="line">orcl.__db_cache_size=<span class="number">721420288</span></div><div class="line">orcl.__java_pool_size=<span class="number">16777216</span></div><div class="line">orcl.__large_pool_size=<span class="number">16777216</span></div><div class="line">orcl.__oracle_base=<span class="string">'E:\app\Administrator'</span><span class="comment">#ORACLE_BASE set from environment</span></div><div class="line">orcl.__pga_aggregate_target=<span class="number">889192448</span></div><div class="line">orcl.__sga_target=<span class="number">1677721600</span></div><div class="line">orcl.__shared_io_pool_size=<span class="number">0</span></div><div class="line">orcl.__shared_pool_size=<span class="number">738197504</span></div><div class="line">orcl.__streams_pool_size=<span class="number">33554432</span></div><div class="line">*.audit_file_dest=<span class="string">'E:\app\Administrator\admin\orcl\adump'</span></div><div class="line">*.audit_trail=<span class="string">'db'</span></div><div class="line">*.compatible=<span class="string">'11.2.0.0.0'</span></div><div class="line">*.control_files=<span class="string">'E:\APP\ADMINISTRATOR\ORADATA\ORCL\CONTROL01.CTL'</span>,<span class="string">'E:\APP\ADMINISTRATOR\FLASH_RECOVERY_AREA\ORCL\CONTROL02.CTL'</span><span class="comment">#Restore Controlfile</span></div><div class="line">*.db_16k_cache_size=<span class="number">117440512</span></div><div class="line">*.db_block_size=<span class="number">8192</span></div><div class="line">*.db_create_file_dest=<span class="string">'E:\app\Administrator\oradata\orcl'</span></div><div class="line">*.db_domain=<span class="string">''</span></div><div class="line">*.db_name=<span class="string">'orcl'</span></div><div class="line">*.db_recovery_file_dest=<span class="string">'E:\app\Administrator\flash_recovery_area'</span></div><div class="line">*.db_recovery_file_dest_size=<span class="number">10737418240</span></div><div class="line">*.diagnostic_dest=<span class="string">'E:\app\Administrator'</span></div><div class="line">*.dispatchers=<span class="string">'(PROTOCOL=TCP) (SERVICE=orclXDB)'</span></div><div class="line">*.local_listener=<span class="string">'LISTENER_ORCL'</span></div><div class="line">*.log_archive_dest_1=<span class="string">'LOCATION=E:\app\Administrator\flash_recovery_area'</span></div><div class="line">*.log_archive_format=<span class="string">'arch_%d_%t_%r_%s.log'</span></div><div class="line">*.memory_target=<span class="number">2555379712</span></div><div class="line">*.open_cursors=<span class="number">300</span></div><div class="line">*.processes=<span class="number">150</span></div><div class="line">*.remote_login_passwordfile=<span class="string">'EXCLUSIVE'</span></div><div class="line">*.undo_tablespace=<span class="string">'UNDOTBS1'</span></div></pre></figure>
+
+<p><em>注：注册到监听器中的服务值从<code>init.ora</code>文件中的参数<code>service_names</code>取得。如果该参数没有设定值，数据库将拼接<code>init.ora</code>文件中的 <code>db_name</code>和<code>db_domain</code>的值来注册自己。如果选择提供<code>service_names</code>值，您可以使用完全限定的名称（比如 orcl.oracle.com)或缩写的名称（比如orcl）。如果选择缩写的名称并设置了<code>db_domain</code>参数，注册到监听器中的服务将是 <code>service_name</code>值和<code>db_domain</code>值的拼接。例如下面的设置将导致服务orcl.oracle.com被注册到监听器中：<code>db_domain=oracle.com service_names=orcl</code></em></p>
+<ul>
+<li>由于动态注册需要pmon进程，所以监听必须在数据库启动之前启动，否则动态注册将失败；在数据库运行的过程中，如果重启监听也会造成动态注册失败。如果监听器后来发生了重启，动态注册信息将会丢失。</li>
+<li>动态注册只是注册默认的监听器上（名称是listener、端口是1521、协议时TCP），如果需要向非默认的监听注册，则需要改变<code>local_listener</code>参数。<br>将监听的信息添加到<code>tnsnames.ora</code>文件中。 注意，是<code>tnsnames.ora</code>文件， 因为pmon在动态注册监听时要从<code>tnsnames.ora</code>中读取相关信息。</li>
+</ul>
+<figure class="highlight bash"><pre><div class="line">LISTENER =</div><div class="line">(DESCRIPTION =</div><div class="line">(ADDRESS = (PROTOCOL = TCP)(HOST = xxx)(PORT = <span class="number">1522</span>))</div><div class="line">)</div></pre></figure>
+
+<p>然后以sys用戶运行：</p>
+<figure class="highlight bash"><pre><div class="line">SQL&gt; alter system <span class="keyword">set</span> local_listener=listener;</div><div class="line">SQL&gt; alter system register;</div><div class="line">或者：</div><div class="line">SQL&gt; alter system <span class="keyword">set</span> LOCAL_LISTENER=<span class="string">'(ADDRESS = (PROTOCOL = TCP)(HOST = xxx)(PORT = 1522))'</span>;</div><div class="line">SQL&gt; alter system register;</div><div class="line">系统已更改。</div></pre></figure>
+
+<h3 id="ORACLE监听服务-动态与静态的区别">ORACLE监听服务-动态与静态的区别</h3>
+<p>可以使用命令lsnrctl status来查看某服务是静态注册还是动态注册。</p>
+<ul>
+<li>实例状态为UNKNOWN值时表明此服务是静态注册的设置。这时监听器用来表明它不知道关于该实例的任何信息，只有当客户发出连接请求时，它才检查该实例是否存在。</li>
+<li>动态注册的数据库通过状态信息中的状态READY或状态BLOCKED（对于一个备用数据库）来指明。不管关闭何时数据库，动态注册的数据库都会动态地从监听器注销，而与之相关的信息将从状态列表中消失。这样，不管数据库是在运行还是已经关闭，监听器总是知道它的状态。该信息将被用于连接请求的回退和负载平衡。</li>
+</ul>
+<p><img src="/image/lsn1.png" alt="lsn1"><br><img src="/image/lsn2.png" alt="lsn2"><br><img src="/image/lsn3.png" alt="lsn3"></p>
+<h2 id="oracle实例名,数据库名,服务名等概念区别与联系">oracle实例名,数据库名,服务名等概念区别与联系</h2>
+<ul>
+<li>查看数据库名<br><img src="/image/ora1.png" alt="ora1"></li>
+<li>查询当前数据库实例名<br><img src="/image/ora2.png" alt="ora2"><br>数据库实例名是用于和操作系统进行联系的标识，就是说数据库和操作系统之间的交互用的是数据库实例名。实例名也被写入参数文件中，该参数为<code>instance_name</code>。数据库名和实例名可以相同也可以不同。在一般情况下，数据库名和实例名是一对一的关系，但如果在oracle并行服务器架构(即oracle实时应用集群)中，数据库名和实例名是一对多的关系。</li>
+<li>查询当前数据库服务名<br><img src="/image/ora3.png" alt="ora3"><br>从oracle9i版本开始，引入了一个新的参数，即数据库服务名。参数名是SERVICE_NAME。如果数据库有域名，则数据库服务名就是全局数据库名；否则，数据库服务名与数据库名相同。</li>
+</ul>
+<h2 id="ORACLE监听常见问题">ORACLE监听常见问题</h2>
+<p>1.ORA-12541: TNS: 没有监听器：显而易见，服务器端的监听器没有启动，另外检查客户端IP地址或端口填写是否正确。启动监听器： <code>$ lsnrctl start</code><br>2.ORA-12500: TNS: 监听程序无法启动专用服务器进程： 对于Windows而言，没有启动Oracle实例服务。启动实例服务：<code>oradim –startup -sid orcl</code><br>3.ORA-12535: TNS: 操作超时： 出现这个问题的原因很多，但主要跟网络有关。解决这个问题，首先检查客户端与服务端的网络是否畅通，如果网络连通，则检查两端的防火墙是否阻挡了连接。<br>4.ORA-12154: TNS: 无法处理服务名： 检 查输入的服务名与配置的服务名是否一致。另外注意生成的本地服务名文件<code>network/admin/tnsnames.ora</code><br>5.ORA-12514: TNS: 监听进程不能解析在连接描述符中给出的 SERVICE_NAME打开Net Manager，选中服务名称，检查服务标识栏里的服务名输入是否正确。该服务名必须与服务器端监听器配置的全局数据库名一致。<br>6.ORA-00119和ORA-00132的解决方案</p>
+<figure class="highlight bash"><pre><div class="line">ORA-<span class="number">00119</span>: invalid specification <span class="keyword">for</span> system parameter LOCAL_LISTENER</div><div class="line">ORA-<span class="number">00132</span>: syntax error or unresolved network name ’LISTENER_ORCL’</div></pre></figure>
+
+<p><b>解决方法一</b>：<br>修改参数文件spfile和pfile<br><img src="/image/err1.png" alt="err1"><br>修改为：<br><code>*.local_listener=‘(ADDRESS = (PROTOCOL = TCP)(HOST = localhost)(PORT = 1521))’</code><br><b>解决方法二：</b><br>修改<code>tnsname.ora</code>,在后面加一行，指定linstener启动时找不到的名字：<br>—LISTENER_ORCL这个是启动时报错找不到的listener<br><img src="/image/err2.png" alt="err2"><br>修改完后startup<br>详细原因有关Oracle启动过程中的一系列动作，可以参看<a href="..">Oracle学习交流（二）—oracle体系结构及启动流程</a></p>
+<h2 id="附：">附：</h2>
+<p>ppt下载<a href="http://wenku.baidu.com/view/c8b0ffdeb9d528ea80c77950?fr=prin" target="_blank" rel="external">Oracle交流</a></p>
 
         </section>
         <hr/>
         <nav class="pagination" style="width:auto" role="pagination">
             
-            <a style="cursor:default" class="newer-posts" href="#">This is the First Post</a>
+            <a data-pjax class="newer-posts" href="/2015/01/03/Oracle学习交流（二）-oracle体系结构及启动流程/">← Prev Post</a>
             
             <a class="share-button" data-original-title title>Share this Post</a>
             
