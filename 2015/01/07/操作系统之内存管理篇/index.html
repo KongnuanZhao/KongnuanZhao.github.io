@@ -544,22 +544,27 @@
 </li>
 </ul>
 <p>非连续分配：优点</p>
-<pre><code><span class="bullet">* </span>一个程序的物理地址空间是非连续的
-<span class="bullet">* </span>更好的内存利用和管理
-<span class="bullet">* </span>允许共享代码与数据（共享库等…)
-<span class="bullet">* </span>支持动态加载和动态链接
-</code></pre><p>非连续分配：缺点</p>
+<ul>
+<li>一个程序的物理地址空间是非连续的</li>
+<li>更好的内存利用和管理</li>
+<li>允许共享代码与数据（共享库等…)</li>
+<li>支持动态加载和动态链接</li>
+</ul>
+<p>非连续分配：缺点</p>
 <ul>
 <li>开销：如何设置虚拟地址和物理地址的转换<ul>
 <li>软件方案</li>
 <li>硬件方案<br>两种硬件辅助机制：<ul>
 <li>分段(segmentation)</li>
-<li>分页(paging)<h2 id="非连续分配：分段">非连续分配：分段</h2>
-程序包含多个段，例如：</li>
+<li>分页(paging)</li>
 </ul>
 </li>
 </ul>
 </li>
+</ul>
+<h2 id="非连续分配：分段">非连续分配：分段</h2>
+<p>程序包含多个段，例如：</p>
+<ul>
 <li>主程序（main prog）</li>
 <li>子程序（subroutines）</li>
 <li>公用库（common libs）</li>
