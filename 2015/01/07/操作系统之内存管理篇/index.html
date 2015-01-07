@@ -48,7 +48,7 @@
                                 </li>
                                 
                                 <li class="search-archive-li mp-pjax">
-                                    <a href="/2015/01/07/小女子谈谈抽象/">小女子谈谈抽象</a>
+                                    <a href="/2015/01/07/谈谈抽象/">谈谈抽象</a>
                                 </li>
                                 
                                 <li class="search-archive-li mp-pjax">
@@ -189,7 +189,7 @@
                                 
                                 <li class="search-category-li mp-pjax">
                                     <a href="/categories/操作系统/">&nbsp;&nbsp;&nbsp;操作系统</a>
-                                    <small>2</small>
+                                    <small>3</small>
                                 </li>
                                 
                                 <li class="search-category-li mp-pjax">
@@ -276,7 +276,7 @@
                                 
                                 <li class="search-tag-li mp-pjax">
                                     <a href="/tags/操作系统/">&nbsp;&nbsp;&nbsp;操作系统</a>
-                                    <small>2</small>
+                                    <small>3</small>
                                 </li>
                                 
                                 <li class="search-tag-li mp-pjax">
@@ -325,7 +325,7 @@
                 
                     <a  data-pjax href="/2015/01/07/操作系统之内存管理篇/">操作系统之内存管理篇</a>
                 
-                    <a  data-pjax href="/2015/01/07/小女子谈谈抽象/">小女子谈谈抽象</a>
+                    <a  data-pjax href="/2015/01/07/谈谈抽象/">谈谈抽象</a>
                 
                     <a  data-pjax href="/2015/01/07/计算机体系结构-内存结构/">计算机体系结构/内存结构</a>
                 
@@ -463,6 +463,10 @@
     <span class="post-meta">
                   <div class="tag-tile">
                       
+                      
+                      <a data-pjax href='/tags/操作系统/' style='color:#D5D5D5'>操作系统</a>
+                      
+                      
                   </div>
                 <h1 class="post-title" style="margin: 14px 0;color:#50585D">操作系统之内存管理篇</h1>
 
@@ -475,7 +479,97 @@
     </span>
 
         <section class="post-content">
-            <p>还没有开始整理奥</p>
+            <p>程序要运行，必须先加载到内存。但在很久很久以前，准确的说是在操作系统没有出现以前，程序并不需要加载到内存就能运行。实际上，那个时候程序曾经存放在卡片上，计算机每读一张卡片，就运行一条指令。因此，程序是直接从卡片到执行。<br><img src="/image/dakong.png" alt="dakong"><br>图片来源<a href="http://tech.sina.com.cn/h/2007-05-17/0723312253.shtml" target="_blank" rel="external">9千万的差距 百年来数据存储历史回顾</a><br>但这种从外部存储媒介上直接执行指令的做法效率极低，且灵活性很差。因此人们发明了内存储器来将需要运行的程序先行加载，再自动执行，从而提高效率和灵活性。这也导致了“存储的程序”的概念的出现，此后人们对内存的要求越来越多，越来越高……</p>
+<p>继续接着上文，那我们要运行程序要使用内存，那操作系统是如何分配内存的呢。</p>
+<ul>
+<li>连续内存分配</li>
+<li>非连续内存分配</li>
+</ul>
+<h2 id="连续内存分配">连续内存分配</h2>
+<ul>
+<li>内存碎片：空闲内存不能被利用<ul>
+<li>外部碎片:分配单元之间的未被使用内存</li>
+<li>内部碎片:分配单元内部的未被使用内存,取决于分配单元大小是否固定</li>
+</ul>
+</li>
+<li>动态分配<br>简单的内存管理方式:当程序被允许进入系统的时候，被分配内存块;分配的内存块在地址上是连续的。<br>操作系统持续追踪：程序运行中的所有已分配内存块；目前空闲的内存块 Empty-blocks (“holes”)。<ul>
+<li>首次适配(First-fit)<br><img src="/image/firstfit.png" alt="firstfit"><br>要求:<ul>
+<li>空闲块列表按照地址排序</li>
+<li>分配过程需要搜索一个合适的分区</li>
+<li>释放分区需要检查其是否可以和临近的空闲分区合并,这样可以得到更大的分区</li>
+</ul>
+</li>
+<li>最佳适配(Best-fit)<br><img src="/image/bestfit.png" alt="bestfit"><br>要求：<ul>
+<li>空闲块列表按照大小排序</li>
+<li>分配过程需要查找一个合适的分区</li>
+<li>释放分区需要查找并且合并临近的空闲分区（如果找到）</li>
+</ul>
+</li>
+<li>最差适配(Worst-fit)<br><img src="/image/worstfit.png" alt="worstfit"><br>要求：<ul>
+<li>空闲块列表按照尺寸排序</li>
+<li>分配非常快(最大的分区)</li>
+<li>释放分区需要合并临近的空闲块(如果有)，然后调整空闲块列表</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="简单适配策略的比较">简单适配策略的比较</h2>
+<p><table><tr><th>适配策略</th><th>优点</th><th>缺点</th></tr><tr><td>首次适配分配机制First Fit Allocation</td><td>简单/在高地址空间有大块的空闲分区</td><td>外部碎片</td></tr><tr><td>最佳适配分配机制Best Fit Allocation</td><td>避免大的空闲块被拆分/减小外部碎片的大小/大部分分配属于尺寸较小的情况下，效果很好</td><td>释放分区较慢/容易产生很多无用的小碎片</td></tr><tr><td>最差适配机制 Worst Fit Allocation</td><td>大部分分配，属于中等尺寸的时候，效果最好</td><td>释放分区较慢/容易破坏大的空闲块，因此后续难以分配大的分区</td></tr></table><br>无论采用何种算法都会产生碎片，那么如何减少碎片呢？</p>
+<h2 id="碎片整理">碎片整理</h2>
+<p><img src="/image/pcopy.png" alt="pcopy"></p>
+<ul>
+<li>碎片整理 – Compaction(压实)<ul>
+<li>移动拷贝应用程序，把碎片合并起来</li>
+<li>需要所有的应用程序可动态重定位</li>
+<li>问题<ul>
+<li>什么时候移动?</li>
+<li>开销</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>碎片整理 – Swappingin/out(换入换出)<br>交换就是将一个进程从内存倒到磁盘上，再将其从磁盘上加载到内存中的过程。<ul>
+<li>运行中的程序需要更多的内存</li>
+<li>抢占等待中的程序，回收它们的内存<br><img src="/image/swap.png" alt="swap"></li>
+</ul>
+</li>
+</ul>
+<h2 id="非连续内存分配">非连续内存分配</h2>
+<ul>
+<li>为什么需要非连续内存分配<br>因为前面提到的连续内存分配有以下几种缺点，<ul>
+<li>分配给一个程序的物理内存是连续的</li>
+<li>有外碎片、内碎片的问题</li>
+</ul>
+</li>
+</ul>
+<p>非连续分配：优点</p>
+<pre><code><span class="bullet">* </span>一个程序的物理地址空间是非连续的
+<span class="bullet">* </span>更好的内存利用和管理
+<span class="bullet">* </span>允许共享代码与数据（共享库等…)
+<span class="bullet">* </span>支持动态加载和动态链接
+</code></pre><p>非连续分配：缺点</p>
+<ul>
+<li>开销：如何设置虚拟地址和物理地址的转换<ul>
+<li>软件方案</li>
+<li>硬件方案<br>两种硬件辅助机制：<ul>
+<li>分段(segmentation)</li>
+<li>分页(paging)<h2 id="非连续分配：分段">非连续分配：分段</h2>
+程序包含多个段，例如：</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>主程序（main prog）</li>
+<li>子程序（subroutines）</li>
+<li>公用库（common libs）</li>
+<li>栈数据（Stack Data）</li>
+<li>堆数据（Heap Data）</li>
+<li>符号表（symbols table）<br>目的：根据各部分的不同特点，更好的分离和共享<br><img src="/image/segmentman.png" alt="segmentman"><br>分散到多个物理地址空间<br><img src="/image/segphy.png" alt="segphy"><br>分段的逻辑视图<br><img src="/image/logicview.png" alt="logicview"><br>程序访问内存地址需要：一个pair (s, addr)</li>
+<li>s：段号</li>
+<li>addr：段内偏移<br><img src="/image/pair.png" alt="pair"><br>硬件方案：<br><img src="/image/phyfangan.png" alt="phyfangan"><br>段表正是由操作系统建立的。<h2 id="非连续分配：分页">非连续分配：分页</h2>
+（未完待续……）</li>
+</ul>
 
         </section>
         <hr/>
@@ -485,7 +579,7 @@
             
             <a class="share-button" data-original-title title>Share this Post</a>
             
-            <a data-pjax class="older-posts" href="/2015/01/07/小女子谈谈抽象/">Next Post →</a>
+            <a data-pjax class="older-posts" href="/2015/01/07/谈谈抽象/">Next Post →</a>
             
         </nav>
         <br/>
