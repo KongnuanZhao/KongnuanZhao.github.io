@@ -4,7 +4,7 @@
 <head>
   <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" >
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
-  <title>KongnuanZhao</title>
+  <title>计算机体系结构/内存结构 | KongnuanZhao</title>
   <meta name="description" content="" />
   <meta name="HandheldFriendly" content="True" />
   <meta name="MobileOptimized" content="320" />
@@ -435,7 +435,7 @@
                 
                 <div id="nav-container">
                     <div class="post-navbar" style="line-height: 63px;display:none">
-                        <li id="navbar-title"><a href="#">undefined</a></li>
+                        <li id="navbar-title"><a href="#">计算机体系结构/内存结构</a></li>
                         <li id="navbar-toc" style="border-left: none">
                             <a style="padding-right: 15px">
                                 <span id="toc-content" >Introduction</span><i class="fa fa-chevron-down" ></i>
@@ -454,426 +454,102 @@
 
 
 <!-- -->
-<!--<body class="home-template">-->
+<!--<body class="post-template">-->
 <!---->
   
+
 <main class="content" role="main">
+    <article class="post" >
+    <span class="post-meta">
+                  <div class="tag-tile">
+                      
+                      
+                      <a data-pjax href='/tags/操作系统/' style='color:#D5D5D5'>操作系统</a>
+                      
+                      
+                  </div>
+                <h1 class="post-title" style="margin: 14px 0;color:#50585D">计算机体系结构/内存结构</h1>
 
-    
-    <article class="post">
+                    <div class="post-meta">
+                        Post on<span class="fa fa-clock-o"></span>
+                        <time datetime="2015-01-07T01:01:11.000Z"
+                              itemprop="datePublished">Jan 7 2015</time>
+                        By 赵空暖
+                    </div>
+    </span>
 
-        <header class="post-header">
-            <div class="tag-tile">
-                
-                <span class="fa fa-bookmark" style="float:right;color:#fa8072"></span>
-            </div>
-            <h1 class="post-title"><a data-pjax href="/2015/01/07/操作系统之内存管理篇/">操作系统之内存管理篇</a>
-            </h1>
+        <section class="post-content">
+            <blockquote>
+<p>为什么要学操作系统？因为他很酷！我们可以现在不酷，但是追求酷的心不能没有！O(∩_∩)O~<br>　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　—by赵空暖</p>
+</blockquote>
+<h1 id="课堂笔记">课堂笔记</h1>
+<h2 id="计算机基本硬件结构">计算机基本硬件结构</h2>
+<p><img src="/image/os.png" alt="os"></p>
+<h2 id="内存的层次机构">内存的层次机构</h2>
+<p>CPU要访问的指令或者数据所处的位置<br><img src="/image/neicun.png" alt="neicun"></p>
+<h2 id="操作系统如何管理内存">操作系统如何管理内存</h2>
+<ul>
+<li>抽象：逻辑地址空间</li>
+<li>保护：独立地址空间</li>
+<li>共享：访问相同内存</li>
+<li>虚拟化：更多的地址空间，linux上的swap<br><img src="/image/PPP.png" alt="ppp"><br>这张图展示了物理地址空间和逻辑地址空间之间的关系，那么什么是地址空间？</li>
+<li>什么是地址空间？<ul>
+<li>什么是物理地址空间？—和硬件直接对应的地址空间。<br>起始地址0，直到MAXsys。<br><img src="/image/physicaladd.png" alt="physicaladd"></li>
+<li>什么是逻辑地址空间？—一个程序所拥有的内存范围。例如在进行C语言指针编程中，可以读取指针变量本身值(&amp;操作)，实际上这个值就是逻辑地址，它是相对于你当前进程数据段的地址，不和绝对物理地址相干。<br><img src="/image/logicadd.png" alt="logicadd"></li>
+</ul>
+</li>
+<li>地址空间是怎么生成的？<ul>
+<li>物理地址空间生成<br>起始地址0，地址从0开始编号，顺序地每次加1，直到MAXsys，因此存储器的物理地址空间是呈线性增长的。它是用二进制数来表示的，是无符号整数，书写格式为十六进制数。</li>
+<li>逻辑地址空间产生<br><img src="/image/logicaddress.png" alt="logicaddress"><br><b>问：逻辑地址是在编译的时候产生还是链接的时候产生的呢</b><br>Compilers and assemblers generate code and data sections that start at address zero. The linker relocates these sections by associating a memory location with each symbol definition, and then modifying all of the references to those symbols so that they point to this memory location.<br>编译器和汇编器生成的代码和数据段的开始地址。链接器重新定位这些部分关联的内存位置与每个符号的定义，然后修改所有这些符号的引用，指向该内存位置。所以说是链接的时候产生。</li>
+<li>地址的生成流程<ul>
+<li>编译时<ul>
+<li>假设起始地址已知</li>
+<li>如果起始地址改变，必须重新编译</li>
+</ul>
+</li>
+<li>加载时<ul>
+<li>如果编译时刻起始位置未知，那么编译器必须生成可重定位的代码(relocatablecode)</li>
+<li>加载时，生成绝对地址</li>
+</ul>
+</li>
+<li>执行时<ul>
+<li>程序可以被移动，例如暂时不运行的先放到虚拟内存即硬盘中</li>
+<li>需要地址翻译的硬件支持</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>关于编译器的工作过程，请参看阮一峰的<a href="http://www.ruanyifeng.com/blog/2014/11/compiler.html" target="_blank" rel="external">编译器的工作过程</a> 讲解的甚是详细。</li>
+</ul>
+</li>
+<li>逻辑地址空间和物理地址空间的区别和联系？<br>当我们的cpu需要某条指令的时候，会发出请求参数是逻辑地址空间，cpu里面的MMU会去查找映射表中是否存在逻辑地址所对应的物理地址，如果有，直接找到，如果没有就会产生去内存的map去找。找到了之后会向主存发出一个请求，我需要这个地址里面的内容。之后我们的主存会把所需要的内容通过主线传给我们的CPU，CPU拿到之后就可以对这条指令进项执行了。这里面操作系统的作用在于把逻辑地址和物理地址的对应关系建好，这个对应关系可以放在缓存。<br><img src="/image/address.png" alt="address"></li>
+<li>操作系统是如何管理地址空间，而使得程序之间能够不受干扰？<br>操作系统去建立和维护程序的起始地址和长度，一旦超出了这个程度的地址范围则产生一个异常，此异常的处理也交由操作系统来处理。这个过程也称为地址安全检查。<br><img src="/image/addresscheck.png" alt="addresscheck"></li>
+<li>内存是如何分配的？<ul>
+<li>连续内存分配</li>
+<li>非连续内存分配<br>下篇文章整理吧<a href="...">操作系统之内存管理篇</a></li>
+</ul>
+</li>
+</ul>
 
-            <div class="post-meta">
-                Post on<span class="fa fa-clock-o"></span>
-                <time datetime="2015-01-07T03:18:13.000Z"
-                      itemprop="datePublished">Jan 7 2015</time>
-            </div>
-        </header>
-        <section class="post-excerpt">
-            <p>
-                
-                还没有开始整理奥
-
-                
-            </p>
-            
-            <p>
-                <a data-pjax href="/2015/01/07/操作系统之内存管理篇/"
-                   class="excerpt-link">Read More...</a>
-            </p>
-            
         </section>
-    </article>
-    
-    <article class="post">
-
-        <header class="post-header">
-            <div class="tag-tile">
-                
-                <span class="fa fa-bookmark" style="float:right;color:#fa8072"></span>
-            </div>
-            <h1 class="post-title"><a data-pjax href="/2015/01/07/小女子谈谈抽象/">小女子谈谈抽象</a>
-            </h1>
-
-            <div class="post-meta">
-                Post on<span class="fa fa-clock-o"></span>
-                <time datetime="2015-01-07T01:35:00.000Z"
-                      itemprop="datePublished">Jan 7 2015</time>
-            </div>
-        </header>
-        <section class="post-excerpt">
-            <p>
-                
-                关于思维
-自己的抽象能力一直不是很好，都说绝大多数女性是具象思维。之前在知乎上看到有人问这样一个问题封装和抽象的区别是什么？winter 解释说：封装是屏蔽细节，抽象是提取共性。而杨二毛却用一张图展示了两者的区别，这种图容易理解吧，生动形象吧，但这种图反而顿时从抽象到具象了，对于自己的抽象能力的锻炼恰恰可能不是一种好事，因为毕竟并不是每个知识都会有这样一幅生动形象的图来展示给你看，有人说了，对于想要提高抽象能力的人，建议画的是架构图或者
-                
-            </p>
+        <hr/>
+        <nav class="pagination" style="width:auto" role="pagination">
             
-            <p>
-                <a data-pjax href="/2015/01/07/小女子谈谈抽象/"
-                   class="excerpt-link">Read More...</a>
-            </p>
+            <a data-pjax class="newer-posts" href="/2015/01/07/小女子谈谈抽象/">← Prev Post</a>
             
+            <a class="share-button" data-original-title title>Share this Post</a>
+            
+            <a data-pjax class="older-posts" href="/2015/01/05/未雨绸缪-性能测试工具选型/">Next Post →</a>
+            
+        </nav>
+        <br/>
+        <br/>
+        <section id="comment">
+            <div id="comment-box"></div>
         </section>
+
+
     </article>
-    
-    <article class="post">
-
-        <header class="post-header">
-            <div class="tag-tile">
-                
-                
-                <a data-pjax href='/tags/操作系统/'>操作系统</a>
-                
-                
-                <span class="fa fa-bookmark" style="float:right;color:#fa8072"></span>
-            </div>
-            <h1 class="post-title"><a data-pjax href="/2015/01/07/计算机体系结构-内存结构/">计算机体系结构/内存结构</a>
-            </h1>
-
-            <div class="post-meta">
-                Post on<span class="fa fa-clock-o"></span>
-                <time datetime="2015-01-07T01:01:11.000Z"
-                      itemprop="datePublished">Jan 7 2015</time>
-            </div>
-        </header>
-        <section class="post-excerpt">
-            <p>
-                
-                
-为什么要学操作系统？因为他很酷！我们可以现在不酷，但是追求酷的心不能没有！O(∩_∩)O~　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　—by赵空暖
-
-课堂笔记
-计算机基本硬件结构
-
-内存的层次机构
-CPU要访问的指令或者数据所处的位置
-操作系统如何管理内存
-
-抽象：逻辑地址空间
-保护：独立地址空间
-共享：访问相同内存
-虚拟化：更多的地址空间，linux上的swap这张图展示了物理地址空间和逻辑地址空间之间的
-                
-            </p>
-            
-            <p>
-                <a data-pjax href="/2015/01/07/计算机体系结构-内存结构/"
-                   class="excerpt-link">Read More...</a>
-            </p>
-            
-        </section>
-    </article>
-    
-    <article class="post">
-
-        <header class="post-header">
-            <div class="tag-tile">
-                
-                
-                <a data-pjax href='/tags/性能测试/'>性能测试</a>
-                
-                
-                <span class="fa fa-bookmark" style="float:right;color:#fa8072"></span>
-            </div>
-            <h1 class="post-title"><a data-pjax href="/2015/01/05/未雨绸缪-性能测试工具选型/">未雨绸缪-性能测试工具选型</a>
-            </h1>
-
-            <div class="post-meta">
-                Post on<span class="fa fa-clock-o"></span>
-                <time datetime="2015-01-05T14:56:41.000Z"
-                      itemprop="datePublished">Jan 5 2015</time>
-            </div>
-        </header>
-        <section class="post-excerpt">
-            <p>
-                
-                
-课堂笔记
-自动化测试工具
-自动化测试工具QTP是基于UI对象的功能测试。
-性能测试工具
-性能测试工具LR是基于协议的性能测试。
-自动化测试工具和性能测试工具的区别
-最关键的就是性能测试工具一般是基于协议的，而自动化使用的是对象识别技术。自动化无法造成负载或者很难造成负载。但是通过协议很容易。LR的录制原理是捕获数据包，录制的前提是能识别协议报文。QTP的录制原理是消息机制，截获消息，录制的前提是能识别控件。LR是性能测试工具，侧重的是
-                
-            </p>
-            
-            <p>
-                <a data-pjax href="/2015/01/05/未雨绸缪-性能测试工具选型/"
-                   class="excerpt-link">Read More...</a>
-            </p>
-            
-        </section>
-    </article>
-    
-    <article class="post">
-
-        <header class="post-header">
-            <div class="tag-tile">
-                
-                
-                <a data-pjax href='/tags/读书有疑/'>读书有疑</a>
-                
-                
-                <span class="fa fa-bookmark" style="float:right;color:#fa8072"></span>
-            </div>
-            <h1 class="post-title"><a data-pjax href="/2015/01/05/一个人的碎碎读（二）/">一个人的碎碎读（二）</a>
-            </h1>
-
-            <div class="post-meta">
-                Post on<span class="fa fa-clock-o"></span>
-                <time datetime="2015-01-05T14:49:18.000Z"
-                      itemprop="datePublished">Jan 5 2015</time>
-            </div>
-        </header>
-        <section class="post-excerpt">
-            <p>
-                
-                
-
-在没想好自己想做什么，该做什么，能做什么之前，继续持续学习吧！  —— 写给自己
-
-世界因你不同
-
-
-开复老师在书中提到，美国孩子的创造力和想象力，都是在这些稀奇古怪的题目中每天得到锻炼的。这样的教育的差别就是：（1）从不同的观点看待问题，没有正确答案。（2）经过参与和实践真正理解。（3）团队合作，避免零和思维。
-
-虽然这三点耳熟能详，在中国对美国教育的吹捧已经不是一年二年，自己也没有去过没有机会感受这些美好，但是每一次看起这些字眼
-                
-            </p>
-            
-            <p>
-                <a data-pjax href="/2015/01/05/一个人的碎碎读（二）/"
-                   class="excerpt-link">Read More...</a>
-            </p>
-            
-        </section>
-    </article>
-    
-    <article class="post">
-
-        <header class="post-header">
-            <div class="tag-tile">
-                
-                
-                <a data-pjax href='/tags/oracle/'>oracle</a>
-                
-                
-                <span class="fa fa-bookmark" style="float:right;color:#fa8072"></span>
-            </div>
-            <h1 class="post-title"><a data-pjax href="/2015/01/03/Oracle学习交流（二）-oracle体系结构及启动流程/">Oracle学习交流（二）--oracle体系结构及启动流程</a>
-            </h1>
-
-            <div class="post-meta">
-                Post on<span class="fa fa-clock-o"></span>
-                <time datetime="2015-01-03T13:16:19.000Z"
-                      itemprop="datePublished">Jan 3 2015</time>
-            </div>
-        </header>
-        <section class="post-excerpt">
-            <p>
-                
-                Oracle体系结构
-首先回顾一下Oracle的体系结构每一个运行的Oracle 数据库都与一个Oracle 实例关联。在数据库服务器上启动数据库后，Oracle 软件会分配一个称为系统全局区(SGA) 的共享内存区，还会启动若干个Oracle 后台进程。这种SGA 和Oracle 进程的组合就称为一个Oracle 实例。启动实例后，Oracle 软件会将实例与特定的数据库关联。这个过程称为装载数据库。接下来可以打开数据库，以便授权用户
-                
-            </p>
-            
-            <p>
-                <a data-pjax href="/2015/01/03/Oracle学习交流（二）-oracle体系结构及启动流程/"
-                   class="excerpt-link">Read More...</a>
-            </p>
-            
-        </section>
-    </article>
-    
-    <article class="post">
-
-        <header class="post-header">
-            <div class="tag-tile">
-                
-                
-                <a data-pjax href='/tags/oracle/'>oracle</a>
-                
-                
-                <span class="fa fa-bookmark" style="float:right;color:#fa8072"></span>
-            </div>
-            <h1 class="post-title"><a data-pjax href="/2015/01/02/Oracle学习交流--oracle概述及监听配置/">Oracle学习交流--oracle概述及监听配置</a>
-            </h1>
-
-            <div class="post-meta">
-                Post on<span class="fa fa-clock-o"></span>
-                <time datetime="2015-01-02T13:43:21.000Z"
-                      itemprop="datePublished">Jan 2 2015</time>
-            </div>
-        </header>
-        <section class="post-excerpt">
-            <p>
-                
-                甚是怀念当时一点也不懂oracle然后一股脑认真学习，一笔一划做笔记的样子，所以决定重新一点一滴整理下学过的点点滴滴。
-Oracle初相识
-Oracle Database 11g：“g”代表网格全球网格论坛(GGF)请访问GGF网站
-数据库安装（略）
-Oracle 服务
-Oracle 在 windows 中安装完成后，会安装很多服务，下面介绍几个主要的服务。
-
-OracleService+服务名:该服务是数据库启动的基础，只有该服务启动
-                
-            </p>
-            
-            <p>
-                <a data-pjax href="/2015/01/02/Oracle学习交流--oracle概述及监听配置/"
-                   class="excerpt-link">Read More...</a>
-            </p>
-            
-        </section>
-    </article>
-    
-    <article class="post">
-
-        <header class="post-header">
-            <div class="tag-tile">
-                
-                
-                <a data-pjax href='/tags/nosql/'>nosql</a>
-                
-                
-                <span class="fa fa-bookmark" style="float:right;color:#fa8072"></span>
-            </div>
-            <h1 class="post-title"><a data-pjax href="/2015/01/02/Nosql知多少/">Nosql知多少</a>
-            </h1>
-
-            <div class="post-meta">
-                Post on<span class="fa fa-clock-o"></span>
-                <time datetime="2015-01-02T12:31:19.000Z"
-                      itemprop="datePublished">Jan 2 2015</time>
-            </div>
-        </header>
-        <section class="post-excerpt">
-            <p>
-                
-                数据时代的特征
-3V——Volume（海量）、Variety（多样）、Velocity（实时）
-
-海量——数据量巨大，对TB、PB数据级的处理， 已经成为基本配置。
-多样——处理多样性的数据类型，结构化数据和非结构化数据，能处理Web数据，能处理语音数据甚至是图像、视频数据。
-实时——在客户每次浏览页面，每次下订单的过程中都存在，都会需要对用户进行实时的推荐，决策已经变得实时
-
-数据时代下的系统需求
-
-High performance 
-                
-            </p>
-            
-            <p>
-                <a data-pjax href="/2015/01/02/Nosql知多少/"
-                   class="excerpt-link">Read More...</a>
-            </p>
-            
-        </section>
-    </article>
-    
-    <article class="post">
-
-        <header class="post-header">
-            <div class="tag-tile">
-                
-                
-                <a data-pjax href='/tags/linux/'>linux</a>
-                
-                
-                <span class="fa fa-bookmark" style="float:right;color:#fa8072"></span>
-            </div>
-            <h1 class="post-title"><a data-pjax href="/2015/01/02/在Win7下用XManager远程控制ubuntu/">在Win7下用XManager远程控制ubuntu</a>
-            </h1>
-
-            <div class="post-meta">
-                Post on<span class="fa fa-clock-o"></span>
-                <time datetime="2015-01-02T10:44:18.000Z"
-                      itemprop="datePublished">Jan 2 2015</time>
-            </div>
-        </header>
-        <section class="post-excerpt">
-            <p>
-                
-                在VMware Player 装完Ubuntu 12.04 就巴掌大的界面，很不舒服。所以用Xmanager来远程连接桌面1.在12.04上安装GNOME
-sudoapt-get install gnome-panel
-
-安装完成后注销用户，登陆的时候选择以GNOME界面模式登录登陆进入GNOME界面，选择桌面共享然后进行如下设置：2.Ubuntu下GDM的安装首先将防火墙关闭
-sudo ufw disable
-
-Win7远程连接上Ub
-                
-            </p>
-            
-            <p>
-                <a data-pjax href="/2015/01/02/在Win7下用XManager远程控制ubuntu/"
-                   class="excerpt-link">Read More...</a>
-            </p>
-            
-        </section>
-    </article>
-    
-    <article class="post">
-
-        <header class="post-header">
-            <div class="tag-tile">
-                
-                
-                <a data-pjax href='/tags/计算机网络/'>计算机网络</a>
-                
-                
-                <span class="fa fa-bookmark" style="float:right;color:#fa8072"></span>
-            </div>
-            <h1 class="post-title"><a data-pjax href="/2015/01/02/DNS学习手记/">DNS学习手记</a>
-            </h1>
-
-            <div class="post-meta">
-                Post on<span class="fa fa-clock-o"></span>
-                <time datetime="2015-01-02T03:28:15.000Z"
-                      itemprop="datePublished">Jan 2 2015</time>
-            </div>
-        </header>
-        <section class="post-excerpt">
-            <p>
-                
-                物理层
-域名解析
-域名系统等级结构解析流程
-
-假如没有自己的本地DNS服务器，就要找DNS提供商的主机如电信、网通。
-第一步是ns找自己区域内的DNS服务器，如果没有ns就去找根服务器，然后根让ns找com,com让ns去找163.com
-加入直接在自己的本地DNS服务器直接找到即直接返回IP则为权威答案。如此请求分为两种：
-递归请求：即只需发出一次请求，直接返回IP
-迭代查询： 发出n次请求返回IP
-
-
-当然因为会发出多次请求，所以D
-                
-            </p>
-            
-            <p>
-                <a data-pjax href="/2015/01/02/DNS学习手记/"
-                   class="excerpt-link">Read More...</a>
-            </p>
-            
-        </section>
-    </article>
-    
-    <nav class="pagination" role="pagination">
-        
-        <span class="page-number">Page 1 of 3</span>
-        
-        <a data-pjax class="older-posts" href="/page/2/">Older Posts →</a>
-        
-    </nav>
 </main>
 
 
