@@ -5,7 +5,7 @@
   <meta name="baidu-site-verification" content="AQ0sUK7UOM" />
   <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" >
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
-  <title>Archives: 2015/1 | KongnuanZhao</title>
+  <title>操作系统之进程管理 | KongnuanZhao</title>
   <meta name="description" content="" />
   <meta name="HandheldFriendly" content="True" />
   <meta name="MobileOptimized" content="320" />
@@ -458,7 +458,7 @@
                 
                 <div id="nav-container">
                     <div class="post-navbar" style="line-height: 63px;display:none">
-                        <li id="navbar-title"><a href="#">undefined</a></li>
+                        <li id="navbar-title"><a href="#">操作系统之进程管理</a></li>
                         <li id="navbar-toc" style="border-left: none">
                             <a style="padding-right: 15px">
                                 <span id="toc-content" >Introduction</span><i class="fa fa-chevron-down" ></i>
@@ -477,427 +477,85 @@
 
 
 <!-- -->
-<!--<body class="home-template">-->
+<!--<body class="post-template">-->
 <!---->
   
+
 <main class="content" role="main">
+    <article class="post" >
+    <span class="post-meta">
+                  <div class="tag-tile">
+                      
+                      
+                      <a data-pjax href='/tags/操作系统/' style='color:#D5D5D5'>操作系统</a>
+                      
+                      
+                  </div>
+                <h1 class="post-title" style="margin: 14px 0;color:#50585D">操作系统之进程管理</h1>
 
-    
-    <article class="post">
+                    <div class="post-meta">
+                        Post on<span class="fa fa-clock-o"></span>
+                        <time datetime="2015-01-08T12:17:07.000Z"
+                              itemprop="datePublished">Jan 8 2015</time>
+                        By 赵空暖
+                    </div>
+    </span>
 
-        <header class="post-header">
-            <div class="tag-tile">
-                
-                
-                <a data-pjax href='/tags/操作系统/'>操作系统</a>
-                
-                
-                <span class="fa fa-bookmark" style="float:right;color:#fa8072"></span>
-            </div>
-            <h1 class="post-title"><a data-pjax href="/2015/01/08/操作系统之进程管理/">操作系统之进程管理</a>
-            </h1>
+        <section class="post-content">
+            <h1 id="进程描述">进程描述</h1>
+<ul>
+<li>进程的定义<br>进程：一个具有一定独立功能的程序在一个数据集合上的一次动态执行过程。<br><img src="/image/process.png" alt="process"></li>
+<li>进程的组成<ul>
+<li>程序的代码</li>
+<li>程序处理的数据</li>
+<li>程序计数器中的值，指示下一条将运行的指令</li>
+<li>一组通用的寄存器的当前值，堆、栈</li>
+<li>一组系统资源（如打开的文件）<br>总之，进程包含了正在运行的一个程序的所有状态信息。</li>
+</ul>
+</li>
+<li>进程与程序的联系<ul>
+<li>程序是产生进程的基础</li>
+<li>程序的每次运行构成不同的进程（因为每次获取的数据、资源不一样）</li>
+<li>进程是程序功能的体现（同一个程序运行的不同进程但实现的功能是一样的）</li>
+<li>通过多次执行，一个程序可对应多个进程；通过调用关系，一个进程可包括多个程序。</li>
+</ul>
+</li>
+<li>进程与程序的区别<ul>
+<li>进程是动态的，程序是静态的：程序是有序代码的集合；进程是程序的执行，进程有核心态/用户态</li>
+<li>进程是暂时的，程序的永久的：进程是一个状态变化的过程，程序可长久保存</li>
+<li>进程与程序的组成不同：进程的组成包括程序、数据和进程控制块（即进程状态信息）</li>
+</ul>
+</li>
+<li>进程的特点<ul>
+<li>动态性:可动态地创建、结束进程；</li>
+<li>并发性:进程可以被独立调度并占用处理机运行；通过进程切换实现，而不是真正意义上的并行。<br><img src="/image/bingfa.png" alt="bingfa"></li>
+<li>独立性:不同进程的工作不相互影响；<br><img src="/image/duli.png" alt="duli"></li>
+<li>制约性:因访问共享数据/资源或进程间同步而产生制约。<br><img src="/image/zhiyue.png" alt="zhiyue"></li>
+</ul>
+</li>
+</ul>
+<p>(未完待续)</p>
+<p>(图片来源：<a href="http://www.topu.com/kvideo.php?do=course_progress&amp;kvideoid=4100&amp;classesid=808" target="_blank" rel="external">清华大学陈瑜老师操作系统公开课</a>)</p>
 
-            <div class="post-meta">
-                Post on<span class="fa fa-clock-o"></span>
-                <time datetime="2015-01-08T12:17:07.000Z"
-                      itemprop="datePublished">Jan 8 2015</time>
-            </div>
-        </header>
-        <section class="post-excerpt">
-            <p>
-                
-                进程描述
-
-进程的定义进程：一个具有一定独立功能的程序在一个数据集合上的一次动态执行过程。
-进程的组成
-程序的代码
-程序处理的数据
-程序计数器中的值，指示下一条将运行的指令
-一组通用的寄存器的当前值，堆、栈
-一组系统资源（如打开的文件）总之，进程包含了正在运行的一个程序的所有状态信息。
-
-
-进程与程序的联系
-程序是产生进程的基础
-程序的每次运行构成不同的进程（因为每次获取的数据、资源不一样）
-进程是程序功能的体现（同一个程序运行的不同进
-                
-            </p>
-            
-            <p>
-                <a data-pjax href="/2015/01/08/操作系统之进程管理/"
-                   class="excerpt-link">Read More...</a>
-            </p>
-            
         </section>
-    </article>
-    
-    <article class="post">
-
-        <header class="post-header">
-            <div class="tag-tile">
-                
-                
-                <a data-pjax href='/tags/操作系统/'>操作系统</a>
-                
-                
-                <span class="fa fa-bookmark" style="float:right;color:#fa8072"></span>
-            </div>
-            <h1 class="post-title"><a data-pjax href="/2015/01/08/虚拟内存管理（下）/">操作系统之虚拟内存管理（下）</a>
-            </h1>
-
-            <div class="post-meta">
-                Post on<span class="fa fa-clock-o"></span>
-                <time datetime="2015-01-08T12:06:30.000Z"
-                      itemprop="datePublished">Jan 8 2015</time>
-            </div>
-        </header>
-        <section class="post-excerpt">
-            <p>
-                
-                还没有开始整理
-
-                
-            </p>
+        <hr/>
+        <nav class="pagination" style="width:auto" role="pagination">
             
-            <p>
-                <a data-pjax href="/2015/01/08/虚拟内存管理（下）/"
-                   class="excerpt-link">Read More...</a>
-            </p>
+            <a style="cursor:default" class="newer-posts" href="#">This is the First Post</a>
             
+            <a class="share-button" data-original-title title>Share this Post</a>
+            
+            <a data-pjax class="older-posts" href="/2015/01/08/虚拟内存管理（下）/">Next Post →</a>
+            
+        </nav>
+        <br/>
+        <br/>
+        <section id="comment">
+            <div id="comment-box"></div>
         </section>
+
+
     </article>
-    
-    <article class="post">
-
-        <header class="post-header">
-            <div class="tag-tile">
-                
-                
-                <a data-pjax href='/tags/操作系统/'>操作系统</a>
-                
-                
-                <span class="fa fa-bookmark" style="float:right;color:#fa8072"></span>
-            </div>
-            <h1 class="post-title"><a data-pjax href="/2015/01/08/操作系统之虚拟内存管理/">操作系统之虚拟内存管理</a>
-            </h1>
-
-            <div class="post-meta">
-                Post on<span class="fa fa-clock-o"></span>
-                <time datetime="2015-01-08T07:17:32.000Z"
-                      itemprop="datePublished">Jan 8 2015</time>
-            </div>
-        </header>
-        <section class="post-excerpt">
-            <p>
-                
-                课堂笔记
-
-为什么有程序规模的增长速度远远大于存储器容量的增长速度
-理想中的存储器：更大、更快、更便宜的非易失性存储器
-实际中的存储器
-操作系统支持的存储器
-在计算机系统中，尤其是在多道程序运行的环境下,可能会出现内存不够用的情况，怎么办？
-如果是程序太大，超过了内存的容量，可以采用手动的覆盖（overlay）技术，只把需要的指令和数据保存在内存当中；
-如果是程序太多，超过了内存的容量，可以采用自动的交换（swapping）技术，把暂时
-                
-            </p>
-            
-            <p>
-                <a data-pjax href="/2015/01/08/操作系统之虚拟内存管理/"
-                   class="excerpt-link">Read More...</a>
-            </p>
-            
-        </section>
-    </article>
-    
-    <article class="post">
-
-        <header class="post-header">
-            <div class="tag-tile">
-                
-                
-                <a data-pjax href='/tags/操作系统/'>操作系统</a>
-                
-                
-                <span class="fa fa-bookmark" style="float:right;color:#fa8072"></span>
-            </div>
-            <h1 class="post-title"><a data-pjax href="/2015/01/07/操作系统之内存管理篇/">操作系统之内存管理篇</a>
-            </h1>
-
-            <div class="post-meta">
-                Post on<span class="fa fa-clock-o"></span>
-                <time datetime="2015-01-07T03:18:13.000Z"
-                      itemprop="datePublished">Jan 7 2015</time>
-            </div>
-        </header>
-        <section class="post-excerpt">
-            <p>
-                
-                程序要运行，必须先加载到内存。但在很久很久以前，准确的说是在操作系统没有出现以前，程序并不需要加载到内存就能运行。实际上，那个时候程序曾经存放在卡片上，计算机每读一张卡片，就运行一条指令。因此，程序是直接从卡片到执行。图片来源9千万的差距 百年来数据存储历史回顾但这种从外部存储媒介上直接执行指令的做法效率极低，且灵活性很差。因此人们发明了内存储器来将需要运行的程序先行加载，再自动执行，从而提高效率和灵活性。这也导致了“存储的程序”的概念
-                
-            </p>
-            
-            <p>
-                <a data-pjax href="/2015/01/07/操作系统之内存管理篇/"
-                   class="excerpt-link">Read More...</a>
-            </p>
-            
-        </section>
-    </article>
-    
-    <article class="post">
-
-        <header class="post-header">
-            <div class="tag-tile">
-                
-                <span class="fa fa-bookmark" style="float:right;color:#fa8072"></span>
-            </div>
-            <h1 class="post-title"><a data-pjax href="/2015/01/07/谈谈抽象/">谈谈抽象</a>
-            </h1>
-
-            <div class="post-meta">
-                Post on<span class="fa fa-clock-o"></span>
-                <time datetime="2015-01-07T01:35:00.000Z"
-                      itemprop="datePublished">Jan 7 2015</time>
-            </div>
-        </header>
-        <section class="post-excerpt">
-            <p>
-                
-                关于思维
-自己的抽象能力一直不是很好，都说绝大多数女性是具象思维。之前在知乎上看到有人问这样一个问题封装和抽象的区别是什么？winter 解释说：封装是屏蔽细节，抽象是提取共性。而杨二毛却用一张图展示了两者的区别，这种图容易理解吧，生动形象吧，但这种图反而顿时从抽象到具象了，对于自己的抽象能力的锻炼恰恰可能不是一种好事，因为毕竟并不是每个知识都会有这样一幅生动形象的图来展示给你看，有人说了，对于想要提高抽象能力的人，建议画的是架构图或者
-                
-            </p>
-            
-            <p>
-                <a data-pjax href="/2015/01/07/谈谈抽象/"
-                   class="excerpt-link">Read More...</a>
-            </p>
-            
-        </section>
-    </article>
-    
-    <article class="post">
-
-        <header class="post-header">
-            <div class="tag-tile">
-                
-                
-                <a data-pjax href='/tags/操作系统/'>操作系统</a>
-                
-                
-                <span class="fa fa-bookmark" style="float:right;color:#fa8072"></span>
-            </div>
-            <h1 class="post-title"><a data-pjax href="/2015/01/07/计算机体系结构-内存结构/">计算机体系结构/内存结构</a>
-            </h1>
-
-            <div class="post-meta">
-                Post on<span class="fa fa-clock-o"></span>
-                <time datetime="2015-01-07T01:01:11.000Z"
-                      itemprop="datePublished">Jan 7 2015</time>
-            </div>
-        </header>
-        <section class="post-excerpt">
-            <p>
-                
-                
-
-为什么要学操作系统？因为他很酷！我们可以现在不酷，但是追求酷的心不能没有！O(∩_∩)O~　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　—by赵空暖
-
-课堂笔记
-计算机基本硬件结构
-
-内存的层次机构
-CPU要访问的指令或者数据所处的位置
-操作系统如何管理内存
-
-抽象：逻辑地址空间
-保护：独立地址空间
-共享：访问相同内存
-虚拟化：更多的地址空间，linux上的swap这张图展示了物理地址空间和逻辑地址空间之间
-                
-            </p>
-            
-            <p>
-                <a data-pjax href="/2015/01/07/计算机体系结构-内存结构/"
-                   class="excerpt-link">Read More...</a>
-            </p>
-            
-        </section>
-    </article>
-    
-    <article class="post">
-
-        <header class="post-header">
-            <div class="tag-tile">
-                
-                
-                <a data-pjax href='/tags/性能测试/'>性能测试</a>
-                
-                
-                <span class="fa fa-bookmark" style="float:right;color:#fa8072"></span>
-            </div>
-            <h1 class="post-title"><a data-pjax href="/2015/01/05/未雨绸缪-性能测试工具选型/">未雨绸缪-性能测试工具选型</a>
-            </h1>
-
-            <div class="post-meta">
-                Post on<span class="fa fa-clock-o"></span>
-                <time datetime="2015-01-05T14:56:41.000Z"
-                      itemprop="datePublished">Jan 5 2015</time>
-            </div>
-        </header>
-        <section class="post-excerpt">
-            <p>
-                
-                
-课堂笔记
-自动化测试工具
-自动化测试工具QTP是基于UI对象的功能测试。
-性能测试工具
-性能测试工具LR是基于协议的性能测试。
-自动化测试工具和性能测试工具的区别
-最关键的就是性能测试工具一般是基于协议的，而自动化使用的是对象识别技术。自动化无法造成负载或者很难造成负载。但是通过协议很容易。LR的录制原理是捕获数据包，录制的前提是能识别协议报文。QTP的录制原理是消息机制，截获消息，录制的前提是能识别控件。LR是性能测试工具，侧重的是
-                
-            </p>
-            
-            <p>
-                <a data-pjax href="/2015/01/05/未雨绸缪-性能测试工具选型/"
-                   class="excerpt-link">Read More...</a>
-            </p>
-            
-        </section>
-    </article>
-    
-    <article class="post">
-
-        <header class="post-header">
-            <div class="tag-tile">
-                
-                
-                <a data-pjax href='/tags/读书有疑/'>读书有疑</a>
-                
-                
-                <span class="fa fa-bookmark" style="float:right;color:#fa8072"></span>
-            </div>
-            <h1 class="post-title"><a data-pjax href="/2015/01/05/一个人的碎碎读（二）/">一个人的碎碎读（二）</a>
-            </h1>
-
-            <div class="post-meta">
-                Post on<span class="fa fa-clock-o"></span>
-                <time datetime="2015-01-05T14:49:18.000Z"
-                      itemprop="datePublished">Jan 5 2015</time>
-            </div>
-        </header>
-        <section class="post-excerpt">
-            <p>
-                
-                
-
-在没想好自己想做什么，该做什么，能做什么之前，继续持续学习吧！  —— 写给自己
-
-世界因你不同
-
-
-开复老师在书中提到，美国孩子的创造力和想象力，都是在这些稀奇古怪的题目中每天得到锻炼的。这样的教育的差别就是：（1）从不同的观点看待问题，没有正确答案。（2）经过参与和实践真正理解。（3）团队合作，避免零和思维。
-
-虽然这三点耳熟能详，在中国对美国教育的吹捧已经不是一年二年，自己也没有去过没有机会感受这些美好，但是每一次看起这些字眼
-                
-            </p>
-            
-            <p>
-                <a data-pjax href="/2015/01/05/一个人的碎碎读（二）/"
-                   class="excerpt-link">Read More...</a>
-            </p>
-            
-        </section>
-    </article>
-    
-    <article class="post">
-
-        <header class="post-header">
-            <div class="tag-tile">
-                
-                
-                <a data-pjax href='/tags/oracle/'>oracle</a>
-                
-                
-                <span class="fa fa-bookmark" style="float:right;color:#fa8072"></span>
-            </div>
-            <h1 class="post-title"><a data-pjax href="/2015/01/03/Oracle学习交流（二）-oracle体系结构及启动流程/">Oracle学习交流（二）--oracle体系结构及启动流程</a>
-            </h1>
-
-            <div class="post-meta">
-                Post on<span class="fa fa-clock-o"></span>
-                <time datetime="2015-01-03T13:16:19.000Z"
-                      itemprop="datePublished">Jan 3 2015</time>
-            </div>
-        </header>
-        <section class="post-excerpt">
-            <p>
-                
-                Oracle体系结构
-首先回顾一下Oracle的体系结构每一个运行的Oracle 数据库都与一个Oracle 实例关联。在数据库服务器上启动数据库后，Oracle 软件会分配一个称为系统全局区(SGA) 的共享内存区，还会启动若干个Oracle 后台进程。这种SGA 和Oracle 进程的组合就称为一个Oracle 实例。启动实例后，Oracle 软件会将实例与特定的数据库关联。这个过程称为装载数据库。接下来可以打开数据库，以便授权用户
-                
-            </p>
-            
-            <p>
-                <a data-pjax href="/2015/01/03/Oracle学习交流（二）-oracle体系结构及启动流程/"
-                   class="excerpt-link">Read More...</a>
-            </p>
-            
-        </section>
-    </article>
-    
-    <article class="post">
-
-        <header class="post-header">
-            <div class="tag-tile">
-                
-                
-                <a data-pjax href='/tags/oracle/'>oracle</a>
-                
-                
-                <span class="fa fa-bookmark" style="float:right;color:#fa8072"></span>
-            </div>
-            <h1 class="post-title"><a data-pjax href="/2015/01/02/Oracle学习交流--oracle概述及监听配置/">Oracle学习交流--oracle概述及监听配置</a>
-            </h1>
-
-            <div class="post-meta">
-                Post on<span class="fa fa-clock-o"></span>
-                <time datetime="2015-01-02T13:43:21.000Z"
-                      itemprop="datePublished">Jan 2 2015</time>
-            </div>
-        </header>
-        <section class="post-excerpt">
-            <p>
-                
-                甚是怀念当时一点也不懂oracle然后一股脑认真学习，一笔一划做笔记的样子，所以决定重新一点一滴整理下学过的点点滴滴。
-Oracle初相识
-Oracle Database 11g：“g”代表网格全球网格论坛(GGF)请访问GGF网站
-数据库安装（略）
-Oracle 服务
-Oracle 在 windows 中安装完成后，会安装很多服务，下面介绍几个主要的服务。
-
-OracleService+服务名:该服务是数据库启动的基础，只有该服务启动
-                
-            </p>
-            
-            <p>
-                <a data-pjax href="/2015/01/02/Oracle学习交流--oracle概述及监听配置/"
-                   class="excerpt-link">Read More...</a>
-            </p>
-            
-        </section>
-    </article>
-    
-    <nav class="pagination" role="pagination">
-        
-        <span class="page-number">Page 1 of 2</span>
-        
-        <a data-pjax class="older-posts" href="/archives/2015/01/page/2/">Older Posts →</a>
-        
-    </nav>
 </main>
 
 
