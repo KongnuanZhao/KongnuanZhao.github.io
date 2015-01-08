@@ -577,9 +577,74 @@
 <li>堆数据（Heap Data）</li>
 <li>符号表（symbols table）<br>目的：根据各部分的不同特点，更好的分离和共享<br><img src="/image/segmentman.png" alt="segmentman"><br>分散到多个物理地址空间<br><img src="/image/segphy.png" alt="segphy"><br>分段的逻辑视图<br><img src="/image/logicview.png" alt="logicview"><br>程序访问内存地址需要：一个pair (s, addr)</li>
 <li>s：段号</li>
-<li>addr：段内偏移<br><img src="/image/pair.png" alt="pair"><br>硬件方案：<br><img src="/image/phyfangan.png" alt="phyfangan"><br>段表正是由操作系统建立的。<h2 id="非连续分配：分页">非连续分配：分页</h2>
-（未完待续……）</li>
+<li>addr：段内偏移<br><img src="/image/pair.png" alt="pair"><br>硬件方案：<br><img src="/image/phyfangan.png" alt="phyfangan"><br>段表正是由操作系统建立的。</li>
 </ul>
+<h2 id="非连续分配：分页">非连续分配：分页</h2>
+<p>和分段的主要区别是</p>
+<ul>
+<li>分页是把物理内存分割为大小合适的帧（Frame, Page Frame）<br>2的n次方，如512, 4096, 8192</li>
+<li>把逻辑地址空间也划分为相同大小的页（Page）<br>2的n次方，如512, 4096, 8192</li>
+<li>建立逻辑地址到物理地址的转换机制<ul>
+<li>页表</li>
+<li>MMU/TLB</li>
+</ul>
+</li>
+</ul>
+<h3 id="帧">帧</h3>
+<p>物理内存被分割为大小相等的帧。<br><img src="/image/zhen.png" alt="zhen"><br>一个内存物理地址是一个pair(f,o)<br>f — 帧号(F位, 共有2^F个帧)  frame<br>o — 帧内偏移(S位,每帧有2^S字节) offsize<br>物理地址=2^S*f+o<br><img src="/image/zhenphyadd.png" alt="zhenphyadd"></p>
+<p>物理地址计算的例子<br><img src="/image/example.png" alt="example"></p>
+<h3 id="页">页</h3>
+<p>一个程序的逻辑地址空间被划分为大小相等的页。<br><img src="/image/pageoffsize.png" alt="pageoffsize"></p>
+<ul>
+<li>页内偏移的大小= 帧内偏移的大小</li>
+<li>页号大小&lt;&gt; 帧号大小</li>
+</ul>
+<p>一个逻辑地址是一个pair(p,o)<br>p  — 页号(P 位, 2^P个页)<br>o  — 页内偏移(S位, 每页有2^S字节)<br>虚拟地址=2^S*p+o<br><img src="/image/pagelogicaddress.png" alt="pagelogicaddress"></p>
+<ul>
+<li>页寻址机制<br><img src="/image/pagefind.png" alt="pagefind"><br><img src="/image/pagefind2.png" alt="pagefind2"></li>
+<li>不是所有的页都有对应的帧，一般是逻辑地址空间大于物理地址空间</li>
+<li>页是连续的虚拟内存，帧是不连续的物理地址，这样的好处有助于减少碎片。</li>
+</ul>
+<h2 id="页表">页表</h2>
+<p><img src="/image/pagestructs.png" alt="pagestructs"><br>标志位用来标识此映射关系是否存在、此页被读取过？写过？等等<br><img src="/image/pagestruts2.png" alt="pagestruts2"><br>resident bit 为0 代表没有此对应关系，抛出异常由操作系统处理。</p>
+<ul>
+<li>分页机制的性能问题<ul>
+<li>页表可能非常大<ul>
+<li>64位机器如果每页1024字节，那么一个页表的大小会是多少？ 2^54</li>
+<li>每个程序都对应着一个页表，则多个程序要对应多个页表，会多大？</li>
+</ul>
+</li>
+<li>页表变大，cpu cache放不下只能放到内存当中，这样就需要2次内存访问<ul>
+<li>一次用于获取页表入口</li>
+<li>一次用于访问数据</li>
+</ul>
+</li>
+<li>如何处理? <ul>
+<li>缓存 （Caching）Translation Look-aside Buffer(TLB)</li>
+<li>间接（Indirection）访问 ，类似于索引</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="解决之道之一：Translation_Look-aside_Buffer_(TLB)">解决之道之一：Translation Look-aside Buffer (TLB)</h3>
+<p>缓存近期访问的页帧转换表项</p>
+<ul>
+<li>TLB 使用associative memory(关联内存)实现，具备快速访问性能</li>
+<li>如果TLB命中，物理页号可以很快被获取</li>
+<li>如果TLB未命中，对应的表项被更新到TLB中<br><img src="/image/cpuTLB.png" alt="cpuTLB"></li>
+</ul>
+<h3 id="解决之道之二：二级/多级页表">解决之道之二：二级/多级页表</h3>
+<p><img src="/image/erjipage.png" alt="erjipage"></p>
+<ul>
+<li>如此这样，需要三次访问内存，开销增加了，但是好处是一些没有对应关系的行可以不放在页表中了，减少了空间。<br>推而广之，多级页表如下：<br><img src="/image/treepagetable.png" alt="treepagetable"></li>
+</ul>
+<h1 id="问题">问题</h1>
+<ul>
+<li>分段在内存保护方面有优势，分页在内存利用和优化转移到后备存储方面有优势。</li>
+<li>分段、分页能否结合？</li>
+</ul>
+<p>(图片来源：<a href="http://www.topu.com/kvideo.php?do=course_progress&amp;kvideoid=4100&amp;classesid=808" target="_blank" rel="external">清华大学陈瑜老师操作系统公开课</a>)</p>
 
         </section>
         <hr/>
