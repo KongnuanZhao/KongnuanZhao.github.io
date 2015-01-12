@@ -49,11 +49,15 @@
                                 <div class="mp-scroll">
                                 
                                 <li class="search-archive-li mp-pjax">
+                                    <a href="/2015/01/09/操作系统之线程管理/">操作系统之线程管理</a>
+                                </li>
+                                
+                                <li class="search-archive-li mp-pjax">
                                     <a href="/2015/01/08/操作系统之进程管理/">操作系统之进程管理</a>
                                 </li>
                                 
                                 <li class="search-archive-li mp-pjax">
-                                    <a href="/2015/01/08/虚拟内存管理（下）/">操作系统之虚拟内存管理（下）</a>
+                                    <a href="/2015/01/08/操作系统之虚拟内存管理（下）/">操作系统之虚拟内存管理（下）</a>
                                 </li>
                                 
                                 <li class="search-archive-li mp-pjax">
@@ -206,7 +210,7 @@
                                 
                                 <li class="search-category-li mp-pjax">
                                     <a href="/categories/操作系统/">&nbsp;&nbsp;&nbsp;操作系统</a>
-                                    <small>6</small>
+                                    <small>7</small>
                                 </li>
                                 
                                 <li class="search-category-li mp-pjax">
@@ -293,7 +297,7 @@
                                 
                                 <li class="search-tag-li mp-pjax">
                                     <a href="/tags/操作系统/">&nbsp;&nbsp;&nbsp;操作系统</a>
-                                    <small>6</small>
+                                    <small>7</small>
                                 </li>
                                 
                                 <li class="search-tag-li mp-pjax">
@@ -340,9 +344,11 @@
         <div id="pjax">
             <div class="pjax-hidden" style="display: none">
                 
+                    <a  data-pjax href="/2015/01/09/操作系统之线程管理/">操作系统之线程管理</a>
+                
                     <a  data-pjax href="/2015/01/08/操作系统之进程管理/">操作系统之进程管理</a>
                 
-                    <a  data-pjax href="/2015/01/08/虚拟内存管理（下）/">操作系统之虚拟内存管理（下）</a>
+                    <a  data-pjax href="/2015/01/08/操作系统之虚拟内存管理（下）/">操作系统之虚拟内存管理（下）</a>
                 
                     <a  data-pjax href="/2015/01/08/操作系统之虚拟内存管理/">操作系统之虚拟内存管理</a>
                 
@@ -533,19 +539,140 @@
 <li>制约性:因访问共享数据/资源或进程间同步而产生制约。<br><img src="/image/zhiyue.png" alt="zhiyue"></li>
 </ul>
 </li>
+<li>进程控制块(Process Control Block,PCB)<ul>
+<li>操作系统为每个进程都维护了一个PCB，用来保存与该进程有关的各种状态信息。</li>
+<li>操作系统管理控制进程运行所用的信息集合。</li>
+<li>操作系统用PCB来描述进程的基本情况以及运行变化的过程，PCB是进程存在的唯一标志。</li>
 </ul>
-<p>(未完待续)</p>
+</li>
+</ul>
+<h2 id="进程控制块">进程控制块</h2>
+<ul>
+<li>使用进程控制块<ul>
+<li>进程的创建：为该进程生成一个PCB；</li>
+<li>进程的终止：回收它的PCB；</li>
+<li>进程的组织管理：通过对PCB的组织管理来实现；</li>
+</ul>
+</li>
+<li>进程控制块具体包含什么信息？<ul>
+<li>进程标识信息。如本进程的标识；本进程的产生者标识(父进程标识)；用户标识。</li>
+<li>CPU状态信息保存区。保存进程的运行现场信息：<ul>
+<li>用户可见寄存器，用户程序可以使用的数据，地址等寄存器。</li>
+<li>控制和状态寄存器，如程序计数器(PC)，程序状态字(PSW)。</li>
+<li>栈指针，过程调用/系统调用/中断处理和返回时需要用到它。</li>
+</ul>
+</li>
+<li>进程控制信息<ul>
+<li>调度和状态信息，用于操作系统调度进程并占用CPU使用。</li>
+<li>进程间通信信息，为支持进程间的与通信相关的各种标识、信号、信件等，这些信息存在接收方的进程控制块中。</li>
+<li>存储管理信息，包含有指向本进程映像存储空间的数据结构。</li>
+<li>进程所用资源，说明由进程打开、使用的系统资源，如打开的文件等。</li>
+<li>有关数据结构连接信息，进程可以连接到一个进程队列中，或连接到相关的其他进程的PCB。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>PCB的组织方式<ul>
+<li>链表：同一状态的进程其PCB成一链表，多个状态对应多个不同的链表。各状态的进程形成不同的链表：就绪链表、阻塞链表……</li>
+<li>索引表：同一状态的进程归入一个index表（由index指向PCB），多个状态对应多个不同的index表。各状态的进行形成不同的索引表：就绪索引表、阻塞索引表……<br><img src="/image/pcbtable.png" alt="pcbtable"></li>
+</ul>
+</li>
+</ul>
+<h2 id="进程管理">进程管理</h2>
+<ul>
+<li><p>进程状态</p>
+<ul>
+<li>进程的生命期管理<ul>
+<li>进程创建<ul>
+<li>系统初始化时，init()</li>
+<li>用户请求创建一个新进程</li>
+<li>正在运行的进程执行了创建进程的系统调用</li>
+</ul>
+</li>
+<li>进程运行<ul>
+<li>内核为何选择一个就绪的进程，让它占用CPU并执行</li>
+<li>如何选择</li>
+</ul>
+</li>
+<li>进程等待（阻塞）<ul>
+<li>请求并等待系统服务，无法马上完成</li>
+<li>启动某种操作，无法马上完成</li>
+<li>需要的数据没有到达</li>
+<li>注：进程只能自己阻塞自己，因为只有进程自身才能知道何时需要等待某种事件的发生</li>
+</ul>
+</li>
+<li>进程唤醒<ul>
+<li>被阻塞进程需要的资源可被满足</li>
+<li>被阻塞进程等待的事件到达</li>
+<li>将该进程的PCB插入到就绪队列</li>
+<li>注：此时，进程只能被别的进程或操作系统唤醒，因为它本身不占用CPU无法唤醒自己。</li>
+</ul>
+</li>
+<li>进程结束<ul>
+<li>正常退出（自愿的）</li>
+<li>错误退出（自愿的）</li>
+<li>致命错误（强制性的被操作系统kill）</li>
+<li>被其他进程所杀（强制性的被如系统监视进程kill）</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>进程状态变化模型<br><img src="/image/change.png" alt="change"><ul>
+<li>创建状态（new）：一个进程正在被创建。</li>
+<li>运行状态（running）：一个进程正在占用CPU执行</li>
+<li>就绪状态（ready）：一个进程获得了除CPU之外的一切所需资源，一旦得到CPU即可运行。</li>
+<li>等待状态（又称阻塞状态blocked）：一个进程正在等待某一事件而暂停运行，如等待某资源、等待输入输出等。</li>
+<li>结束状态（exit）：一个进程正在从系统中消失时的状态，但是其PCB还存在，没有完全消失。</li>
+</ul>
+</li>
+<li>进程挂起模型<ul>
+<li>什么是挂起？进程在挂起状态时， 意味着进程没有占用内存空间。处在挂起状态的进程映像在磁盘上。</li>
+<li>为什么会挂起？合理且充分地利用系统资源。如一个进程暂时不运行，则会被从内存换出到外存中。</li>
+<li>挂起状态<ul>
+<li>阻塞挂起状态（Blocked-suspend）：进程在外存并等待某事件的出现；</li>
+<li>就绪挂起状态（Ready-suspend）：进程在外存，但只要进入内存，即可运行；</li>
+</ul>
+</li>
+<li>挂起状态转换<br><img src="/image/guaqi.png" alt="guaqi"><ul>
+<li>阻塞到阻塞挂起：没有进程处于就绪状态或就绪进程要求更多内存资源时，会进行这种转换，以提交新进程或运行就绪进程；</li>
+<li>就绪到就绪挂起：当有高优先级阻塞（系统认为会很快就绪的）进程和低优先级就绪进程时，系统会选择挂起低优先级就绪进程；</li>
+<li>运行到就绪挂起：对抢先式分时系统，当有高优先级阻塞挂起进程因事件出现而进入就绪挂起时，系统可能会把运行进程转到就绪挂起状态；</li>
+<li>阻塞挂起到就绪挂起：当有阻塞挂起进程因相关事件出现时，系统会把阻塞挂起进程转换为就绪挂起进程。</li>
+<li>解挂/激活（Activate）<ul>
+<li>就绪挂起到就绪：没有就绪进程或挂起就绪进程优先级高于就绪进程时，会进行这种转换；</li>
+<li>阻塞挂起到阻塞：当一个进程释放足够内存时，系统会把一个高优先级阻塞挂起进程转换为阻塞进程；</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>操作系统如何完成进程的调度过程？<br><img src="/image/processes.png" alt="processes"></p>
+<ul>
+<li>用进程的观点来看待OS：用户进程、磁盘管理进程、终端进程……</li>
+<li>最底层为CPU调度程序（包括中断处理等）；</li>
+<li>上面一层为一组各式各样的进程；</li>
+<li>由操作系统来维护一组<b>状态队列</b>，用来表示系统当中所有进程的当前状态；<ul>
+<li>不同的状态分别用不同的队列来表示（就绪队列、各种类型的阻塞队列）</li>
+<li>每个进程的PCB都根据它的状态加入到相应的队列当中，当一个进程的状态发生变化时，它的PCB从一个状态队列中脱离出来，加入到另外一个队列。<br><img src="/image/que.png" alt="que"></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
 <p>(图片来源：<a href="http://www.topu.com/kvideo.php?do=course_progress&amp;kvideoid=4100&amp;classesid=808" target="_blank" rel="external">清华大学陈瑜老师操作系统公开课</a>)</p>
 
         </section>
         <hr/>
         <nav class="pagination" style="width:auto" role="pagination">
             
-            <a style="cursor:default" class="newer-posts" href="#">This is the First Post</a>
+            <a data-pjax class="newer-posts" href="/2015/01/09/操作系统之线程管理/">← Prev Post</a>
             
             <a class="share-button" data-original-title title>Share this Post</a>
             
-            <a data-pjax class="older-posts" href="/2015/01/08/虚拟内存管理（下）/">Next Post →</a>
+            <a data-pjax class="older-posts" href="/2015/01/08/操作系统之虚拟内存管理（下）/">Next Post →</a>
             
         </nav>
         <br/>
@@ -561,6 +688,8 @@
 
   
 <footer class="site-footer">
+<a target="_blank" href="http://mail.qq.com/cgi-bin/qm_share?t=qm_mailme&email=QS80IC8vNCAvdHQBJy45LCAoLW8iLiw" style="text-decoration:none;">给我写信</a>
+
     
     <div class="inner">
         <section class="copyright"><a href="/"></a> &copy; KongnuanZhao 2014</section>
