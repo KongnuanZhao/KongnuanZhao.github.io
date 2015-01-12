@@ -5,7 +5,7 @@
   <meta name="baidu-site-verification" content="AQ0sUK7UOM" />
   <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" >
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
-  <title>论文数据分析 | KongnuanZhao</title>
+  <title>WebServices下的三个技术基础 | KongnuanZhao</title>
   <meta name="description" content="" />
   <meta name="HandheldFriendly" content="True" />
   <meta name="MobileOptimized" content="320" />
@@ -470,7 +470,7 @@
                 
                 <div id="nav-container">
                     <div class="post-navbar" style="line-height: 63px;display:none">
-                        <li id="navbar-title"><a href="#">论文数据分析</a></li>
+                        <li id="navbar-title"><a href="#">WebServices下的三个技术基础</a></li>
                         <li id="navbar-toc" style="border-left: none">
                             <a style="padding-right: 15px">
                                 <span id="toc-content" >Introduction</span><i class="fa fa-chevron-down" ></i>
@@ -498,228 +498,91 @@
     <span class="post-meta">
                   <div class="tag-tile">
                       
-                      
-                      <a data-pjax href='/tags/R/' style='color:#D5D5D5'>R</a>
-                      
-                      <a data-pjax href='/tags/数据分析/' style='color:#D5D5D5'>数据分析</a>
-                      
-                      
                   </div>
-                <h1 class="post-title" style="margin: 14px 0;color:#50585D">论文数据分析</h1>
+                <h1 class="post-title" style="margin: 14px 0;color:#50585D">WebServices下的三个技术基础</h1>
 
                     <div class="post-meta">
                         Post on<span class="fa fa-clock-o"></span>
-                        <time datetime="2014-12-28T10:20:28.000Z"
-                              itemprop="datePublished">Dec 28 2014</time>
+                        <time datetime="2015-01-12T07:16:03.000Z"
+                              itemprop="datePublished">Jan 12 2015</time>
                         By 赵空暖
                     </div>
     </span>
 
         <section class="post-content">
-            <p>echarts源码 ：<a class="fa fa-github" href="https://github.com/KongnuanZhao/echarts" target="_blank">&nbsp;&nbsp;&nbsp;echarts</a><br>recharts源码：<a class="fa fa-github" href="https://github.com/KongnuanZhao/recharts" target="_blank">&nbsp;&nbsp;&nbsp;recharts</a><br>以iris数据集做一简单示例</p>
-<figure class="highlight r"><pre><div class="line">head(iris)</div><div class="line">dat = ddply(iris, .(Species), colwise(mean)) </div><div class="line">dat[,<span class="number">1</span>]</div><div class="line">rownames(dat) = dat[,<span class="number">1</span>]</div><div class="line">dat = dat[, -<span class="number">1</span>]</div><div class="line">plot(eBar(dat))</div><div class="line">print(eBar(dat))<span class="comment">#打印代码插入文章中</span></div></pre></figure>
+            <h1 id="web_services的三个技术基础">web services的三个技术基础</h1>
+<ul>
+<li>SOAP(Simple Object Access Protocol) - 简单对象访问协议</li>
+<li>WSDL(Web Services Definition Language) - WEB SERVICES定义语言</li>
+<li>UDDI(Universal Description,Discovery and Integration) - 统一描述、发现、集成</li>
+</ul>
+<p>下面分开来说，</p>
+<h2 id="SOAP">SOAP</h2>
+<p><img src="/image/soap.png" alt="soap"><br>是一个基于XML的协议，其定义了一套编码规则，该规则定义如何将数据表示为消息，以及怎样通过http协议来传输SOAP消息，它主要由以下四部分组成:</p>
+<ul>
+<li>SOAP信封（Envelope）定义了一个框架，该框架描述了消息中的内容是什么，包括消息的内容、发送者、接受者、处理者以及如何处理等信息。</li>
+<li>SOAP编码规则，它定义了一种序列化的机制，用于交换应用程序所定义的数据类型的实例。</li>
+<li>SOAP RPC表示，它定义了用于表示远程调用和应答的协定。</li>
+<li>SOAP绑定，它定义了一种使用底层传输协议来完成在结点间交换SOAP信封的约定。<br>举个栗子，以下是 SOAP 1.2 请求和响应示例：</li>
+</ul>
+<figure class="highlight xml"><pre><div class="line">POST /WebServices/MobileCodeWS.asmx HTTP/1.1</div><div class="line">Host: webservice.webxml.com.cn</div><div class="line">Content-Type: application/soap+xml; charset=utf-8</div><div class="line">Content-Length: length</div><div class="line"></div><div class="line"><span class="pi">&lt;?xml version="1.0" encoding="utf-8"?&gt;</span></div><div class="line"><span class="tag">&lt;<span class="title">soap12:Envelope</span> <span class="attribute">xmlns:xsi</span>=<span class="value">"http://www.w3.org/2001/XMLSchema-instance"</span> <span class="attribute">xmlns:xsd</span>=<span class="value">"http://www.w3.org/2001/XMLSchema"</span> <span class="attribute">xmlns:soap12</span>=<span class="value">"http://www.w3.org/2003/05/soap-envelope"</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="title">soap12:Body</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="title">getMobileCodeInfo</span> <span class="attribute">xmlns</span>=<span class="value">"http://WebXml.com.cn/"</span>&gt;</span></div><div class="line">      <span class="tag">&lt;<span class="title">mobileCode</span>&gt;</span>string<span class="tag">&lt;/<span class="title">mobileCode</span>&gt;</span></div><div class="line">      <span class="tag">&lt;<span class="title">userID</span>&gt;</span>string<span class="tag">&lt;/<span class="title">userID</span>&gt;</span></div><div class="line">    <span class="tag">&lt;/<span class="title">getMobileCodeInfo</span>&gt;</span></div><div class="line">  <span class="tag">&lt;/<span class="title">soap12:Body</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="title">soap12:Envelope</span>&gt;</span></div></pre></figure>
 
-<p>（如加载缓慢请重新刷新该页面）</p>
-<script src="http://echarts.baidu.com/doc/example/www/js/echarts.js"></script>
-<div id="eBarID19701c023cfb" style="width:100%; height:450px; ;border:1px solid #ccc;padding:5px;"></div>
-<script>
 
-   require.config({
-        paths:{ 
-            'echarts': 'http://echarts.baidu.com/build/dist'
-        }
-    });
 
-    // Step:4 require echarts and use it in the callback.
-    require(
-        [
-            'echarts',
-            'echarts/chart/bar',
-            'echarts/chart/line',
-            'echarts/chart/scatter',
-            'echarts/chart/k',
-            'echarts/chart/pie',
-            'echarts/chart/map',
-            'echarts/chart/force',
-            'echarts/chart/radar'
-        ],
-    function(ec) {
-        var EChart_eBarID19701c023cfb = ec.init(document.getElementById('eBarID19701c023cfb'))
-        var option_eBarID19701c023cfb = 
-{
-    "title" : {
-        "text" : "",
-        "subtext" : "",
-        "x" : "center",
-        "y" : "top"
-    },
-    "calculable" : true,
-    "tooltip" : {
-        "show" : true,
-        "trigger" : "item"
-    },
-    "toolbox" : {
-        "show" : true,
-        "x" : "right",
-        "y" : "top",
-        "orient" : "horizontal",
-        "feature" : {
-            "mark" : {
-                "show" : true
-            },
-            "dataZoom" : {
-                "show" : false
-            },
-            "magicType" : {
-                "show" : true,
-                "type" : [
-                    "line",
-                    "bar",
-                    "stack",
-                    "tiled"
-                ]
-            },
-            "restore" : {
-                "show" : true
-            },
-            "dataView" : {
-                "show" : {
-                    "readOnly" : false
-                }
-            },
-            "saveAsImage" : {
-                "show" : true
-            }
-        }
-    },
-    "legend" : {
-        "show" : true,
-        "orient" : "horizontal",
-        "x" : "left",
-        "y" : "top",
-        "data" : [
-            "Sepal.Length",
-            "Sepal.Width",
-            "Petal.Length",
-            "Petal.Width"
-        ]
-    },
-    "xAxis" : {
-        "position" : "bottom",
-        "name" : "",
-        "nameLocation" : "start",
-        "scale" : true,
-        "precision" : 2,
-        "power" : 2,
-        "axisLine" : {
-            "show" : true
-        },
-        "axisTick" : {
-            "show" : false
-        },
-        "axisLable" : {
-            "show" : true,
-            "textStyle" : {
-                "color" : "black"
-            }
-        },
-        "splitLine" : {
-            "show" : true
-        },
-        "splitArea" : {
-            "show" : false
-        },
-        "type" : "category",
-        "data" : [
-            "setosa",
-            "versicolor",
-            "virginica"
-        ],
-        "boundaryGap" : true
-    },
-    "yAxis" : {
-        "position" : "left",
-        "name" : "",
-        "nameLocation" : "start",
-        "scale" : true,
-        "precision" : 2,
-        "power" : 2,
-        "axisLine" : {
-            "show" : true
-        },
-        "axisTick" : {
-            "show" : false
-        },
-        "axisLable" : {
-            "show" : true
-        },
-        "splitLine" : {
-            "show" : true
-        },
-        "splitArea" : {
-            "show" : false
-        },
-        "type" : "value",
-        "boundaryGap" : [
-            0,
-            0
-        ]
-    },
-    "series" : [
-        {
-            "type" : "bar",
-            "name" : "Sepal.Length",
-            "data" : [
-                5.006,
-                5.936,
-                6.588
-            ]
-        },
-        {
-            "type" : "bar",
-            "name" : "Sepal.Width",
-            "data" : [
-                3.428,
-                2.77,
-                2.974
-            ]
-        },
-        {
-            "type" : "bar",
-            "name" : "Petal.Length",
-            "data" : [
-                1.462,
-                4.26,
-                5.552
-            ]
-        },
-        {
-            "type" : "bar",
-            "name" : "Petal.Width",
-            "data" : [
-                0.246,
-                1.326,
-                2.026
-            ]
-        }
-    ]
-}
-  EChart_eBarID19701c023cfb.setOption(option_eBarID19701c023cfb);
-        }
-    );
-</script>
+<figure class="highlight xml"><pre><div class="line">HTTP/1.1 200 OK</div><div class="line">Content-Type: application/soap+xml; charset=utf-8</div><div class="line">Content-Length: length</div><div class="line"></div><div class="line"><span class="pi">&lt;?xml version="1.0" encoding="utf-8"?&gt;</span></div><div class="line"><span class="tag">&lt;<span class="title">soap12:Envelope</span> <span class="attribute">xmlns:xsi</span>=<span class="value">"http://www.w3.org/2001/XMLSchema-instance"</span> <span class="attribute">xmlns:xsd</span>=<span class="value">"http://www.w3.org/2001/XMLSchema"</span> <span class="attribute">xmlns:soap12</span>=<span class="value">"http://www.w3.org/2003/05/soap-envelope"</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="title">soap12:Body</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="title">getMobileCodeInfoResponse</span> <span class="attribute">xmlns</span>=<span class="value">"http://WebXml.com.cn/"</span>&gt;</span></div><div class="line">      <span class="tag">&lt;<span class="title">getMobileCodeInfoResult</span>&gt;</span>string<span class="tag">&lt;/<span class="title">getMobileCodeInfoResult</span>&gt;</span></div><div class="line">    <span class="tag">&lt;/<span class="title">getMobileCodeInfoResponse</span>&gt;</span></div><div class="line">  <span class="tag">&lt;/<span class="title">soap12:Body</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="title">soap12:Envelope</span>&gt;</span></div></pre></figure>
 
-<p>——未完待续——</p>
+<p><b>HTTP GET</b><br>以下是 HTTP GET 请求和响应示例。所显示的占位符需替换为实际值。</p>
+<figure class="highlight bash"><pre><div class="line">GET /WebServices/MobileCodeWS.asmx/getMobileCodeInfo?mobileCode=string&userID=string HTTP/<span class="number">1.1</span></div><div class="line">Host: webservice.webxml.com.cn</div></pre></figure>
+
+
+
+<figure class="highlight bash"><pre><div class="line">HTTP/<span class="number">1.1</span> <span class="number">200</span> OK</div><div class="line">Content-Type: text/xml; charset=utf-<span class="number">8</span></div><div class="line">Content-Length: length</div><div class="line"></div><div class="line">&lt;?xml version=<span class="string">"1.0"</span> encoding=<span class="string">"utf-8"</span>?&gt;</div><div class="line">&lt;string xmlns=<span class="string">"http://WebXml.com.cn/"</span>&gt;string&lt;/string&gt;</div></pre></figure>
+
+<p><b>HTTP POST</b><br>以下是 HTTP POST 请求和响应示例。所显示的占位符需替换为实际值。</p>
+<figure class="highlight bash"><pre><div class="line">POST /WebServices/MobileCodeWS.asmx/getMobileCodeInfo HTTP/<span class="number">1.1</span></div><div class="line">Host: webservice.webxml.com.cn</div><div class="line">Content-Type: application/x-www-form-urlencoded</div><div class="line">Content-Length: length</div><div class="line"></div><div class="line">mobileCode=string&userID=string</div></pre></figure>
+
+
+
+<figure class="highlight bash"><pre><div class="line">HTTP/<span class="number">1.1</span> <span class="number">200</span> OK</div><div class="line">Content-Type: text/xml; charset=utf-<span class="number">8</span></div><div class="line">Content-Length: length</div><div class="line"></div><div class="line">&lt;?xml version=<span class="string">"1.0"</span> encoding=<span class="string">"utf-8"</span>?&gt;</div><div class="line">&lt;string xmlns=<span class="string">"http://WebXml.com.cn/"</span>&gt;string&lt;/string&gt;</div></pre></figure>
+
+<h2 id="WSDL">WSDL</h2>
+<p><img src="/image/webservices.png" alt="webservices"><br>一次Web Services的调用实际上是发送SOAP消息（即XML文档），以一个<a href="http://webservice.webxml.com.cn/WebServices/MobileCodeWS.asmx?wsdl" target="_blank" rel="external">国内手机号码归属地查询WEB服务 通讯和通信</a>Services为例：<br>分析一个portType结点</p>
+<figure class="highlight xml"><pre><div class="line"><span class="tag">&lt;<span class="title">wsdl:portType</span> <span class="attribute">name</span>=<span class="value">"MobileCodeWSSoap"</span>&gt;</span></div><div class="line"> <span class="tag">&lt;<span class="title">wsdl:operation</span> <span class="attribute">name</span>=<span class="value">"getMobileCodeInfo"</span>&gt;</span></div><div class="line">   <span class="tag">&lt;<span class="title">wsdl:documentation</span> <span class="attribute">xmlns:wsdl</span>=<span class="value">"http://schemas.xmlsoap.org/wsdl/"</span>&gt;</span>...<span class="tag">&lt;/<span class="title">wsdl:documentation</span>&gt;</span></div><div class="line">   <span class="tag">&lt;<span class="title">wsdl:input</span> <span class="attribute">message</span>=<span class="value">"tns:getMobileCodeInfoSoapIn"</span>/&gt;</span></div><div class="line">   <span class="tag">&lt;<span class="title">wsdl:output</span> <span class="attribute">message</span>=<span class="value">"tns:getMobileCodeInfoSoapOut"</span>/&gt;</span></div><div class="line"> <span class="tag">&lt;/<span class="title">wsdl:operation</span>&gt;</span></div><div class="line"> <span class="tag">&lt;<span class="title">wsdl:operation</span> <span class="attribute">name</span>=<span class="value">"getDatabaseInfo"</span>&gt;</span></div><div class="line">   <span class="tag">&lt;<span class="title">wsdl:documentation</span> <span class="attribute">xmlns:wsdl</span>=<span class="value">"http://schemas.xmlsoap.org/wsdl/"</span>&gt;</span></div><div class="line">   <span class="tag">&lt;<span class="title">br</span> /&gt;</span><span class="tag">&lt;<span class="title">h3</span>&gt;</span>获得国内手机号码归属地数据库信息<span class="tag">&lt;/<span class="title">h3</span>&gt;</span><span class="tag">&lt;<span class="title">p</span>&gt;</span>输入参数：无；返回数据：一维字符串数组（省份 城市 记录数量）。<span class="tag">&lt;/<span class="title">p</span>&gt;</span><span class="tag">&lt;<span class="title">br</span> /&gt;</span></div><div class="line">  <span class="tag">&lt;/<span class="title">wsdl:documentation</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="title">wsdl:input</span> <span class="attribute">message</span>=<span class="value">"tns:getDatabaseInfoSoapIn"</span>/&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="title">wsdl:output</span> <span class="attribute">message</span>=<span class="value">"tns:getDatabaseInfoSoapOut"</span>/&gt;</span></div><div class="line"> <span class="tag">&lt;/<span class="title">wsdl:operation</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="title">wsdl:portType</span>&gt;</span></div></pre></figure>
+
+<p>该结点里面有两个operation结点，分别为<code>getMobileCodeInfo</code>和<code>getDatabaseInfo</code>,子节点<code>getMobileCodeInfo</code>下有input和output即输入和输出，怎么知道输入的是什么呢？往上面去找message元素，即</p>
+<figure class="highlight xml"><pre><div class="line"><span class="tag">&lt;<span class="title">wsdl:message</span> <span class="attribute">name</span>=<span class="value">"getMobileCodeInfoSoapIn"</span>&gt;</span></div><div class="line">	<span class="tag">&lt;<span class="title">wsdl:part</span> <span class="attribute">name</span>=<span class="value">"parameters"</span> <span class="attribute">element</span>=<span class="value">"tns:getMobileCodeInfo"</span>/&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="title">wsdl:message</span>&gt;</span></div></pre></figure>
+
+<p>可知这是一个参数，具体是什么类型，查看type元素schema定义</p>
+<figure class="highlight xml"><pre><div class="line"><span class="tag">&lt;<span class="title">s:element</span> <span class="attribute">name</span>=<span class="value">"getMobileCodeInfo"</span>&gt;</span></div><div class="line">	<span class="tag">&lt;<span class="title">s:complexType</span>&gt;</span></div><div class="line">		<span class="tag">&lt;<span class="title">s:sequence</span>&gt;</span></div><div class="line">		 <span class="tag">&lt;<span class="title">s:element</span> <span class="attribute">minOccurs</span>=<span class="value">"0"</span> <span class="attribute">maxOccurs</span>=<span class="value">"1"</span> <span class="attribute">name</span>=<span class="value">"mobileCode"</span> <span class="attribute">type</span>=<span class="value">"s:string"</span>/&gt;</span></div><div class="line">		 <span class="tag">&lt;<span class="title">s:element</span> <span class="attribute">minOccurs</span>=<span class="value">"0"</span> <span class="attribute">maxOccurs</span>=<span class="value">"1"</span> <span class="attribute">name</span>=<span class="value">"userID"</span> <span class="attribute">type</span>=<span class="value">"s:string"</span>/&gt;</span></div><div class="line">		<span class="tag">&lt;/<span class="title">s:sequence</span>&gt;</span></div><div class="line">	<span class="tag">&lt;/<span class="title">s:complexType</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="title">s:element</span>&gt;</span></div></pre></figure>
+
+<p>可知这个输入参数是个复杂类型，有两个字符串类型的输入参数包含在一个有序序列当中，即<code>name=&quot;mobileCode&quot;</code>和<code>name=&quot;userID&quot;</code>最小出现0次，最多出现1次<br>即传入的消息是：</p>
+<figure class="highlight xml"><pre><div class="line"><span class="pi">&lt;?xml version="1.0" encoding="utf-8"?&gt;</span></div><div class="line"><span class="tag">&lt;<span class="title">soap12:Envelope</span> <span class="attribute">xmlns:xsi</span>=<span class="value">"http://www.w3.org/2001/XMLSchema-instance"</span> <span class="attribute">xmlns:xsd</span>=<span class="value">"http://www.w3.org/2001/XMLSchema"</span> <span class="attribute">xmlns:soap12</span>=<span class="value">"http://www.w3.org/2003/05/soap-envelope"</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="title">soap12:Body</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="title">getMobileCodeInfo</span> <span class="attribute">xmlns</span>=<span class="value">"http://WebXml.com.cn/"</span>&gt;</span></div><div class="line">      <span class="tag">&lt;<span class="title">mobileCode</span>&gt;</span>string<span class="tag">&lt;/<span class="title">mobileCode</span>&gt;</span></div><div class="line">      <span class="tag">&lt;<span class="title">userID</span>&gt;</span>string<span class="tag">&lt;/<span class="title">userID</span>&gt;</span></div><div class="line">    <span class="tag">&lt;/<span class="title">getMobileCodeInfo</span>&gt;</span></div><div class="line">  <span class="tag">&lt;/<span class="title">soap12:Body</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="title">soap12:Envelope</span>&gt;</span></div></pre></figure>
+
+<p>类似的分析output返回的消息,返回的消息即：</p>
+<figure class="highlight xml"><pre><div class="line">HTTP/1.1 200 OK</div><div class="line">Content-Type: application/soap+xml; charset=utf-8</div><div class="line">Content-Length: length</div><div class="line"></div><div class="line"><span class="pi">&lt;?xml version="1.0" encoding="utf-8"?&gt;</span></div><div class="line"><span class="tag">&lt;<span class="title">soap12:Envelope</span> <span class="attribute">xmlns:xsi</span>=<span class="value">"http://www.w3.org/2001/XMLSchema-instance"</span> <span class="attribute">xmlns:xsd</span>=<span class="value">"http://www.w3.org/2001/XMLSchema"</span> <span class="attribute">xmlns:soap12</span>=<span class="value">"http://www.w3.org/2003/05/soap-envelope"</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="title">soap12:Body</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="title">getMobileCodeInfoResponse</span> <span class="attribute">xmlns</span>=<span class="value">"http://WebXml.com.cn/"</span>&gt;</span></div><div class="line">      <span class="tag">&lt;<span class="title">getMobileCodeInfoResult</span>&gt;</span>string<span class="tag">&lt;/<span class="title">getMobileCodeInfoResult</span>&gt;</span></div><div class="line">    <span class="tag">&lt;/<span class="title">getMobileCodeInfoResponse</span>&gt;</span></div><div class="line">  <span class="tag">&lt;/<span class="title">soap12:Body</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="title">soap12:Envelope</span>&gt;</span></div></pre></figure>
+
+<p>测试：<br><img src="/image/telnum.png" alt="telnum"><br>返回：183<strong><em>**</em></strong>：山东 潍坊 山东移动全球通卡</p>
+<p>调用一次web services的本质：<br>1.客户端把调用方法参数，转换XML文档片段（SOAP消息）—该文档片段必须符合WSDL定义的格式，即input消息。<br>2.通过网络，把XML文档片段传给服务器。<br>3.服务器收到XML文档片段。<br>4.服务器解析XML文档片段，提取其中的数据。并把数据转换成web services所需要的参数值。<br>5.服务器端执行方法。<br>6.把执行方法得到的返回值，再次转换生成为XML文档片段（SOAP消息）即output消息。<br>7.通过网络把XML文档片段传给客户端<br>8.客户端接收到XML片段。<br>9.客户端解析XML片段，提取其中的数据，并把数据转换成调用Web Services的返回值。</p>
+<p>从上面的调用本质来看，<br>1.和具体的语言无关，唯一的要求是该语言支持XML文档的生成、解析、支持网络传输。<br>2.客户端只是发送和接收消息，实际调用处理方法是在服务器端进行的。</p>
+<p>所以，WSDL文档描述了</p>
+<ul>
+<li>what：该web services包含什么操作？</li>
+<li>how: 该web services怎样调用？</li>
+<li>where：该web services的服务地址</li>
+</ul>
+<p>即只要得到了web services的WSDL文档，程序就可以调用web services。</p>
+<h2 id="UDDI">UDDI</h2>
+<p>要调用一个web Service需要几方面的信息。首先需要找到满足需要的Web Service,还需要了解传送请求的模式，即如何调用这个Web Service。web是一个不固定的环境，新的web service在不断增加，旧的web service在不断删除，已有的web service的调用方式可能会随时发生变化，所系客观上需要在web service的发布者和调用者之间建立一种便于查找和发布的机制。UDDI规范为解决这些问题提供了一种途径，web Service的发布者可以将其注册到注册中心，是一种目录服务，web service的调用者可以从注册中心查找到需要的web service并进行调用。</p>
 
         </section>
         <hr/>
         <nav class="pagination" style="width:auto" role="pagination">
             
-            <a data-pjax class="newer-posts" href="/2014/12/28/潍坊物价信息数据分析及展现/">← Prev Post</a>
+            <a style="cursor:default" class="newer-posts" href="#">This is the First Post</a>
             
             <a class="share-button" data-original-title title>Share this Post</a>
             
-            <a data-pjax class="older-posts" href="/2014/12/28/金融时间序列结业作业/">Next Post →</a>
+            <a data-pjax class="older-posts" href="/2015/01/09/操作系统之线程管理/">Next Post →</a>
             
         </nav>
         <br/>
