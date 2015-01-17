@@ -580,6 +580,12 @@
 <li>基于浏览器的应用程序中使用了HTTPS 安全协议，使用URL-based 方式录制</li>
 </ul>
 </li>
+</ul>
+<p>下面的这段引用来自用户指导手册</p>
+<blockquote>
+<p>基于HTML 的脚本：此选项为Web (HTTP/HTML) Vuser 的默认录制级别。它指示VuGen 在当前网页的上下文中录制HTML 操作。它在录制会话期间不会录制所有资源，而是在回放期间下载这些资源。建议对带有小程序和VB 脚本的浏览器应用程序使用此选项。<br>基于URL 的脚本：录制来自服务器的所有请求和资源。它将每个HTTP 资源自动作为URL 步骤 （web_url 语句）进行录制，将表单作为web_submit_data 进行录制。它不生成 web_link、web_image 和 web_submit_form 函数，也不录制框架。建议对非浏览器应用程序使用此选项。</p>
+</blockquote>
+<ul>
 <li>运行时设置解析<ul>
 <li>Think Time(思考时间)</li>
 <li>Run Logic(Action执行顺序和迭代)</li>
@@ -588,15 +594,33 @@
 </li>
 </ul>
 <h1 id="课后作业">课后作业</h1>
-<p>1.描述使用LoadRunner分别基于HTML-based script和URL-based script方式录制的区别和各自的使用场景。<br>分别使用HTML-based script和URL-based script录制，截取一小部分<br>HTML-based script</p>
+<p><b>1.描述使用LoadRunner分别基于HTML-based script和URL-based script方式录制的区别和各自的使用场景。</b><br>分别使用HTML-based script和URL-based script录制，截取一小部分<br>HTML-based script</p>
 <figure class="highlight bash"><pre><div class="line">web_url(<span class="string">"www.baidu.com"</span>, </div><div class="line">		<span class="string">"URL=http://www.baidu.com/"</span>, </div><div class="line">		<span class="string">"Resource=0"</span>, </div><div class="line">		<span class="string">"RecContentType=text/html"</span>, </div><div class="line">		<span class="string">"Referer="</span>, </div><div class="line">		<span class="string">"Snapshot=t36.inf"</span>, </div><div class="line">		<span class="string">"Mode=HTML"</span>, </div><div class="line">		EXTRARES, </div><div class="line">		<span class="string">"Url=http://p0.qhimg.com/d/webidnameplate/4e323a1ec97c6d0eabaf3952cbe376c5.png"</span>, <span class="string">"Referer="</span>, ENDITEM, </div><div class="line">		<span class="string">"Url=http://suggestion.baidu.com/su?wd=&json=1&p=3&sid=8555_1459_11085_10873_11111_11066_10922_11150_10700_10991_10618&req=2&cb=jQuery110209753620238043368_1421395272889&_=1421395272890"</span>, ENDITEM, </div><div class="line">		<span class="string">"Url=/cache/fpid/chromelib_1_1.js?_=1421395272891"</span>, ENDITEM, </div><div class="line">		<span class="string">"Url=http://dj1.baidu.com/v.gif?mod=superplus%3Aweather&submod=weather_tpl&utype=&superver=superplus&portrait=c978b6b5c0ef45b8f6ccc7bb06&glogid=4027434301&type=2011&pid=315&version=PCHome&terminal=PC&qid=0xc049195f0000585b&sid=8555_1459_11085_10873_11111_11066_10922_11150_10700_10991_10618&super_frm=&from_login=&from_reg=&query=&curcard=2&curcardtab=&_r=0.8888055183924735&m=superplus%3Aweather_weatherShow&logactid=5000000000&showType=weatherMod"</span>, ENDITEM, </div><div class="line">		LAST);</div></pre></figure>
 
 <p>URL-based script</p>
 <figure class="highlight bash"><pre><div class="line">web_url(<span class="string">"4e323a1ec97c6d0eabaf3952cbe376c5.png"</span>, </div><div class="line">		<span class="string">"URL=http://p0.qhimg.com/d/webidnameplate/4e323a1ec97c6d0eabaf3952cbe376c5.png"</span>, </div><div class="line">		<span class="string">"Resource=1"</span>, </div><div class="line">		<span class="string">"RecContentType=image/png"</span>, </div><div class="line">		<span class="string">"Referer="</span>, </div><div class="line">		<span class="string">"Snapshot=t46.inf"</span>, </div><div class="line">		LAST);</div><div class="line">web_url(<span class="string">"su"</span>, </div><div class="line">		<span class="string">"URL=http://suggestion.baidu.com/su?wd=&json=1&p=3&sid=8555_1459_11085_10873_11111_11066_10922_11150_10700_10991_10618&req=2&cb=jQuery110207037915396504104_1421395381446&_=1421395381447"</span>, </div><div class="line">		<span class="string">"Resource=1"</span>, </div><div class="line">		<span class="string">"RecContentType=text/javascript"</span>, </div><div class="line">		<span class="string">"Referer=http://www.baidu.com/"</span>, </div><div class="line">		<span class="string">"Snapshot=t50.inf"</span>, </div><div class="line">		LAST);</div><div class="line">web_url(<span class="string">"v.gif"</span>, </div><div class="line">		<span class="string">"URL=http://dj1.baidu.com/v.gif?mod=superplus%3Aweather&submod=weather_tpl&utype=&superver=superplus&portrait=c978b6b5c0ef45b8f6ccc7bb06&glogid=4038189714&type=2011&pid=315&version=PCHome&terminal=PC&qid=0x8d8956a9000066c7&sid=8555_1459_11085_10873_11111_11066_10922_11150_10700_10991_10618&super_frm=&from_login=&from_reg=&query=&curcard=2&curcardtab=&_r=0.8510286659002304&m=superplus%3Aweather_weatherShow&logactid=5000000000&showType=weatherMod"</span>, </div><div class="line">		<span class="string">"Resource=1"</span>, </div><div class="line">		<span class="string">"RecContentType=image/gif"</span>, </div><div class="line">		<span class="string">"Referer=http://www.baidu.com/"</span>, </div><div class="line">		LAST);</div></pre></figure>
 
-<p>2.录制LoadRunner安装后自带的订票网站的打开首页和登录操作，录制在action中，录制生成脚本后，在登录前添加等待3秒的思考时间，同时，在登录函数后面添加lr_log_message函数，使用这个函数打印出自己姓名的全拼，将该录制脚本保存目录中的action.c文件作为附件提交作为作业。</p>
-<p>3.HTTP协议中的If-Modified-Since请求头的含义是什么？LoadRunner中通过什么方式使得请求中包括If-Modified-Since请求头？<br>If-Modified-Since,从上次请求之后是否修改，即最后的修改时间。<br>4.使用LoadRunner创建一个HTTP协议的空脚本，修改脚本，保证脚本中有两个action,分别叫Action1和Action2,通过修改运行时设置中的配置，需要达到在运行脚本时，50%的概率运行Action1，50%的概率运行Action2。将该脚本保存后打包成压缩包作为附件形式提交作为作业。</p>
-<p>（考试周TT 未完待续……）</p>
+<p>1.可以看出HTML-based script是将一个页面的多次请求URL放在一个web_url当中，而URL-based script则是将每条客户端发出的请求单独为一个web_url.<br>下面的这段引用来自用户指导手册</p>
+<blockquote>
+<p>基于HTML 的脚本：此选项为Web (HTTP/HTML) Vuser 的默认录制级别。它指示VuGen 在当前网页的上下文中录制HTML 操作。它在录制会话期间不会录制所有资源，而是在回放期间下载这些资源。建议对带有小程序和VB 脚本的浏览器应用程序使用此选项。<br>基于URL 的脚本：录制来自服务器的所有请求和资源。它将每个HTTP 资源自动作为URL 步骤 （web_url 语句）进行录制，将表单作为web_submit_data 进行录制。它不生成 web_link、web_image 和 web_submit_form 函数，也不录制框架。建议对非浏览器应用程序使用此选项。</p>
+</blockquote>
+<p>2.HTML-based script方式录制一般是web_submit_form</p>
+<figure class="highlight bash"><pre><div class="line">web_submit_form(<span class="string">"login.pl"</span>, </div><div class="line">	<span class="string">"Snapshot=t2.inf"</span>, </div><div class="line">	ITEMDATA, </div><div class="line">	<span class="string">"Name=username"</span>, <span class="string">"Value=jojo"</span>, ENDITEM, </div><div class="line">	<span class="string">"Name=password"</span>, <span class="string">"Value=bean"</span>, ENDITEM, </div><div class="line">	LAST);</div></pre></figure>
+
+<p>URL-based script方式录制一般是web_submit_data</p>
+<figure class="highlight bash"><pre><div class="line">web_submit_data(<span class="string">"login.pl"</span>, </div><div class="line">		<span class="string">"Action=http://127.0.0.1:1080/WebTours/login.pl"</span>, </div><div class="line">		<span class="string">"Method=POST"</span>, </div><div class="line">		<span class="string">"RecContentType=text/html"</span>, </div><div class="line">		<span class="string">"Referer=http://127.0.0.1:1080/WebTours/nav.pl?in=home"</span>, </div><div class="line">		<span class="string">"Snapshot=t28.inf"</span>, </div><div class="line">		<span class="string">"Mode=HTTP"</span>, </div><div class="line">		ITEMDATA, </div><div class="line">		<span class="string">"Name=userSession"</span>, <span class="string">"Value=115148.735034427fQccQzDpAfiDDDDDDffDHpHHiDf"</span>, ENDITEM, </div><div class="line">		<span class="string">"Name=username"</span>, <span class="string">"Value=jojo"</span>, ENDITEM, </div><div class="line">		<span class="string">"Name=password"</span>, <span class="string">"Value=bean"</span>, ENDITEM, </div><div class="line">		<span class="string">"Name=login.x"</span>, <span class="string">"Value=67"</span>, ENDITEM, </div><div class="line">		<span class="string">"Name=login.y"</span>, <span class="string">"Value=1"</span>, ENDITEM, </div><div class="line">		<span class="string">"Name=JSFormSubmit"</span>, <span class="string">"Value=off"</span>, ENDITEM, </div><div class="line">		LAST);</div></pre></figure>
+
+<p>后者更全活些，无需从cache中取。<br>关于web_submit_data和web_submit_form，HTML-based script也可以出现web_submit_data,可以在高级选项中设置。但是URL-based script一定不会出现web_submit_form。<br>选择哪种方式录制，有以下参考原则：</p>
+<ul>
+<li>基于浏览器的应用程序推荐使用HTML-based Script</li>
+<li>不是基于浏览器的应用程序推荐使用URL-based Script</li>
+<li>如果基于浏览器的应用程序中包含了JavaScript 并且该脚本向服务器产生了请求，比如DataGrid的分页按钮等，flash等，也要使用URL-based 方式录制</li>
+<li>基于浏览器的应用程序中使用了HTTPS 安全协议，使用URL-based 方式录制</li>
+</ul>
+<p><b>2.录制LoadRunner安装后自带的订票网站的打开首页和登录操作，录制在action中，录制生成脚本后，在登录前添加等待3秒的思考时间，同时，在登录函数后面添加lr_log_message函数，使用这个函数打印出自己姓名的全拼，将该录制脚本保存目录中的action.c文件作为附件提交作为作业。</b><br>见附件（略）</p>
+<p><b>3.HTTP协议中的If-Modified-Since请求头的含义是什么？LoadRunner中通过什么方式使得请求中包括If-Modified-Since请求头？</b><br>If-Modified-Since,从上次请求之后是否修改，即最后的修改时间。不需要每次都去服务器请求完整的资源，只需要看If-Modified-Since得知最后是什么时间修改的，然后对比缓存中的，如果没有修改就直接从缓存中读取。<br><img src="/image/newer.png" alt="newer"></p>
+<p><b>4.使用LoadRunner创建一个HTTP协议的空脚本，修改脚本，保证脚本中有两个action,分别叫Action1和Action2,通过修改运行时设置中的配置，需要达到在运行脚本时，50%的概率运行Action1，50%的概率运行Action2。将该脚本保存后打包成压缩包作为附件形式提交作为作业。<b><br>循环10次 ，各占50%<br><img src="/image/action.png" alt="action"><br>见附件（略）</b></b></p>
+<p>（考试周TT 笔记没整理完 未完待续……）</p>
 
         </section>
         <hr/>
