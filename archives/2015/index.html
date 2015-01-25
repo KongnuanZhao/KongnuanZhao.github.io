@@ -49,6 +49,10 @@
                                 <div class="mp-scroll">
                                 
                                 <li class="search-archive-li mp-pjax">
+                                    <a href="/2015/01/20/LoadRunner脚本开发和常用函数/">LoadRunner脚本开发和常用函数</a>
+                                </li>
+                                
+                                <li class="search-archive-li mp-pjax">
                                     <a href="/2015/01/16/我想要最好的20岁/">我想要最好的20岁</a>
                                 </li>
                                 
@@ -217,7 +221,7 @@
                                 
                                 <li class="search-category-li mp-pjax">
                                     <a href="/categories/性能测试/">&nbsp;&nbsp;&nbsp;性能测试</a>
-                                    <small>4</small>
+                                    <small>5</small>
                                 </li>
                                 
                                 <li class="search-category-li mp-pjax">
@@ -299,7 +303,7 @@
                                 
                                 <li class="search-tag-li mp-pjax">
                                     <a href="/tags/性能测试/">&nbsp;&nbsp;&nbsp;性能测试</a>
-                                    <small>4</small>
+                                    <small>5</small>
                                 </li>
                                 
                                 <li class="search-tag-li mp-pjax">
@@ -355,6 +359,8 @@
         </nav>
         <div id="pjax">
             <div class="pjax-hidden" style="display: none">
+                
+                    <a  data-pjax href="/2015/01/20/LoadRunner脚本开发和常用函数/">LoadRunner脚本开发和常用函数</a>
                 
                     <a  data-pjax href="/2015/01/16/我想要最好的20岁/">我想要最好的20岁</a>
                 
@@ -506,6 +512,55 @@
   
 <main class="content" role="main">
 
+    
+    <article class="post">
+
+        <header class="post-header">
+            <div class="tag-tile">
+                
+                
+                <a data-pjax href='/tags/性能测试/'>性能测试</a>
+                
+                
+                <span class="fa fa-bookmark" style="float:right;color:#fa8072"></span>
+            </div>
+            <h1 class="post-title"><a data-pjax href="/2015/01/20/LoadRunner脚本开发和常用函数/">LoadRunner脚本开发和常用函数</a>
+            </h1>
+
+            <div class="post-meta">
+                Post on<span class="fa fa-clock-o"></span>
+                <time datetime="2015-01-20T13:15:11.000Z"
+                      itemprop="datePublished">Jan 20 2015</time>
+            </div>
+        </header>
+        <section class="post-excerpt">
+            <p>
+                
+                课堂笔记
+
+脚本开发的原则：简单、正确、高效
+
+LoadRunner实现机制
+
+解释执行C代码，不需要像java等一样需要编译。
+
+#include&lt;globals.h&gt;main(){	vuser_init();	Action();	vuser_end();}
+
+局部变量和全局变量
+
+局部变量
+
+Action(){    int a=10;		printf("%d",a);    int b=2;	lr_output_mes
+                
+            </p>
+            
+            <p>
+                <a data-pjax href="/2015/01/20/LoadRunner脚本开发和常用函数/"
+                   class="excerpt-link">Read More...</a>
+            </p>
+            
+        </section>
+    </article>
     
     <article class="post">
 
@@ -863,55 +918,6 @@ SOAP
             
             <p>
                 <a data-pjax href="/2015/01/07/谈谈抽象/"
-                   class="excerpt-link">Read More...</a>
-            </p>
-            
-        </section>
-    </article>
-    
-    <article class="post">
-
-        <header class="post-header">
-            <div class="tag-tile">
-                
-                
-                <a data-pjax href='/tags/操作系统/'>操作系统</a>
-                
-                
-                <span class="fa fa-bookmark" style="float:right;color:#fa8072"></span>
-            </div>
-            <h1 class="post-title"><a data-pjax href="/2015/01/07/计算机体系结构-内存结构/">计算机体系结构/内存结构</a>
-            </h1>
-
-            <div class="post-meta">
-                Post on<span class="fa fa-clock-o"></span>
-                <time datetime="2015-01-07T01:01:11.000Z"
-                      itemprop="datePublished">Jan 7 2015</time>
-            </div>
-        </header>
-        <section class="post-excerpt">
-            <p>
-                
-                
-
-为什么要学操作系统？因为他很酷！我们可以现在不酷，但是追求酷的心不能没有！O(∩_∩)O~　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　—by赵空暖
-
-课堂笔记
-计算机基本硬件结构
-
-内存的层次机构
-CPU要访问的指令或者数据所处的位置
-操作系统如何管理内存
-
-抽象：逻辑地址空间
-保护：独立地址空间
-共享：访问相同内存
-虚拟化：更多的地址空间，linux上的swap这张图展示了物理地址空间和逻辑地址空间之间
-                
-            </p>
-            
-            <p>
-                <a data-pjax href="/2015/01/07/计算机体系结构-内存结构/"
                    class="excerpt-link">Read More...</a>
             </p>
             

@@ -5,7 +5,7 @@
   <meta name="baidu-site-verification" content="AQ0sUK7UOM" />
   <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" >
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
-  <title>Archives: 2014/12 | KongnuanZhao</title>
+  <title>LoadRunner脚本开发和常用函数 | KongnuanZhao</title>
   <meta name="description" content="" />
   <meta name="HandheldFriendly" content="True" />
   <meta name="MobileOptimized" content="320" />
@@ -488,7 +488,7 @@
                 
                 <div id="nav-container">
                     <div class="post-navbar" style="line-height: 63px;display:none">
-                        <li id="navbar-title"><a href="#">undefined</a></li>
+                        <li id="navbar-title"><a href="#">LoadRunner脚本开发和常用函数</a></li>
                         <li id="navbar-toc" style="border-left: none">
                             <a style="padding-right: 15px">
                                 <span id="toc-content" >Introduction</span><i class="fa fa-chevron-down" ></i>
@@ -507,200 +507,137 @@
 
 
 <!-- -->
-<!--<body class="home-template">-->
+<!--<body class="post-template">-->
 <!---->
   
+
 <main class="content" role="main">
+    <article class="post" >
+    <span class="post-meta">
+                  <div class="tag-tile">
+                      
+                      
+                      <a data-pjax href='/tags/性能测试/' style='color:#D5D5D5'>性能测试</a>
+                      
+                      
+                  </div>
+                <h1 class="post-title" style="margin: 14px 0;color:#50585D">LoadRunner脚本开发和常用函数</h1>
 
-    
-    <article class="post">
+                    <div class="post-meta">
+                        Post on<span class="fa fa-clock-o"></span>
+                        <time datetime="2015-01-20T13:15:11.000Z"
+                              itemprop="datePublished">Jan 20 2015</time>
+                        By 赵空暖
+                    </div>
+    </span>
 
-        <header class="post-header">
-            <div class="tag-tile">
-                
-                
-                <a data-pjax href='/tags/点滴/'>点滴</a>
-                
-                
-                <span class="fa fa-bookmark" style="float:right;color:#fa8072"></span>
-            </div>
-            <h1 class="post-title"><a data-pjax href="/2014/12/15/记录总结这半学期/">记录总结这半学期</a>
-            </h1>
+        <section class="post-content">
+            <h1 id="课堂笔记">课堂笔记</h1>
+<blockquote>
+<p>脚本开发的原则：简单、正确、高效</p>
+</blockquote>
+<p>LoadRunner实现机制</p>
+<ul>
+<li>解释执行C代码，不需要像java等一样需要编译。<br><img src="/image/cccc.png" alt="cccc"></li>
+</ul>
+<figure class="highlight c"><pre><div class="line"><span class="preprocessor">#<span class="keyword">include</span>&lt;globals.h&gt;</span></div><div class="line">main(){</div><div class="line">	vuser_init();</div><div class="line">	Action();</div><div class="line">	vuser_end();</div><div class="line">}</div></pre></figure>
 
-            <div class="post-meta">
-                Post on<span class="fa fa-clock-o"></span>
-                <time datetime="2014-12-15T15:50:01.000Z"
-                      itemprop="datePublished">Dec 15 2014</time>
-            </div>
-        </header>
-        <section class="post-excerpt">
-            <p>
-                
-                
-我应该是说，这半学期，真的是说不上有什么收获，完全没有大一大二的充实，也少了那时候的冲劲。这半年各处涉猎，突然回首发现原来自己还是在起点。对于专业课，我不能拍着胸脯说每一个知识点自己都掌握的很好，很多东西学了会忘。只有真正理解的东西才是最深刻的。也才是真正属于自己的东西。这半年，自己在性格上开朗了很多，不知道是好事还是坏事。总之，学会正确的做人做事才是最重要的。一个属于自己博客，也终于在这学期落地了，想了很久，开始的时候是觉得没有必要
-                
-            </p>
-            
-            <p>
-                <a data-pjax href="/2014/12/15/记录总结这半学期/"
-                   class="excerpt-link">Read More...</a>
-            </p>
-            
+<h2 id="局部变量和全局变量">局部变量和全局变量</h2>
+<ul>
+<li>局部变量</li>
+</ul>
+<figure class="highlight c"><pre><div class="line">Action()</div><div class="line">{</div><div class="line">    <span class="keyword">int</span> a=<span class="number">10</span>;</div><div class="line">	</div><div class="line">	<span class="built_in">printf</span>(<span class="string">"%d"</span>,a);</div><div class="line">    <span class="keyword">int</span> b=<span class="number">2</span>;</div><div class="line">	lr_output_message(<span class="string">"%d"</span>,a);</div><div class="line">	lr_output_message(<span class="string">"%d"</span>,a);</div><div class="line">	lr_output_message(<span class="string">"%d"</span>,a);</div><div class="line"></div><div class="line">	<span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">}</div></pre></figure>
+
+
+
+<figure class="highlight bash"><pre><div class="line">Action.c (<span class="number">6</span>): illegal statement termination</div><div class="line">Action.c (<span class="number">6</span>): skipping `int<span class="string">'</span></div><div class="line">Action.c (6): undeclared identifier `b'</div><div class="line">e:\\hp\\mytest\\bian\\\\combined_bian.c (<span class="number">5</span>): <span class="number">3</span> errors, not writing pre_cci.ci</div></pre></figure>
+
+<p>以上例子可以看出LoadRunner虽然基本完全支持C，但是和C还有一点细微的差别。这里定义变量要提到前面去。</p>
+<figure class="highlight c"><pre><div class="line"><span class="keyword">int</span> a=<span class="number">10</span>;</div><div class="line"><span class="keyword">int</span> b=<span class="number">2</span>;</div><div class="line"><span class="built_in">printf</span>(<span class="string">"%d"</span>,a);</div></pre></figure>
+
+<p>实例二在函数外面定义，</p>
+<figure class="highlight c"><pre><div class="line"><span class="keyword">int</span> a=<span class="number">100</span>;</div><div class="line">Action()</div><div class="line">{</div><div class="line">   <span class="comment">// int a=10;</span></div><div class="line">	<span class="built_in">printf</span>(<span class="string">"%d"</span>,a);</div><div class="line"></div><div class="line">	lr_output_message(<span class="string">"%d"</span>,a);</div><div class="line">	lr_output_message(<span class="string">"%d"</span>,a);</div><div class="line">	lr_output_message(<span class="string">"%d"</span>,a);</div><div class="line"></div><div class="line">	</div><div class="line">	<span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">}</div></pre></figure>
+
+<p>输出结果</p>
+<figure class="highlight bash"><pre><div class="line">Starting iteration <span class="number">1</span>.</div><div class="line">Starting action Action.</div><div class="line">Action.c(<span class="number">7</span>): <span class="number">100</span></div><div class="line">Action.c(<span class="number">8</span>): <span class="number">100</span></div><div class="line">Action.c(<span class="number">9</span>): <span class="number">100</span></div><div class="line">Ending action Action.</div><div class="line">Ending iteration <span class="number">1</span>.</div><div class="line">Ending Vuser...</div><div class="line">Starting action vuser_end.</div><div class="line">Ending action vuser_end.</div><div class="line">Vuser Terminated.</div></pre></figure>
+
+<p>去掉注释，输出，可以看出，局部变量会覆盖文件级变量（即在函数外面定义的变量）</p>
+<figure class="highlight bash"><pre><div class="line">Starting iteration <span class="number">1</span>.</div><div class="line">Starting action Action.</div><div class="line">Action.c(<span class="number">7</span>): <span class="number">10</span></div><div class="line">Action.c(<span class="number">8</span>): <span class="number">10</span></div><div class="line">Action.c(<span class="number">9</span>): <span class="number">10</span></div><div class="line">Ending action Action.</div><div class="line">Ending iteration <span class="number">1</span>.</div><div class="line">Ending Vuser...</div><div class="line">Starting action vuser_end.</div><div class="line">Ending action vuser_end.</div><div class="line">Vuser Terminated.</div></pre></figure>
+
+<ul>
+<li>全局变量在<code>globals.h</code>定义</li>
+</ul>
+<figure class="highlight bash"><pre><div class="line">//--------------------------------------------------------------------</div><div class="line">// Include Files</div><div class="line"><span class="comment">#include "lrun.h"</span></div><div class="line"><span class="comment">#include "web_api.h"</span></div><div class="line"><span class="comment">#include "lrw_custom_body.h"</span></div><div class="line"></div><div class="line">//--------------------------------------------------------------------</div><div class="line">// Global Variables</div><div class="line">// </div><div class="line">char *p;</div></pre></figure>
+
+<p>总结，</p>
+<ul>
+<li>在init、action、end中定义的变量就是局部变量</li>
+<li>在globals.h中定义的变量是全局变量</li>
+<li>什么时候定义全局变量?<br>整个过程中固定不变的，例如URL地址、KEY、其他</li>
+<li>支持指针、数组、控制流等</li>
+</ul>
+<h2 id="函数">函数</h2>
+<p>LoadRunner中的几种类型的函数：</p>
+<ul>
+<li>通用函数lr开头的（例如日志函数，思考时间函数…）</li>
+<li>与编程语言相关的函数</li>
+<li>与协议相关的函数</li>
+<li>自定义函数</li>
+</ul>
+<p><b>(F1查看帮助文档)</b></p>
+<table><tr><td>通用函数lr开头的</td><td>①lr_think_time()、lr_get_host_name()、lr_whoami()、lr_get_attrib_string()<br><br>②LoadRunner错误处理机制/lr_continue_on _error函数<br>③日志函数解析/lr_output_message、lr_log_message 、lr_message 、lr_error_message</td></tr><tr><td>与编程语言相关的函数</td><td>strcpy与strcat、strcmp、atoi、sprinf、time、文件操作..略</td></tr><tr><td>与协议相关的函数</td><td>web_link与web_url(get)、web_submit_form与web_submit_data(POST)、web_submit_form中的hidden自动发送、web_custom_request、web_add_header、web_get_int_property</td></tr></table>
+
+<h1 id="课后作业">课后作业</h1>
+<p><b>作业1： 详细阐述HTTP协议中的GET和POST请求方式的区别和各自的使用场景。</b><br>区别：</p>
+<ul>
+<li>HTTP-GET以使用MIME类型application/x-www-form-urlencoded的urlencoded文本的格式传递参数。Urlencoding是一种字符编码，保证被传送的参数由遵循规范的文本组成，例如一个空格的编码是”%20”。附加参数还能被认为是一个查询字符串，即传送数据在URL中可以看到。</li>
+<li>与HTTP-GET类似，HTTP POST参数也是被URL编码的。然而，变量名/变量值不作为URL的一部分被传送，而是放在实际的HTTP请求消息内部HTML HEADER内被传送，所以相对来说更安全一些。</li>
+<li>GET方式提交的数据最多只能有1024字节，而POST则没有此限制。</li>
+</ul>
+<p>以下情况使用POST，</p>
+<ul>
+<li>传送的消息过长</li>
+<li>要传送的数据不是采用ASCII编码</li>
+<li>数据安全性要求高</li>
+</ul>
+<p><b>作业2： 使用VuGen编写一个脚本，脚本中需要包含定义局部变量、全局变量、指针、数组，将以上变量赋值后（初值自己随便指定，符合语法即可）使用LoadRunner中的输出函数打印出，将脚本保存后打包作为附件上传。</b></p>
+<figure class="highlight c"><pre><div class="line"></div><div class="line"></div><div class="line"><span class="keyword">int</span> a=<span class="number">100</span>;</div><div class="line">Action()</div><div class="line">{</div><div class="line">    <span class="keyword">int</span> a=<span class="number">10</span>;</div><div class="line">	<span class="keyword">char</span> p[]={<span class="string">'Z'</span>,<span class="string">'K'</span>,<span class="string">'N'</span>};<span class="comment">//以字符形式赋值的时候系统不会默认加上/0,所以认为没有结束。</span></div><div class="line">	<span class="keyword">char</span> s[]=<span class="string">"hello loadrunner!"</span>;<span class="comment">//以字符串形式赋值的时候，系统会默认加上/0</span></div><div class="line">	<span class="keyword">char</span> t[]=<span class="string">"test end!!"</span>;</div><div class="line">    <span class="keyword">char</span> * host;</div><div class="line">	lr_output_message(<span class="string">"%d"</span>,a);</div><div class="line"></div><div class="line">	lr_output_message(<span class="string">"p=%s"</span>,p);</div><div class="line">	lr_output_message(<span class="string">"s=%s"</span>,s);</div><div class="line">	lr_output_message(<span class="string">"t=%s"</span>,t);</div><div class="line">lr_output_message(<span class="string">"---------------------------我是华丽丽的分隔线------------------------------------------"</span>);</div><div class="line">	lr_output_message(<span class="string">"sizeof(s)=%d"</span>,<span class="keyword">sizeof</span>(s));<span class="comment">//比实际的多了一个，是系统默认加上的/0</span></div><div class="line">	lr_output_message(<span class="string">"strlen(s)=%d"</span>,<span class="built_in">strlen</span>(s));</div><div class="line">lr_output_message(<span class="string">"---------------------------我是华丽丽的分隔线------------------------------------------"</span>);</div><div class="line">	<span class="keyword">if</span>(a&lt;<span class="number">10</span>){</div><div class="line">		lr_output_message(<span class="string">"a小于10"</span>);</div><div class="line">	}<span class="keyword">else</span> <span class="keyword">if</span>(a==<span class="number">10</span>){</div><div class="line">		lr_output_message(<span class="string">"a等于10"</span>);</div><div class="line">	}<span class="keyword">else</span>{</div><div class="line">		lr_output_message(<span class="string">"a大于10"</span>);</div><div class="line">	}</div><div class="line">lr_output_message(<span class="string">"---------------------------我是华丽丽的分隔线------------------------------------------"</span>);</div><div class="line">	<span class="keyword">while</span>(a&gt;<span class="number">0</span>){</div><div class="line">		lr_output_message(<span class="string">"我是好人！！"</span>);</div><div class="line">		a--;</div><div class="line">	}</div><div class="line"></div><div class="line">lr_output_message(<span class="string">"---------------------------我是华丽丽的分隔线------------------------------------------"</span>);</div><div class="line">    host=lr_get_host_name();</div><div class="line">	lr_output_message(<span class="string">"my_host_name=%s"</span>,host);</div><div class="line">	<span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">}</div><div class="line"></div><div class="line"><span class="comment">//int add(int a,int b){</span></div><div class="line"><span class="comment">//    return a+b;</span></div><div class="line"><span class="comment">//}</span></div></pre></figure>
+
+<p><b>作业3： LoadRunner包含哪几种类型函数？在VuGen中使用C语言中的文件操作函数编写一个脚本，脚本中包含在C盘创建一个文件，并将自己的姓名的全拼写入该文件并保存，将脚本保存上打包作为附件上传。</b><br>LoadRunner中的几种类型的函数：</p>
+<ul>
+<li>通用函数lr开头的（例如日志函数，思考时间函数…）</li>
+<li>与编程语言相关的函数</li>
+<li>与协议相关的函数</li>
+<li>自定义函数<br>Action.c</li>
+</ul>
+<figure class="highlight c"><pre><div class="line"><span class="preprocessor">#<span class="keyword">include</span> "myname.h"</span></div><div class="line">Action()</div><div class="line">{</div><div class="line"> lr_output_message(<span class="string">"my name=%s"</span>,printName(<span class="string">"zhaokongnuan"</span>));</div><div class="line">	<span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">}</div></pre></figure>
+
+<p>myname.h</p>
+<figure class="highlight c"><pre><div class="line"><span class="keyword">char</span> * printName(<span class="keyword">char</span> * name){</div><div class="line">    <span class="keyword">return</span> name;</div><div class="line">}</div></pre></figure>
+
+<p><b>作业4： 使用web_url函数随便在互联网上下载一个图片（自己找个图片的URL），之后使用web_get_int_property函数判断下载的图片的大小，当下载大于0时，就打印出下载成功，否则打印出下载失败。将脚本保存上打包作为附件上传。</b><br>Action.c</p>
+<figure class="highlight c"><pre><div class="line">Action()</div><div class="line">{</div><div class="line">    <span class="keyword">int</span> i; </div><div class="line">	<span class="keyword">int</span> j;</div><div class="line"></div><div class="line">   lr_start_transaction(<span class="string">"DownloadPicture"</span>); </div><div class="line">	web_url(<span class="string">"ac4bd11373f082026b041f2248fbfbedab641b1c.jpg"</span>,</div><div class="line">			<span class="string">"URL=http://b.hiphotos.baidu.com/image/w%3D1366%3Bcrop%3D0%2C0%2C1366%2C768/sign=5fada6b8097b02080cc93be254efc9b0/ac4bd11373f082026b041f2248fbfbedab641b1c.jpg"</span>,</div><div class="line">			<span class="string">"Resource=1"</span>,</div><div class="line">			<span class="string">"RecContentType=image/jpg"</span>,</div><div class="line">			 LAST);</div><div class="line">	lr_output_message(<span class="string">"*******图片存在********"</span>);</div><div class="line">    i = web_get_int_property(HTTP_INFO_DOWNLOAD_SIZE); </div><div class="line">    lr_output_message(<span class="string">"The download size of the Picture was: %d"</span>,i); </div><div class="line">    <span class="keyword">if</span>(i &gt;<span class="number">0</span>) </div><div class="line">    { </div><div class="line">		lr_end_transaction(<span class="string">"DownloadPicture"</span>, LR_PASS); </div><div class="line"></div><div class="line">	}<span class="keyword">else</span>{</div><div class="line">		lr_end_transaction(<span class="string">"DownloadPicture"</span>, LR_FAIL); </div><div class="line">	}</div><div class="line">	<span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">}</div></pre></figure>
+
+
         </section>
-    </article>
-    
-    <article class="post">
-
-        <header class="post-header">
-            <div class="tag-tile">
-                
-                
-                <a data-pjax href='/tags/抓包/'>抓包</a>
-                
-                <a data-pjax href='/tags/测试/'>测试</a>
-                
-                
-                <span class="fa fa-bookmark" style="float:right;color:#fa8072"></span>
-            </div>
-            <h1 class="post-title"><a data-pjax href="/2014/12/11/抓包/">抓包</a>
-            </h1>
-
-            <div class="post-meta">
-                Post on<span class="fa fa-clock-o"></span>
-                <time datetime="2014-12-11T13:36:24.000Z"
-                      itemprop="datePublished">Dec 11 2014</time>
-            </div>
-        </header>
-        <section class="post-excerpt">
-            <p>
-                
-                
-抓包工具之比较
-Httpwatch
-1）基本使用和技巧2）HTTP请求时间分段分析
-时间轴
-(图片点击放大)
-
-
-Blocked
-The Blocked time includes any pre-processing time (such as cache lookup) and the time spent waiting for a network connection to become available. Browsers
-                
-            </p>
+        <hr/>
+        <nav class="pagination" style="width:auto" role="pagination">
             
-            <p>
-                <a data-pjax href="/2014/12/11/抓包/"
-                   class="excerpt-link">Read More...</a>
-            </p>
+            <a style="cursor:default" class="newer-posts" href="#">This is the First Post</a>
             
+            <a class="share-button" data-original-title title>Share this Post</a>
+            
+            <a data-pjax class="older-posts" href="/2015/01/16/我想要最好的20岁/">Next Post →</a>
+            
+        </nav>
+        <br/>
+        <br/>
+        <section id="comment">
+            <div id="comment-box"></div>
         </section>
+
+
     </article>
-    
-    <article class="post">
-
-        <header class="post-header">
-            <div class="tag-tile">
-                
-                
-                <a data-pjax href='/tags/hexo/'>hexo</a>
-                
-                
-                <span class="fa fa-bookmark" style="float:right;color:#fa8072"></span>
-            </div>
-            <h1 class="post-title"><a data-pjax href="/2014/12/10/通过源码学习hexo/">通过源码学习hexo</a>
-            </h1>
-
-            <div class="post-meta">
-                Post on<span class="fa fa-clock-o"></span>
-                <time datetime="2014-12-10T04:46:12.000Z"
-                      itemprop="datePublished">Dec 10 2014</time>
-            </div>
-        </header>
-        <section class="post-excerpt">
-            <p>
-                
-                先序知识
-模块
-
-参考阮一峰的前端模块管理器简介
-Javascript模块化编程（一）：模块的写法
-Javascript模块化编程（二）：AMD规范
-Javascript模块化编程（三）：require.js的用法
-
-NodeJS社区
-
-
-NodeJS 移步 → Nodejs学习路线图
-npm 移步 → 快速创建基于npm的nodejs库
-RequireJS 移步 → RequireJS异步模块加载
-
-hexo是什么
-
-关于hexo的详
-                
-            </p>
-            
-            <p>
-                <a data-pjax href="/2014/12/10/通过源码学习hexo/"
-                   class="excerpt-link">Read More...</a>
-            </p>
-            
-        </section>
-    </article>
-    
-    <article class="post">
-
-        <header class="post-header">
-            <div class="tag-tile">
-                
-                
-                <a data-pjax href='/tags/点滴/'>点滴</a>
-                
-                
-                <span class="fa fa-bookmark" style="float:right;color:#fa8072"></span>
-            </div>
-            <h1 class="post-title"><a data-pjax href="/2014/12/08/新的开始/">新的开始</a>
-            </h1>
-
-            <div class="post-meta">
-                Post on<span class="fa fa-clock-o"></span>
-                <time datetime="2014-12-08T08:35:00.000Z"
-                      itemprop="datePublished">Dec 8 2014</time>
-            </div>
-        </header>
-        <section class="post-excerpt">
-            <p>
-                
-                这是新的开始，我用hexo创建了第一篇文章。
-通过下面的命令，就可以创建新文章
-hexo new 新的开始
-
-通过下面的命令可以创建带图片的文章
-hexo new photo 新的开始
-
-
-
-hexo generate #生成静态页面至public目录hexo server #开启预览访问端口（默认端口4000，'ctrl + c'关闭server）hexo deploy #将.deploy目录部署到GitHub
-
-常用复合命令
-hex
-                
-            </p>
-            
-            <p>
-                <a data-pjax href="/2014/12/08/新的开始/"
-                   class="excerpt-link">Read More...</a>
-            </p>
-            
-        </section>
-    </article>
-    
-    <nav class="pagination" role="pagination">
-        
-        <a data-pjax class="newer-posts" href="/archives/2014/12/">← Newer Posts</a>
-        
-        <span class="page-number">Page 2 of 2</span>
-        
-    </nav>
 </main>
 
 
