@@ -539,12 +539,6 @@
 <p>LoadRunner实现机制<br><img src="/image/cccc.png" alt="cccc"></p>
 <figure class="highlight c"><pre><div class="line"><span class="preprocessor">#<span class="keyword">include</span>&lt;globals.h&gt;</span></div><div class="line">main(){</div><div class="line">	vuser_init();</div><div class="line">	Action();</div><div class="line">	vuser_end();</div><div class="line">}</div></pre></figure>
 
-<h2 id="局部变量和全局变量">局部变量和全局变量</h2>
-<ul>
-<li>局部变量</li>
-</ul>
-<figure class="highlight c"><pre><div class="line">Action()</div><div class="line">{</div><div class="line">    <span class="keyword">int</span> a=<span class="number">10</span>;</div><div class="line">	</div><div class="line">	<span class="built_in">printf</span>(<span class="string">"%d"</span>,a);</div><div class="line">    <span class="keyword">int</span> b=<span class="number">2</span>;</div><div class="line">	lr_output_message(<span class="string">"%d"</span>,a);</div><div class="line">	lr_output_message(<span class="string">"%d"</span>,a);</div><div class="line">	lr_output_message(<span class="string">"%d"</span>,a);</div><div class="line"></div><div class="line">	<span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">}</div></pre></figure>
-
 <ul>
 <li>解释执行C代码，不需要像java等一样需要编译。</li>
 </ul>
@@ -553,9 +547,14 @@
 <li>编译型语言：把源程序全部编译成二进制代码的可运行程序。之后，可直接运行这个程序无需再次编译。<br><img src="/image/complicate.jpg" alt="complicate"></li>
 <li>解释型语言：把源程序交给翻译器翻译一句就提交给计算机，然后计算机执行一句并不行程目标程序，直到运行结束。<br><img src="/image/jieshi.jpg" alt="jieshi"><br>区别：</li>
 <li>编译型语言，编译完成之后执行速度快，效率高；依赖编译器 如C,C++,Delphi,Fortran.</li>
-<li>解释型语言，执行速度慢，效率低；依赖解释器；如java、Basic.<br>总结：编译型语言在编译成目标程序后是可以通过操作系统直接运行，而解释语言的执行则需要一个解释环境（相当于一台虚拟机）,解释器在程序执行期间一直随之运行，在这里LoadRunner充当了解释器的角色，一般来说，解释器比编译有更好的灵活性，而编译有着很好的性能。<br>其中java是特殊的，java程序也需要编译，但是没有直接编译成为机器语言，而是编译成字节码。<br>java字节码的执行有两种方式：<br>1.即时编译方式：解释器先将字节码编译成机器码，然后再执行该机器码。<br>2.解释执行方式：解释器通过每次解释并执行一段代码来完成java字节码程序的所有操作。<br>通常采用的是第二种党法，由于JVM具有较好的灵活性，使字节码翻译为机器码效率较高。对于那些对于执行速度要求较高的应用程序，解释器可将java字节码即时编译为机器码，从而很好的保证了java代码的可移植性和高性能。<br><img src="/image/java.jpg" alt="java"></li>
+<li>解释型语言，执行速度慢，效率低；依赖解释器；如java、Basic.<br>总结：编译型语言在编译成目标程序后是可以通过操作系统直接运行，而解释语言的执行则需要一个解释环境（相当于一台虚拟机）,解释器在程序执行期间一直随之运行，在这里LoadRunner充当了解释器的角色，一般来说，解释器比编译有更好的灵活性，而编译有着很好的性能。<br>其中java是特殊的，java程序也需要编译，但是没有直接编译成为机器语言，而是编译成字节码。<br>java字节码的执行有两种方式：<br>1.即时编译方式：解释器先将字节码编译成机器码，然后再执行该机器码。<br>2.解释执行方式：解释器通过每次解释并执行一段代码来完成java字节码程序的所有操作。<br>通常采用的是第二种党法，由于JVM具有较好的灵活性，使字节码翻译为机器码效率较高。对于那些对于执行速度要求较高的应用程序，解释器可将java字节码即时编译为机器码，从而很好的保证了java代码的可移植性和高性能。<br><img src="/image/java.jpg" alt="java"><h2 id="局部变量和全局变量">局部变量和全局变量</h2>
+</li>
+<li>局部变量</li>
 </ul>
-<h2 id="LoadRunner变量定义">LoadRunner变量定义</h2>
+<figure class="highlight c"><pre><div class="line">Action()</div><div class="line">{</div><div class="line">    <span class="keyword">int</span> a=<span class="number">10</span>;</div><div class="line">	</div><div class="line">	<span class="built_in">printf</span>(<span class="string">"%d"</span>,a);</div><div class="line">    <span class="keyword">int</span> b=<span class="number">2</span>;</div><div class="line">	lr_output_message(<span class="string">"%d"</span>,a);</div><div class="line">	lr_output_message(<span class="string">"%d"</span>,a);</div><div class="line">	lr_output_message(<span class="string">"%d"</span>,a);</div><div class="line"></div><div class="line">	<span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">}</div></pre></figure>
+
+
+
 <figure class="highlight bash"><pre><div class="line">Action.c (<span class="number">6</span>): illegal statement termination</div><div class="line">Action.c (<span class="number">6</span>): skipping `int<span class="string">'</span></div><div class="line">Action.c (6): undeclared identifier `b'</div><div class="line">e:\\hp\\mytest\\bian\\\\combined_bian.c (<span class="number">5</span>): <span class="number">3</span> errors, not writing pre_cci.ci</div></pre></figure>
 
 <p>以上例子可以看出LoadRunner虽然基本完全支持C，但是和C还有一点细微的差别。这里定义变量要提到前面去。</p>
