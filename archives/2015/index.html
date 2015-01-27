@@ -541,16 +541,13 @@
 脚本开发的原则：简单、正确、高效
 
 LoadRunner实现机制
-
-解释执行C代码，不需要像java等一样需要编译。
-
 #include&lt;globals.h&gt;main(){	vuser_init();	Action();	vuser_end();}
 
 局部变量和全局变量
 
 局部变量
 
-Action(){    int a=10;		printf("%d",a);    int b=2;	lr_output_mes
+Action(){    int a=10;		printf("%d",a);    int b=2;	lr_output_message("%d",a);	lr_output_mes
                 
             </p>
             
