@@ -49,6 +49,10 @@
                                 <div class="mp-scroll">
                                 
                                 <li class="search-archive-li mp-pjax">
+                                    <a href="/2015/01/31/LoadRunner中的事务和参数化/">LoadRunner中的事务和参数化</a>
+                                </li>
+                                
+                                <li class="search-archive-li mp-pjax">
                                     <a href="/2015/01/20/LoadRunner脚本开发和常用函数/">LoadRunner脚本开发和常用函数</a>
                                 </li>
                                 
@@ -221,7 +225,7 @@
                                 
                                 <li class="search-category-li mp-pjax">
                                     <a href="/categories/性能测试/">&nbsp;&nbsp;&nbsp;性能测试</a>
-                                    <small>5</small>
+                                    <small>6</small>
                                 </li>
                                 
                                 <li class="search-category-li mp-pjax">
@@ -303,7 +307,7 @@
                                 
                                 <li class="search-tag-li mp-pjax">
                                     <a href="/tags/性能测试/">&nbsp;&nbsp;&nbsp;性能测试</a>
-                                    <small>5</small>
+                                    <small>6</small>
                                 </li>
                                 
                                 <li class="search-tag-li mp-pjax">
@@ -359,6 +363,8 @@
         </nav>
         <div id="pjax">
             <div class="pjax-hidden" style="display: none">
+                
+                    <a  data-pjax href="/2015/01/31/LoadRunner中的事务和参数化/">LoadRunner中的事务和参数化</a>
                 
                     <a  data-pjax href="/2015/01/20/LoadRunner脚本开发和常用函数/">LoadRunner脚本开发和常用函数</a>
                 
@@ -512,6 +518,54 @@
   
 <main class="content" role="main">
 
+    
+    <article class="post">
+
+        <header class="post-header">
+            <div class="tag-tile">
+                
+                
+                <a data-pjax href='/tags/性能测试/'>性能测试</a>
+                
+                
+                <span class="fa fa-bookmark" style="float:right;color:#fa8072"></span>
+            </div>
+            <h1 class="post-title"><a data-pjax href="/2015/01/31/LoadRunner中的事务和参数化/">LoadRunner中的事务和参数化</a>
+            </h1>
+
+            <div class="post-meta">
+                Post on<span class="fa fa-clock-o"></span>
+                <time datetime="2015-01-31T10:42:41.000Z"
+                      itemprop="datePublished">Jan 31 2015</time>
+            </div>
+        </header>
+        <section class="post-excerpt">
+            <p>
+                
+                课堂笔记
+目的
+
+掌握LoadRunner中的事务和参数化的基本概念和使用方法
+
+关于事务
+
+什么是事务？
+添加事务：lr_start_transaction、lr_end_transaction解析
+事务的4个状态
+子事务的概念
+
+Action.c
+Action(){	int status;	lr_start_transaction("open");	status = web_url("WebTours", 		"URL=http:/
+                
+            </p>
+            
+            <p>
+                <a data-pjax href="/2015/01/31/LoadRunner中的事务和参数化/"
+                   class="excerpt-link">Read More...</a>
+            </p>
+            
+        </section>
+    </article>
     
     <article class="post">
 
