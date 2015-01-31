@@ -550,12 +550,11 @@
 关于事务
 
 什么是事务？
-添加事务：lr_start_transaction、lr_end_transaction解析
-事务的4个状态
-子事务的概念
+为什么要有事务？
+我们需要知道不同的操作所花费的时间，这样我们就可以衡量不同的操作对被测系统所造成的影响，那么我们如何知道不同的操作所花费的时间，这就用到了事务，我们在操作之前插入一个事务开始标识，在操作完成后插入一个事务结束表示，这样我们就知道了这个操作所花费的时间。
 
-Action.c
-Action(){	int status;	lr_start_transaction("open");	status = web_url("WebTours", 		"URL=http:/
+
+添加事务：lr_start_transaction、lr
                 
             </p>
             

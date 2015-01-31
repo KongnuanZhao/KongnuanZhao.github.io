@@ -546,11 +546,20 @@
 <h2 id="关于事务">关于事务</h2>
 <ul>
 <li>什么是事务？</li>
-<li>添加事务：lr_start_transaction、lr_end_transaction解析</li>
-<li>事务的4个状态</li>
-<li>子事务的概念</li>
+<li>为什么要有事务？<ul>
+<li>我们需要知道不同的操作所花费的时间，这样我们就可以衡量不同的操作对被测系统所造成的影响，那么我们如何知道不同的操作所花费的时间，这就用到了事务，我们在操作之前插入一个事务开始标识，在操作完成后插入一个事务结束表示，这样我们就知道了这个操作所花费的时间。</li>
 </ul>
-<p>Action.c</p>
+</li>
+<li>添加事务：lr_start_transaction、lr_end_transaction解析</li>
+<li>事务的4个状态<ul>
+<li>LR_AUTO是指事务的状态有系统自动根据默认规则来判断，结果为PASS/FAIL。</li>
+<li>LR_PASS是指事务是以PASS状态通过的，说明该事务正确的完成了，并且记录下对应的时间，这个时间就是指做这件事情所需要消耗的响应时间。</li>
+<li>LR_FAIL是指事务以FAIL状态结束，该事务是一个失败的事务，没有完成事务中脚本应该达到的效果，得到的时间不是正确操作的时间，这个时间在后期的统计中将被独立统计。</li>
+<li>LR_STOP将事务以STOP状态停止。事务的PASS和FAIL状态会在场景的对应计数器中记录，包括通过的次数和事务的响应时间，方便后期分析该事务的吞吐量以及响应时间的变化情况。</li>
+</ul>
+</li>
+<li>子事务的概念：嵌套在一个事务里面的事务就是子事务。<br>Action.c</li>
+</ul>
 <figure class="highlight c"><pre><div class="line">Action()</div><div class="line">{</div><div class="line"></div><div class="line">	<span class="keyword">int</span> status;</div><div class="line">	lr_start_transaction(<span class="string">"open"</span>);</div><div class="line"></div><div class="line">	status = web_url(<span class="string">"WebTours"</span>, </div><div class="line">		<span class="string">"URL=http://127.0.0.1:1080/WebTours/"</span>, </div><div class="line">		<span class="string">"Resource=0"</span>, </div><div class="line">		<span class="string">"RecContentType=text/html"</span>, </div><div class="line">		<span class="string">"Referer="</span>, </div><div class="line">		<span class="string">"Mode=HTML"</span>, </div><div class="line">		LAST);</div><div class="line"></div><div class="line"></div><div class="line">	<span class="comment">//lr_end_transaction("open", LR_AUTO);</span></div><div class="line"></div><div class="line">	<span class="keyword">if</span>(status==<span class="number">0</span>){</div><div class="line">		lr_end_transaction(<span class="string">"open"</span>,LR_PASS);</div><div class="line">	}<span class="keyword">else</span>{</div><div class="line">		lr_end_transaction(<span class="string">"open"</span>,LR_FAIL);</div><div class="line">	}</div><div class="line"></div><div class="line"></div><div class="line">	<span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">}</div></pre></figure>
 
 <p>运行结果：</p>
@@ -588,8 +597,8 @@
 </ul>
 <p>Loadrunner中提供一种机制帮助解决上述问题， 叫参数化（parameterization）</p>
 <ul>
-<li>LoadRunner中的参数化和 函数的参数之间的关系</li>
-<li>哪些需要参数化？<br>大部分情况下只有函数的参数才能参数化，但也不是所有函数的参数都可以参数化。需要参数化的：<ul>
+<li>LoadRunner中的<b>参数化</b>和函数的<b>参数</b>之间的关系<br>大部分情况下只有函数的参数才能参数化，但也不是所有函数的参数都可以参数化。</li>
+<li>哪些需要参数化？<ul>
 <li>登陆认证信息</li>
 <li>一些和时间相关的，违反时间约束的</li>
 <li>一些受其他字段约束的</li>
@@ -598,8 +607,34 @@
 </ul>
 </li>
 </ul>
+<p>简单的例子:</p>
+<figure class="highlight c"><pre><div class="line">Action()</div><div class="line">{</div><div class="line">	web_url(<span class="string">"hello"</span>,</div><div class="line">		<span class="string">"URL=http://www.iciba.com/{searchword}"</span>,</div><div class="line">		<span class="string">"Resource=0"</span>,</div><div class="line">		<span class="string">"RecContentType=text/html"</span>,</div><div class="line">		<span class="string">"Referer=http://www.iciba.com/"</span>,</div><div class="line">		<span class="string">"Snapshot=t29.inf"</span>,</div><div class="line">		<span class="string">"Mode=HTML"</span>,</div><div class="line">		LAST);</div><div class="line"></div><div class="line">	</div><div class="line"><span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">}</div></pre></figure>
+
+<p>在日志里找到这一句</p>
+<figure class="highlight bash"><pre><div class="line">Action.c(<span class="number">3</span>): Notify: Parameter Substitution: parameter <span class="string">"searchword"</span> =  <span class="string">"hello"</span></div></pre></figure>
+
+<p>参数化之后，写死了的代码变活，代码也变得更加美好！</p>
+<ul>
+<li>参数化取值方法<br>select next row : 获取下一行数据的方式<br>update value on : 重新获取下一个参数的时机（条件）<br><img src="/image/properties.png" alt="properties"></li>
+<li>总结：<br>1、根据你需要的参数获取方式设置不同的组合，满足你的需求<br>2、select next row能随即尽量随机<br>3、使用不同用户登录一次使用 Unique + Once模式</li>
+<li>参数化和变量的区别<br>参数作用域远远大于局部变量，在一个action中的参数可以再另一个函数使用，而局部变量不行，除非是全局<br>变量。</li>
+<li>参数和变量的转换<ul>
+<li>参数转换成变量 lr_eval_string</li>
+<li>变量转换成参数 lr_save_string</li>
+</ul>
+</li>
+</ul>
 <h1 id="课程作业">课程作业</h1>
-<p><b>1、LoadRunner中的事务的含义是什么？随便录制或找一个使用LoadRunner脚本，添加一个事务，然后添加自己的其他代码（目的是要加深学习wasted time这个概念），使用lr_wasted_time将自己代码浪费的时间添加到wasted time中。（例子自己随便选，如果实在不知如果弄，按照课程中的例子也可以），将这个作为附件提交。</b><br><b>2、Loadrunner中的参数化的目的是什么？ 一般什么情况下进行参数化，如果有实际经验，结合实际经验阐述更好。</b><br><b>3、Loadrunner参数化中 select next row 和update value on一共有几种组合方式？阐述如果select next row的选择是random，和它对应的3种update value on分别组合，对这3组组合的含义进行描述。</b></p>
+<p><b>1、LoadRunner中的事务的含义是什么？随便录制或找一个使用LoadRunner脚本，添加一个事务，然后添加自己的其他代码（目的是要加深学习wasted time这个概念），使用lr_wasted_time将自己代码浪费的时间添加到wasted time中。（例子自己随便选，如果实在不知如果弄，按照课程中的例子也可以），将这个作为附件提交。</b><br>事务又称为Transaction，在LoadRunner中的定义如下:An end-to-end(browser-to-browser) measurement of one or more user actions within action file。中文理解如下：事务(Transaction)这样一个点，我们为了衡量某个action的性能，需要在action的开始和结束位置插入这样一个范围，这就定义了一个transaction。<br>例子见上面笔记，代码见附件~<br><b>2、Loadrunner中的参数化的目的是什么？ 一般什么情况下进行参数化，如果有实际经验，结合实际经验阐述更好。</b><br>目的：实现脚本和数据分离，使代码变活。一般在有数据变动的情况下需要进行参数化。<br>举个简单的参数化的例子，<code>.dat</code>文件内容：</p>
+<figure class="highlight bash"><pre><div class="line">NewParam</div><div class="line">hello</div><div class="line">word</div><div class="line">found</div><div class="line">text</div><div class="line">log</div><div class="line">               //这里有个空行，不可没有，也不可多一行</div></pre></figure>
+
+<p>Action.c</p>
+<figure class="highlight c"><pre><div class="line">Action()</div><div class="line">{</div><div class="line">	web_url(<span class="string">"hello"</span>,</div><div class="line">		<span class="string">"URL=http://www.iciba.com/{NewParam}"</span>,</div><div class="line">		<span class="string">"Resource=0"</span>,</div><div class="line">		<span class="string">"RecContentType=text/html"</span>,</div><div class="line">		<span class="string">"Referer=http://www.iciba.com/"</span>,</div><div class="line">		<span class="string">"Snapshot=t29.inf"</span>,</div><div class="line">		<span class="string">"Mode=HTML"</span>,</div><div class="line">		LAST);</div><div class="line"></div><div class="line">	</div><div class="line"><span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">}</div></pre></figure>
+
+<p>迭代5次，查看部分日志</p>
+<figure class="highlight bash"><pre><div class="line">Running Vuser...</div><div class="line">Starting iteration <span class="number">1</span>.</div><div class="line">Starting action Action.</div><div class="line">Action.c(<span class="number">3</span>): Notify: Parameter Substitution: parameter <span class="string">"NewParam"</span> =  <span class="string">"hello"</span></div><div class="line">……</div><div class="line">Starting action Action.</div><div class="line">Action.c(<span class="number">3</span>): Notify: Parameter Substitution: parameter <span class="string">"NewParam"</span> =  <span class="string">"word"</span></div><div class="line">……</div><div class="line">Starting action Action.</div><div class="line">Action.c(<span class="number">3</span>): Notify: Parameter Substitution: parameter <span class="string">"NewParam"</span> =  <span class="string">"found"</span></div><div class="line">……</div><div class="line">Starting action Action.</div><div class="line">Action.c(<span class="number">3</span>): Notify: Parameter Substitution: parameter <span class="string">"NewParam"</span> =  <span class="string">"text"</span></div><div class="line">……</div><div class="line">Starting action Action.</div><div class="line">Action.c(<span class="number">3</span>): Notify: Parameter Substitution: parameter <span class="string">"NewParam"</span> =  <span class="string">"log"</span></div><div class="line">……</div></pre></figure>
+
+<p><b>3、Loadrunner参数化中 select next row 和update value on一共有几种组合方式？阐述如果select next row的选择是random，和它对应的3种update value on分别组合，对这3组组合的含义进行描述。</b><br>select next row : 获取下一行数据的方式<br>update value on : 重新获取下一个参数的时机（条件）<br>一共十种组合方式，如下图所示：<br><img src="/image/para.jpg" alt="para"><br>random的三次组合，含义如下图：<br><img src="/image/random.jpg" alt="random"></p>
 
         </section>
         <hr/>
