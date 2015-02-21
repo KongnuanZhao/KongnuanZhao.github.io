@@ -49,6 +49,14 @@
                                 <div class="mp-scroll">
                                 
                                 <li class="search-archive-li mp-pjax">
+                                    <a href="/2015/02/21/性能测试计划的编写/">性能测试计划的编写</a>
+                                </li>
+                                
+                                <li class="search-archive-li mp-pjax">
+                                    <a href="/2015/02/21/LoadRunner中的关联/">LoadRunner中的关联</a>
+                                </li>
+                                
+                                <li class="search-archive-li mp-pjax">
                                     <a href="/2015/01/31/LoadRunner中的事务和参数化/">LoadRunner中的事务和参数化</a>
                                 </li>
                                 
@@ -225,7 +233,7 @@
                                 
                                 <li class="search-category-li mp-pjax">
                                     <a href="/categories/性能测试/">&nbsp;&nbsp;&nbsp;性能测试</a>
-                                    <small>6</small>
+                                    <small>8</small>
                                 </li>
                                 
                                 <li class="search-category-li mp-pjax">
@@ -307,7 +315,7 @@
                                 
                                 <li class="search-tag-li mp-pjax">
                                     <a href="/tags/性能测试/">&nbsp;&nbsp;&nbsp;性能测试</a>
-                                    <small>6</small>
+                                    <small>8</small>
                                 </li>
                                 
                                 <li class="search-tag-li mp-pjax">
@@ -363,6 +371,10 @@
         </nav>
         <div id="pjax">
             <div class="pjax-hidden" style="display: none">
+                
+                    <a  data-pjax href="/2015/02/21/性能测试计划的编写/">性能测试计划的编写</a>
+                
+                    <a  data-pjax href="/2015/02/21/LoadRunner中的关联/">LoadRunner中的关联</a>
                 
                     <a  data-pjax href="/2015/01/31/LoadRunner中的事务和参数化/">LoadRunner中的事务和参数化</a>
                 
@@ -581,7 +593,7 @@
 <li>需要注意的<ul>
 <li>事务中不要插入日志函数</li>
 <li>不要插入集合点函数<ul>
-<li>插入集合点是为了衡量在加重负载的情况下的性能情况。在计划中，可能会要求系统能够承受1000 人同时提交数据，在LoadRunner中可以通过在提交数据操作前面加入集合点，这样当虚拟用户运行到提交数据的集合点时，LoadRunner就会检查同时有多少用户运行到集合点，如果不到1000 人，LoadRunner 就会命令已经到集合点的用户在此等待，当在集合点等待的用户达到1000人时，LoadRunner命令1000人同时去提交数据，从而达到计划中的需求</li>
+<li>插入集合点是为了衡量在加重负载的情况下的性能情况。在计划中，可能会要求系统能够承受1000人同时提交数据，在LoadRunner中可以通过在提交数据操作前面加入集合点，这样当虚拟用户运行到提交数据的集合点时，LoadRunner就会检查同时有多少用户运行到集合点，如果不到1000人，LoadRunner就会命令已经到集合点的用户在此等待，当在集合点等待的用户达到1000人时，LoadRunner命令1000人同时去提交数据，从而达到计划中的需求。</li>
 </ul>
 </li>
 <li>尽量不要插入思考时间lr_think_time()<ul>
@@ -646,7 +658,7 @@
         <hr/>
         <nav class="pagination" style="width:auto" role="pagination">
             
-            <a style="cursor:default" class="newer-posts" href="#">This is the First Post</a>
+            <a data-pjax class="newer-posts" href="/2015/02/21/LoadRunner中的关联/">← Prev Post</a>
             
             <a class="share-button" data-original-title title>Share this Post</a>
             

@@ -49,6 +49,14 @@
                                 <div class="mp-scroll">
                                 
                                 <li class="search-archive-li mp-pjax">
+                                    <a href="/2015/02/21/性能测试计划的编写/">性能测试计划的编写</a>
+                                </li>
+                                
+                                <li class="search-archive-li mp-pjax">
+                                    <a href="/2015/02/21/LoadRunner中的关联/">LoadRunner中的关联</a>
+                                </li>
+                                
+                                <li class="search-archive-li mp-pjax">
                                     <a href="/2015/01/31/LoadRunner中的事务和参数化/">LoadRunner中的事务和参数化</a>
                                 </li>
                                 
@@ -225,7 +233,7 @@
                                 
                                 <li class="search-category-li mp-pjax">
                                     <a href="/categories/性能测试/">&nbsp;&nbsp;&nbsp;性能测试</a>
-                                    <small>6</small>
+                                    <small>8</small>
                                 </li>
                                 
                                 <li class="search-category-li mp-pjax">
@@ -307,7 +315,7 @@
                                 
                                 <li class="search-tag-li mp-pjax">
                                     <a href="/tags/性能测试/">&nbsp;&nbsp;&nbsp;性能测试</a>
-                                    <small>6</small>
+                                    <small>8</small>
                                 </li>
                                 
                                 <li class="search-tag-li mp-pjax">
@@ -363,6 +371,10 @@
         </nav>
         <div id="pjax">
             <div class="pjax-hidden" style="display: none">
+                
+                    <a  data-pjax href="/2015/02/21/性能测试计划的编写/">性能测试计划的编写</a>
+                
+                    <a  data-pjax href="/2015/02/21/LoadRunner中的关联/">LoadRunner中的关联</a>
                 
                     <a  data-pjax href="/2015/01/31/LoadRunner中的事务和参数化/">LoadRunner中的事务和参数化</a>
                 
@@ -518,6 +530,84 @@
   
 <main class="content" role="main">
 
+    
+    <article class="post">
+
+        <header class="post-header">
+            <div class="tag-tile">
+                
+                
+                <a data-pjax href='/tags/操作系统/'>操作系统</a>
+                
+                
+                <span class="fa fa-bookmark" style="float:right;color:#fa8072"></span>
+            </div>
+            <h1 class="post-title"><a data-pjax href="/2015/01/08/操作系统之虚拟内存管理/">操作系统之虚拟内存管理</a>
+            </h1>
+
+            <div class="post-meta">
+                Post on<span class="fa fa-clock-o"></span>
+                <time datetime="2015-01-08T07:17:32.000Z"
+                      itemprop="datePublished">Jan 8 2015</time>
+            </div>
+        </header>
+        <section class="post-excerpt">
+            <p>
+                
+                课堂笔记
+
+为什么有程序规模的增长速度远远大于存储器容量的增长速度
+理想中的存储器：更大、更快、更便宜的非易失性存储器
+实际中的存储器
+操作系统支持的存储器
+在计算机系统中，尤其是在多道程序运行的环境下,可能会出现内存不够用的情况，怎么办？
+如果是程序太大，超过了内存的容量，可以采用手动的覆盖（overlay）技术，只把需要的指令和数据保存在内存当中；
+如果是程序太多，超过了内存的容量，可以采用自动的交换（swapping）技术，把暂时
+                
+            </p>
+            
+            <p>
+                <a data-pjax href="/2015/01/08/操作系统之虚拟内存管理/"
+                   class="excerpt-link">Read More...</a>
+            </p>
+            
+        </section>
+    </article>
+    
+    <article class="post">
+
+        <header class="post-header">
+            <div class="tag-tile">
+                
+                
+                <a data-pjax href='/tags/操作系统/'>操作系统</a>
+                
+                
+                <span class="fa fa-bookmark" style="float:right;color:#fa8072"></span>
+            </div>
+            <h1 class="post-title"><a data-pjax href="/2015/01/07/操作系统之内存管理篇/">操作系统之内存管理篇</a>
+            </h1>
+
+            <div class="post-meta">
+                Post on<span class="fa fa-clock-o"></span>
+                <time datetime="2015-01-07T03:18:13.000Z"
+                      itemprop="datePublished">Jan 7 2015</time>
+            </div>
+        </header>
+        <section class="post-excerpt">
+            <p>
+                
+                程序要运行，必须先加载到内存。但在很久很久以前，准确的说是在操作系统没有出现以前，程序并不需要加载到内存就能运行。实际上，那个时候程序曾经存放在卡片上，计算机每读一张卡片，就运行一条指令。因此，程序是直接从卡片到执行。图片来源9千万的差距 百年来数据存储历史回顾但这种从外部存储媒介上直接执行指令的做法效率极低，且灵活性很差。因此人们发明了内存储器来将需要运行的程序先行加载，再自动执行，从而提高效率和灵活性。这也导致了“存储的程序”的概念
+                
+            </p>
+            
+            <p>
+                <a data-pjax href="/2015/01/07/操作系统之内存管理篇/"
+                   class="excerpt-link">Read More...</a>
+            </p>
+            
+        </section>
+    </article>
     
     <article class="post">
 
@@ -843,110 +933,6 @@ Win7远程连接上Ub
             
             <p>
                 <a data-pjax href="/2015/01/02/在Win7下用XManager远程控制ubuntu/"
-                   class="excerpt-link">Read More...</a>
-            </p>
-            
-        </section>
-    </article>
-    
-    <article class="post">
-
-        <header class="post-header">
-            <div class="tag-tile">
-                
-                
-                <a data-pjax href='/tags/计算机网络/'>计算机网络</a>
-                
-                
-                <span class="fa fa-bookmark" style="float:right;color:#fa8072"></span>
-            </div>
-            <h1 class="post-title"><a data-pjax href="/2015/01/02/DNS学习手记/">DNS学习手记</a>
-            </h1>
-
-            <div class="post-meta">
-                Post on<span class="fa fa-clock-o"></span>
-                <time datetime="2015-01-02T03:28:15.000Z"
-                      itemprop="datePublished">Jan 2 2015</time>
-            </div>
-        </header>
-        <section class="post-excerpt">
-            <p>
-                
-                物理层
-域名解析
-域名系统等级结构解析流程
-
-假如没有自己的本地DNS服务器，就要找DNS提供商的主机如电信、网通。
-第一步是ns找自己区域内的DNS服务器，如果没有ns就去找根服务器，然后根让ns找com,com让ns去找163.com
-加入直接在自己的本地DNS服务器直接找到即直接返回IP则为权威答案。如此请求分为两种：
-递归请求：即只需发出一次请求，直接返回IP
-迭代查询： 发出n次请求返回IP
-
-
-当然因为会发出多次请求，所以D
-                
-            </p>
-            
-            <p>
-                <a data-pjax href="/2015/01/02/DNS学习手记/"
-                   class="excerpt-link">Read More...</a>
-            </p>
-            
-        </section>
-    </article>
-    
-    <article class="post">
-
-        <header class="post-header">
-            <div class="tag-tile">
-                
-                
-                <a data-pjax href='/tags/性能测试/'>性能测试</a>
-                
-                
-                <span class="fa fa-bookmark" style="float:right;color:#fa8072"></span>
-            </div>
-            <h1 class="post-title"><a data-pjax href="/2014/12/29/性能测试的今生前世/">性能测试的今生前世</a>
-            </h1>
-
-            <div class="post-meta">
-                Post on<span class="fa fa-clock-o"></span>
-                <time datetime="2014-12-29T11:35:15.000Z"
-                      itemprop="datePublished">Dec 29 2014</time>
-            </div>
-        </header>
-        <section class="post-excerpt">
-            <p>
-                
-                
-课堂笔记
-目的：构建起性能测试的基本概念和基本思想
-
-任何事物发展都有一个过程
-
-
-功能关注
-性能关注
-安全关注
-
-软件性能
-
-用户视角：软件性能就是软件对用户操作的响应时间快，好用，舒服，交互性强。
-系统管理员：
-系统的响应时间；
-系统运行时服务器的状态，如CPU利用情况、内存使用情况等；
-系统能否能够实现拓展；
-系统支持多少用户访问；
-系统性能可能的瓶颈在哪里；
-系统是否支持7*24小时的业务访问。
-
-
-性能测试人员：全面的性能—
-                
-            </p>
-            
-            <p>
-                <a data-pjax href="/2014/12/29/性能测试的今生前世/"
                    class="excerpt-link">Read More...</a>
             </p>
             
