@@ -642,6 +642,11 @@
 </ul>
 </li>
 </ul>
+<p>注：<br>LR参数化后highest severity level was”ERROR”的解决方法：<br>处理两种方法如下：</p>
+<ol>
+<li>选择使用URL＿based script录制。</li>
+<li>打开recording options，在开始录制option下的recording中选择recording level为HTML-based script，点击HTML Advanced，选择script type为A script containing explicit.即可。</li>
+</ol>
 <h1 id="课程作业">课程作业</h1>
 <p><b>1、LoadRunner中的事务的含义是什么？随便录制或找一个使用LoadRunner脚本，添加一个事务，然后添加自己的其他代码（目的是要加深学习wasted time这个概念），使用lr_wasted_time将自己代码浪费的时间添加到wasted time中。（例子自己随便选，如果实在不知如果弄，按照课程中的例子也可以），将这个作为附件提交。</b><br>事务又称为Transaction，在LoadRunner中的定义如下:An end-to-end(browser-to-browser) measurement of one or more user actions within action file。中文理解如下：事务(Transaction)这样一个点，我们为了衡量某个action的性能，需要在action的开始和结束位置插入这样一个范围，这就定义了一个transaction。<br>例子见上面笔记，代码见附件~<br><b>2、Loadrunner中的参数化的目的是什么？ 一般什么情况下进行参数化，如果有实际经验，结合实际经验阐述更好。</b><br>目的：实现脚本和数据分离，使代码变活。一般在有数据变动的情况下需要进行参数化。<br>举个简单的参数化的例子，<code>.dat</code>文件内容：</p>
 <figure class="highlight bash"><pre><div class="line">NewParam</div><div class="line">hello</div><div class="line">word</div><div class="line">found</div><div class="line">text</div><div class="line">log</div><div class="line">               //这里有个空行，不可没有，也不可多一行</div></pre></figure>
