@@ -2,8 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://yoursite.com/2015/02/27/text/</loc>
+    <lastmod>2015-02-27T14:31:02.000Z</lastmod>
+  </url>
+  
+  <url>
     <loc>http://yoursite.com/2015/01/31/LoadRunner%E4%B8%AD%E7%9A%84%E4%BA%8B%E5%8A%A1%E5%92%8C%E5%8F%82%E6%95%B0%E5%8C%96/</loc>
-    <lastmod>2015-02-27T14:28:45.000Z</lastmod>
+    <lastmod>2015-02-27T14:30:26.000Z</lastmod>
   </url>
   
   <url>
