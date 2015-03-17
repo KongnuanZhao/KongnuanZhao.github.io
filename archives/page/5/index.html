@@ -5,7 +5,7 @@
   <meta name="baidu-site-verification" content="AQ0sUK7UOM" />
   <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" >
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
-  <title>在Win7下用XManager远程控制ubuntu | KongnuanZhao</title>
+  <title>Archives | KongnuanZhao</title>
   <meta name="description" content="" />
   <meta name="HandheldFriendly" content="True" />
   <meta name="MobileOptimized" content="320" />
@@ -578,7 +578,7 @@
                 
                 <div id="nav-container">
                     <div class="post-navbar" style="line-height: 63px;display:none">
-                        <li id="navbar-title"><a href="#">在Win7下用XManager远程控制ubuntu</a></li>
+                        <li id="navbar-title"><a href="#">undefined</a></li>
                         <li id="navbar-toc" style="border-left: none">
                             <a style="padding-right: 15px">
                                 <span id="toc-content" >Introduction</span><i class="fa fa-chevron-down" ></i>
@@ -597,85 +597,66 @@
 
 
 <!-- -->
-<!--<body class="post-template">-->
+<!--<body class="home-template">-->
 <!---->
   
-
 <main class="content" role="main">
-    <article class="post" >
-    <span class="post-meta">
-                  <div class="tag-tile">
-                      
-                      
-                      <a data-pjax href='/tags/linux/' style='color:#D5D5D5'>linux</a>
-                      
-                      
-                  </div>
-                <h1 class="post-title" style="margin: 14px 0;color:#50585D">在Win7下用XManager远程控制ubuntu</h1>
 
-                    <div class="post-meta">
-                        Post on<span class="fa fa-clock-o"></span>
-                        <time datetime="2015-01-02T10:44:18.000Z"
-                              itemprop="datePublished">Jan 2 2015</time>
-                        By 赵空暖
-                    </div>
-    </span>
+    
+    <article class="post">
 
-        <section class="post-content">
-            <p>在VMware Player 装完Ubuntu 12.04 就巴掌大的界面，很不舒服。<br>所以用Xmanager来远程连接桌面<br>1.在12.04上安装GNOME</p>
-<figure class="highlight bash"><pre><div class="line">sudoapt-get install gnome-panel</div></pre></figure>
+        <header class="post-header">
+            <div class="tag-tile">
+                
+                
+                <a data-pjax href='/tags/点滴/'>点滴</a>
+                
+                
+                <span class="fa fa-bookmark" style="float:right;color:#fa8072"></span>
+            </div>
+            <h1 class="post-title"><a data-pjax href="/2014/12/08/新的开始/">新的开始</a>
+            </h1>
 
-<p>安装完成后注销用户，登陆的时候选择以GNOME界面模式登录<br><img src="/image/ubuntu.png" alt="ubuntu"><br><img src="/image/Ubuntu1.png" alt="Ubuntu1"><br>登陆进入GNOME界面，选择桌面共享然后进行如下设置：<br><img src="/image/Ubuntu2.png" alt="Ubuntu2"><br><img src="/image/Ubuntu3.png" alt="Ubuntu3"><br>2.Ubuntu下GDM的安装<br>首先将防火墙关闭</p>
-<figure class="highlight bash"><pre><div class="line"><span class="built_in">sudo</span> ufw disable</div></pre></figure>
+            <div class="post-meta">
+                Post on<span class="fa fa-clock-o"></span>
+                <time datetime="2014-12-08T08:35:00.000Z"
+                      itemprop="datePublished">Dec 8 2014</time>
+            </div>
+        </header>
+        <section class="post-excerpt">
+            <p>
+                
+                这是新的开始，我用hexo创建了第一篇文章。
+通过下面的命令，就可以创建新文章
+hexo new 新的开始
 
-<p>Win7远程连接上Ubuntu，所使用的协议是rdp，如果没有先装上去</p>
-<figure class="highlight bash"><pre><div class="line"><span class="built_in">sudo</span> apt-get install xrdp</div><div class="line"><span class="built_in">sudo</span> apt-get install vnc4server tightvncserver</div></pre></figure>
+通过下面的命令可以创建带图片的文章
+hexo new photo 新的开始
 
-<p>安装gdm包</p>
-<figure class="highlight bash"><pre><div class="line"><span class="built_in">sudo</span> apt-get install gdm</div></pre></figure>
 
-<p>确认gdm是否安装上去了</p>
-<figure class="highlight bash"><pre><div class="line">$ gdm –version</div></pre></figure>
 
-<p>修改custom.conf配置文件：</p>
-<figure class="highlight bash"><pre><div class="line">$ <span class="built_in">sudo</span> gedit /etc/gdm/custom.conf</div></pre></figure>
+hexo generate #生成静态页面至public目录hexo server #开启预览访问端口（默认端口4000，'ctrl + c'关闭server）hexo deploy #将.deploy目录部署到GitHub
 
-<p>添加如下两个字段：</p>
-<figure class="highlight xml"><pre><div class="line">[security]</div><div class="line">DisallowTCP=false</div><div class="line">[xdmcp]</div><div class="line">Enable=true</div><div class="line">Port=177</div><div class="line">DisplaysPerHost=10  </div><div class="line">//注：DisplaysPerHost表示显示主机的数量</div></pre></figure>
-
-<p>3、修改schemas配置文件</p>
-<figure class="highlight bash"><pre><div class="line"><span class="built_in">sudo</span> gedit /etc/gdm/gdm.schemas</div></pre></figure>
-
-<p>修改xdmcp/Enable字段：</p>
-<figure class="highlight xml"><pre><div class="line"><span class="tag">&lt;<span class="title">schema</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="title">key</span>&gt;</span>xdmcp/Enable<span class="tag">&lt;/<span class="title">key</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="title">signature</span>&gt;</span>b<span class="tag">&lt;/<span class="title">signature</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="title">default</span>&gt;</span>true<span class="tag">&lt;/<span class="title">default</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="title">schema</span>&gt;</span></div></pre></figure>
-
-<p>开启177端口，保证177端口可用</p>
-<figure class="highlight bash"><pre><div class="line"><span class="built_in">sudo</span> ufw allow <span class="number">177</span></div></pre></figure>
-
-<p>重启gdm</p>
-<figure class="highlight bash"><pre><div class="line"><span class="built_in">sudo</span> /etc/init.d/gdm restart</div></pre></figure>
-
-<p>在windows系统上运行xmanager4里的Xbrowser程序在里面新建一个Xmanager Session在Host这里输入ip地址其它配置都不要改变包括端口号确定退出。然后双击这个New Xmanager Session就可以看到登录界面<br><img src="/image/Ubuntu4.png" alt="Ubuntu4"><br>还是大桌面爽~<br><img src="/image/Ubuntu5.png" alt="Ubuntu5"></p>
-
+常用复合命令
+hex
+                
+            </p>
+            
+            <p>
+                <a data-pjax href="/2014/12/08/新的开始/"
+                   class="excerpt-link">Read More...</a>
+            </p>
+            
         </section>
-        <hr/>
-        <nav class="pagination" style="width:auto" role="pagination">
-            
-            <a data-pjax class="newer-posts" href="/2015/01/02/Nosql知多少/">← Prev Post</a>
-            
-            <a class="share-button" data-original-title title>Share this Post</a>
-            
-            <a data-pjax class="older-posts" href="/2015/01/02/DNS学习手记/">Next Post →</a>
-            
-        </nav>
-        <br/>
-        <br/>
-        <section id="comment">
-            <div id="comment-box"></div>
-        </section>
-
-
     </article>
+    
+    <nav class="pagination" role="pagination">
+        
+        <a data-pjax class="newer-posts" href="/archives/page/4/">← Newer Posts</a>
+        
+        <span class="page-number">Page 5 of 5</span>
+        
+    </nav>
 </main>
 
 
