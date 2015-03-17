@@ -5,7 +5,7 @@
   <meta name="baidu-site-verification" content="AQ0sUK7UOM" />
   <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" >
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
-  <title>Archives: 2014/12 | KongnuanZhao</title>
+  <title>github | KongnuanZhao</title>
   <meta name="description" content="" />
   <meta name="HandheldFriendly" content="True" />
   <meta name="MobileOptimized" content="320" />
@@ -572,7 +572,7 @@
                 
                 <div id="nav-container">
                     <div class="post-navbar" style="line-height: 63px;display:none">
-                        <li id="navbar-title"><a href="#">undefined</a></li>
+                        <li id="navbar-title"><a href="#">github</a></li>
                         <li id="navbar-toc" style="border-left: none">
                             <a style="padding-right: 15px">
                                 <span id="toc-content" >Introduction</span><i class="fa fa-chevron-down" ></i>
@@ -591,200 +591,76 @@
 
 
 <!-- -->
-<!--<body class="home-template">-->
+<!--<body class="post-template">-->
 <!---->
   
+
 <main class="content" role="main">
+    <article class="post" >
+    <span class="post-meta">
+                  <div class="tag-tile">
+                      
+                      
+                      <a data-pjax href='/tags/github/' style='color:#D5D5D5'>github</a>
+                      
+                      
+                  </div>
+                <h1 class="post-title" style="margin: 14px 0;color:#50585D">github</h1>
 
-    
-    <article class="post">
+                    <div class="post-meta">
+                        Post on<span class="fa fa-clock-o"></span>
+                        <time datetime="2015-03-17T05:59:51.000Z"
+                              itemprop="datePublished">Mar 17 2015</time>
+                        By 赵空暖
+                    </div>
+    </span>
 
-        <header class="post-header">
-            <div class="tag-tile">
-                
-                
-                <a data-pjax href='/tags/点滴/'>点滴</a>
-                
-                
-                <span class="fa fa-bookmark" style="float:right;color:#fa8072"></span>
-            </div>
-            <h1 class="post-title"><a data-pjax href="/2014/12/15/记录总结这半学期/">记录总结这半学期</a>
-            </h1>
+        <section class="post-content">
+            <p>郁闷一下午提交一直是<code>Everything up-to-date</code>,要不就是</p>
+<figure class="highlight bash"><pre><div class="line">git status</div><div class="line">n branch master</div><div class="line">nothing to commit, working directory clean</div><div class="line">git push gitcafe gitcafe-pages</div><div class="line">verything up-to-date</div></pre></figure>
 
-            <div class="post-meta">
-                Post on<span class="fa fa-clock-o"></span>
-                <time datetime="2014-12-15T15:50:01.000Z"
-                      itemprop="datePublished">Dec 15 2014</time>
-            </div>
-        </header>
-        <section class="post-excerpt">
-            <p>
-                
-                
-我应该是说，这半学期，真的是说不上有什么收获，完全没有大一大二的充实，也少了那时候的冲劲。这半年各处涉猎，突然回首发现原来自己还是在起点。对于专业课，我不能拍着胸脯说每一个知识点自己都掌握的很好，很多东西学了会忘。只有真正理解的东西才是最深刻的。也才是真正属于自己的东西。这半年，自己在性格上开朗了很多，不知道是好事还是坏事。总之，学会正确的做人做事才是最重要的。一个属于自己博客，也终于在这学期落地了，想了很久，开始的时候是觉得没有必要
-                
-            </p>
-            
-            <p>
-                <a data-pjax href="/2014/12/15/记录总结这半学期/"
-                   class="excerpt-link">Read More...</a>
-            </p>
-            
+<p>先记录一下今天遇到的问题：<br>使用hexo写博客源文件都是在本地的，如果换了电脑需要写博客时就会比较麻烦。<br>我们需要在电脑上新建一个文件夹如:111,然后进入这个文件夹克隆创建仓库。</p>
+<figure class="highlight bash"><pre><div class="line">$ git clone git@github.com:KongnuanZhao/KongnuanZhao.github.io.git</div><div class="line">Cloning into <span class="string">'KongnuanZhao.github.io'</span>...</div><div class="line">remote: Counting objects: <span class="number">6496</span>, done.</div><div class="line">remote: Compressing objects: <span class="number">100</span>% (<span class="number">166</span>/<span class="number">166</span>), done.</div><div class="line">remote: Total <span class="number">6496</span> (delta <span class="number">112</span>), reused <span class="number">1</span> (delta <span class="number">1</span>), pack-reused <span class="number">6227</span></div><div class="line">Receiving objects: <span class="number">100</span>% (<span class="number">6496</span>/<span class="number">6496</span>), <span class="number">23.61</span> MiB | <span class="number">192.00</span> KiB/s, done.</div><div class="line">Resolving deltas: <span class="number">100</span>% (<span class="number">2665</span>/<span class="number">2665</span>), done.</div><div class="line">Checking connectivity... done.</div></pre></figure>
+
+<p>设置远程仓库地址，</p>
+<figure class="highlight bash"><pre><div class="line">$ git remote add origin git@github.com:KongnuanZhao/KongnuanZhao.github.io.git</div></pre></figure>
+
+<p><code>origin</code>可以改为别的名字，相应的改变在<code>.git</code>文件下的<code>Config</code>配置文件</p>
+<figure class="highlight bash"><pre><div class="line">[core]</div><div class="line">	repositoryformatversion = <span class="number">0</span></div><div class="line">	filemode = <span class="literal">false</span></div><div class="line">	bare = <span class="literal">false</span></div><div class="line">	logallrefupdates = <span class="literal">true</span></div><div class="line">	symlinks = <span class="literal">false</span></div><div class="line">	ignorecase = <span class="literal">true</span></div><div class="line">	hideDotFiles = dotGitOnly</div><div class="line"></div><div class="line">[remote <span class="string">"origin"</span>]</div><div class="line">	url = git@github.com:KongnuanZhao/KongnuanZhao.github.io.git</div><div class="line">	fetch = +refs/heads/*:refs/remotes/origin/*</div></pre></figure>
+
+<p>如果要是执行<code>git remote add gitcafe git@gitcafe.com:KongnuanZhao/KongnuanZhao.git</code>,该配置文件就会添加：</p>
+<figure class="highlight bash"><pre><div class="line">[remote <span class="string">"gitcafe"</span>]</div><div class="line">	url = git@gitcafe.com:KongnuanZhao/KongnuanZhao.git</div><div class="line">	fetch = +refs/heads/*:refs/remotes/gitcafe/*</div></pre></figure>
+
+<p>查看你当前项目远程连接的是哪个仓库地址:<code>git remote -v</code></p>
+<figure class="highlight bash"><pre><div class="line">$ git remote -v</div><div class="line">origin  git@github.com:KongnuanZhao/KongnuanZhao.github.io.git (fetch)</div><div class="line">origin  git@github.com:KongnuanZhao/KongnuanZhao.github.io.git (push)</div></pre></figure>
+
+<p>之后，当写博客后，只需要<code>git add .</code>，将所有文件提交到缓存区。<br><code>git commit -m &quot;add all files&quot;</code> ，将这些文件提交到本地仓库。<br><code>git push origin master</code>，将本地仓库的改动推送到github仓库。<br>当远程仓库有更新时，使用git pull或者git fetch就可以同步代码到本地了。<br>从远程库抓取信息,然后将远端分支自动合并到本地仓库中当前分支。这么用，既快且好。默认情况下<code>git clone</code>命令本质上就是自动创建了本地的<code>master</code>分支用于跟踪远程仓库中的 master 分支。所以一般我们运行<code>git pull</code>，目的都是要从原始克隆的远端仓库中抓取数据后，合并到工作目录中的当前分支。</p>
+<figure class="highlight bash"><pre><div class="line">$ git pull origin</div><div class="line">Already up-to-date.</div></pre></figure>
+
+<p>再就是今天莫名其妙的发现不能同时提交代码到github和gitcafe上了，没办法，只能记录下下面这条命令喽。<br>先查看远程仓库地址</p>
+<figure class="highlight bash"><pre><div class="line">$ git remote -v</div><div class="line">gitcafe git@gitcafe.com:KongnuanZhao/KongnuanZhao.git (fetch)</div><div class="line">gitcafe git@gitcafe.com:KongnuanZhao/KongnuanZhao.git (push)</div><div class="line">origin  git@github.com:KongnuanZhao/KongnuanZhao.github.io.git (fetch</div><div class="line">origin  git@github.com:KongnuanZhao/KongnuanZhao.github.io.git (push)</div></pre></figure>
+
+<p>到<code>\Hexo\.deploy</code>目录底下，执行（现在也不需要切换分支也能提交啦）<br><code>git checkout gitcafe-pages &amp;&amp; git push gitcafe gitcafe-pages &amp;&amp; git checkout master &amp;&amp; cd .. &amp;&amp; hexo d</code></p>
+
         </section>
-    </article>
-    
-    <article class="post">
-
-        <header class="post-header">
-            <div class="tag-tile">
-                
-                
-                <a data-pjax href='/tags/抓包/'>抓包</a>
-                
-                <a data-pjax href='/tags/测试/'>测试</a>
-                
-                
-                <span class="fa fa-bookmark" style="float:right;color:#fa8072"></span>
-            </div>
-            <h1 class="post-title"><a data-pjax href="/2014/12/11/抓包/">抓包</a>
-            </h1>
-
-            <div class="post-meta">
-                Post on<span class="fa fa-clock-o"></span>
-                <time datetime="2014-12-11T13:36:24.000Z"
-                      itemprop="datePublished">Dec 11 2014</time>
-            </div>
-        </header>
-        <section class="post-excerpt">
-            <p>
-                
-                
-抓包工具之比较
-Httpwatch
-1）基本使用和技巧2）HTTP请求时间分段分析
-时间轴
-(图片点击放大)
-
-
-Blocked
-The Blocked time includes any pre-processing time (such as cache lookup) and the time spent waiting for a network connection to become available. Browsers
-                
-            </p>
+        <hr/>
+        <nav class="pagination" style="width:auto" role="pagination">
             
-            <p>
-                <a data-pjax href="/2014/12/11/抓包/"
-                   class="excerpt-link">Read More...</a>
-            </p>
+            <a style="cursor:default" class="newer-posts" href="#">This is the First Post</a>
             
+            <a class="share-button" data-original-title title>Share this Post</a>
+            
+            <a data-pjax class="older-posts" href="/2015/03/17/music-Avatar-Island-whale/">Next Post →</a>
+            
+        </nav>
+        <br/>
+        <br/>
+        <section id="comment">
+            <div id="comment-box"></div>
         </section>
+
+
     </article>
-    
-    <article class="post">
-
-        <header class="post-header">
-            <div class="tag-tile">
-                
-                
-                <a data-pjax href='/tags/hexo/'>hexo</a>
-                
-                
-                <span class="fa fa-bookmark" style="float:right;color:#fa8072"></span>
-            </div>
-            <h1 class="post-title"><a data-pjax href="/2014/12/10/通过源码学习hexo/">通过源码学习hexo</a>
-            </h1>
-
-            <div class="post-meta">
-                Post on<span class="fa fa-clock-o"></span>
-                <time datetime="2014-12-10T04:46:12.000Z"
-                      itemprop="datePublished">Dec 10 2014</time>
-            </div>
-        </header>
-        <section class="post-excerpt">
-            <p>
-                
-                先序知识
-模块
-
-参考阮一峰的前端模块管理器简介
-Javascript模块化编程（一）：模块的写法
-Javascript模块化编程（二）：AMD规范
-Javascript模块化编程（三）：require.js的用法
-
-NodeJS社区
-
-
-NodeJS 移步 → Nodejs学习路线图
-npm 移步 → 快速创建基于npm的nodejs库
-RequireJS 移步 → RequireJS异步模块加载
-
-hexo是什么
-
-关于hexo的详
-                
-            </p>
-            
-            <p>
-                <a data-pjax href="/2014/12/10/通过源码学习hexo/"
-                   class="excerpt-link">Read More...</a>
-            </p>
-            
-        </section>
-    </article>
-    
-    <article class="post">
-
-        <header class="post-header">
-            <div class="tag-tile">
-                
-                
-                <a data-pjax href='/tags/点滴/'>点滴</a>
-                
-                
-                <span class="fa fa-bookmark" style="float:right;color:#fa8072"></span>
-            </div>
-            <h1 class="post-title"><a data-pjax href="/2014/12/08/新的开始/">新的开始</a>
-            </h1>
-
-            <div class="post-meta">
-                Post on<span class="fa fa-clock-o"></span>
-                <time datetime="2014-12-08T08:35:00.000Z"
-                      itemprop="datePublished">Dec 8 2014</time>
-            </div>
-        </header>
-        <section class="post-excerpt">
-            <p>
-                
-                这是新的开始，我用hexo创建了第一篇文章。
-通过下面的命令，就可以创建新文章
-hexo new 新的开始
-
-通过下面的命令可以创建带图片的文章
-hexo new photo 新的开始
-
-
-
-hexo generate #生成静态页面至public目录hexo server #开启预览访问端口（默认端口4000，'ctrl + c'关闭server）hexo deploy #将.deploy目录部署到GitHub
-
-常用复合命令
-hex
-                
-            </p>
-            
-            <p>
-                <a data-pjax href="/2014/12/08/新的开始/"
-                   class="excerpt-link">Read More...</a>
-            </p>
-            
-        </section>
-    </article>
-    
-    <nav class="pagination" role="pagination">
-        
-        <a data-pjax class="newer-posts" href="/archives/2014/12/">← Newer Posts</a>
-        
-        <span class="page-number">Page 2 of 2</span>
-        
-    </nav>
 </main>
 
 
