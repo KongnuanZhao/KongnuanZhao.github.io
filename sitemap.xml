@@ -2,6 +2,21 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://yoursite.com/2015/03/18/thrift-maven/</loc>
+    <lastmod>2015-03-18T13:46:44.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/2015/03/17/hadoop-install/</loc>
+    <lastmod>2015-03-18T13:12:29.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/2015/03/18/hbase-install/</loc>
+    <lastmod>2015-03-18T13:08:52.000Z</lastmod>
+  </url>
+  
+  <url>
     <loc>http://yoursite.com/2015/03/17/github/</loc>
     <lastmod>2015-03-18T02:27:53.000Z</lastmod>
   </url>
@@ -24,11 +39,6 @@
   <url>
     <loc>http://yoursite.com/2015/03/17/music-Avatar-Island-whale/</loc>
     <lastmod>2015-03-17T13:45:16.000Z</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://yoursite.com/2015/03/17/hadoop-install/</loc>
-    <lastmod>2015-03-17T13:27:34.000Z</lastmod>
   </url>
   
   <url>
