@@ -2,8 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://yoursite.com/2015/03/17/github/</loc>
+    <lastmod>2015-03-18T02:27:53.000Z</lastmod>
+  </url>
+  
+  <url>
     <loc>http://yoursite.com/2015/03/17/ubuntu-oracle/</loc>
-    <lastmod>2015-03-17T13:49:02.000Z</lastmod>
+    <lastmod>2015-03-18T02:20:09.000Z</lastmod>
   </url>
   
   <url>
@@ -19,11 +24,6 @@
   <url>
     <loc>http://yoursite.com/2015/03/17/music-Avatar-Island-whale/</loc>
     <lastmod>2015-03-17T13:45:16.000Z</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://yoursite.com/2015/03/17/github/</loc>
-    <lastmod>2015-03-17T13:43:03.000Z</lastmod>
   </url>
   
   <url>

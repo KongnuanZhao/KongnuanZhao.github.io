@@ -5,7 +5,7 @@
   <meta name="baidu-site-verification" content="AQ0sUK7UOM" />
   <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" >
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
-  <title>ubuntu-oracle | KongnuanZhao</title>
+  <title>Linux上安装Oracle | KongnuanZhao</title>
   <meta name="description" content="" />
   <meta name="HandheldFriendly" content="True" />
   <meta name="MobileOptimized" content="320" />
@@ -49,7 +49,7 @@
                                 <div class="mp-scroll">
                                 
                                 <li class="search-archive-li mp-pjax">
-                                    <a href="/2015/03/17/ubuntu-oracle/">ubuntu-oracle</a>
+                                    <a href="/2015/03/17/ubuntu-oracle/">Linux上安装Oracle</a>
                                 </li>
                                 
                                 <li class="search-archive-li mp-pjax">
@@ -57,7 +57,7 @@
                                 </li>
                                 
                                 <li class="search-archive-li mp-pjax">
-                                    <a href="/2015/03/17/github/">github</a>
+                                    <a href="/2015/03/17/github/">hexo博客同步到github和gitcafe(下)</a>
                                 </li>
                                 
                                 <li class="search-archive-li mp-pjax">
@@ -436,11 +436,11 @@
         <div id="pjax">
             <div class="pjax-hidden" style="display: none">
                 
-                    <a  data-pjax href="/2015/03/17/ubuntu-oracle/">ubuntu-oracle</a>
+                    <a  data-pjax href="/2015/03/17/ubuntu-oracle/">Linux上安装Oracle</a>
                 
                     <a  data-pjax href="/2015/03/17/hadoop-install/">Ubuntu搭建hadoop</a>
                 
-                    <a  data-pjax href="/2015/03/17/github/">github</a>
+                    <a  data-pjax href="/2015/03/17/github/">hexo博客同步到github和gitcafe(下)</a>
                 
                     <a  data-pjax href="/2015/03/17/music-Avatar-Island-whale/">化身孤岛的鲸</a>
                 
@@ -598,7 +598,7 @@
                 
                 <div id="nav-container">
                     <div class="post-navbar" style="line-height: 63px;display:none">
-                        <li id="navbar-title"><a href="#">ubuntu-oracle</a></li>
+                        <li id="navbar-title"><a href="#">Linux上安装Oracle</a></li>
                         <li id="navbar-toc" style="border-left: none">
                             <a style="padding-right: 15px">
                                 <span id="toc-content" >Introduction</span><i class="fa fa-chevron-down" ></i>
@@ -631,7 +631,7 @@
                       
                       
                   </div>
-                <h1 class="post-title" style="margin: 14px 0;color:#50585D">ubuntu-oracle</h1>
+                <h1 class="post-title" style="margin: 14px 0;color:#50585D">Linux上安装Oracle</h1>
 
                     <div class="post-meta">
                         Post on<span class="fa fa-clock-o"></span>
@@ -642,7 +642,16 @@
     </span>
 
         <section class="post-content">
-            <p>装Oracle的次数还蛮多的，记录一下Oracle的安装，方便自己回忆。</p>
+            <p>装Oracle的次数还蛮多的，记录一下Oracle的安装，方便自己回忆。<br>Oracle数据库10g下载 <a href="http://www.oracle.com/technetwork/cn/database/index-084376-zhs.html" target="_blank" rel="external">链接在此</a><br>官网上说Oracle Database 10.2 and 11.1 are no longer available for download. 现在只能下Oracle 10g快捷版（Express Edition）<br>ORACLE把10G的下载从官网拿掉了，这里oracle10g下载的链接方便大家下载<a href="http://blog.itpub.net/27006877/viewspace-739059/" target="_blank" rel="external">链接在此</a><br>Oracle10g联机文档<a href="https://docs.oracle.com/cd/B19306_01/nav/portal_2.htm" target="_blank" rel="external">Oracle Database Online Documentation 10g Release 2 (10.2)</a><br>关于Oracle10gEX介绍如下：</p>
+<blockquote>
+<p>Oracle 数据库 10g 快捷版（Oracle 数据库 XE）是一款基于 Oracle 数据库 10g 第 2 版代码库的小型入门级数据库，它具备以下优点：免费进行开发、部署和分发；下载速度快；并且管理简单。Oracle 数据库 XE 是一款优秀的入门级数据库，可供以下用户使用：<br>致力于 PHP、Java、.NET、XML 和开放源代码应用程序的开发人员<br>需要免费的入门级数据库进行培训和部署的 DBA<br>需要入门级数据库进行免费分发的独立软件供应商 (ISV) 和硬件供应商<br>需要在课程中使用免费数据库的教育机构和学生<br>现在，利用 Oracle 数据库 XE，您可以使用强大的、公认的、行业领先的基础架构来开发和部署应用程序，然后在必要时进行升级而不必进行昂贵和复杂的移植。<br>Oracle 数据库 XE 对安装到的主机的规模和 CPU 数量不作限制（每台计算机一个数据库），但 XE 将最多存储 4GB 的用户数据，最多使用 1GB 内存，并在主机上使用一个 CPU。</p>
+</blockquote>
+<p>关于下载的介绍：</p>
+<blockquote>
+<p>database 是ORACLE数据库系统软件，一般只要这个包就可以了。<br>client是database包的精减包，不包括数据库，只包括客户端访问需要用的相关软件包，主要用于安装在客户端机器上。<br>gateways是指透明网关用的，如果要从oracle访问其它数据库系统(sqlserver,sybase…)则需要这个包了<br>clusterware是安装ORACLE集群(rac)时用的</p>
+</blockquote>
+<p>Oracle数据库11g及以上版本下载 <a href="http://www.oracle.com/technetwork/database/enterprise-edition/downloads/index.html" target="_blank" rel="external">链接在此</a><br>Oracle11g联机文档<a href="http://docs.oracle.com/cd/E11882_01/nav/portal_11.htm" target="_blank" rel="external">Oracle Database Online Documentation 11g Release 2 (11.2)</a></p>
+<p>参考文章<a href="http://www.cnblogs.com/quanweiru/archive/2012/11/09/2762353.html" target="_blank" rel="external">Linux Oracle10g安装</a><br>照着官方文档和参考这篇文章开始漫漫装吧。</p>
 
         </section>
         <hr/>
