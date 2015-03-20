@@ -750,8 +750,18 @@
 <li>负载机器的软硬件配置<br>硬件环境（PC、笔记本电脑、服务器、小型机、大型机等）。<br>软件环境（操作系统，如win200、winXp,win7,winNT,UNIX，Linux等；web服务器，如Tomcat、Weblogic、IIS、WebSphere<br>等；数据库，如Oracle、SQL Server、MySQL、DB2等；还有一些其他软件，如办公软件，杀毒软件等）。软件环境的配置还需呀考虑软件的具体版本和补丁的安装情况。</li>
 <li>脚本的复杂程度</li>
 <li>负载生成器的连接<br>添加Load Generator后，执行”Connect”操作，使Status为Ready，表示该机器连接正常了如果为Failed，表示该机器不能连接，要检查原因。<br><img src="/image/loadGenerators.png" alt="loadGenerators"></li>
-<li>mmdrv解析<br>Controller使用驱动程序mmdrv运行Vuser.可以在controller的【run-time settiing】中选择Vuser的运行方式，是多进程还是多线程的方式。<br><img src="/image/process-thread.png" alt="process-thread"><br>如果选择以线程方式运行：假设并发用户为30，则只启动一个线程。最多一个线程最大用户数是50。也就是说如果并发用户为125则是三个进程。<br>如果选择以进程的方式运行：假设并发用户为30，则启动30个进程。<br>在启动了IP欺骗之后，所需启动的进程数，还与选择的是按进程还是线程来分配IP地址有关，下面介绍的是IP欺骗。<br>按进程分IP，每个ip就需要启动一个进程。<br>按线程分IP，每个ip就不需要启动一个进程。<h3 id="IP_Spoofer和集合点">IP Spoofer和集合点</h3>
+<li>mmdrv解析<br>Controller使用驱动程序mmdrv运行Vuser.可以在controller的【run-time settiing】中选择Vuser的运行方式，是多进程还是多线程的方式。<br><img src="/image/process-thread.png" alt="process-thread"><br>  *如果选择以线程方式运行：假设并发用户为30，则只启动一个线程。最多一个线程最大用户数是50。也就是说如果并发用户为125则是三个进程。<ul>
+<li>如果选择以进程的方式运行：假设并发用户为30，则启动30个进程。</li>
+<li>在启动了IP欺骗之后，所需启动的进程数，还与选择的是按进程还是线程来分配IP地址有关，下面介绍的是IP欺骗。<ul>
+<li>按进程分IP，每个ip就需要启动一个进程。</li>
+<li>按线程分IP，每个ip就不需要启动一个进程。</li>
+</ul>
 </li>
+</ul>
+</li>
+</ul>
+<h3 id="IP_Spoofer和集合点">IP Spoofer和集合点</h3>
+<ul>
 <li><p>IP欺骗（IP Spoofer）</p>
 <ul>
 <li>为什么需要IP Spoofer？<br>默认情况下，同一个Load Generator上的所有虚拟用户都是用该Generator的IP地址来访问服务器，即在同一个负载生成器计算机上的Vuser具有相同的IP地址，当有大量虚拟用户并发运行时，就会出现多个用户使用同一个IP地址对网站进行加压的的情况。与此同时，应用程序服务器经常缓存来自同一台计算机上的客户端信息，而路由器则缓存源信息和目标信息，以提高处理能力。经过服务器和路由器进行优化处理后，Load Generator产生的压力可能无法反映真实的情况，尤其遇到服务器对同一IP访问进行限制的情况，将会导致每个Load Generator仅能创建一个虚拟用户，除非修改服务器配置。<br>LaodRunner可以通过IP Spoofer技术来解决上述问题，以保证每个虚拟用户使用自己的IP地址来访问服务器，IP Spoofer也称为“IP 欺骗”。<br>其实，在大多数性能测试过程中，使用多个IP地址和使用同一个IP对网站进行访问并不影响实际被测应用的性能表现，但在某些情况下，使用多个IP地址和使用一个IP地址对应用会造成不同的运行情况，此时就需要更加真实的模拟，在同一台LaodGenerator Machine上，让每个虚拟用户使用不同的IP地址。</li>
