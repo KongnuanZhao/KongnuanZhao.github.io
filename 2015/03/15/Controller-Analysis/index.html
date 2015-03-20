@@ -707,8 +707,7 @@
 <h2 id="Controller">Controller</h2>
 <h3 id="Controller的引入">Controller的引入</h3>
 <ul>
-<li>需要Controller的原因？</li>
-<li>一种强大的、成熟的工具的体现。</li>
+<li>需要Controller的原因？<br>做性能测试需要模拟比如一个网站数以万计的用户级的数量，如果要手工测试这是不可能的，所以需要LoadRunner来完成。Controller用来管理和维护场景，可以在一台工作站控制一个场景中的所有虚拟用户Vuser。执行场景时，Controller会将该场景中的每个Vuser分配给一个负载生成器。负载生成器执行脚本，从而使Vuser可以模拟真实用户操作计算机。解决了手工操作不同步和人力、物力、资源浪费的问题。</li>
 <li><p>Controller的启动方式</p>
 <ul>
 <li>【LoadRunner Launcher】 → 【Run Load Tests】</li>
@@ -736,7 +735,7 @@
 </li>
 <li><p>Run视图解析</p>
 <ul>
-<li>Schedule by 和 Run mode解析</li>
+<li>Schedule by 和 Run mode解析<table><caption>Schedule by解析</caption><tr><th style="width:20%">Scenario(场景)</th><td>当按场景计划执行时，Controller会同时运行所有参与场景的Vuser组，Controller会将操作按比例应用于所有的Vuser。</td></tr><tr><th>Group(组)</th><td>当按组计划执行时，参与场景的每个Vuser组按其自己单独计划运行。对于每个Vuser组，可以指定合适开始运行，在制定的时间间隔内开始和停止运行运行组中多少个Vuser,以及改组应该继续运行多长时间。比如订票系统这种场景时存在业务处理先后顺序，这个时候就需要用到组方式，只有注册用户业务先完成后，才能执行订票业务。</td></tr></table><br><table><caption>Run mode解析 </caption><tr><th style="width:20%">Real-World Schedule(实际计划)</th><td>Vuser组根据设置定义来运行，但是可以自己定义每次运行多少个Vuser,Vuser应该持续运行多长时间以及每次多少个Vuser停止运行。</td></tr><tr><th>Basic schedule(基本计划)</th><td>可以计划一次运行多少个Vuser,以及停止之前应运行多长时间。</td></tr></table></li>
 <li>Run视图解析<ul>
 <li>init状态解析</li>
 </ul>
@@ -745,15 +744,14 @@
 </li>
 </ul>
 <h3 id="负载生成器">负载生成器</h3>
-<p>Controller发号施令，Load Generator负责实施和执行。一个Controller可以控制多台机器上的Load Generator，只需要在其他机器上装有Load Generator启动agent并在网络上找到它，让他们听从指挥，共同完成任务。负载生成器(Load Generators)的使用要保证负载生成器自己不要成为瓶颈。</p>
 <ul>
+<li>为什么有<br>负载是需要消耗系统资源的，如：CPU、内存、磁盘空间等，模拟越多的用户，也就意味着消耗更多的资源，当一台机器资源模拟不了太多的虚拟用户时，负载机就成为了性能测试的瓶颈。针对这个问题，LoadRunner提供了负载生成器（LoadGenerator）来解决。Load Generator是在场景运行中运行虚拟用户脚本的计算机。它将负载的虚拟用户分配给多个负载机，利用这些机器的硬件资源模拟大量的虚拟用户对被测系统施加更大的压力。</li>
+<li>负载生成器和Controller的关系<br>Controller发号施令，Load Generator负责实施和执行。一个Controller可以控制多台机器上的Load Generator，只需要在其他机器上装有Load Generator启动agent并在网络上找到它，让他们听从指挥，共同完成任务。负载生成器(Load Generators)的使用要保证负载生成器自己不要成为瓶颈。</li>
 <li>负载机器的软硬件配置<br>硬件环境（PC、笔记本电脑、服务器、小型机、大型机等）。<br>软件环境（操作系统，如win200、winXp,win7,winNT,UNIX，Linux等；web服务器，如Tomcat、Weblogic、IIS、WebSphere<br>等；数据库，如Oracle、SQL Server、MySQL、DB2等；还有一些其他软件，如办公软件，杀毒软件等）。软件环境的配置还需呀考虑软件的具体版本和补丁的安装情况。</li>
 <li>脚本的复杂程度</li>
 <li>负载生成器的连接<br>添加Load Generator后，执行”Connect”操作，使Status为Ready，表示该机器连接正常了如果为Failed，表示该机器不能连接，要检查原因。<br><img src="/image/loadGenerators.png" alt="loadGenerators"></li>
-<li>mmdrv解析</li>
-</ul>
-<h3 id="IP_Spoofer和集合点">IP Spoofer和集合点</h3>
-<ul>
+<li>mmdrv解析<br>Controller使用驱动程序mmdrv运行Vuser.可以在controller的【run-time settiing】中选择Vuser的运行方式，是多进程还是多线程的方式。<br><img src="/image/process-thread.png" alt="process-thread"><br>如果选择以线程方式运行：假设并发用户为30，则只启动一个线程。最多一个线程最大用户数是50。也就是说如果并发用户为125则是三个进程。<br>如果选择以进程的方式运行：假设并发用户为30，则启动30个进程。<br>在启动了IP欺骗之后，所需启动的进程数，还与选择的是按进程还是线程来分配IP地址有关，下面介绍的是IP欺骗。<br>按进程分IP，每个ip就需要启动一个进程。<br>按线程分IP，每个ip就不需要启动一个进程。<h3 id="IP_Spoofer和集合点">IP Spoofer和集合点</h3>
+</li>
 <li><p>IP欺骗（IP Spoofer）</p>
 <ul>
 <li>为什么需要IP Spoofer？<br>默认情况下，同一个Load Generator上的所有虚拟用户都是用该Generator的IP地址来访问服务器，即在同一个负载生成器计算机上的Vuser具有相同的IP地址，当有大量虚拟用户并发运行时，就会出现多个用户使用同一个IP地址对网站进行加压的的情况。与此同时，应用程序服务器经常缓存来自同一台计算机上的客户端信息，而路由器则缓存源信息和目标信息，以提高处理能力。经过服务器和路由器进行优化处理后，Load Generator产生的压力可能无法反映真实的情况，尤其遇到服务器对同一IP访问进行限制的情况，将会导致每个Load Generator仅能创建一个虚拟用户，除非修改服务器配置。<br>LaodRunner可以通过IP Spoofer技术来解决上述问题，以保证每个虚拟用户使用自己的IP地址来访问服务器，IP Spoofer也称为“IP 欺骗”。<br>其实，在大多数性能测试过程中，使用多个IP地址和使用同一个IP对网站进行访问并不影响实际被测应用的性能表现，但在某些情况下，使用多个IP地址和使用一个IP地址对应用会造成不同的运行情况，此时就需要更加真实的模拟，在同一台LaodGenerator Machine上，让每个虚拟用户使用不同的IP地址。</li>
@@ -824,7 +822,7 @@
 </ul>
 <p><b>3、Web Page Diagnostics中请求各阶段都有哪些？它们的具体含义是什么？</b><br>Connections Time：连接服务器所需要的时间。TCP三次握手的时间。<br>DNS Resolution Time：通过DNS服务器解析域名所需要的时间，解析受到DNS服务器的影响。<br>Error Time：服务器返回错误响应时间，这个时间反映了服务器处理错误的速度，一般是Web服务器直接返回的，包含了网络时间和Web服务器返回错误的时间。<br>First Buffer Time：连接到服务器，从我们发出请求到服务器返回第一个字节所需要的时间，反映了系统对于正常请求的处理时间开销，包含网络时间和服务器正常处理的时间。<br>FTP Authentication Time ：FTP认证时间，这是进行FTP登录等操作所需要消耗的认证时间。<br>Receive Time：接受数据的时间，这个时间反映了带宽的大小，带宽越大，下载时间越短。<br>SSL Handshaking Time：SSL加密握手的时间，当发出https时才会进行SSL加密处理。<br>Receive Time:接收返回的时间。<br>Client Time：客户端浏览接收所需要使用的时间，可以不用考虑。</p>
 <p><b>4、详细阐述拐点的含义。并说明如何在图表中识别出拐点？</b><br>基本思想就是性能产生瓶颈的主要原因就是因为某个资源的使用达到了极限，此时表现为随着压力的增大，系统性能却出现急剧下降，这样就产生了”拐点”现象。当得到”拐点”附近的资源使用情况时，就能定位出系统的性能瓶颈。”拐点分析”方法举例，如系统随着用户的增多，事务响应时间缓慢增加，当用户数达到100个虚拟用户时，系统响应时间急剧增加，表现为一个明显的”折线”，这就说明了系统承载不了如此多的用户做这个事务，也就是存在性能瓶颈。</p>
-<h2 id="（未完待续）">（未完待续）</h2>
+<hr>
 <p>学习的课程来自<a href="http://www.dataguru.cn/" target="_blank" rel="external">炼数成金</a>广州八神王磊老师的软件性能测试（第二期）^_^</p>
 
         </section>
