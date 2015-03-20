@@ -297,12 +297,12 @@
                                 </li>
                                 
                                 <li class="search-category-li mp-pjax">
-                                    <a href="/categories/nosql/">&nbsp;&nbsp;&nbsp;nosql</a>
+                                    <a href="/categories/Hbase/nosql/">&nbsp;&nbsp;&nbsp;nosql</a>
                                     <small>1</small>
                                 </li>
                                 
                                 <li class="search-category-li mp-pjax">
-                                    <a href="/categories/Hbase/nosql/">&nbsp;&nbsp;&nbsp;nosql</a>
+                                    <a href="/categories/nosql/">&nbsp;&nbsp;&nbsp;nosql</a>
                                     <small>1</small>
                                 </li>
                                 
@@ -317,13 +317,13 @@
                                 </li>
                                 
                                 <li class="search-category-li mp-pjax">
-                                    <a href="/categories/数据分析/">&nbsp;&nbsp;&nbsp;数据分析</a>
-                                    <small>1</small>
+                                    <a href="/categories/R/数据分析/">&nbsp;&nbsp;&nbsp;数据分析</a>
+                                    <small>2</small>
                                 </li>
                                 
                                 <li class="search-category-li mp-pjax">
-                                    <a href="/categories/R/数据分析/">&nbsp;&nbsp;&nbsp;数据分析</a>
-                                    <small>2</small>
+                                    <a href="/categories/数据分析/">&nbsp;&nbsp;&nbsp;数据分析</a>
+                                    <small>1</small>
                                 </li>
                                 
                                 <li class="search-category-li mp-pjax">
@@ -594,17 +594,17 @@
                 
                     <a data-pjax href="/categories/linux/">&nbsp;&nbsp;linux</a>
                 
-                    <a data-pjax href="/categories/nosql/">&nbsp;&nbsp;nosql</a>
-                
                     <a data-pjax href="/categories/Hbase/nosql/">&nbsp;&nbsp;nosql</a>
+                
+                    <a data-pjax href="/categories/nosql/">&nbsp;&nbsp;nosql</a>
                 
                     <a data-pjax href="/categories/性能测试/">&nbsp;&nbsp;性能测试</a>
                 
                     <a data-pjax href="/categories/操作系统/">&nbsp;&nbsp;操作系统</a>
                 
-                    <a data-pjax href="/categories/数据分析/">&nbsp;&nbsp;数据分析</a>
-                
                     <a data-pjax href="/categories/R/数据分析/">&nbsp;&nbsp;数据分析</a>
+                
+                    <a data-pjax href="/categories/数据分析/">&nbsp;&nbsp;数据分析</a>
                 
                     <a data-pjax href="/categories/测试/">&nbsp;&nbsp;测试</a>
                 
@@ -721,14 +721,16 @@
 <li>全部操作在server端完成，避免了数据在网络上的传输。</li>
 <li>导出文件的格式更接近于数据库本身文件的格式，避免了数据写入文件时的转换。</li>
 <li>直接路径的加载，使效率更高。</li>
-<li>元数据和数据在导出过程中可以重叠进行，提高导出的效率。<h1 id="实际操作">实际操作</h1>
+<li>元数据和数据在导出过程中可以重叠进行，提高导出的效率。</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h1 id="实际操作">实际操作</h1>
 <h2 id="exp/imp方式">exp/imp方式</h2>
 <h3 id="exp导出">exp导出</h3>
-</li>
-</ul>
-</li>
-</ul>
-</li>
+<ul>
 <li>将数据库orcl完全导出,用户名zkn 密码zkn 导出到D:\zkn.dmp中</li>
 </ul>
 <figure class="highlight bash"><pre><div class="line">exp zkn/zkn@orcl file=d:\zkn.dmp full=y</div></pre></figure>
@@ -746,7 +748,7 @@
 </ul>
 <figure class="highlight bash"><pre><div class="line">exp system/zkn@orcl file=d:\tables.dmp tables=(table1,table2)</div></pre></figure>
 
-<p>数据的导入</p>
+<h3 id="导入imp">导入imp</h3>
 <ul>
 <li>将D:\zkn.dmp 中的数据导入 TEST数据库中。</li>
 </ul>
@@ -758,7 +760,8 @@
 </ul>
 <figure class="highlight bash"><pre><div class="line">SQL&gt; create user test identified by test;</div><div class="line">用户已创建。</div><div class="line">SQL&gt; grant dba to test;</div><div class="line">授权成功。</div></pre></figure>
 
-<h3 id="导入imp">导入imp</h3>
+
+
 <figure class="highlight bash"><pre><div class="line">C:\Users\Administrator\Desktop&gt;imp test/test@orcl file=d:\test.dmp full=y</div><div class="line"></div><div class="line">Import: Release <span class="number">11.2</span>.<span class="number">0.1</span>.<span class="number">0</span> - Production on 星期五 <span class="number">3</span>月 <span class="number">20</span> <span class="number">13</span>:<span class="number">47</span>:<span class="number">01</span> <span class="number">2015</span></div><div class="line"></div><div class="line">Copyright (c) <span class="number">1982</span>, <span class="number">2009</span>, Oracle and/or its affiliates.  All rights reserved.</div><div class="line"></div><div class="line"></div><div class="line">连接到: Oracle Database <span class="number">11</span>g Enterprise Edition Release <span class="number">11.2</span>.<span class="number">0.1</span>.<span class="number">0</span> - <span class="number">64</span>bit Production</div><div class="line">With the Partitioning, Oracle Label Security, OLAP, Data Mining</div><div class="line">and Real Application Testing options</div><div class="line"></div><div class="line">经由常规路径由 EXPORT:V11.<span class="number">02.00</span> 创建的导出文件</div><div class="line">已经完成 ZHS16GBK 字符集和 AL16UTF16 NCHAR 字符集中的导入</div><div class="line">. 正在将 TEST 的对象导入到 TEST</div><div class="line">. . 正在导入表                             <span class="string">"T"</span>导入了           <span class="number">2</span> 行</div><div class="line">. . 正在导入表                           <span class="string">"ZKN"</span>导入了           <span class="number">4</span> 行</div><div class="line">. . 正在导入表                          <span class="string">"city"</span>导入了           <span class="number">2</span> 行</div><div class="line">成功终止导入, 没有出现警告。</div></pre></figure>
 
 <ul>
@@ -792,14 +795,24 @@
 <p>注意：本地一定要有<code>dir_dp</code>即<code>D:\oracle\dir_dp</code>这个文件夹。</p>
 <ul>
 <li>导出的各种模式<ul>
-<li>按表模式导出：<br>expdp lttfm/lttfm@fgisdb  tables=lttfm.b$i_exch_info,lttfm.b$i_manhole_info dumpfile =expdp_test2.dmp logfile=expdp_test2.log directory=dir_dp job_name=my_job</li>
-<li>按查询条件导出：<br>expdp lttfm/lttfm@fgisdb  tables=lttfm.b$i_exch_info dumpfile =expdp_test3.dmp logfile=expdp_test3.log directory=dir_dp job_name=my_job query=’”where rownum&lt;11”‘</li>
-<li>按表空间导出：<br>Expdp lttfm/lttfm@fgisdb dumpfile=expdp_tablespace.dmp tablespaces=GCOMM.DBF logfile=expdp_tablespace.log directory=dir_dp job_name=my_job</li>
-<li>导出方案<br>Expdp lttfm/lttfm DIRECTORY=dir_dp DUMPFILE=schema.dmp SCHEMAS=lttfm,gwm</li>
-<li>导出整个数据库：<br>expdp lttfm/lttfm@fgisdb dumpfile =full.dmp full=y logfile=full.log directory=dir_dp job_name=my_job</li>
+<li>按表模式导出：</li>
 </ul>
 </li>
 </ul>
+<figure class="highlight bash"><pre><div class="line">expdp test/test@orcl  tables=zkn,city dumpfile=expdp_test2.dmp logfile=expdp_test2.log directory=dir_dp job_name=my_job</div></pre></figure>
+
+<pre><code><span class="bullet">* </span>按查询条件导出：
+</code></pre><figure class="highlight bash"><pre><div class="line">expdp test/test@orcl  tables=zkn dumpfile=expdp_test3.dmp logfile=expdp_test3.log directory=dir_dp job_name=my_job query=<span class="string">'"where rownum&lt;11"'</span></div></pre></figure>
+
+<pre><code><span class="bullet">* </span>按表空间导出：
+</code></pre><figure class="highlight bash"><pre><div class="line">expdp test/test@orcl dumpfile=expdp_tablespace.dmp tablespaces=TEST.DBF logfile=expdp_tablespace.log directory=dir_dp job_name=my_job</div></pre></figure>
+
+<pre><code><span class="bullet">* </span>导出方案
+</code></pre><figure class="highlight bash"><pre><div class="line">expdp test/test@orcl DIRECTORY=dir_dp DUMPFILE=schema.dmp SCHEMAS=ZKN,TEST</div></pre></figure>
+
+<pre><code><span class="bullet">* </span>导出整个数据库：
+</code></pre><figure class="highlight bash"><pre><div class="line">expdp test/test@orcl dumpfile =full.dmp full=y logfile=full.log directory=dir_dp job_name=my_job</div></pre></figure>
+
 <h3 id="导入impdp">导入impdp</h3>
 <ul>
 <li>按表导入</li>
