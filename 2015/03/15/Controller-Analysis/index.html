@@ -800,7 +800,7 @@
 <li>Analysis中各常用图表介绍</li>
 <li>详解Web Page Diagnostics</li>
 <li>图表的合并（必须X轴的单位是一致的（X轴的度量单位一致））</li>
-<li>拐点</li>
+<li>拐点<br><img src="/image/point.jpg" alt="point"></li>
 </ul>
 <h1 id="课堂作业">课堂作业</h1>
 <p><b>1、详细阐述Controller中面向目的的场景的含义、运行原理和使用方法。</b><br>面向目的场景(Goal-Oriented Scenario)：在面向目标场景中，先定义测试要达到的目标，然后LoadRunner自动基于这些目标创建场景，运行过程中，会不断地把结果和目标相比较，以决定下一步怎么走。</p>
@@ -822,7 +822,7 @@
 <li>打开菜单【Tools】—&gt;【Expert Mode】，进入专家模式，对多个IP地址进行全局设置，进入【Tools】—&gt;【Options】中的“General”选项卡，根据虚拟用户的情况来配置IP地址的加载方式。如果虚拟用户按线程启动，则选择为每个线程分配一个IP；如果虚拟用户按进程来运行，则选择为每个进程（含50个线程）分配一个IP。</li>
 <li>IP Spoofer配置步骤：（可以手动在机器上配置多个IP，但是太繁琐了）单击【开始】—&gt;【程序】—&gt;【HP LoadRunner】—&gt;【Tools】—&gt;【IP Wizard】，打开设置向导进行设置。</li>
 </ul>
-<p><b>3、Web Page Diagnostics中请求各阶段都有哪些？它们的具体含义是什么？</b><br>Client Time：客户端浏览接收所需要使用的时间，可以不用考虑。<br>Connections Time：连接服务器所需要的时间。<br>DNS Resolution Time：通过DNS服务器解析域名所需要的时间，解析受到DNS服务器的影响。<br>Error Time：服务器返回错误响应时间，这个时间反映了服务器处理错误的速度，一般是Web服务器直接返回的，包含了网络时间和Web服务器返回错误的时间。<br>First Buffer Time：连接到服务器，服务器返回第一个字节所需要的时间，反映了系统对于正常请求的处理时间开销，包含网络时间和服务器正常处理的时间。<br>FTP Authentication Time ：FTP认证时间，这是进行FTP登录等操作所需要消耗的认证时间。<br>Receive Time：接受数据的时间，这个时间反映了带宽的大小，带宽越大，下载时间越短。<br>SSL Handshaking Time： SSL加密握手的时间，而Analysis在这里会分析得到页面请求的组成比例图，便于分析页面时间浪费在哪些过程中。</p>
+<p><b>3、Web Page Diagnostics中请求各阶段都有哪些？它们的具体含义是什么？</b><br>Connections Time：连接服务器所需要的时间。TCP三次握手的时间。<br>DNS Resolution Time：通过DNS服务器解析域名所需要的时间，解析受到DNS服务器的影响。<br>Error Time：服务器返回错误响应时间，这个时间反映了服务器处理错误的速度，一般是Web服务器直接返回的，包含了网络时间和Web服务器返回错误的时间。<br>First Buffer Time：连接到服务器，从我们发出请求到服务器返回第一个字节所需要的时间，反映了系统对于正常请求的处理时间开销，包含网络时间和服务器正常处理的时间。<br>FTP Authentication Time ：FTP认证时间，这是进行FTP登录等操作所需要消耗的认证时间。<br>Receive Time：接受数据的时间，这个时间反映了带宽的大小，带宽越大，下载时间越短。<br>SSL Handshaking Time：SSL加密握手的时间，当发出https时才会进行SSL加密处理。<br>Receive Time:接收返回的时间。<br>Client Time：客户端浏览接收所需要使用的时间，可以不用考虑。</p>
 <p><b>4、详细阐述拐点的含义。并说明如何在图表中识别出拐点？</b><br>基本思想就是性能产生瓶颈的主要原因就是因为某个资源的使用达到了极限，此时表现为随着压力的增大，系统性能却出现急剧下降，这样就产生了”拐点”现象。当得到”拐点”附近的资源使用情况时，就能定位出系统的性能瓶颈。”拐点分析”方法举例，如系统随着用户的增多，事务响应时间缓慢增加，当用户数达到100个虚拟用户时，系统响应时间急剧增加，表现为一个明显的”折线”，这就说明了系统承载不了如此多的用户做这个事务，也就是存在性能瓶颈。</p>
 <h2 id="（未完待续）">（未完待续）</h2>
 <p>学习的课程来自<a href="http://www.dataguru.cn/" target="_blank" rel="external">炼数成金</a>广州八神王磊老师的软件性能测试（第二期）^_^</p>
