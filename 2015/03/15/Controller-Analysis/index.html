@@ -49,6 +49,10 @@
                                 <div class="mp-scroll">
                                 
                                 <li class="search-archive-li mp-pjax">
+                                    <a href="/2015/03/20/oracle-exp-imp/">Oracle的导入导出</a>
+                                </li>
+                                
+                                <li class="search-archive-li mp-pjax">
                                     <a href="/2015/03/18/thrift-maven/">Ubuntu搭建Thrift和Maven</a>
                                 </li>
                                 
@@ -254,7 +258,7 @@
                                 
                                 <li class="search-category-li mp-pjax">
                                     <a href="/categories/Oracle/">&nbsp;&nbsp;&nbsp;Oracle</a>
-                                    <small>3</small>
+                                    <small>4</small>
                                 </li>
                                 
                                 <li class="search-category-li mp-pjax">
@@ -371,7 +375,7 @@
                                 
                                 <li class="search-tag-li mp-pjax">
                                     <a href="/tags/Oracle/">&nbsp;&nbsp;&nbsp;Oracle</a>
-                                    <small>3</small>
+                                    <small>4</small>
                                 </li>
                                 
                                 <li class="search-tag-li mp-pjax">
@@ -478,6 +482,8 @@
         </nav>
         <div id="pjax">
             <div class="pjax-hidden" style="display: none">
+                
+                    <a  data-pjax href="/2015/03/20/oracle-exp-imp/">Oracle的导入导出</a>
                 
                     <a  data-pjax href="/2015/03/18/thrift-maven/">Ubuntu搭建Thrift和Maven</a>
                 
@@ -750,7 +756,8 @@
 <li>负载机器的软硬件配置<br>硬件环境（PC、笔记本电脑、服务器、小型机、大型机等）。<br>软件环境（操作系统，如win200、winXp,win7,winNT,UNIX，Linux等；web服务器，如Tomcat、Weblogic、IIS、WebSphere<br>等；数据库，如Oracle、SQL Server、MySQL、DB2等；还有一些其他软件，如办公软件，杀毒软件等）。软件环境的配置还需呀考虑软件的具体版本和补丁的安装情况。</li>
 <li>脚本的复杂程度</li>
 <li>负载生成器的连接<br>添加Load Generator后，执行”Connect”操作，使Status为Ready，表示该机器连接正常了如果为Failed，表示该机器不能连接，要检查原因。<br><img src="/image/loadGenerators.png" alt="loadGenerators"></li>
-<li>mmdrv解析<br>Controller使用驱动程序mmdrv运行Vuser.可以在controller的【run-time settiing】中选择Vuser的运行方式，是多进程还是多线程的方式。<br><img src="/image/process-thread.png" alt="process-thread"><br>  *如果选择以线程方式运行：假设并发用户为30，则只启动一个线程。最多一个线程最大用户数是50。也就是说如果并发用户为125则是三个进程。<ul>
+<li>mmdrv解析<br>Controller使用驱动程序mmdrv运行Vuser.可以在controller的【run-time settiing】中选择Vuser的运行方式，是多进程还是多线程的方式。<br><img src="/image/process-thread.png" alt="process-thread"><ul>
+<li>如果选择以线程方式运行：假设并发用户为30，则只启动一个线程。最多一个线程最大用户数是50。也就是说如果并发用户为125则是三个进程。</li>
 <li>如果选择以进程的方式运行：假设并发用户为30，则启动30个进程。</li>
 <li>在启动了IP欺骗之后，所需启动的进程数，还与选择的是按进程还是线程来分配IP地址有关，下面介绍的是IP欺骗。<ul>
 <li>按进程分IP，每个ip就需要启动一个进程。</li>

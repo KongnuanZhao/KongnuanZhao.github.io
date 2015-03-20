@@ -2,8 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://yoursite.com/2015/03/20/oracle-exp-imp/</loc>
+    <lastmod>2015-03-20T06:30:33.000Z</lastmod>
+  </url>
+  
+  <url>
     <loc>http://yoursite.com/2015/03/15/Controller-Analysis/</loc>
-    <lastmod>2015-03-20T02:30:45.000Z</lastmod>
+    <lastmod>2015-03-20T02:32:30.000Z</lastmod>
   </url>
   
   <url>
