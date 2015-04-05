@@ -2,6 +2,21 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://yoursite.com/2015/04/02/about-jvm/</loc>
+    <lastmod>2015-04-05T15:55:28.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/2015/04/02/about-yum/</loc>
+    <lastmod>2015-04-02T13:46:44.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/2015/04/02/cut-the-ejb/</loc>
+    <lastmod>2015-04-02T12:50:57.000Z</lastmod>
+  </url>
+  
+  <url>
     <loc>http://yoursite.com/2015/03/28/javaVuser/</loc>
     <lastmod>2015-03-29T13:34:46.000Z</lastmod>
   </url>
