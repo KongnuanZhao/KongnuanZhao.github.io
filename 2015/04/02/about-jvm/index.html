@@ -870,15 +870,12 @@
 <p><img src="/image/running_time.jpg" alt="running_time"></p>
 <h2 id="OOM—Out_Of_Memory">OOM—Out Of Memory</h2>
 <p>1）操作系统与OOM killer<br>（对一个进程来说，所能看到的虚拟地址空间，并不是真正的物理内存空间，每一个进程都认为自己占了整个的4G地址空间）<br>2）Java虚拟机中的OOM,一般由三种情况：</p>
-<pre><code>* 永久区溢出 Exception <span class="keyword">in</span> thread <span class="string">"main"</span> java.lang.OutOfMemoryError: PermGen <span class="built_in">space</span>
-这一部分用于存放<span class="keyword">Class</span>和Meta的信息，<span class="keyword">Class</span>在被 Load的时候被放入PermGen <span class="built_in">space</span>区域(包括常量池: 静态变量)，它和存放Instance的Heap区域不同，GC(Garbage Collection)不会在主程序运行期对PermGen <span class="built_in">space</span>进行清理，所以如果你的APP会LOAD很多<span class="keyword">CLASS</span>的话,就很可能出现PermGen <span class="built_in">space</span>错误。
-可以通过设置jvm启动参数来解决 `-XX:MaxPermSize=<span class="number">256</span>m`
-* 堆溢出 java.lang.OutOfMemoryError: Java heap <span class="built_in">space</span>
-这部分用于存放类的实例。被缓存的实例(Cache)对象，大的map,list引用大的对象等等，都会保存于此。
-堆内存会在jvm启动时自动设置，初始值 -Xms为物理内存的<span class="number">1</span>/<span class="number">64</span>，最大值-Xmx为<span class="number">1</span>/<span class="number">4</span>;可以通过参数-Xmn、-Xms、-Xmx设置，一般-Xms和-Xmx不超过<span class="number">80</span>%，-Xmn为-Xmx的<span class="number">1</span>/<span class="number">4</span>;
-* 栈溢出 Exception <span class="keyword">in</span> thread <span class="string">"main"</span> java.lang.StackOverflowError
-这部分用于存放局部变量、方法栈帧信息。栈帧太多，也就是函数调用层级过多时就会出现此异常，检查是否有死递归的情况。
-</code></pre><h2 id="Java与C++之间的围城">Java与C++之间的围城</h2>
+<ul>
+<li>永久区溢出 Exception in thread “main” java.lang.OutOfMemoryError: PermGen space<br>这一部分用于存放Class和Meta的信息，Class在被 Load的时候被放入PermGen space区域(包括常量池: 静态变量)，它和存放Instance的Heap区域不同，GC(Garbage Collection)不会在主程序运行期对PermGen space进行清理，所以如果你的APP会LOAD很多CLASS的话,就很可能出现PermGen space错误。<br>可以通过设置jvm启动参数来解决 <code>-XX:MaxPermSize=256m</code></li>
+<li>堆溢出 java.lang.OutOfMemoryError: Java heap space<br>这部分用于存放类的实例。被缓存的实例(Cache)对象，大的map,list引用大的对象等等，都会保存于此。<br>堆内存会在jvm启动时自动设置，初始值 -Xms为物理内存的1/64，最大值-Xmx为1/4;可以通过参数-Xmn、-Xms、-Xmx设置，一般-Xms和-Xmx不超过80%，-Xmn为-Xmx的1/4;</li>
+<li>栈溢出 Exception in thread “main” java.lang.StackOverflowError<br>这部分用于存放局部变量、方法栈帧信息。栈帧太多，也就是函数调用层级过多时就会出现此异常，检查是否有死递归的情况。</li>
+</ul>
+<h2 id="Java与C++之间的围城">Java与C++之间的围城</h2>
 <p>垃圾回收GC(Garbage Collection)</p>
 <ul>
 <li><p>引用计数法(传统简单做法)</p>
@@ -925,7 +922,11 @@
 <ul>
 <li>引用计数器：对于一个对象A，只要有任何一个对象引用了A，则A的引用计数器就加1，当引用失效时，引用计数器就减1。只要对象A的引用计数器的值为0，则对象A就不可能再被使用，然后就可以回收啦。</li>
 <li>标记-清除：在标记阶段，首先通过根节点，标记所有从根节点开始的可达对象。因此，未被标记的对象就是未被引用的垃圾对象。然后，在清除阶段，清除所有未被标记的对象。</li>
-<li>复制算法：将原有的内存空间分为两块，每次只使用其中一块，在垃圾回收时，将正在使用的内存中的存活对象复制到未使用的内存块中，之后，清除正在使用的内存块中的所有对象，交换两个内存的角色，完成垃圾回收。<br><b>2、使用jmap命令生成堆Dump文件的命令是什么？jmap命令还可以有什么其他的用处？</b><br>将内存使用的详细情况输出到文件<code>jmap -dump:format=b,file=m.datpid</code><br>jmap -heap pid 查看java 堆（heap）使用情况。<br>jmap -histo pid 查看堆内存(histogram)中的对象数量，大小。<br><b>3、HotSpot虚拟机对堆内存是如何划分的？各部分的作用都是什么？如果查看各部分的使用情况？</b><br>Java虚拟机运行时数据区结构图<br><img src="/image/c_jvm.png" alt="c_jvm"><br>将内存划分成不同的区域，有些是在java虚拟机启动的时候就存在了，有些是随着线程的生成和销毁而存在的。</li>
+<li>复制算法：将原有的内存空间分为两块，每次只使用其中一块，在垃圾回收时，将正在使用的内存中的存活对象复制到未使用的内存块中，之后，清除正在使用的内存块中的所有对象，交换两个内存的角色，完成垃圾回收。</li>
+</ul>
+<p><b>2、使用jmap命令生成堆Dump文件的命令是什么？jmap命令还可以有什么其他的用处？</b><br>将内存使用的详细情况输出到文件<code>jmap -dump:format=b,file=m.datpid</code><br>jmap -heap pid 查看java 堆（heap）使用情况。<br>jmap -histo pid 查看堆内存(histogram)中的对象数量，大小。</p>
+<p><b>3、HotSpot虚拟机对堆内存是如何划分的？各部分的作用都是什么？如果查看各部分的使用情况？</b><br>Java虚拟机运行时数据区结构图<br><img src="/image/c_jvm.png" alt="c_jvm"><br>将内存划分成不同的区域，有些是在java虚拟机启动的时候就存在了，有些是随着线程的生成和销毁而存在的。</p>
+<ul>
 <li><p>方法区</p>
 <ul>
 <li>保存装载的类信息<ul>
