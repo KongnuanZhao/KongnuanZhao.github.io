@@ -49,6 +49,14 @@
                                 <div class="mp-scroll">
                                 
                                 <li class="search-archive-li mp-pjax">
+                                    <a href="/2015/04/17/about-time/">尽我们所能，珍惜这段美妙的旅程</a>
+                                </li>
+                                
+                                <li class="search-archive-li mp-pjax">
+                                    <a href="/2015/04/14/Memory/">数据交流大通道-内存</a>
+                                </li>
+                                
+                                <li class="search-archive-li mp-pjax">
                                     <a href="/2015/04/12/about-disk/">掀起你的盖头来--磁盘我来看看你</a>
                                 </li>
                                 
@@ -365,7 +373,7 @@
                                 
                                 <li class="search-category-li mp-pjax">
                                     <a href="/categories/性能测试/">&nbsp;&nbsp;&nbsp;性能测试</a>
-                                    <small>13</small>
+                                    <small>14</small>
                                 </li>
                                 
                                 <li class="search-category-li mp-pjax">
@@ -395,7 +403,7 @@
                                 
                                 <li class="search-category-li mp-pjax">
                                     <a href="/categories/点滴/">&nbsp;&nbsp;&nbsp;点滴</a>
-                                    <small>9</small>
+                                    <small>10</small>
                                 </li>
                                 
                                 <li class="search-category-li mp-pjax">
@@ -492,7 +500,7 @@
                                 
                                 <li class="search-tag-li mp-pjax">
                                     <a href="/tags/性能测试/">&nbsp;&nbsp;&nbsp;性能测试</a>
-                                    <small>14</small>
+                                    <small>15</small>
                                 </li>
                                 
                                 <li class="search-tag-li mp-pjax">
@@ -517,7 +525,7 @@
                                 
                                 <li class="search-tag-li mp-pjax">
                                     <a href="/tags/点滴/">&nbsp;&nbsp;&nbsp;点滴</a>
-                                    <small>9</small>
+                                    <small>10</small>
                                 </li>
                                 
                                 <li class="search-tag-li mp-pjax">
@@ -549,6 +557,10 @@
         </nav>
         <div id="pjax">
             <div class="pjax-hidden" style="display: none">
+                
+                    <a  data-pjax href="/2015/04/17/about-time/">尽我们所能，珍惜这段美妙的旅程</a>
+                
+                    <a  data-pjax href="/2015/04/14/Memory/">数据交流大通道-内存</a>
                 
                     <a  data-pjax href="/2015/04/12/about-disk/">掀起你的盖头来--磁盘我来看看你</a>
                 
@@ -788,6 +800,77 @@
   
 <main class="content" role="main">
 
+    
+    <article class="post">
+
+        <header class="post-header">
+            <div class="tag-tile">
+                
+                <span class="fa fa-bookmark" style="float:right;color:#fa8072"></span>
+            </div>
+            <h1 class="post-title"><a data-pjax href="/2015/03/27/file-recover/">数据恢复</a>
+            </h1>
+
+            <div class="post-meta">
+                Post on<span class="fa fa-clock-o"></span>
+                <time datetime="2015-03-27T00:15:35.000Z"
+                      itemprop="datePublished">Mar 27 2015</time>
+            </div>
+        </header>
+        <section class="post-excerpt">
+            <p>
+                
+                数据恢复工程师常说：“只要数据没有被覆盖，数据就有可能恢复回来”。因为磁盘的存储特性，当我们不需要硬盘上的数据时，数据并没有被拿走。删除时系统只是在文件上写一个删除标志，格式化和低级格式化也是在磁盘上重新覆盖写一遍以数字0为内容的数据，这就是覆盖。一个文件被标记上删除标志后，他所占用的空间在有新文件写入时，将有可能被新文件占用覆盖写上新内容。这时删除的文件名虽然还在，但他指向数据区的空间内容已经被覆盖改变，恢复出来的将是错误异常内容。同
+                
+            </p>
+            
+            <p>
+                <a data-pjax href="/2015/03/27/file-recover/"
+                   class="excerpt-link">Read More...</a>
+            </p>
+            
+        </section>
+    </article>
+    
+    <article class="post">
+
+        <header class="post-header">
+            <div class="tag-tile">
+                
+                
+                <a data-pjax href='/tags/oracle/'>oracle</a>
+                
+                
+                <span class="fa fa-bookmark" style="float:right;color:#fa8072"></span>
+            </div>
+            <h1 class="post-title"><a data-pjax href="/2015/03/24/about-index/">关于索引的一些总结和思考（上）</a>
+            </h1>
+
+            <div class="post-meta">
+                Post on<span class="fa fa-clock-o"></span>
+                <time datetime="2015-03-24T10:49:38.000Z"
+                      itemprop="datePublished">Mar 24 2015</time>
+            </div>
+        </header>
+        <section class="post-excerpt">
+            <p>
+                
+                
+索引之基础
+什么是索引
+数据库的索引类似于书籍的索引。在书籍中，索引允许用户不必翻阅完整个书就能迅速地找到所需要的信息。在数据库中，索引也允许数据库程序迅速地找到表中的数据，而不必扫描整张表。在Oracle中索引和表一样，是段的一种，当我们建一个表，就产生一个表的segment，当在表上的某些列上建索引，就产生一个索引的segment。索引的目的就是让表的查询更快。
+如何实现
+这是因为索引最低级的块（叶块）存储了索引键跟rowid来实
+                
+            </p>
+            
+            <p>
+                <a data-pjax href="/2015/03/24/about-index/"
+                   class="excerpt-link">Read More...</a>
+            </p>
+            
+        </section>
+    </article>
     
     <article class="post">
 
@@ -1103,82 +1186,6 @@ sudo gedit ~/.bashrc （注：修改根目录下的bashrc文件，以便设置ja
             
             <p>
                 <a data-pjax href="/2015/03/17/hadoop-install/"
-                   class="excerpt-link">Read More...</a>
-            </p>
-            
-        </section>
-    </article>
-    
-    <article class="post">
-
-        <header class="post-header">
-            <div class="tag-tile">
-                
-                
-                <a data-pjax href='/tags/github/'>github</a>
-                
-                
-                <span class="fa fa-bookmark" style="float:right;color:#fa8072"></span>
-            </div>
-            <h1 class="post-title"><a data-pjax href="/2015/03/17/github/">hexo博客同步到github和gitcafe(下)</a>
-            </h1>
-
-            <div class="post-meta">
-                Post on<span class="fa fa-clock-o"></span>
-                <time datetime="2015-03-17T05:59:51.000Z"
-                      itemprop="datePublished">Mar 17 2015</time>
-            </div>
-        </header>
-        <section class="post-excerpt">
-            <p>
-                
-                郁闷一下午提交一直是Everything up-to-date,要不就是
-git statusn branch masternothing to commit, working directory cleangit push gitcafe gitcafe-pagesverything up-to-date
-
-先记录一下今天遇到的问题：使用hexo写博客源文件都是在本地的，如果换了电脑需要写博客时就会比较麻烦。我们需要在电脑上新建一个文
-                
-            </p>
-            
-            <p>
-                <a data-pjax href="/2015/03/17/github/"
-                   class="excerpt-link">Read More...</a>
-            </p>
-            
-        </section>
-    </article>
-    
-    <article class="post">
-
-        <header class="post-header">
-            <div class="tag-tile">
-                
-                
-                <a data-pjax href='/tags/点滴/'>点滴</a>
-                
-                
-                <span class="fa fa-bookmark" style="float:right;color:#fa8072"></span>
-            </div>
-            <h1 class="post-title"><a data-pjax href="/2015/03/17/music-Avatar-Island-whale/">化身孤岛的鲸</a>
-            </h1>
-
-            <div class="post-meta">
-                Post on<span class="fa fa-clock-o"></span>
-                <time datetime="2015-03-17T04:52:26.000Z"
-                      itemprop="datePublished">Mar 17 2015</time>
-            </div>
-        </header>
-        <section class="post-excerpt">
-            <p>
-                
-                
-
-
-《化身孤岛的鲸》，沃特艾文儿填词作品。原曲为谢安琪的《我们都被忘了》。一首很美的歌~歌词：我是只化身孤岛的蓝鲸有着最巨大的身影鱼虾在身侧穿行也有飞鸟在背上停我路过太多太美的奇景如同伊甸般的仙境而大海太平太静多少故事无人倾听我爱地中海的天晴爱西伯利亚的雪景爱万丈高空的鹰爱肚皮下的藻荇我在尽心尽力地多情直到那一天你的衣衫破旧而歌声却温柔陪我漫无目的地四处漂流我的背脊如荒丘而你却微笑摆首把它当成整个宇宙你与太阳挥手也同海鸥问候陪我爱天爱
-                
-            </p>
-            
-            <p>
-                <a data-pjax href="/2015/03/17/music-Avatar-Island-whale/"
                    class="excerpt-link">Read More...</a>
             </p>
             
