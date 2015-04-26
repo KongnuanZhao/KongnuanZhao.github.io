@@ -5,7 +5,7 @@
   <meta name="baidu-site-verification" content="AQ0sUK7UOM" />
   <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" >
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
-  <title>Category: hbase | KongnuanZhao</title>
+  <title>线程的自白 | KongnuanZhao</title>
   <meta name="description" content="赵空暖" />
   <meta name="HandheldFriendly" content="True" />
   <meta name="MobileOptimized" content="320" />
@@ -782,7 +782,7 @@
                 
                 <div id="nav-container">
                     <div class="post-navbar" style="line-height: 63px;display:none">
-                        <li id="navbar-title"><a href="#">undefined</a></li>
+                        <li id="navbar-title"><a href="#">线程的自白</a></li>
                         <li id="navbar-toc" style="border-left: none">
                             <a style="padding-right: 15px">
                                 <span id="toc-content" >Introduction</span><i class="fa fa-chevron-down" ></i>
@@ -801,56 +801,63 @@
 
 
 <!-- -->
-<!--<body class="home-template">-->
+<!--<body class="post-template">-->
 <!---->
   
+
 <main class="content" role="main">
+    <article class="post" >
+    <span class="post-meta">
+                  <div class="tag-tile">
+                      
+                      
+                      <a data-pjax href='/tags/性能测试/' style='color:#D5D5D5'>性能测试</a>
+                      
+                      
+                  </div>
+                <h1 class="post-title" style="margin: 14px 0;color:#50585D">线程的自白</h1>
 
-    
-    <article class="post">
+                    <div class="post-meta">
+                        Post on<span class="fa fa-clock-o"></span>
+                        <time datetime="2015-04-22T11:36:56.000Z"
+                              itemprop="datePublished">Apr 22 2015</time>
+                        By 赵空暖
+                    </div>
+    </span>
 
-        <header class="post-header">
-            <div class="tag-tile">
-                
-                
-                <a data-pjax href='/tags/hbase/'>hbase</a>
-                
-                <a data-pjax href='/tags/hadoop/'>hadoop</a>
-                
-                
-                <span class="fa fa-bookmark" style="float:right;color:#fa8072"></span>
-            </div>
-            <h1 class="post-title"><a data-pjax href="/2015/03/18/thrift-maven/">Ubuntu搭建Thrift和Maven</a>
-            </h1>
+        <section class="post-content">
+            <h1 id="课堂笔记">课堂笔记</h1>
+<p>目的：了解进程和线程的基本概念。了解操作系统线程模型的演化，加深对线程概念的理解。</p>
+<p>回顾之前做的笔记：<br><a href="http://www.zhaokongnuan.com/2015/01/09/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E4%B9%8B%E7%BA%BF%E7%A8%8B%E7%AE%A1%E7%90%86/" target="_blank" rel="external">操作系统之线程管理</a><br><a href="http://www.zhaokongnuan.com/2015/01/08/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E4%B9%8B%E8%BF%9B%E7%A8%8B%E7%AE%A1%E7%90%86/" target="_blank" rel="external">操作系统之进程管理</a></p>
+<p>多核多线程  查看多核多线程<br>top ps -efL pstree -c | grep 进程名字</p>
+<h1 id="课堂作业">课堂作业</h1>
+<p><b>1、Linux操作系统中ps命令如何查看线程？其中输出的各列的含义都是什么？</b></p>
+<figure class="highlight bash"><pre><div class="line">[zkn@hadoop1 Desktop]$ ps -aux</div><div class="line">Warning: bad syntax, perhaps a bogus <span class="string">'-'</span>? See /usr/share/doc/procps-<span class="number">3.2</span>.<span class="number">8</span>/FAQ</div><div class="line">USER       PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND</div><div class="line">root         <span class="number">1</span>  <span class="number">0.9</span>  <span class="number">0.1</span>  <span class="number">19352</span>  <span class="number">1540</span> ?        Ss   <span class="number">08</span>:<span class="number">26</span>   <span class="number">0</span>:<span class="number">02</span> /sbin/init</div><div class="line">root         <span class="number">2</span>  <span class="number">0.0</span>  <span class="number">0.0</span>      <span class="number">0</span>     <span class="number">0</span> ?        S    <span class="number">08</span>:<span class="number">26</span>   <span class="number">0</span>:<span class="number">00</span> [kthreadd]</div><div class="line">root         <span class="number">3</span>  <span class="number">0.0</span>  <span class="number">0.0</span>      <span class="number">0</span>     <span class="number">0</span> ?        S    <span class="number">08</span>:<span class="number">26</span>   <span class="number">0</span>:<span class="number">00</span> [migration/<span class="number">0</span>]</div><div class="line">root         <span class="number">4</span>  <span class="number">0.0</span>  <span class="number">0.0</span>      <span class="number">0</span>     <span class="number">0</span> ?        S    <span class="number">08</span>:<span class="number">26</span>   <span class="number">0</span>:<span class="number">00</span> [ksoftirqd/<span class="number">0</span>]</div><div class="line">……</div></pre></figure>
 
-            <div class="post-meta">
-                Post on<span class="fa fa-clock-o"></span>
-                <time datetime="2015-03-18T13:14:47.000Z"
-                      itemprop="datePublished">Mar 18 2015</time>
-            </div>
-        </header>
-        <section class="post-excerpt">
-            <p>
-                
-                关于thrift和maven简介
+<p>USER：该程序的属主<br>PID：进程的ID<br>%CPU：进程占用的CPU百分比<br>%MEM：占用内存的百分比<br>VSZ： 该进程使用的虚拟內存量（KB）<br>RSS：  该进程占用的固定內存量（KB）（驻留中页的数量）<br>TTY：是否为登入者执行的程序？若为 tty1-tty6 则为本机登入者，若为 pts/?? 则为远程登入者执行的程序<br>STAT：该程序的状态（ “S”:进程处在睡眠状态,表明这些进程在等待某些事件发生—可能是用户输入或者系统资源的可用性）<br>START：该程序启动时间<br>TIME：该程序运行的时间<br>COMMAND：命令的名称和参数</p>
+<figure class="highlight bash"><pre><div class="line">[zkn@hadoop1 Desktop]$ ps -ef</div><div class="line">UID        PID  PPID  C STIME TTY          TIME CMD</div><div class="line">root         <span class="number">1</span>     <span class="number">0</span>  <span class="number">0</span> <span class="number">08</span>:<span class="number">26</span> ?        <span class="number">00</span>:<span class="number">00</span>:<span class="number">02</span> /sbin/init</div><div class="line">root         <span class="number">2</span>     <span class="number">0</span>  <span class="number">0</span> <span class="number">08</span>:<span class="number">26</span> ?        <span class="number">00</span>:<span class="number">00</span>:<span class="number">00</span> [kthreadd]</div><div class="line">root         <span class="number">3</span>     <span class="number">2</span>  <span class="number">0</span> <span class="number">08</span>:<span class="number">26</span> ?        <span class="number">00</span>:<span class="number">00</span>:<span class="number">00</span> [migration/<span class="number">0</span>]</div><div class="line">root         <span class="number">4</span>     <span class="number">2</span>  <span class="number">0</span> <span class="number">08</span>:<span class="number">26</span> ?        <span class="number">00</span>:<span class="number">00</span>:<span class="number">00</span> [ksoftirqd/<span class="number">0</span>]</div><div class="line">root         <span class="number">5</span>     <span class="number">2</span>  <span class="number">0</span> <span class="number">08</span>:<span class="number">26</span> ?        <span class="number">00</span>:<span class="number">00</span>:<span class="number">00</span> [migration/<span class="number">0</span>]</div><div class="line">root         <span class="number">6</span>     <span class="number">2</span>  <span class="number">0</span> <span class="number">08</span>:<span class="number">26</span> ?        <span class="number">00</span>:<span class="number">00</span>:<span class="number">00</span> [watchdog/<span class="number">0</span>]</div><div class="line">root         <span class="number">7</span>     <span class="number">2</span>  <span class="number">0</span> <span class="number">08</span>:<span class="number">26</span> ?        <span class="number">00</span>:<span class="number">00</span>:<span class="number">00</span> [events/<span class="number">0</span>]</div><div class="line">root         <span class="number">8</span>     <span class="number">2</span>  <span class="number">0</span> <span class="number">08</span>:<span class="number">26</span> ?        <span class="number">00</span>:<span class="number">00</span>:<span class="number">00</span> [cgroup]</div><div class="line">root         <span class="number">9</span>     <span class="number">2</span>  <span class="number">0</span> <span class="number">08</span>:<span class="number">26</span> ?        <span class="number">00</span>:<span class="number">00</span>:<span class="number">00</span> [khelper]</div><div class="line">root        <span class="number">10</span>     <span class="number">2</span>  <span class="number">0</span> <span class="number">08</span>:<span class="number">26</span> ?        <span class="number">00</span>:<span class="number">00</span>:<span class="number">00</span> [netns]</div><div class="line">……</div></pre></figure>
 
-Thrift简介目前流行的服务调用方式有很多种，例如基于 SOAP 消息格式的 Web Service，基于 JSON 消息格式的 RESTful 服务等。其中所用到的数据传输方式包括 XML，JSON 等，然而 XML 相对体积太大，传输效率低，JSON 体积较小，新颖，但还不够完善。由 Facebook 开发的远程服务调用框架 Apache Thrift，它采用接口描述语言定义并创建服务，支持可扩
-                
-            </p>
-            
-            <p>
-                <a data-pjax href="/2015/03/18/thrift-maven/"
-                   class="excerpt-link">Read More...</a>
-            </p>
-            
+<p><b>2、操作系统线程模型有哪些？各自的含义是什么？</b><br>1) 多对一模型<br>将多个用户级线程映射到一个内核级线程，线程管理在用户空间完成。<br>此模式中，用户级线程对操作系统不可见（即透明）。<br>优点：线程管理是在用户空间进行的，因而效率比较高。<br>缺点：当一个线程在使用内核服务时被阻塞，那么整个进程都会被阻塞；多个线程不能并行地运行在多处理机上。<br>2) 一对一模型<br>将每个用户级线程映射到一个内核级线程。<br>优点：当一个线程被阻塞后，允许另一个线程继续执行，所以并发能力较强。<br>缺点：每创建一个用户级线程都需要创建一个内核级线程与其对应，这样创建线程的开销比较大，会影响到应用程序的性能。<br>3) 多对多模型<br>将 n 个用户级线程映射到 m 个内核级线程上，要求 m &lt;= n。<br>特点：在多对一模型和一对一模型中取了个折中，克服了多对一模型的并发度不高的缺点，又克服了一对一模型的一个用户进程占用太多内核级线程，开销太大的缺点。又拥有多对一模型和一对一模型各自的优点，可谓集两者之所长。<br><b>3、Linux进程状态有哪些？各状态含义是什么？</b><br>Linux进程状态：R (TASK_RUNNING)，可执行状态。<br>Linux进程状态：S (TASK_INTERRUPTIBLE)，可中断的睡眠状态。<br>Linux进程状态：D (TASK_UNINTERRUPTIBLE)，不可中断的睡眠状态。<br>Linux进程状态：Z (TASK_DEAD - EXIT_ZOMBIE)，退出状态，进程成为僵尸进程。<br>Linux进程状态：T (TASK_STOPPED or TASK_TRACED)，暂停状态或跟踪状态。<br>Linux进程状态：X (TASK_DEAD - EXIT_DEAD)，退出状态，进程即将被销毁。 </p>
+
         </section>
+        <hr/>
+        <nav class="pagination" style="width:auto" role="pagination">
+            
+            <a style="cursor:default" class="newer-posts" href="#">This is the First Post</a>
+            
+            <a class="share-button" data-original-title title>Share this Post</a>
+            
+            <a data-pjax class="older-posts" href="/2015/04/17/about-time/">Next Post →</a>
+            
+        </nav>
+        <br/>
+        <br/>
+        <section id="comment">
+            <div id="comment-box"></div>
+        </section>
+
+
     </article>
-    
-    <nav class="pagination" role="pagination">
-        
-        <span class="page-number">Page  of </span>
-        
-    </nav>
 </main>
 
 
