@@ -5,7 +5,7 @@
   <meta name="baidu-site-verification" content="AQ0sUK7UOM" />
   <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" >
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
-  <title>LoadRunner中的JavaVuser | KongnuanZhao</title>
+  <title>Category: maven | KongnuanZhao</title>
   <meta name="description" content="赵空暖" />
   <meta name="HandheldFriendly" content="True" />
   <meta name="MobileOptimized" content="320" />
@@ -814,7 +814,7 @@
                 
                 <div id="nav-container">
                     <div class="post-navbar" style="line-height: 63px;display:none">
-                        <li id="navbar-title"><a href="#">LoadRunner中的JavaVuser</a></li>
+                        <li id="navbar-title"><a href="#">undefined</a></li>
                         <li id="navbar-toc" style="border-left: none">
                             <a style="padding-right: 15px">
                                 <span id="toc-content" >Introduction</span><i class="fa fa-chevron-down" ></i>
@@ -833,146 +833,94 @@
 
 
 <!-- -->
-<!--<body class="post-template">-->
+<!--<body class="home-template">-->
 <!---->
   
-
 <main class="content" role="main">
-    <article class="post" >
-    <span class="post-meta">
-                  <div class="tag-tile">
-                      
-                      
-                      <a data-pjax href='/tags/性能测试/' style='color:#D5D5D5'>性能测试</a>
-                      
-                      
-                  </div>
-                <h1 class="post-title" style="margin: 14px 0;color:#50585D">LoadRunner中的JavaVuser</h1>
 
-                    <div class="post-meta">
-                        Post on<span class="fa fa-clock-o"></span>
-                        <time datetime="2015-03-28T06:16:10.000Z"
-                              itemprop="datePublished">Mar 28 2015</time>
-                        By 赵空暖
-                    </div>
-    </span>
+    
+    <article class="post">
 
-        <section class="post-content">
-            <h1 id="课堂笔记">课堂笔记</h1>
-<p>越学越觉得，软件性能测试涉及面非常广泛。需得一个知识点一个知识点往前推啊。</p>
-<h2 id="引入Java_Vuser">引入Java Vuser</h2>
-<ul>
-<li>为什么要使用Java Vuser？<ul>
-<li>有些使用C解决起来很麻烦，但是使用java很方便，存在强大的开源类库</li>
-<li>更方便的使用自定义的类，节省开发脚本的时间。特别是对于自定义的一些算法或类，更是方便。</li>
-</ul>
-</li>
-</ul>
-<h2 id="LoadRunner中两种语言的区别">LoadRunner中两种语言的区别</h2>
-<ul>
-<li>Java Vuser与C的区别<ul>
-<li>语言不同、语法不同，支持的函数不同</li>
-<li>C是解释的，Java Vuser的是编译的，出错提示更准确。<br>（Java Vuser是编译的，使用Java 的编译器Javac,这样出错提示更准确）<br>关于C脚本开发参看之前写的<a href="http://www.zhaokongnuan.com/2015/01/20/LoadRunner%E8%84%9A%E6%9C%AC%E5%BC%80%E5%8F%91%E5%92%8C%E5%B8%B8%E7%94%A8%E5%87%BD%E6%95%B0/" target="_blank" rel="external">LoadRunner脚本开发和常用函数</a></li>
-</ul>
-</li>
-<li>运行java Vuser要配置JDK，如下图<br><img src="/image/jvuserjdk.png" alt="jvuserjdk"></li>
-<li>Java Vuser缺点和不足<ul>
-<li>学习更多的知识，要会使用Java语言。</li>
-<li>有些语法支持的不好，例如静态代码块，尽量少用不常用的语法和功能。</li>
-</ul>
-</li>
-</ul>
-<figure class="highlight java"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">StaticBlock</span> </span>{</div><div class="line">	<span class="keyword">static</span>{</div><div class="line">		System.out.println(<span class="string">"hello java Vuser !"</span>);</div><div class="line">	}</div><div class="line">	</div><div class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span>(String[] args) {	</div><div class="line">	StaticBlock sBlock=<span class="keyword">new</span> StaticBlock();</div><div class="line">	}</div><div class="line">}</div></pre></figure>
+        <header class="post-header">
+            <div class="tag-tile">
+                
+                
+                <a data-pjax href='/tags/maven/'>maven</a>
+                
+                
+                <span class="fa fa-bookmark" style="float:right;color:#fa8072"></span>
+            </div>
+            <h1 class="post-title"><a data-pjax href="/2016/01/30/maven-version/">Maven(二)用MyEclipse建立Maven骨架的项目</a>
+            </h1>
 
-<p>运行结果 ：<code>hello java Vuser !</code></p>
-<figure class="highlight java"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">StaticBlock</span> </span>{</div><div class="line">	<span class="keyword">static</span>{</div><div class="line">		System.out.println(<span class="string">"hello java Vuser !"</span>);</div><div class="line">	}</div><div class="line">	</div><div class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span>(String[] args) {	</div><div class="line">	    System.out.println(<span class="string">"i am main ~"</span>);</div><div class="line">	}</div><div class="line">}</div></pre></figure>
-
-<p>运行结果：</p>
-<figure class="highlight bash"><pre><div class="line">hello java Vuser !</div><div class="line">i am main ~</div></pre></figure>
-
-<p>静态代码块是在类加载的时候执行。加载完类之后然后从main开始执行，所以输出结果是上面的顺序。<br>在loadrunner中会报错。</p>
-<figure class="highlight java"><pre><div class="line"><span class="keyword">import</span> lrapi.lr;</div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Actions</span></span></div><div class="line">{</div><div class="line">        <span class="keyword">static</span>{</div><div class="line">		System.out.println(<span class="string">"this is static !"</span>);</div><div class="line">		lr.think_time(<span class="number">10</span>);</div><div class="line">	}</div><div class="line"></div><div class="line">	<span class="keyword">public</span> <span class="keyword">int</span> <span class="title">init</span>() <span class="keyword">throws</span> Throwable {</div><div class="line">	    System.out.println(<span class="string">"hello, this is init()!"</span>);</div><div class="line">		<span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">	}<span class="comment">//end of init</span></div><div class="line"></div><div class="line">	<span class="keyword">public</span> <span class="keyword">int</span> <span class="title">action</span>() <span class="keyword">throws</span> Throwable {</div><div class="line">		<span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">	}<span class="comment">//end of action</span></div><div class="line"></div><div class="line">	<span class="keyword">public</span> <span class="keyword">int</span> <span class="title">end</span>() <span class="keyword">throws</span> Throwable {</div><div class="line">		<span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">	}<span class="comment">//end of end</span></div><div class="line">}</div></pre></figure>
-
-
-
-<figure class="highlight bash"><pre><div class="line">Error (-<span class="number">17998</span>): Failed to get [param not passed <span class="keyword">in</span> call] thread TLS entry.</div><div class="line">Error (-<span class="number">17998</span>): Failed to get [param not passed <span class="keyword">in</span> call] thread TLS entry.</div><div class="line"></div><div class="line">Virtual User Script started at : <span class="number">2015</span>-<span class="number">03</span>-<span class="number">28</span> <span class="number">21</span>:<span class="number">14</span>:<span class="number">51</span></div><div class="line">Starting action vuser_init.</div><div class="line">System.out: hello, this is init()!                                                                                                                                                      Notify:</div><div class="line">Ending action vuser_init.</div><div class="line">Running Vuser...</div><div class="line">Starting iteration <span class="number">1</span>.</div><div class="line">Starting action Actions.</div><div class="line">Ending action Actions.</div><div class="line">Ending iteration <span class="number">1</span>.</div><div class="line">Ending Vuser...</div><div class="line">Starting action vuser_end.</div><div class="line">Ending action vuser_end.</div><div class="line">Vuser Terminated.</div></pre></figure>
-
-<h2 id="Java_Vuser需要注意">Java Vuser需要注意</h2>
-<ul>
-<li>如果在脚本中包括自定义的类，你需要确保这个类是线程安全的，如果不确定，使用进程方式运行，这样可以每个进程一个虚拟机，充分的隔离。<ul>
-<li>线程安全的含义：线程安全就是说多线程访问修改同一代码，不会产生不确定的结果。关于线程的基础概念理解参看<a href="http://www.zhaokongnuan.com/2015/01/09/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E4%B9%8B%E7%BA%BF%E7%A8%8B%E7%AE%A1%E7%90%86/" target="_blank" rel="external">操作系统之线程管理</a></li>
-<li>没有修改，只有读肯定是线程安全的</li>
-<li>操作不同的对象或者变量是线程安全的</li>
-<li>线程安全是很难检测的。往往在很少用户并发时很难发现，甚至很多程序运行多年才发现，相对来说，在大压力下或CPU资源紧张的时候更容易发现。</li>
-</ul>
-</li>
-<li>不要在Java Vuser衍生出来的线程中使用Java Vuser Api</li>
-</ul>
-<h2 id="编写Java_Vuser的一般步骤">编写Java Vuser的一般步骤</h2>
-<ul>
-<li>了解被测项目业务和所使用的技术，分析是否使用JavaVuser</li>
-<li>在eclipse中编写一个正确的压力模拟代码</li>
-<li>将eclipse中的代码移到LoadRunner中的JavaVuser</li>
-<li>结合业务特点，对脚本进一步增强</li>
-<li>使用Comtroller运行多用的JavaVuser</li>
-<li>……</li>
-</ul>
-<h2 id="从web转化为Java_Vuser">从web转化为Java Vuser</h2>
-<p>1）将要转换的web脚本复制出来并保存到文本文件中<br>2）参数界定符部分需要由{}手动修改成&lt;&gt;<br>3）打开CMD<br>4）切换到 C:\Program Files\HP\LoadRunner\dat<br>5）运行 ..\bin\sed -f web_to_java.sed c:\web.txt &gt; c:\java.txt<br>6 ) 创建参数并进行其他操作</p>
-<h1 id="课后作业">课后作业</h1>
-<p><b>LoadRunner中的JavaVuser有哪些特点？具体有哪些使用场景？</b></p>
-<ul>
-<li>JavaVuser有哪些特点？<ul>
-<li>有些使用C解决起来很麻烦，但是使用java很方便，存在强大的开源类库</li>
-<li>更方便的使用自定义的类，节省开发脚本的时间。特别是对于自定义的一些算法或类，更是方便。</li>
-</ul>
-</li>
-<li>具体有哪些使用场景？没有用过o(╯□╰)o，应该什么场景都能用吧。</li>
-</ul>
-<p><b>2、线程安全的含义是什么？如何写出线程安全的代码？</b><br>线程安全就是说多线程访问修改同一代码，不会产生不确定的结果。一个简单的栗子：</p>
-<figure class="highlight java"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Count</span> </span>{</div><div class="line">	<span class="keyword">int</span> num = <span class="number">0</span>;</div><div class="line">	<span class="keyword">public</span> <span class="keyword">void</span> <span class="title">count</span>() {</div><div class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= <span class="number">10</span>; i++) {</div><div class="line">			num += i;</div><div class="line">		}</div><div class="line">		System.out.println(Thread.currentThread().getName() + <span class="string">" : "</span> + num);</div><div class="line">	}</div><div class="line"></div><div class="line">	<span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span>(String[] args) {</div><div class="line">		Runnable runnable = <span class="keyword">new</span> Runnable() {</div><div class="line">			Count count = <span class="keyword">new</span> Count();</div><div class="line">			<span class="keyword">public</span> <span class="keyword">void</span> <span class="title">run</span>() {</div><div class="line">				count.count();</div><div class="line">			}</div><div class="line">		};</div><div class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">10</span>; i++) {</div><div class="line">			<span class="keyword">new</span> Thread(runnable).start();</div><div class="line">		}</div><div class="line">	}</div><div class="line">}</div></pre></figure>
-
-<p>输出结果</p>
-<figure class="highlight bash"><pre><div class="line">Thread-<span class="number">0</span> : <span class="number">55</span></div><div class="line">Thread-<span class="number">1</span> : <span class="number">110</span></div><div class="line">Thread-<span class="number">2</span> : <span class="number">165</span></div><div class="line">Thread-<span class="number">3</span> : <span class="number">220</span></div><div class="line">Thread-<span class="number">4</span> : <span class="number">275</span></div><div class="line">Thread-<span class="number">5</span> : <span class="number">330</span></div><div class="line">Thread-<span class="number">7</span> : <span class="number">440</span></div><div class="line">Thread-<span class="number">6</span> : <span class="number">385</span></div><div class="line">Thread-<span class="number">8</span> : <span class="number">495</span></div><div class="line">Thread-<span class="number">9</span> : <span class="number">550</span></div></pre></figure>
-
-<p>可以看到是结果是对num累加的。<br>再运行几次，可能出现下面这个结果</p>
-<figure class="highlight bash"><pre><div class="line">Thread-<span class="number">0</span> : <span class="number">110</span></div><div class="line">Thread-<span class="number">5</span> : <span class="number">165</span></div><div class="line">Thread-<span class="number">3</span> : <span class="number">275</span></div><div class="line">Thread-<span class="number">1</span> : <span class="number">110</span></div><div class="line">Thread-<span class="number">4</span> : <span class="number">275</span></div><div class="line">Thread-<span class="number">9</span> : <span class="number">330</span></div><div class="line">Thread-<span class="number">8</span> : <span class="number">440</span></div><div class="line">Thread-<span class="number">7</span> : <span class="number">385</span></div><div class="line">Thread-<span class="number">2</span> : <span class="number">495</span></div><div class="line">Thread-<span class="number">6</span> : <span class="number">550</span></div></pre></figure>
-
-<p>现在把num这个变量拿到count函数里面去</p>
-<figure class="highlight bash"><pre><div class="line">public class Count {</div><div class="line">	</div><div class="line">	public void <span class="function"><span class="title">count</span></span>() {</div><div class="line">		int num = <span class="number">0</span>;</div><div class="line">		<span class="keyword">for</span> (int i = <span class="number">1</span>; i &lt;= <span class="number">10</span>; i++) {</div><div class="line">			num += i;</div><div class="line">		}</div><div class="line">		System.out.println(Thread.currentThread().getName() + <span class="string">" : "</span> + num);</div><div class="line">	}</div><div class="line"></div><div class="line">	public static void main(String[] args) {</div><div class="line">		Runnable runnable = new <span class="function"><span class="title">Runnable</span></span>() {</div><div class="line">			Count count = new Count();</div><div class="line">			public void <span class="function"><span class="title">run</span></span>() {</div><div class="line">				count.count();</div><div class="line">			}</div><div class="line">		};</div><div class="line">		<span class="keyword">for</span> (int i = <span class="number">0</span>; i &lt; <span class="number">10</span>; i++) {</div><div class="line">			new Thread(runnable).start();</div><div class="line">		}</div><div class="line">	}</div><div class="line">}</div></pre></figure>
-
-<p>运行结果：</p>
-<figure class="highlight bash"><pre><div class="line">Thread-<span class="number">2</span> : <span class="number">55</span></div><div class="line">Thread-<span class="number">6</span> : <span class="number">55</span></div><div class="line">Thread-<span class="number">3</span> : <span class="number">55</span></div><div class="line">Thread-<span class="number">7</span> : <span class="number">55</span></div><div class="line">Thread-<span class="number">0</span> : <span class="number">55</span></div><div class="line">Thread-<span class="number">1</span> : <span class="number">55</span></div><div class="line">Thread-<span class="number">4</span> : <span class="number">55</span></div><div class="line">Thread-<span class="number">5</span> : <span class="number">55</span></div><div class="line">Thread-<span class="number">8</span> : <span class="number">55</span></div><div class="line">Thread-<span class="number">9</span> : <span class="number">55</span></div></pre></figure>
-
-<p>从第一个例子可以看出，线程之间共享成员变量，再看第一个程序的第二个结果，也就是说存在成员变量的类用于多线程时是不安全的，不安全体现在这个成员变量可能发生非原子性的操作。而变量定义在方法内也就是局部变量是线程安全的。<br>（对于运行结果的解释：在多个线程之间共享了Count类的一个对象，这个对象是被创建在主内存(堆内存)中，每个线程都有自己的工作内存(线程栈)，工作内存存储了主内存Count对象的一个副本，当线程操作Count对象时，首先从主内存复制Count对象到工作内存中，然后执行代码count.count()，改变了num值，最后用工作内存Count刷新主内存Count。当一个对象在多个内存中都存在副本时，如果一个内存修改了共享变量，其它线程也应该能够看到被修改后的值，此为可见性。多个线程执行时，CPU对线程的调度是随机的，我们不知道当前程序被执行到哪步就切换到了下一个线程，于是就有了不同的运行结果，显然这不是我们所期望的。）<br>如何写出线程安全的代码？线程安全性非常类似于在描述 ACID(原子性、一致性、独立性和持久性)事务时使用的一致性,对于事务的一致性，数据库都是用锁机制来实现的。java也可以采用锁机制比如上述java代码加上<code>synchronized</code>关键字：</p>
-<figure class="highlight java"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Count</span> </span>{</div><div class="line">	<span class="keyword">int</span> num = <span class="number">0</span>;</div><div class="line">	<span class="keyword">public</span> <span class="keyword">synchronized</span> <span class="keyword">void</span> <span class="title">count</span>() {</div><div class="line">		</div><div class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= <span class="number">10</span>; i++) {</div><div class="line">			num += i;</div><div class="line">		}</div><div class="line">		System.out.println(Thread.currentThread().getName() + <span class="string">" : "</span> + num);</div><div class="line">	}</div><div class="line">	</div><div class="line"></div><div class="line">	<span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span>(String[] args) {</div><div class="line">		Runnable runnable = <span class="keyword">new</span> Runnable() {</div><div class="line">			Count count = <span class="keyword">new</span> Count();</div><div class="line">			<span class="keyword">public</span>  <span class="keyword">void</span> <span class="title">run</span>() {</div><div class="line">				count.count();</div><div class="line">			}</div><div class="line">		};</div><div class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">10</span>; i++) {</div><div class="line">			<span class="keyword">new</span> Thread(runnable).start();</div><div class="line">		}</div><div class="line">	}</div><div class="line">}</div></pre></figure>
-
-<p>运行结果：</p>
-<figure class="highlight bash"><pre><div class="line">Thread-<span class="number">0</span> : <span class="number">55</span></div><div class="line">Thread-<span class="number">1</span> : <span class="number">110</span></div><div class="line">Thread-<span class="number">4</span> : <span class="number">165</span></div><div class="line">Thread-<span class="number">2</span> : <span class="number">220</span></div><div class="line">Thread-<span class="number">5</span> : <span class="number">275</span></div><div class="line">Thread-<span class="number">3</span> : <span class="number">330</span></div><div class="line">Thread-<span class="number">7</span> : <span class="number">385</span></div><div class="line">Thread-<span class="number">6</span> : <span class="number">440</span></div><div class="line">Thread-<span class="number">9</span> : <span class="number">495</span></div><div class="line">Thread-<span class="number">8</span> : <span class="number">550</span></div></pre></figure>
-
-<p>就只会出现累加的情况，就不会出现发生非原子性的操作。<br>另外还有生产者/消费者模式、通过<code>volatile</code>关键字等方式以保证线程安全。<br><b>3、使用JavaVuser的方式完成如下描述的操作，将生成的JavaVuser代码打包上传。<br>使用JavaVuser完成LoadRunner自带的例子中的注册新用户操作，脚本需要参数化新注册用户的用户名、密码和确认密码。需要三个参数化变量从同一个文件取值。参数化后生成10个新用户，名字是test01—test10，密码随便但不要重复，需要使用same line as ，使用关联判断是否注册成功。将JavaVuser脚本目录打包作为附件提交。</b><br>（代码见附件）</p>
-<hr>
-<p>学习的课程来自<a href="http://www.dataguru.cn/" target="_blank" rel="external">炼数成金</a>广州八神王磊老师的软件性能测试（第二期）^_^</p>
-
+            <div class="post-meta">
+                Post on<span class="fa fa-clock-o"></span>
+                <time datetime="2016-01-30T11:44:46.000Z"
+                      itemprop="datePublished">Jan 30 2016</time>
+            </div>
+        </header>
+        <section class="post-excerpt">
+            <p>
+                
+                实践环境
+Myeclipse 10.7Java Version “1.7.0_51”M2_HOME=G:\apache-maven-3.3.1
+项目构建
+Maven 项目结构分析    src/main/java 存放项目源码    src/main/resources 存放项目配置文件    src/test/java 存放测试用例代码    src/test/resources 存放测试配置文件 
+`src/main/webapp`
+                
+            </p>
+            
+            <p>
+                <a data-pjax href="/2016/01/30/maven-version/"
+                   class="excerpt-link">Read More...</a>
+            </p>
+            
         </section>
-        <hr/>
-        <nav class="pagination" style="width:auto" role="pagination">
-            
-            <a data-pjax class="newer-posts" href="/2015/04/02/cut-the-ejb/">← Prev Post</a>
-            
-            <a class="share-button" data-original-title title>Share this Post</a>
-            
-            <a data-pjax class="older-posts" href="/2015/03/27/about-maven/">Next Post →</a>
-            
-        </nav>
-        <br/>
-        <br/>
-        <section id="comment">
-            <div id="comment-box"></div>
-        </section>
-
-
     </article>
+    
+    <article class="post">
+
+        <header class="post-header">
+            <div class="tag-tile">
+                
+                
+                <a data-pjax href='/tags/maven/'>maven</a>
+                
+                
+                <span class="fa fa-bookmark" style="float:right;color:#fa8072"></span>
+            </div>
+            <h1 class="post-title"><a data-pjax href="/2015/03/27/about-maven/">Maven初体验（一）</a>
+            </h1>
+
+            <div class="post-meta">
+                Post on<span class="fa fa-clock-o"></span>
+                <time datetime="2015-03-27T05:35:33.000Z"
+                      itemprop="datePublished">Mar 27 2015</time>
+            </div>
+        </header>
+        <section class="post-excerpt">
+            <p>
+                
+                Maven简介
+是一个采用纯Java编写的开 源项目管理工具。Maven采用了一种被称之为project object model (POM)概念来管理项目，所有的项目配置信息都被定义在一个叫做POM.xml的文件中，通过该文件，Maven可以管理项目的整个声明周期，包括编译，构建，测试，发布，报告等等。目前Apache下绝大多数项目都已经采用Maven进行管理。
+实践环境
+C:\Users\Administrator\Desktop&
+                
+            </p>
+            
+            <p>
+                <a data-pjax href="/2015/03/27/about-maven/"
+                   class="excerpt-link">Read More...</a>
+            </p>
+            
+        </section>
+    </article>
+    
+    <nav class="pagination" role="pagination">
+        
+        <span class="page-number">Page  of </span>
+        
+    </nav>
 </main>
 
 

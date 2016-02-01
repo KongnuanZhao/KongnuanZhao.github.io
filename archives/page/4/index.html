@@ -49,6 +49,10 @@
                                 <div class="mp-scroll">
                                 
                                 <li class="search-archive-li mp-pjax">
+                                    <a href="/2016/01/30/maven-version/">Maven(二)用MyEclipse建立Maven骨架的项目</a>
+                                </li>
+                                
+                                <li class="search-archive-li mp-pjax">
                                     <a href="/2016/01/30/from-now/">千里之行始于足下</a>
                                 </li>
                                 
@@ -369,6 +373,11 @@
                                 </li>
                                 
                                 <li class="search-category-li mp-pjax">
+                                    <a href="/categories/maven/">&nbsp;&nbsp;&nbsp;maven</a>
+                                    <small>2</small>
+                                </li>
+                                
+                                <li class="search-category-li mp-pjax">
                                     <a href="/categories/Hbase/nosql/">&nbsp;&nbsp;&nbsp;nosql</a>
                                     <small>1</small>
                                 </li>
@@ -384,13 +393,13 @@
                                 </li>
                                 
                                 <li class="search-category-li mp-pjax">
-                                    <a href="/categories/性能测试/">&nbsp;&nbsp;&nbsp;性能测试</a>
-                                    <small>15</small>
+                                    <a href="/categories/Java/性能测试/">&nbsp;&nbsp;&nbsp;性能测试</a>
+                                    <small>1</small>
                                 </li>
                                 
                                 <li class="search-category-li mp-pjax">
-                                    <a href="/categories/Java/性能测试/">&nbsp;&nbsp;&nbsp;性能测试</a>
-                                    <small>1</small>
+                                    <a href="/categories/性能测试/">&nbsp;&nbsp;&nbsp;性能测试</a>
+                                    <small>15</small>
                                 </li>
                                 
                                 <li class="search-category-li mp-pjax">
@@ -501,6 +510,11 @@
                                 </li>
                                 
                                 <li class="search-tag-li mp-pjax">
+                                    <a href="/tags/maven/">&nbsp;&nbsp;&nbsp;maven</a>
+                                    <small>2</small>
+                                </li>
+                                
+                                <li class="search-tag-li mp-pjax">
                                     <a href="/tags/nosql/">&nbsp;&nbsp;&nbsp;nosql</a>
                                     <small>1</small>
                                 </li>
@@ -569,6 +583,8 @@
         </nav>
         <div id="pjax">
             <div class="pjax-hidden" style="display: none">
+                
+                    <a  data-pjax href="/2016/01/30/maven-version/">Maven(二)用MyEclipse建立Maven骨架的项目</a>
                 
                     <a  data-pjax href="/2016/01/30/from-now/">千里之行始于足下</a>
                 
@@ -717,15 +733,17 @@
                 
                     <a data-pjax href="/categories/linux/">&nbsp;&nbsp;linux</a>
                 
+                    <a data-pjax href="/categories/maven/">&nbsp;&nbsp;maven</a>
+                
                     <a data-pjax href="/categories/Hbase/nosql/">&nbsp;&nbsp;nosql</a>
                 
                     <a data-pjax href="/categories/nosql/">&nbsp;&nbsp;nosql</a>
                 
                     <a data-pjax href="/categories/oracle/">&nbsp;&nbsp;oracle</a>
                 
-                    <a data-pjax href="/categories/性能测试/">&nbsp;&nbsp;性能测试</a>
-                
                     <a data-pjax href="/categories/Java/性能测试/">&nbsp;&nbsp;性能测试</a>
+                
+                    <a data-pjax href="/categories/性能测试/">&nbsp;&nbsp;性能测试</a>
                 
                     <a data-pjax href="/categories/操作系统/">&nbsp;&nbsp;操作系统</a>
                 
@@ -763,6 +781,8 @@
                     <a data-pjax href="/tags/java/">&nbsp;&nbsp;java</a>
                 
                     <a data-pjax href="/tags/linux/">&nbsp;&nbsp;linux</a>
+                
+                    <a data-pjax href="/tags/maven/">&nbsp;&nbsp;maven</a>
                 
                     <a data-pjax href="/tags/nosql/">&nbsp;&nbsp;nosql</a>
                 
@@ -818,6 +838,46 @@
   
 <main class="content" role="main">
 
+    
+    <article class="post">
+
+        <header class="post-header">
+            <div class="tag-tile">
+                
+                
+                <a data-pjax href='/tags/性能测试/'>性能测试</a>
+                
+                
+                <span class="fa fa-bookmark" style="float:right;color:#fa8072"></span>
+            </div>
+            <h1 class="post-title"><a data-pjax href="/2015/02/21/LoadRunner中的关联/">LoadRunner中的关联和检查点</a>
+            </h1>
+
+            <div class="post-meta">
+                Post on<span class="fa fa-clock-o"></span>
+                <time datetime="2015-02-21T12:03:26.000Z"
+                      itemprop="datePublished">Feb 21 2015</time>
+            </div>
+        </header>
+        <section class="post-excerpt">
+            <p>
+                
+                课堂笔记
+目的
+目的：掌握LoadRunner中的关联的基本概念和使用方法
+概念之关联
+
+关联的定义  因为LoadRunner录制的时候SessionID是写死的，会话结束后该SessionID便会失效，脚本回访就会报错，所以我们需要对类似SessionID从服务器返回动态变化的值进行关联。所以在脚本回放过程中，客户端发出请求，通过关联函数所定义的左右边界值，在服务器所响应的内容中查找，得到相应的值，以变量的形式替换录制时的静态值，从
+                
+            </p>
+            
+            <p>
+                <a data-pjax href="/2015/02/21/LoadRunner中的关联/"
+                   class="excerpt-link">Read More...</a>
+            </p>
+            
+        </section>
+    </article>
     
     <article class="post">
 
@@ -1212,41 +1272,6 @@ SOAP
             
             <p>
                 <a data-pjax href="/2015/01/08/操作系统之虚拟内存管理/"
-                   class="excerpt-link">Read More...</a>
-            </p>
-            
-        </section>
-    </article>
-    
-    <article class="post">
-
-        <header class="post-header">
-            <div class="tag-tile">
-                
-                
-                <a data-pjax href='/tags/操作系统/'>操作系统</a>
-                
-                
-                <span class="fa fa-bookmark" style="float:right;color:#fa8072"></span>
-            </div>
-            <h1 class="post-title"><a data-pjax href="/2015/01/07/操作系统之内存管理篇/">操作系统之内存管理篇</a>
-            </h1>
-
-            <div class="post-meta">
-                Post on<span class="fa fa-clock-o"></span>
-                <time datetime="2015-01-07T03:18:13.000Z"
-                      itemprop="datePublished">Jan 7 2015</time>
-            </div>
-        </header>
-        <section class="post-excerpt">
-            <p>
-                
-                程序要运行，必须先加载到内存。但在很久很久以前，准确的说是在操作系统没有出现以前，程序并不需要加载到内存就能运行。实际上，那个时候程序曾经存放在卡片上，计算机每读一张卡片，就运行一条指令。因此，程序是直接从卡片到执行。图片来源9千万的差距 百年来数据存储历史回顾但这种从外部存储媒介上直接执行指令的做法效率极低，且灵活性很差。因此人们发明了内存储器来将需要运行的程序先行加载，再自动执行，从而提高效率和灵活性。这也导致了“存储的程序”的概念
-                
-            </p>
-            
-            <p>
-                <a data-pjax href="/2015/01/07/操作系统之内存管理篇/"
                    class="excerpt-link">Read More...</a>
             </p>
             
