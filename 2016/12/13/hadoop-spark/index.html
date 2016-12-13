@@ -929,23 +929,118 @@
 </ul>
 <figure class="highlight bash"><pre><div class="line"><span class="built_in">sudo</span> apt-get install openssh-server</div></pre></figure>
 
-<pre><code><span class="bullet">* </span>192.168.1.11是主节点，切换到ubuntu用户
-</code></pre><figure class="highlight bash"><pre><div class="line"><span class="variable">$su</span> ubuntu</div><div class="line"><span class="built_in">cd</span> /home/ubuntu</div><div class="line"><span class="variable">$ssh</span>-keygen -trsa</div></pre></figure>
+<p>192.168.1.11是主节点，切换到ubuntu用户</p>
+<figure class="highlight bash"><pre><div class="line"><span class="variable">$su</span> ubuntu</div><div class="line"><span class="built_in">cd</span> /home/ubuntu</div><div class="line"><span class="variable">$ssh</span>-keygen -trsa</div></pre></figure>
 
-<pre><code>然后一直按回车,完成后，在home跟目录下会产生隐藏文件夹<span class="code">`.ssh`</span>
-</code></pre><figure class="highlight bash"><pre><div class="line"><span class="variable">$cd</span> .ssh</div></pre></figure>
+<p>然后一直按回车,完成后，在home跟目录下会产生隐藏文件夹<code>.ssh</code></p>
+<figure class="highlight bash"><pre><div class="line"><span class="variable">$cd</span> .ssh</div></pre></figure>
 
-<pre><code>* 之后<span class="keyword">ls</span>查看文件
-</code></pre><figure class="highlight bash"><pre><div class="line">cp id_rsa.pub authorized_keys</div></pre></figure>
+<p>之后ls查看文件</p>
+<figure class="highlight bash"><pre><div class="line">cp id_rsa.pub authorized_keys</div></pre></figure>
 
-<pre><code><span class="bullet">* </span>测试localhost：
-<span class="code">`ssh localhost`</span>发现链接成功，并且无需密码。
-<span class="bullet">* </span>复制到192.168.1.12/192.168.1.13上
-</code></pre><figure class="highlight bash"><pre><div class="line"><span class="variable">$scp</span> authorized_keys <span class="number">192.168</span>.<span class="number">1.12</span>:/home/ubuntu/.ssh/</div><div class="line"><span class="variable">$scp</span> authorized_keys <span class="number">192.168</span>.<span class="number">1.13</span>:/home/ubuntu/.ssh/</div></pre></figure>
+<p>测试localhost：<br><code>ssh localhost</code>发现链接成功，并且无需密码。<br>复制到192.168.1.12/192.168.1.13上</p>
+<figure class="highlight bash"><pre><div class="line"><span class="variable">$scp</span> authorized_keys <span class="number">192.168</span>.<span class="number">1.12</span>:/home/ubuntu/.ssh/</div><div class="line"><span class="variable">$scp</span> authorized_keys <span class="number">192.168</span>.<span class="number">1.13</span>:/home/ubuntu/.ssh/</div></pre></figure>
 
-<pre><code><span class="bullet">* </span>测试
-</code></pre><figure class="highlight bash"><pre><div class="line">ssh <span class="number">192.168</span>.<span class="number">1.12</span>和<span class="number">192.168</span>.<span class="number">1.13</span></div></pre></figure>
+<p>测试</p>
+<figure class="highlight bash"><pre><div class="line">ssh <span class="number">192.168</span>.<span class="number">1.12</span>和<span class="number">192.168</span>.<span class="number">1.13</span></div></pre></figure>
 
+<p><img src="/image/ssh.png" alt="ssh有效性"></p>
+<ul>
+<li>卸载原有JDK安装JDK8+</li>
+</ul>
+<p>1)卸载自带的openjdk：</p>
+<figure class="highlight bash"><pre><div class="line"><span class="built_in">sudo</span> apt-get remove openjdk*</div></pre></figure>
+
+<p>2)下载jdk8,解压</p>
+<figure class="highlight bash"><pre><div class="line">tar -xzvf jdk-<span class="number">8</span>u111-linux-i586.tar.gz</div></pre></figure>
+
+<p>3)设置环境变量</p>
+<figure class="highlight bash"><pre><div class="line"><span class="built_in">sudo</span> gedit /etc/profile</div><div class="line"><span class="keyword">export</span> JAVA_HOME=/usr/jdk1.<span class="number">8.0</span>_111</div><div class="line">CLASSPATH=<span class="variable">$CLASSPATH</span>.:<span class="variable">$JAVA_HOME</span>/lib:<span class="variable">$JAVA_HOME</span>/jre/lib</div><div class="line"><span class="keyword">export</span> PATH=<span class="variable">$PATH</span>:<span class="variable">$JAVA_HOME</span>/bin:<span class="variable">$JAVA_HOME</span>/jre/bin</div></pre></figure>
+
+<p>4)测试</p>
+<figure class="highlight bash"><pre><div class="line">ubuntu@ubuntu00:~/.ssh$ java -version</div><div class="line">java version <span class="string">"1.8.0_111"</span></div><div class="line">Java(TM) SE Runtime Environment (build <span class="number">1.8</span>.<span class="number">0</span>_111-b14)</div><div class="line">Java HotSpot(TM) Server VM (build <span class="number">25.111</span>-b14, mixed mode)</div></pre></figure>
+
+<h2 id="安装Hadoop">安装Hadoop</h2>
+<ul>
+<li>下载解压hadoop2.7.3</li>
+</ul>
+<p>1)解压：<br>tar -zxvf hadoop-2.7.3.tar.gz<br>2)解压好之后配置环境变量<code>sudo gedit /etc/profile</code>继续追加以下内容：</p>
+<figure class="highlight bash"><pre><div class="line"><span class="keyword">export</span> HADOOP_HOME=/home/ubuntu/hadoop-<span class="number">2.7</span>.<span class="number">3</span></div><div class="line"><span class="keyword">export</span> PATH=<span class="variable">$PATH</span>:<span class="variable">$HADOOP_HOME</span>/bin</div></pre></figure>
+
+<p>修改完之后<code>source /etc/profile</code>使之生效。<br>3)配置hadoop目录下的<code>/etc/hadoop/hadoop-env.sh</code>文件，在如下注释处添加：</p>
+<figure class="highlight bash"><pre><div class="line"><span class="comment"># The java implementation to use.</span></div><div class="line"><span class="keyword">export</span> JAVA_HOME=/usr/jdk1.<span class="number">8.0</span>_111/</div></pre></figure>
+
+<ul>
+<li>集群配置</li>
+</ul>
+<p>1)配置文件<code>hadoop-2.7.3/etc/hadoop/core-site.xml</code>添加如下内容:</p>
+<figure class="highlight bash"><pre><div class="line">&lt;configuration&gt;</div><div class="line">&lt;property&gt;</div><div class="line"> &lt;name&gt;fs.default.name&lt;/name&gt;</div><div class="line">  &lt;value&gt;hdfs://<span class="number">192.168</span>.<span class="number">1.11</span>:<span class="number">49000</span>&lt;/value&gt;</div><div class="line">&lt;/property&gt;</div><div class="line">&lt;property&gt;</div><div class="line">  &lt;name&gt;hadoop.tmp.dir&lt;/name&gt;</div><div class="line"> &lt;value&gt;/home/ubuntu/hadoop-<span class="number">2.7</span>.<span class="number">3</span>/var&lt;/value&gt;</div><div class="line">&lt;/property&gt;</div><div class="line">&lt;/configuration&gt;</div></pre></figure>
+
+<p>注：(1) <code>fs.default.name</code>是NameNode的URI。hdfs://主机名:端口/<br>    (2) <code>hadoop.tmp.dir</code>：Hadoop的默认临时路径，这个最好配置，如果在新增节点或者其他情况下莫名其妙的DataNode启动不了，就删除此文件中的tmp目录即可。不过如果删除了NameNode机器的此目录，那么就需要重新执行NameNode格式化的命令。<br>2)配置文件 <code>mapred-site.xml</code></p>
+<figure class="highlight bash"><pre><div class="line">&lt;configuration&gt;</div><div class="line">&lt;property&gt;</div><div class="line">  &lt;name&gt;mapred.job.tracker&lt;/name&gt;</div><div class="line">  &lt;value&gt;<span class="number">192.168</span>.<span class="number">1.11</span>:<span class="number">49001</span>&lt;/value&gt;</div><div class="line">&lt;/property&gt;</div><div class="line">&lt;property&gt;</div><div class="line">  &lt;name&gt;mapred.local.dir&lt;/name&gt;</div><div class="line"> &lt;value&gt;/home/ubuntu/hadoop-<span class="number">2.7</span>.<span class="number">3</span>/var&lt;/value&gt;</div><div class="line">&lt;/property&gt;</div><div class="line">&lt;/configuration&gt;</div></pre></figure>
+
+<p>注：<code>mapred.job.tracker</code>是JobTracker的主机（或者IP）和端口。主机:端口。<br>3)配置文件<code>hdfs-site.xml</code></p>
+<figure class="highlight bash"><pre><div class="line">&lt;configuration&gt;</div><div class="line">&lt;property&gt;</div><div class="line">&lt;name&gt;dfs.name.dir&lt;/name&gt;</div><div class="line">&lt;value&gt;/home/ubuntu/name1,/home/ubuntu/name2&lt;/value&gt;</div><div class="line">&lt;description&gt;  &lt;/description&gt;</div><div class="line">&lt;/property&gt;</div><div class="line">&lt;property&gt;</div><div class="line">&lt;name&gt;dfs.data.dir&lt;/name&gt;</div><div class="line">&lt;value&gt;/home/ubuntu/data1,/home/ubuntu/data2&lt;/value&gt;</div><div class="line">&lt;description&gt; &lt;/description&gt;</div><div class="line">&lt;/property&gt;</div><div class="line">&lt;property&gt;</div><div class="line">  &lt;name&gt;dfs.replication&lt;/name&gt;</div><div class="line">  &lt;value&gt;<span class="number">3</span>&lt;/value&gt;</div><div class="line">&lt;/property&gt;</div><div class="line">&lt;/configuration&gt;</div></pre></figure>
+
+<p>注：(1)<code>dfs.name.dir</code>是NameNode持久存储名字空间及事务日志的本地文件系统路径。 当这个值是一个逗号分割的目录列表时，nametable数据将会被复制到所有目录中做冗余备份。<br>(2)<code>dfs.data.dir</code>是DataNode存放块数据的本地文件系统路径，逗号分割的列表。 当这个值是逗号分割的目录列表时，数据将被存储在所有目录下，通常分布在不同设备上。<br>(3)<code>dfs.replication</code>是数据需要备份的数量，默认是3，如果此数大于集群的机器数会出错。<br>(4)此处的name1、name2、data1、data2目录不能预先创建，hadoop格式化时会自动创建，如果预先创建反而会有问题。<br>4)配置<code>masters</code>和<code>slaves</code>主从结点</p>
+<figure class="highlight bash"><pre><div class="line">vi masters </div><div class="line">输入：<span class="number">192.168</span>.<span class="number">1.11</span></div><div class="line">vi slaves</div><div class="line">输入：<span class="number">192.168</span>.<span class="number">1.12</span></div><div class="line"><span class="number">192.168</span>.<span class="number">1.13</span></div></pre></figure>
+
+<p>配置结束，把配置好的<code>hadoop-2.7.3</code>文件夹拷贝到其他集群的机器中，并且保证上面的配置对于其他机器而言正确:</p>
+<figure class="highlight bash"><pre><div class="line"><span class="variable">$scp</span> -r /home/ubuntu/hadoop-<span class="number">2.7</span>.<span class="number">3</span> <span class="number">192.168</span>.<span class="number">1.12</span>: /home/ubuntu/</div><div class="line"><span class="variable">$scp</span> -r /home/ubuntu/hadoop-<span class="number">2.7</span>.<span class="number">3</span> <span class="number">192.168</span>.<span class="number">1.13</span>: /home/ubuntu/</div></pre></figure>
+
+
+
+<ul>
+<li>hadoop启动</li>
+</ul>
+<p>1) 格式化一个新的分布式文件系统</p>
+<figure class="highlight bash"><pre><div class="line">$ bin/hadoop namenode -format</div></pre></figure>
+
+<p>查看输出保证分布式文件系统格式化成功<br>执行完后可以到master机器上看到<code>/home/ubuntu/name1</code>和<code>/home/ubuntu/name2</code>两个目录。<br><img src="/image/name12.png" alt="name12"><br>2)启动所有节点<br>$ sbin/start-all.sh<br>查看结果：<br><img src="/image/00namenode.png" alt="name12"><br><img src="/image/01datanode.png" alt="name12"><br><img src="/image/03datenode.png" alt="name12"><br>执行完后可以到slave(192.168.1.12,192.168.1.13)机器上看到<code>/home/ubuntu/data1</code>和<code>/home/ubuntu/data2</code>两个目录。</p>
+<h2 id="安装Scala">安装Scala</h2>
+<ul>
+<li>下载scala-2.12.0.tgz<br>解压 <code>tar –zxvf scala-2.12.0.tgz</code></li>
+<li>配置环境变量<br><code>/etc/profile</code>在下面添加路径：</li>
+</ul>
+<figure class="highlight bash"><pre><div class="line"><span class="keyword">export</span> SCALA_HOME=/usr/scala-<span class="number">2.11</span>.<span class="number">8</span></div><div class="line"><span class="keyword">export</span> PATH=<span class="variable">$PATH</span>:<span class="variable">$SCALA_HOME</span>/bin</div></pre></figure>
+
+<p>使修改生效<code>source /etc/profile</code></p>
+<ul>
+<li>在命令行输入scala测试:<br><img src="/image/00scala-test.png" alt="scala"><br><img src="/image/01scala-test.png" alt="scala"><br><img src="/image/03scala-test.png" alt="scala"></li>
+</ul>
+<h2 id="安装Spark">安装Spark</h2>
+<ul>
+<li>下载spark2.0.1<br>解压作个软链：</li>
+</ul>
+<figure class="highlight bash"><pre><div class="line">tar -zxvf spark-<span class="number">2.0</span>.<span class="number">1</span>-bin-hadoop2.<span class="number">7</span>.tgz</div><div class="line">ln <span class="operator">-s</span> spark-<span class="number">2.0</span>.<span class="number">2</span>-bin-hadoop2.<span class="number">7</span> spark2</div></pre></figure>
+
+<ul>
+<li>配置环境变量</li>
+</ul>
+<figure class="highlight bash"><pre><div class="line">vi /etc/profile</div><div class="line"><span class="comment">#Spark 2.0.1</span></div><div class="line"><span class="keyword">export</span> SPARK_HOME=/home/ubuntu/spark2</div><div class="line"><span class="keyword">export</span> PATH=<span class="variable">$PATH</span>:<span class="variable">$SPARK_HOME</span>/bin</div></pre></figure>
+
+<ul>
+<li>配置文件<code>/usr/local/spark2/conf</code><br>1) spark-env.sh</li>
+</ul>
+<figure class="highlight bash"><pre><div class="line">cp <span class="operator">-a</span> spark-env.sh.template spark-env.sh</div><div class="line">vi spark-env.sh</div><div class="line"><span class="keyword">export</span> JAVA_HOME=/usr/java/jdk1.<span class="number">8</span></div><div class="line"><span class="keyword">export</span> SPARK_MASTER_HOST=<span class="number">192.168</span>.<span class="number">1.11</span></div></pre></figure>
+
+<p>2)slaves</p>
+<figure class="highlight bash"><pre><div class="line">cp <span class="operator">-a</span> slaves.template slaves</div><div class="line">vi slaves</div><div class="line"><span class="number">192.168</span>.<span class="number">1.12</span></div><div class="line"><span class="number">192.168</span>.<span class="number">1.13</span></div></pre></figure>
+
+<p>bash</p>
+<ul>
+<li>复制到其他节点</li>
+</ul>
+<figure class="highlight bash"><pre><div class="line">scp -r spark-<span class="number">2.0</span>.<span class="number">1</span>-bin-hadoop2.<span class="number">7</span> <span class="number">192.168</span>.<span class="number">1.12</span>:/home/ubuntu/</div><div class="line">scp -r spark-<span class="number">2.0</span>.<span class="number">1</span>-bin-hadoop2.<span class="number">7</span> <span class="number">192.168</span>.<span class="number">1.13</span>:/home/ubuntu/</div></pre></figure>
+
+<p>4.5启动</p>
+<figure class="highlight bash"><pre><div class="line"><span class="variable">$SPARK_HOME</span>/sbin/start-all.sh</div></pre></figure>
+
+<p>查看三个节点上的结果：<br><img src="/image/00spark.png" alt="00spark"><br><img src="/image/01spark.png" alt="01spark"><br><img src="/image/02spark.png" alt="02spark"></p>
+<ul>
+<li>Web界面<br><a href="http://192.168.1.11:8080/jobs/" target="_blank" rel="external">http://192.168.1.11:8080/jobs/</a><br><a href="http://192.168.1.11:4040/jobs/" target="_blank" rel="external">http://192.168.1.11:4040/jobs/</a><br><img src="/image/spark.png" alt="spark"></li>
+</ul>
+<p>至此，搭建完成，之后在上面要做几个实验。</p>
 
         </section>
         <hr/>
