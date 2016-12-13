@@ -2,6 +2,31 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://yoursite.com/2016/12/13/hadoop-spark/</loc>
+    <lastmod>2016-12-13T03:13:15.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/about/index.html</loc>
+    <lastmod>2016-02-18T03:26:52.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/2016/02/16/oracle-sql/</loc>
+    <lastmod>2016-02-16T11:59:26.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/2016/02/03/direction/</loc>
+    <lastmod>2016-02-16T11:57:57.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/2016/02/02/jquery-ui/</loc>
+    <lastmod>2016-02-03T03:34:44.000Z</lastmod>
+  </url>
+  
+  <url>
     <loc>http://yoursite.com/2015/04/02/cut-the-ejb/</loc>
     <lastmod>2016-02-01T16:12:57.000Z</lastmod>
   </url>
@@ -99,11 +124,6 @@
   <url>
     <loc>http://yoursite.com/2015/03/21/test-report/</loc>
     <lastmod>2015-03-26T13:35:03.000Z</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://yoursite.com/about/index.html</loc>
-    <lastmod>2015-03-24T13:38:05.000Z</lastmod>
   </url>
   
   <url>
