@@ -2,13 +2,8 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>http://yoursite.com/2017/07/01/where/</loc>
-    <lastmod>2017-07-01T12:05:48.000Z</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://yoursite.com/2017/06/21/Same-as-you/</loc>
-    <lastmod>2017-06-30T14:43:12.000Z</lastmod>
+    <loc>http://yoursite.com/2017/03/22/read-for-better/</loc>
+    <lastmod>2017-09-13T12:52:37.000Z</lastmod>
   </url>
   
   <url>
@@ -17,18 +12,8 @@
   </url>
   
   <url>
-    <loc>http://yoursite.com/2017/02/20/ML01/</loc>
-    <lastmod>2017-03-22T12:36:50.000Z</lastmod>
-  </url>
-  
-  <url>
     <loc>http://yoursite.com/2017/02/27/dream-where/</loc>
     <lastmod>2017-03-22T12:35:08.000Z</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://yoursite.com/2017/03/22/read-for-better/</loc>
-    <lastmod>2017-03-22T12:30:55.000Z</lastmod>
   </url>
   
   <url>
@@ -59,11 +44,6 @@
   <url>
     <loc>http://yoursite.com/2016/02/03/direction/</loc>
     <lastmod>2016-02-16T11:57:57.000Z</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://yoursite.com/2015/04/02/cut-the-ejb/</loc>
-    <lastmod>2016-02-01T16:12:57.000Z</lastmod>
   </url>
   
   <url>
@@ -114,11 +94,6 @@
   <url>
     <loc>http://yoursite.com/2015/03/22/web-analytics/</loc>
     <lastmod>2015-04-10T08:24:17.000Z</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://yoursite.com/2015/04/07/enjoy/</loc>
-    <lastmod>2015-04-07T09:51:53.000Z</lastmod>
   </url>
   
   <url>
