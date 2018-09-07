@@ -86,6 +86,6 @@ plugins: hexo-generator-sitemap
 # Deployment
 ## Docs: http://hexo.io/docs/deployment.html
 deploy:
-  type: github
+  type: git
   repo: git@github.com:KongnuanZhao/KongnuanZhao.github.io.git
   branch: master
