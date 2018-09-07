@@ -1,0 +1,1133 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta name="baidu-site-verification" content="AQ0sUK7UOM" />
+  <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" >
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+  <title>Oracle学习交流--oracle概述及监听配置 | KongnuanZhao</title>
+  <meta name="description" content="赵空暖" />
+  <meta name="HandheldFriendly" content="True" />
+  <meta name="MobileOptimized" content="320" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="/favicon.ico" rel="icon" type="image/x-ico">
+  <link rel="stylesheet" type="text/css" href="/css/component.css" />
+  <link rel="stylesheet" type="text/css" href="/css/screen.css" />
+  <meta name="generator" content="KongnuanZhao">
+ 
+  
+  
+  
+
+  
+
+
+
+<script type="text/javascript">window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"1","bdSize":"16"},"slide":{"type":"slide","bdImg":"3","bdPos":"left","bdTop":"300"},"image":{"viewList":["qzone","tsina","tqq","renren","weixin","douban","twi","mshare"],"viewText":"分享到：","viewSize":"16"},"selectShare":{"bdContainerClass":null,"bdSelectMiniList":["qzone","tsina","tqq","renren","weixin","douban","twi","mshare"]}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+
+</head>
+<body>
+<div class="container">
+    <div class="mp-pusher" id="mp-pusher">
+        <i id="scroll-up" class="fa fa-angle-up"></i>
+        <nav id="mp-menu" class="mp-menu">
+            <div class="mp-level">
+                <a data-pjax class="back-home" style="font-size: 20px" href="/"><h2 ><i class="fa fa-home"></i>
+                        Home</h2></a>
+                <ul class="first-level">
+                    <li>
+                        <a class="fa fa-archive" href="#"><i class="fa fa-angle-left">
+                            </i>&nbsp;&nbsp;Archive</a>
+                        <div class="mp-level page-list">
+                            <h2 ><i class="fa fa-archive"></i>
+                                Archive</h2>
+                            <a class="mp-back" href="#">back</a>
+                            <form id="search-form" action="">
+                                <input type="text" class="search search-archive" placeholder="Search.."/>
+                            </form>
+                            <ul>
+                                <div class="mp-scroll">
+                                
+                                <li class="search-archive-li mp-pjax">
+                                    <a href="/2017/09/20/jmetal01/">jmetal01</a>
+                                </li>
+                                
+                                <li class="search-archive-li mp-pjax">
+                                    <a href="/2017/03/22/read-for-better/">开卷有益</a>
+                                </li>
+                                
+                                <li class="search-archive-li mp-pjax">
+                                    <a href="/2017/02/19/gpu01/">GPU并行计算与CUDA编程01</a>
+                                </li>
+                                
+                                <li class="search-archive-li mp-pjax">
+                                    <a href="/2016/12/13/hadoop-spark/">Hadoop和Spark集群搭建</a>
+                                </li>
+                                
+                                <li class="search-archive-li mp-pjax">
+                                    <a href="/2016/02/03/direction/">晴天</a>
+                                </li>
+                                
+                                <li class="search-archive-li mp-pjax">
+                                    <a href="/2016/01/30/maven-version/">Maven(二)用MyEclipse建立Maven骨架的项目</a>
+                                </li>
+                                
+                                <li class="search-archive-li mp-pjax">
+                                    <a href="/2016/01/30/from-now/">千里之行始于足下</a>
+                                </li>
+                                
+                                <li class="search-archive-li mp-pjax">
+                                    <a href="/2015/05/27/believe-me/">世界是心的镜子</a>
+                                </li>
+                                
+                                <li class="search-archive-li mp-pjax">
+                                    <a href="/2015/04/22/about-thread/">线程的自白</a>
+                                </li>
+                                
+                                <li class="search-archive-li mp-pjax">
+                                    <a href="/2015/04/17/about-time/">尽我们所能，珍惜这段美妙的旅程</a>
+                                </li>
+                                
+                                <li class="search-archive-li mp-pjax">
+                                    <a href="/2015/04/14/Memory/">数据交流大通道-内存</a>
+                                </li>
+                                
+                                <li class="search-archive-li mp-pjax">
+                                    <a href="/2015/04/12/about-disk/">掀起你的盖头来--磁盘我来看看你</a>
+                                </li>
+                                
+                                <li class="search-archive-li mp-pjax">
+                                    <a href="/2015/04/10/warmness/">做一个有心人</a>
+                                </li>
+                                
+                                <li class="search-archive-li mp-pjax">
+                                    <a href="/2015/04/02/about-yum/">问题之yum一二三</a>
+                                </li>
+                                
+                                <li class="search-archive-li mp-pjax">
+                                    <a href="/2015/04/02/about-jvm/">性能测试之探索Java虚拟机</a>
+                                </li>
+                                
+                                <li class="search-archive-li mp-pjax">
+                                    <a href="/2015/03/28/javaVuser/">LoadRunner中的JavaVuser</a>
+                                </li>
+                                
+                                <li class="search-archive-li mp-pjax">
+                                    <a href="/2015/03/27/about-maven/">Maven初体验（一）</a>
+                                </li>
+                                
+                                <li class="search-archive-li mp-pjax">
+                                    <a href="/2015/03/27/file-recover/">数据恢复</a>
+                                </li>
+                                
+                                <li class="search-archive-li mp-pjax">
+                                    <a href="/2015/03/24/about-index/">关于索引的一些总结和思考（上）</a>
+                                </li>
+                                
+                                <li class="search-archive-li mp-pjax">
+                                    <a href="/2015/03/23/about-health/">不要等到很累的时候才去休息</a>
+                                </li>
+                                
+                                <li class="search-archive-li mp-pjax">
+                                    <a href="/2015/03/22/web-analytics/">网站分析</a>
+                                </li>
+                                
+                                <li class="search-archive-li mp-pjax">
+                                    <a href="/2015/03/21/test-report/">性能测试报告的编写</a>
+                                </li>
+                                
+                                <li class="search-archive-li mp-pjax">
+                                    <a href="/2015/03/20/oracle-exp-imp/">Oracle的导入导出</a>
+                                </li>
+                                
+                                <li class="search-archive-li mp-pjax">
+                                    <a href="/2015/03/18/thrift-maven/">Ubuntu搭建Thrift和Maven</a>
+                                </li>
+                                
+                                <li class="search-archive-li mp-pjax">
+                                    <a href="/2015/03/18/hbase-install/">Ubuntu中安装HBase</a>
+                                </li>
+                                
+                                <li class="search-archive-li mp-pjax">
+                                    <a href="/2015/03/17/ubuntu-oracle/">Linux上安装Oracle</a>
+                                </li>
+                                
+                                <li class="search-archive-li mp-pjax">
+                                    <a href="/2015/03/17/hadoop-install/">Ubuntu搭建hadoop</a>
+                                </li>
+                                
+                                <li class="search-archive-li mp-pjax">
+                                    <a href="/2015/03/17/github/">hexo博客同步到github和gitcafe(下)</a>
+                                </li>
+                                
+                                <li class="search-archive-li mp-pjax">
+                                    <a href="/2015/03/17/music-Avatar-Island-whale/">化身孤岛的鲸</a>
+                                </li>
+                                
+                                <li class="search-archive-li mp-pjax">
+                                    <a href="/2015/03/15/Controller-Analysis/">LoadRunner中的Controller和Analysis</a>
+                                </li>
+                                
+                                <li class="search-archive-li mp-pjax">
+                                    <a href="/2015/03/08/interface-performance-testing/">一个接口性能测试脚本开发案例</a>
+                                </li>
+                                
+                                <li class="search-archive-li mp-pjax">
+                                    <a href="/2015/03/01/github-gitcafe/">hexo博客同步到github和gitcafe</a>
+                                </li>
+                                
+                                <li class="search-archive-li mp-pjax">
+                                    <a href="/2015/02/21/性能测试计划的编写/">性能测试计划的编写</a>
+                                </li>
+                                
+                                <li class="search-archive-li mp-pjax">
+                                    <a href="/2015/02/21/LoadRunner中的关联/">LoadRunner中的关联和检查点</a>
+                                </li>
+                                
+                                <li class="search-archive-li mp-pjax">
+                                    <a href="/2015/01/31/LoadRunner中的事务和参数化/">LoadRunner中的事务和参数化</a>
+                                </li>
+                                
+                                <li class="search-archive-li mp-pjax">
+                                    <a href="/2015/01/20/LoadRunner脚本开发和常用函数/">LoadRunner脚本开发和常用函数</a>
+                                </li>
+                                
+                                <li class="search-archive-li mp-pjax">
+                                    <a href="/2015/01/16/我想要最好的20岁/">我想要最好的20岁</a>
+                                </li>
+                                
+                                <li class="search-archive-li mp-pjax">
+                                    <a href="/2015/01/15/初识LoadRunner/">初识LoadRunner</a>
+                                </li>
+                                
+                                <li class="search-archive-li mp-pjax">
+                                    <a href="/2015/01/12/WebServices下的三个技术基础/">WebServices下的三个技术基础</a>
+                                </li>
+                                
+                                <li class="search-archive-li mp-pjax">
+                                    <a href="/2015/01/09/操作系统之线程管理/">操作系统之线程管理</a>
+                                </li>
+                                
+                                <li class="search-archive-li mp-pjax">
+                                    <a href="/2015/01/08/操作系统之进程管理/">操作系统之进程管理</a>
+                                </li>
+                                
+                                <li class="search-archive-li mp-pjax">
+                                    <a href="/2015/01/08/操作系统之虚拟内存管理（下）/">操作系统之虚拟内存管理（下）</a>
+                                </li>
+                                
+                                <li class="search-archive-li mp-pjax">
+                                    <a href="/2015/01/08/操作系统之虚拟内存管理/">操作系统之虚拟内存管理</a>
+                                </li>
+                                
+                                <li class="search-archive-li mp-pjax">
+                                    <a href="/2015/01/07/操作系统之内存管理篇/">操作系统之内存管理篇</a>
+                                </li>
+                                
+                                <li class="search-archive-li mp-pjax">
+                                    <a href="/2015/01/07/谈谈抽象/">谈谈抽象</a>
+                                </li>
+                                
+                                <li class="search-archive-li mp-pjax">
+                                    <a href="/2015/01/07/计算机体系结构-内存结构/">计算机体系结构/内存结构</a>
+                                </li>
+                                
+                                <li class="search-archive-li mp-pjax">
+                                    <a href="/2015/01/05/未雨绸缪-性能测试工具选型/">未雨绸缪-性能测试工具选型</a>
+                                </li>
+                                
+                                <li class="search-archive-li mp-pjax">
+                                    <a href="/2015/01/05/一个人的碎碎读（二）/">一个人的碎碎读（二）</a>
+                                </li>
+                                
+                                <li class="search-archive-li mp-pjax">
+                                    <a href="/2015/01/03/Oracle学习交流（二）-oracle体系结构及启动流程/">Oracle学习交流（二）--oracle体系结构及启动流程</a>
+                                </li>
+                                
+                                <li class="search-archive-li mp-pjax">
+                                    <a href="/2015/01/02/Oracle学习交流--oracle概述及监听配置/">Oracle学习交流--oracle概述及监听配置</a>
+                                </li>
+                                
+                                <li class="search-archive-li mp-pjax">
+                                    <a href="/2015/01/02/Nosql知多少/">Nosql知多少</a>
+                                </li>
+                                
+                                <li class="search-archive-li mp-pjax">
+                                    <a href="/2015/01/02/在Win7下用XManager远程控制ubuntu/">在Win7下用XManager远程控制ubuntu</a>
+                                </li>
+                                
+                                <li class="search-archive-li mp-pjax">
+                                    <a href="/2015/01/02/DNS学习手记/">DNS学习手记</a>
+                                </li>
+                                
+                                <li class="search-archive-li mp-pjax">
+                                    <a href="/2014/12/29/性能测试的今生前世/">性能测试的今生前世</a>
+                                </li>
+                                
+                                <li class="search-archive-li mp-pjax">
+                                    <a href="/2014/12/28/潍坊物价信息数据分析及展现/">潍坊物价信息数据分析及展现</a>
+                                </li>
+                                
+                                <li class="search-archive-li mp-pjax">
+                                    <a href="/2014/12/28/论文数据分析/">论文数据分析</a>
+                                </li>
+                                
+                                <li class="search-archive-li mp-pjax">
+                                    <a href="/2014/12/28/金融时间序列结业作业/">金融时间序列结业作业</a>
+                                </li>
+                                
+                                <li class="search-archive-li mp-pjax">
+                                    <a href="/2014/12/28/一个人的碎碎读/">一个人的碎碎读</a>
+                                </li>
+                                
+                                <li class="search-archive-li mp-pjax">
+                                    <a href="/2014/12/27/关于TCP三次握手及四次挥手/">关于TCP三次握手及四次挥手</a>
+                                </li>
+                                
+                                <li class="search-archive-li mp-pjax">
+                                    <a href="/2014/12/23/为什么只有13台dns根服务器/">为什么只有13台dns根服务器</a>
+                                </li>
+                                
+                                <li class="search-archive-li mp-pjax">
+                                    <a href="/2014/12/23/性能测试之时间都去哪了/">性能测试之时间都去哪了</a>
+                                </li>
+                                
+                                <li class="search-archive-li mp-pjax">
+                                    <a href="/2014/12/22/这些年上过的课/">这些年上过的课</a>
+                                </li>
+                                
+                                <li class="search-archive-li mp-pjax">
+                                    <a href="/2014/12/21/熟悉的陌生人OS/">熟悉的陌生人OS</a>
+                                </li>
+                                
+                                <li class="search-archive-li mp-pjax">
+                                    <a href="/2014/12/15/记录总结这半学期/">记录总结这半学期</a>
+                                </li>
+                                
+                                <li class="search-archive-li mp-pjax">
+                                    <a href="/2014/12/11/抓包/">抓包</a>
+                                </li>
+                                
+                                <li class="search-archive-li mp-pjax">
+                                    <a href="/2014/12/10/通过源码学习hexo/">通过源码学习hexo</a>
+                                </li>
+                                
+                                <li class="search-archive-li mp-pjax">
+                                    <a href="/2014/12/08/新的开始/">新的开始</a>
+                                </li>
+                                
+                                </div>
+                            </ul>
+                        </div>
+                    </li>
+                    <li>
+                        <a class="fa fa-copy" href="#"><i class="fa fa-angle-left">
+                            </i>&nbsp;&nbsp;Categories</a>
+
+                        <div class="mp-level page-list">
+                            <h2 ><i class="fa fa-copy"></i>
+                                Categories</h2>
+                            <a class="mp-back" href="#">back</a>
+                            <form id="search-form" action="">
+                                <input type="text" class="search search-category" placeholder="Search.."/>
+                            </form>
+                            <ul>
+                                <div class="mp-scroll">
+                                
+                                <li class="search-category-li mp-pjax">
+                                    <a href="/categories/GPU/">&nbsp;&nbsp;&nbsp;GPU</a>
+                                    <small>1</small>
+                                </li>
+                                
+                                <li class="search-category-li mp-pjax">
+                                    <a href="/categories/Hadoop/">&nbsp;&nbsp;&nbsp;Hadoop</a>
+                                    <small>1</small>
+                                </li>
+                                
+                                <li class="search-category-li mp-pjax">
+                                    <a href="/categories/Hbase/">&nbsp;&nbsp;&nbsp;Hbase</a>
+                                    <small>1</small>
+                                </li>
+                                
+                                <li class="search-category-li mp-pjax">
+                                    <a href="/categories/Java/">&nbsp;&nbsp;&nbsp;Java</a>
+                                    <small>1</small>
+                                </li>
+                                
+                                <li class="search-category-li mp-pjax">
+                                    <a href="/categories/R/">&nbsp;&nbsp;&nbsp;R</a>
+                                    <small>2</small>
+                                </li>
+                                
+                                <li class="search-category-li mp-pjax">
+                                    <a href="/categories/github/">&nbsp;&nbsp;&nbsp;github</a>
+                                    <small>1</small>
+                                </li>
+                                
+                                <li class="search-category-li mp-pjax">
+                                    <a href="/categories/spark/hadoop/">&nbsp;&nbsp;&nbsp;hadoop</a>
+                                    <small>1</small>
+                                </li>
+                                
+                                <li class="search-category-li mp-pjax">
+                                    <a href="/categories/hbase/hadoop/">&nbsp;&nbsp;&nbsp;hadoop</a>
+                                    <small>1</small>
+                                </li>
+                                
+                                <li class="search-category-li mp-pjax">
+                                    <a href="/categories/hbase/">&nbsp;&nbsp;&nbsp;hbase</a>
+                                    <small>1</small>
+                                </li>
+                                
+                                <li class="search-category-li mp-pjax">
+                                    <a href="/categories/hexo/">&nbsp;&nbsp;&nbsp;hexo</a>
+                                    <small>2</small>
+                                </li>
+                                
+                                <li class="search-category-li mp-pjax">
+                                    <a href="/categories/java/">&nbsp;&nbsp;&nbsp;java</a>
+                                    <small>1</small>
+                                </li>
+                                
+                                <li class="search-category-li mp-pjax">
+                                    <a href="/categories/linux/">&nbsp;&nbsp;&nbsp;linux</a>
+                                    <small>2</small>
+                                </li>
+                                
+                                <li class="search-category-li mp-pjax">
+                                    <a href="/categories/maven/">&nbsp;&nbsp;&nbsp;maven</a>
+                                    <small>2</small>
+                                </li>
+                                
+                                <li class="search-category-li mp-pjax">
+                                    <a href="/categories/nosql/">&nbsp;&nbsp;&nbsp;nosql</a>
+                                    <small>1</small>
+                                </li>
+                                
+                                <li class="search-category-li mp-pjax">
+                                    <a href="/categories/Hbase/nosql/">&nbsp;&nbsp;&nbsp;nosql</a>
+                                    <small>1</small>
+                                </li>
+                                
+                                <li class="search-category-li mp-pjax">
+                                    <a href="/categories/oracle/">&nbsp;&nbsp;&nbsp;oracle</a>
+                                    <small>5</small>
+                                </li>
+                                
+                                <li class="search-category-li mp-pjax">
+                                    <a href="/categories/spark/">&nbsp;&nbsp;&nbsp;spark</a>
+                                    <small>1</small>
+                                </li>
+                                
+                                <li class="search-category-li mp-pjax">
+                                    <a href="/categories/优化算法/">&nbsp;&nbsp;&nbsp;优化算法</a>
+                                    <small>1</small>
+                                </li>
+                                
+                                <li class="search-category-li mp-pjax">
+                                    <a href="/categories/性能测试/">&nbsp;&nbsp;&nbsp;性能测试</a>
+                                    <small>15</small>
+                                </li>
+                                
+                                <li class="search-category-li mp-pjax">
+                                    <a href="/categories/Java/性能测试/">&nbsp;&nbsp;&nbsp;性能测试</a>
+                                    <small>1</small>
+                                </li>
+                                
+                                <li class="search-category-li mp-pjax">
+                                    <a href="/categories/操作系统/">&nbsp;&nbsp;&nbsp;操作系统</a>
+                                    <small>7</small>
+                                </li>
+                                
+                                <li class="search-category-li mp-pjax">
+                                    <a href="/categories/数据分析/">&nbsp;&nbsp;&nbsp;数据分析</a>
+                                    <small>1</small>
+                                </li>
+                                
+                                <li class="search-category-li mp-pjax">
+                                    <a href="/categories/R/数据分析/">&nbsp;&nbsp;&nbsp;数据分析</a>
+                                    <small>2</small>
+                                </li>
+                                
+                                <li class="search-category-li mp-pjax">
+                                    <a href="/categories/测试/">&nbsp;&nbsp;&nbsp;测试</a>
+                                    <small>2</small>
+                                </li>
+                                
+                                <li class="search-category-li mp-pjax">
+                                    <a href="/categories/点滴/">&nbsp;&nbsp;&nbsp;点滴</a>
+                                    <small>13</small>
+                                </li>
+                                
+                                <li class="search-category-li mp-pjax">
+                                    <a href="/categories/计算机网络/">&nbsp;&nbsp;&nbsp;计算机网络</a>
+                                    <small>1</small>
+                                </li>
+                                
+                                <li class="search-category-li mp-pjax">
+                                    <a href="/categories/读书有疑/">&nbsp;&nbsp;&nbsp;读书有疑</a>
+                                    <small>3</small>
+                                </li>
+                                
+                                </div>
+                            </ul>
+                        </div>
+                    </li>
+                    <li>
+                        <a class="fa fa-tags" href="#"><i class="fa fa-angle-left">
+                            </i>&nbsp;&nbsp;Tags</a>
+                        <div class="mp-level page-list">
+                            <h2 ><i class="fa fa-tags"></i>
+                                Tags</h2>
+                            <a class="mp-back" href="#">back</a>
+                            <form id="search-form" action="">
+                                <input type="text" class="search search-tag" placeholder="Search.."/>
+                            </form>
+                            <ul>
+                                <div class="mp-scroll">
+                                
+                                <li class="search-tag-li mp-pjax">
+                                    <a href="/tags/CUDA/">&nbsp;&nbsp;&nbsp;CUDA</a>
+                                    <small>1</small>
+                                </li>
+                                
+                                <li class="search-tag-li mp-pjax">
+                                    <a href="/tags/GPU/">&nbsp;&nbsp;&nbsp;GPU</a>
+                                    <small>1</small>
+                                </li>
+                                
+                                <li class="search-tag-li mp-pjax">
+                                    <a href="/tags/Hadoop/">&nbsp;&nbsp;&nbsp;Hadoop</a>
+                                    <small>1</small>
+                                </li>
+                                
+                                <li class="search-tag-li mp-pjax">
+                                    <a href="/tags/Hbase/">&nbsp;&nbsp;&nbsp;Hbase</a>
+                                    <small>1</small>
+                                </li>
+                                
+                                <li class="search-tag-li mp-pjax">
+                                    <a href="/tags/Java/">&nbsp;&nbsp;&nbsp;Java</a>
+                                    <small>1</small>
+                                </li>
+                                
+                                <li class="search-tag-li mp-pjax">
+                                    <a href="/tags/R/">&nbsp;&nbsp;&nbsp;R</a>
+                                    <small>2</small>
+                                </li>
+                                
+                                <li class="search-tag-li mp-pjax">
+                                    <a href="/tags/gitcafe/">&nbsp;&nbsp;&nbsp;gitcafe</a>
+                                    <small>1</small>
+                                </li>
+                                
+                                <li class="search-tag-li mp-pjax">
+                                    <a href="/tags/github/">&nbsp;&nbsp;&nbsp;github</a>
+                                    <small>2</small>
+                                </li>
+                                
+                                <li class="search-tag-li mp-pjax">
+                                    <a href="/tags/hadoop/">&nbsp;&nbsp;&nbsp;hadoop</a>
+                                    <small>2</small>
+                                </li>
+                                
+                                <li class="search-tag-li mp-pjax">
+                                    <a href="/tags/hbase/">&nbsp;&nbsp;&nbsp;hbase</a>
+                                    <small>1</small>
+                                </li>
+                                
+                                <li class="search-tag-li mp-pjax">
+                                    <a href="/tags/hexo/">&nbsp;&nbsp;&nbsp;hexo</a>
+                                    <small>2</small>
+                                </li>
+                                
+                                <li class="search-tag-li mp-pjax">
+                                    <a href="/tags/java/">&nbsp;&nbsp;&nbsp;java</a>
+                                    <small>1</small>
+                                </li>
+                                
+                                <li class="search-tag-li mp-pjax">
+                                    <a href="/tags/linux/">&nbsp;&nbsp;&nbsp;linux</a>
+                                    <small>2</small>
+                                </li>
+                                
+                                <li class="search-tag-li mp-pjax">
+                                    <a href="/tags/maven/">&nbsp;&nbsp;&nbsp;maven</a>
+                                    <small>2</small>
+                                </li>
+                                
+                                <li class="search-tag-li mp-pjax">
+                                    <a href="/tags/nosql/">&nbsp;&nbsp;&nbsp;nosql</a>
+                                    <small>1</small>
+                                </li>
+                                
+                                <li class="search-tag-li mp-pjax">
+                                    <a href="/tags/oracle/">&nbsp;&nbsp;&nbsp;oracle</a>
+                                    <small>5</small>
+                                </li>
+                                
+                                <li class="search-tag-li mp-pjax">
+                                    <a href="/tags/spark/">&nbsp;&nbsp;&nbsp;spark</a>
+                                    <small>1</small>
+                                </li>
+                                
+                                <li class="search-tag-li mp-pjax">
+                                    <a href="/tags/优化算法/">&nbsp;&nbsp;&nbsp;优化算法</a>
+                                    <small>1</small>
+                                </li>
+                                
+                                <li class="search-tag-li mp-pjax">
+                                    <a href="/tags/性能测试/">&nbsp;&nbsp;&nbsp;性能测试</a>
+                                    <small>16</small>
+                                </li>
+                                
+                                <li class="search-tag-li mp-pjax">
+                                    <a href="/tags/抓包/">&nbsp;&nbsp;&nbsp;抓包</a>
+                                    <small>1</small>
+                                </li>
+                                
+                                <li class="search-tag-li mp-pjax">
+                                    <a href="/tags/操作系统/">&nbsp;&nbsp;&nbsp;操作系统</a>
+                                    <small>7</small>
+                                </li>
+                                
+                                <li class="search-tag-li mp-pjax">
+                                    <a href="/tags/数据分析/">&nbsp;&nbsp;&nbsp;数据分析</a>
+                                    <small>3</small>
+                                </li>
+                                
+                                <li class="search-tag-li mp-pjax">
+                                    <a href="/tags/测试/">&nbsp;&nbsp;&nbsp;测试</a>
+                                    <small>1</small>
+                                </li>
+                                
+                                <li class="search-tag-li mp-pjax">
+                                    <a href="/tags/点滴/">&nbsp;&nbsp;&nbsp;点滴</a>
+                                    <small>13</small>
+                                </li>
+                                
+                                <li class="search-tag-li mp-pjax">
+                                    <a href="/tags/计算机网络/">&nbsp;&nbsp;&nbsp;计算机网络</a>
+                                    <small>2</small>
+                                </li>
+                                
+                                <li class="search-tag-li mp-pjax">
+                                    <a href="/tags/读书有疑/">&nbsp;&nbsp;&nbsp;读书有疑</a>
+                                    <small>3</small>
+                                </li>
+                                
+                                </div>
+                            </ul>
+                        </div>
+                    </li>
+                    
+                    <li>
+                        <a class="fa fa-weibo" href="http://weibo.com/zhaokongnuan/profile?rightmod=1&wvr=6&mod=personinfo" target="_blank">&nbsp;&nbsp;Weibo Show</a>   
+                    </li>
+                    
+                    <li class="mp-pjax"><a class="fa fa-user" href="/about">&nbsp;&nbsp;&nbsp;About me</a></li>
+                    <li><a class="fa fa-github" href="https://github.com/KongnuanZhao/KongnuanZhao.github.io.git" target="_blank">&nbsp;&nbsp;&nbsp;Github</a></li>
+                     <li><a class="fa fa-github" href="https://gitcafe.com/KongnuanZhao" target="_blank">&nbsp;&nbsp;&nbsp;GitCafe</a></li>
+
+                </ul>
+
+            </div>
+        </nav>
+        <div id="pjax">
+            <div class="pjax-hidden" style="display: none">
+                
+                    <a  data-pjax href="/2017/09/20/jmetal01/">jmetal01</a>
+                
+                    <a  data-pjax href="/2017/03/22/read-for-better/">开卷有益</a>
+                
+                    <a  data-pjax href="/2017/02/19/gpu01/">GPU并行计算与CUDA编程01</a>
+                
+                    <a  data-pjax href="/2016/12/13/hadoop-spark/">Hadoop和Spark集群搭建</a>
+                
+                    <a  data-pjax href="/2016/02/03/direction/">晴天</a>
+                
+                    <a  data-pjax href="/2016/01/30/maven-version/">Maven(二)用MyEclipse建立Maven骨架的项目</a>
+                
+                    <a  data-pjax href="/2016/01/30/from-now/">千里之行始于足下</a>
+                
+                    <a  data-pjax href="/2015/05/27/believe-me/">世界是心的镜子</a>
+                
+                    <a  data-pjax href="/2015/04/22/about-thread/">线程的自白</a>
+                
+                    <a  data-pjax href="/2015/04/17/about-time/">尽我们所能，珍惜这段美妙的旅程</a>
+                
+                    <a  data-pjax href="/2015/04/14/Memory/">数据交流大通道-内存</a>
+                
+                    <a  data-pjax href="/2015/04/12/about-disk/">掀起你的盖头来--磁盘我来看看你</a>
+                
+                    <a  data-pjax href="/2015/04/10/warmness/">做一个有心人</a>
+                
+                    <a  data-pjax href="/2015/04/02/about-yum/">问题之yum一二三</a>
+                
+                    <a  data-pjax href="/2015/04/02/about-jvm/">性能测试之探索Java虚拟机</a>
+                
+                    <a  data-pjax href="/2015/03/28/javaVuser/">LoadRunner中的JavaVuser</a>
+                
+                    <a  data-pjax href="/2015/03/27/about-maven/">Maven初体验（一）</a>
+                
+                    <a  data-pjax href="/2015/03/27/file-recover/">数据恢复</a>
+                
+                    <a  data-pjax href="/2015/03/24/about-index/">关于索引的一些总结和思考（上）</a>
+                
+                    <a  data-pjax href="/2015/03/23/about-health/">不要等到很累的时候才去休息</a>
+                
+                    <a  data-pjax href="/2015/03/22/web-analytics/">网站分析</a>
+                
+                    <a  data-pjax href="/2015/03/21/test-report/">性能测试报告的编写</a>
+                
+                    <a  data-pjax href="/2015/03/20/oracle-exp-imp/">Oracle的导入导出</a>
+                
+                    <a  data-pjax href="/2015/03/18/thrift-maven/">Ubuntu搭建Thrift和Maven</a>
+                
+                    <a  data-pjax href="/2015/03/18/hbase-install/">Ubuntu中安装HBase</a>
+                
+                    <a  data-pjax href="/2015/03/17/ubuntu-oracle/">Linux上安装Oracle</a>
+                
+                    <a  data-pjax href="/2015/03/17/hadoop-install/">Ubuntu搭建hadoop</a>
+                
+                    <a  data-pjax href="/2015/03/17/github/">hexo博客同步到github和gitcafe(下)</a>
+                
+                    <a  data-pjax href="/2015/03/17/music-Avatar-Island-whale/">化身孤岛的鲸</a>
+                
+                    <a  data-pjax href="/2015/03/15/Controller-Analysis/">LoadRunner中的Controller和Analysis</a>
+                
+                    <a  data-pjax href="/2015/03/08/interface-performance-testing/">一个接口性能测试脚本开发案例</a>
+                
+                    <a  data-pjax href="/2015/03/01/github-gitcafe/">hexo博客同步到github和gitcafe</a>
+                
+                    <a  data-pjax href="/2015/02/21/性能测试计划的编写/">性能测试计划的编写</a>
+                
+                    <a  data-pjax href="/2015/02/21/LoadRunner中的关联/">LoadRunner中的关联和检查点</a>
+                
+                    <a  data-pjax href="/2015/01/31/LoadRunner中的事务和参数化/">LoadRunner中的事务和参数化</a>
+                
+                    <a  data-pjax href="/2015/01/20/LoadRunner脚本开发和常用函数/">LoadRunner脚本开发和常用函数</a>
+                
+                    <a  data-pjax href="/2015/01/16/我想要最好的20岁/">我想要最好的20岁</a>
+                
+                    <a  data-pjax href="/2015/01/15/初识LoadRunner/">初识LoadRunner</a>
+                
+                    <a  data-pjax href="/2015/01/12/WebServices下的三个技术基础/">WebServices下的三个技术基础</a>
+                
+                    <a  data-pjax href="/2015/01/09/操作系统之线程管理/">操作系统之线程管理</a>
+                
+                    <a  data-pjax href="/2015/01/08/操作系统之进程管理/">操作系统之进程管理</a>
+                
+                    <a  data-pjax href="/2015/01/08/操作系统之虚拟内存管理（下）/">操作系统之虚拟内存管理（下）</a>
+                
+                    <a  data-pjax href="/2015/01/08/操作系统之虚拟内存管理/">操作系统之虚拟内存管理</a>
+                
+                    <a  data-pjax href="/2015/01/07/操作系统之内存管理篇/">操作系统之内存管理篇</a>
+                
+                    <a  data-pjax href="/2015/01/07/谈谈抽象/">谈谈抽象</a>
+                
+                    <a  data-pjax href="/2015/01/07/计算机体系结构-内存结构/">计算机体系结构/内存结构</a>
+                
+                    <a  data-pjax href="/2015/01/05/未雨绸缪-性能测试工具选型/">未雨绸缪-性能测试工具选型</a>
+                
+                    <a  data-pjax href="/2015/01/05/一个人的碎碎读（二）/">一个人的碎碎读（二）</a>
+                
+                    <a  data-pjax href="/2015/01/03/Oracle学习交流（二）-oracle体系结构及启动流程/">Oracle学习交流（二）--oracle体系结构及启动流程</a>
+                
+                    <a  data-pjax href="/2015/01/02/Oracle学习交流--oracle概述及监听配置/">Oracle学习交流--oracle概述及监听配置</a>
+                
+                    <a  data-pjax href="/2015/01/02/Nosql知多少/">Nosql知多少</a>
+                
+                    <a  data-pjax href="/2015/01/02/在Win7下用XManager远程控制ubuntu/">在Win7下用XManager远程控制ubuntu</a>
+                
+                    <a  data-pjax href="/2015/01/02/DNS学习手记/">DNS学习手记</a>
+                
+                    <a  data-pjax href="/2014/12/29/性能测试的今生前世/">性能测试的今生前世</a>
+                
+                    <a  data-pjax href="/2014/12/28/潍坊物价信息数据分析及展现/">潍坊物价信息数据分析及展现</a>
+                
+                    <a  data-pjax href="/2014/12/28/论文数据分析/">论文数据分析</a>
+                
+                    <a  data-pjax href="/2014/12/28/金融时间序列结业作业/">金融时间序列结业作业</a>
+                
+                    <a  data-pjax href="/2014/12/28/一个人的碎碎读/">一个人的碎碎读</a>
+                
+                    <a  data-pjax href="/2014/12/27/关于TCP三次握手及四次挥手/">关于TCP三次握手及四次挥手</a>
+                
+                    <a  data-pjax href="/2014/12/23/为什么只有13台dns根服务器/">为什么只有13台dns根服务器</a>
+                
+                    <a  data-pjax href="/2014/12/23/性能测试之时间都去哪了/">性能测试之时间都去哪了</a>
+                
+                    <a  data-pjax href="/2014/12/22/这些年上过的课/">这些年上过的课</a>
+                
+                    <a  data-pjax href="/2014/12/21/熟悉的陌生人OS/">熟悉的陌生人OS</a>
+                
+                    <a  data-pjax href="/2014/12/15/记录总结这半学期/">记录总结这半学期</a>
+                
+                    <a  data-pjax href="/2014/12/11/抓包/">抓包</a>
+                
+                    <a  data-pjax href="/2014/12/10/通过源码学习hexo/">通过源码学习hexo</a>
+                
+                    <a  data-pjax href="/2014/12/08/新的开始/">新的开始</a>
+                
+                
+                    <a data-pjax href="/categories/GPU/">&nbsp;&nbsp;GPU</a>
+                
+                    <a data-pjax href="/categories/Hadoop/">&nbsp;&nbsp;Hadoop</a>
+                
+                    <a data-pjax href="/categories/Hbase/">&nbsp;&nbsp;Hbase</a>
+                
+                    <a data-pjax href="/categories/Java/">&nbsp;&nbsp;Java</a>
+                
+                    <a data-pjax href="/categories/R/">&nbsp;&nbsp;R</a>
+                
+                    <a data-pjax href="/categories/github/">&nbsp;&nbsp;github</a>
+                
+                    <a data-pjax href="/categories/spark/hadoop/">&nbsp;&nbsp;hadoop</a>
+                
+                    <a data-pjax href="/categories/hbase/hadoop/">&nbsp;&nbsp;hadoop</a>
+                
+                    <a data-pjax href="/categories/hbase/">&nbsp;&nbsp;hbase</a>
+                
+                    <a data-pjax href="/categories/hexo/">&nbsp;&nbsp;hexo</a>
+                
+                    <a data-pjax href="/categories/java/">&nbsp;&nbsp;java</a>
+                
+                    <a data-pjax href="/categories/linux/">&nbsp;&nbsp;linux</a>
+                
+                    <a data-pjax href="/categories/maven/">&nbsp;&nbsp;maven</a>
+                
+                    <a data-pjax href="/categories/nosql/">&nbsp;&nbsp;nosql</a>
+                
+                    <a data-pjax href="/categories/Hbase/nosql/">&nbsp;&nbsp;nosql</a>
+                
+                    <a data-pjax href="/categories/oracle/">&nbsp;&nbsp;oracle</a>
+                
+                    <a data-pjax href="/categories/spark/">&nbsp;&nbsp;spark</a>
+                
+                    <a data-pjax href="/categories/优化算法/">&nbsp;&nbsp;优化算法</a>
+                
+                    <a data-pjax href="/categories/性能测试/">&nbsp;&nbsp;性能测试</a>
+                
+                    <a data-pjax href="/categories/Java/性能测试/">&nbsp;&nbsp;性能测试</a>
+                
+                    <a data-pjax href="/categories/操作系统/">&nbsp;&nbsp;操作系统</a>
+                
+                    <a data-pjax href="/categories/数据分析/">&nbsp;&nbsp;数据分析</a>
+                
+                    <a data-pjax href="/categories/R/数据分析/">&nbsp;&nbsp;数据分析</a>
+                
+                    <a data-pjax href="/categories/测试/">&nbsp;&nbsp;测试</a>
+                
+                    <a data-pjax href="/categories/点滴/">&nbsp;&nbsp;点滴</a>
+                
+                    <a data-pjax href="/categories/计算机网络/">&nbsp;&nbsp;计算机网络</a>
+                
+                    <a data-pjax href="/categories/读书有疑/">&nbsp;&nbsp;读书有疑</a>
+                
+                
+                    <a data-pjax href="/tags/CUDA/">&nbsp;&nbsp;CUDA</a>
+                
+                    <a data-pjax href="/tags/GPU/">&nbsp;&nbsp;GPU</a>
+                
+                    <a data-pjax href="/tags/Hadoop/">&nbsp;&nbsp;Hadoop</a>
+                
+                    <a data-pjax href="/tags/Hbase/">&nbsp;&nbsp;Hbase</a>
+                
+                    <a data-pjax href="/tags/Java/">&nbsp;&nbsp;Java</a>
+                
+                    <a data-pjax href="/tags/R/">&nbsp;&nbsp;R</a>
+                
+                    <a data-pjax href="/tags/gitcafe/">&nbsp;&nbsp;gitcafe</a>
+                
+                    <a data-pjax href="/tags/github/">&nbsp;&nbsp;github</a>
+                
+                    <a data-pjax href="/tags/hadoop/">&nbsp;&nbsp;hadoop</a>
+                
+                    <a data-pjax href="/tags/hbase/">&nbsp;&nbsp;hbase</a>
+                
+                    <a data-pjax href="/tags/hexo/">&nbsp;&nbsp;hexo</a>
+                
+                    <a data-pjax href="/tags/java/">&nbsp;&nbsp;java</a>
+                
+                    <a data-pjax href="/tags/linux/">&nbsp;&nbsp;linux</a>
+                
+                    <a data-pjax href="/tags/maven/">&nbsp;&nbsp;maven</a>
+                
+                    <a data-pjax href="/tags/nosql/">&nbsp;&nbsp;nosql</a>
+                
+                    <a data-pjax href="/tags/oracle/">&nbsp;&nbsp;oracle</a>
+                
+                    <a data-pjax href="/tags/spark/">&nbsp;&nbsp;spark</a>
+                
+                    <a data-pjax href="/tags/优化算法/">&nbsp;&nbsp;优化算法</a>
+                
+                    <a data-pjax href="/tags/性能测试/">&nbsp;&nbsp;性能测试</a>
+                
+                    <a data-pjax href="/tags/抓包/">&nbsp;&nbsp;抓包</a>
+                
+                    <a data-pjax href="/tags/操作系统/">&nbsp;&nbsp;操作系统</a>
+                
+                    <a data-pjax href="/tags/数据分析/">&nbsp;&nbsp;数据分析</a>
+                
+                    <a data-pjax href="/tags/测试/">&nbsp;&nbsp;测试</a>
+                
+                    <a data-pjax href="/tags/点滴/">&nbsp;&nbsp;点滴</a>
+                
+                    <a data-pjax href="/tags/计算机网络/">&nbsp;&nbsp;计算机网络</a>
+                
+                    <a data-pjax href="/tags/读书有疑/">&nbsp;&nbsp;读书有疑</a>
+                
+                <a data-pjax class="fa fa-user" href="/about">&nbsp;&nbsp;&nbsp;About me</a>
+            </div>
+            <nav class="nexus">
+                <li  style="border-left: 1px solid #c6d0da;">
+                    <a id="trigger" href="#"><i class="fa fa-bars"></i></a>
+                </li>
+                <li ><a id="nexus-back" data-pjax href="/">KongnuanZhao</a></li>
+                
+                <div id="nav-container">
+                    <div class="post-navbar" style="line-height: 63px;display:none">
+                        <li id="navbar-title"><a href="#">Oracle学习交流--oracle概述及监听配置</a></li>
+                        <li id="navbar-toc" style="border-left: none">
+                            <a style="padding-right: 15px">
+                                <span id="toc-content" >Introduction</span><i class="fa fa-chevron-down" ></i>
+                            </a>
+                            <div class="hidden-box">
+                                <ul id="toc"></ul>
+                            </div>
+                        </li>
+                    </div>
+                </div>
+                
+            </nav>
+
+            <div class="scroller">
+            <div class="scroller-inner">
+
+
+<!-- -->
+<!--<body class="post-template">-->
+<!---->
+  
+
+<main class="content" role="main">
+    <article class="post" >
+    <span class="post-meta">
+                  <div class="tag-tile">
+                      
+                      
+                      <a data-pjax href='/tags/oracle/' style='color:#D5D5D5'>oracle</a>
+                      
+                      
+                  </div>
+                <h1 class="post-title" style="margin: 14px 0;color:#50585D">Oracle学习交流--oracle概述及监听配置</h1>
+
+                    <div class="post-meta">
+                        Post on<span class="fa fa-clock-o"></span>
+                        <time datetime="2015-01-02T13:43:21.000Z"
+                              itemprop="datePublished">Jan 2 2015</time>
+                        By 赵空暖
+                    </div>
+    </span>
+
+        <section class="post-content">
+            <p><img src="/image/who.png" alt="who"><br>甚是怀念当时一点也不懂oracle然后一股脑认真学习，一笔一划做笔记的样子，所以决定重新一点一滴整理下学过的点点滴滴。</p>
+<p>#Oracle初相识#<br>Oracle Database 11g：“g”代表网格<br>全球网格论坛(GGF)<br>请访问<a href="http://www.gridforum.org" target="_blank" rel="external">GGF网站</a><br><img src="/image/oracle.png" alt="oracle"></p>
+<p>##数据库安装（略）##</p>
+<p>##Oracle 服务##<br>Oracle 在 windows 中安装完成后，会安装很多服务，下面介绍几个主要的服务。<br><img src="/image/oracle2.png" alt="oracle2"></p>
+<ul>
+<li>OracleService+服务名:该服务是数据库启动的基础，只有该服务启动了，Oracle 数据库才能正常启动。这是必须启动的服务。</li>
+<li>OracleOraDb11g_home1TNSListener:该服务是监听服务，只有该服务在服务器上正常启动，客户端才能连接到服务器。该监听服务服务器端为客户端提供的接收客户<br>端发出的请求，然后将请求传递给数据库服务器。一旦建立了连接，客户端和数据库服务器就能直接通信了。</li>
+<li>Oracle ORCL Vss Writer Service:Oracle卷映射拷贝写入服务，VSS（Volume Shadow Copy Service）能够让存储基础设备（比如磁盘，阵列等）创建高保真的时间点映像，即映射拷贝(shadow copy)。它可以在多卷或者单个卷上创建映射拷贝，同时不会影响到系统的系统性能。</li>
+<li>OracleJobSchedulerORCL：Oracle作业调度服务，ORCL是Oracle实例标识。此服务被默认设置为禁用状态。</li>
+<li>OracleMTSRecoveryService：服务端控制。该服务允许数据库充当一个微软事务服务器MTS、COM/COM+对象和分布式环境下的事务的资源管理器。（非必须启动）</li>
+</ul>
+<p>##Oracle 客户端工具##<br>Oracle 服务器安装成功后，就可以通过客户端工具连接 Oracle 服务器了，可以到 Oracle官方下载 Oracle 专用的客户端软件，大多客户端工具都是基于 Oracle 客户端软件的。接下来介绍几种常用的 Oracle 客户端工具。</p>
+<ul>
+<li>SQL*Plus 工具</li>
+<li>PL/SQL Developer 工具</li>
+<li>sqldevelepor<br>连接到 Oracle 服务器的命令是：<code>conn 用户名/密码 as 连接身份@服务器连接字符串</code>,客户端工具可以根据“服务器连接字符串”对服务器进行连接，有了连接字符串后客户端就可以像操作本机一样操作远程数据库，因此“服务器连接字符串”的配置也叫本地网络服务配置，如果 SQL*Plus 工具启动在服务器上，并且服务器上只有一个数据库实例的情况下，连接字符串可以缺省，在连接字符串中包括连接服务器的协议，服务器的地址，服务器的端口等设置， Oracle 服务名等，该配置文件在 Oracle安装目录下的：   <code>network/ ADMIN/ tnsnames.ora</code>。该文件是一个文本文件，用记事本打开我本地的文件<code>E:\app\Administrator\product\11.2.0\dbhome_1\NETWORK\ADMIN\listener.ora</code>后如下所示：</li>
+</ul>
+<figure class="highlight bash"><pre><div class="line"><span class="comment"># tnsnames.ora Network Configuration File: E:\app\Administrator\product\11.2.0\dbhome_1\network\admin\tnsnames.ora</span></div><div class="line"><span class="comment"># Generated by Oracle configuration tools.</span></div><div class="line"></div><div class="line">ZKN =</div><div class="line">  (DESCRIPTION =</div><div class="line">    (ADDRESS = (PROTOCOL = TCP)(HOST = localhost)(PORT = <span class="number">1521</span>))</div><div class="line">    (CONNECT_DATA =</div><div class="line">      (SERVER = DEDICATED)</div><div class="line">      (SERVICE_NAME = ZKN)</div><div class="line">    )</div><div class="line">  )</div><div class="line"></div><div class="line">LISTENER_ORCL =</div><div class="line">  (ADDRESS = (PROTOCOL = TCP)(HOST = localhost)(PORT = <span class="number">1521</span>))</div><div class="line"></div><div class="line"></div><div class="line">ORACLR_CONNECTION_DATA =</div><div class="line">  (DESCRIPTION =</div><div class="line">    (ADDRESS_LIST =</div><div class="line">      (ADDRESS = (PROTOCOL = IPC)(KEY = EXTPROC1521))</div><div class="line">    )</div><div class="line">    (CONNECT_DATA =</div><div class="line">      (SID = CLRExtProc)</div><div class="line">      (PRESENTATION = RO)</div><div class="line">    )</div><div class="line">  )</div><div class="line"></div><div class="line">ORCL =</div><div class="line">  (DESCRIPTION =</div><div class="line">    (ADDRESS = (PROTOCOL = TCP)(HOST = localhost)(PORT = <span class="number">1521</span>))</div><div class="line">    (CONNECT_DATA =</div><div class="line">      (SERVER = DEDICATED)</div><div class="line">      (SERVICE_NAME = orcl)</div><div class="line">    )</div><div class="line">  )</div></pre></figure>
+
+
+<ul>
+<li>PORT：数据库侦听正在侦听的端口，可以察看服务器端的<code>listener.ora</code>文件或在数据库侦听所在的机器的命令提示符下通过<code>lnsrctl status</code>命令察看。此处Port的值一定要与数据库侦听正在侦听的端口一样。 </li>
+<li>SERVICE_NAME：在服务器端，用system用户登陆后，<code>sqlplus&gt; show parameter service_name</code>命令察看。　　 </li>
+</ul>
+<p><img src="/image/oracle3.png" alt="oracle3"></p>
+<p>##用于管理Oracle 数据库的工具##<br><img src="/image/oracle4.png" alt="oracle4"></p>
+<ul>
+<li>Oracle Universal Installer (OUI)：Oracle Universal Installer 用于安装Oracle 软件和选件。它可以自动启动Database Configuration Assistant (DBCA) 来创建数据库。</li>
+<li>Database Configuration Assistant (DBCA)：DBCA会根据Oracle提供的模板创建数据库。因此，可以复制预配置的种子数据库，或者，也可以创建自己的数据库和模板。</li>
+<li>Database Upgrade Assistant (DBUA)：该工具可以指导您将现有数据库升级至Oracle新版本。</li>
+<li>Net Manager :该工具用于配置Oracle 数据库与应用程序的网络连接。</li>
+<li>Oracle Enterprise Manager (EM):将图形控制台、代理、公用服务和相关工具组合在一起，为管理Oracle产品提供了一个集成的综合性系统管理平台。在安装<br>Oracle 软件、创建或升级数据库及配置网络之后，可以将Oracle Enterprise Manager作为管理数据库的单一接口。它除了提供基于Web 的用户界面来执行SQL 命令外,还提供与管理数据库的其它Oracle 组件（例如，Recovery Manager 和Scheduler）的无缝接口。</li>
+<li>SQL<em>Plus 和iSQL</em>Plus :SQL<em>Plus是管理数据库的标准命令行接口。iSQL</em>Plus 是一个基于浏览器的接口，它可连到Oracle 数据库。</li>
+<li>Recovery Manager (RMAN)：RMAN 是一款可以提供完整解决方案的Oracle工具，可用来备份、还原和恢复整个数据库或特定的数据库文件。</li>
+<li>Oracle Secure Backup :为Oracle Ecosystem 提供了磁带备份管理，其中包括：<ul>
+<li>通过与Recovery Manager 集成，保护磁带上的Oracle 数据库</li>
+<li>无缝支持Oracle Real Application Clusters (RAC) </li>
+<li>对分布式客户机和介质服务器（包括Oracle Application Server、Oracle Collaboration Suite、Oracle 主目录和二进制文件）进行集中式管理。</li>
+</ul>
+</li>
+<li>数据泵:使用数据泵可以在数据库之间高速传输数据。<ul>
+<li>用于替代老的exp/imp,速度更快，机制上不同于老的 exp/imp，提供更多的功能。</li>
+<li>始于Oracle10g,从Oracle11g开始，不再提供老的imp/exp的支持。</li>
+<li>expdp差不多2倍于传统的exp操作，impdp差不多15-40倍与传统的imp操作。</li>
+<li>如果启用并行操作，性能会更好。更好的利用并行技术，具有对大量数据处理的优势。</li>
+<li>全部操作在server端完成，避免了数据在网络上的传输。</li>
+<li>导出文件的格式更接近于数据库本身文件的格式，避免了数据写入文件时的转换。</li>
+<li>直接路径的加载，使效率更高。</li>
+<li>元数据和数据在导出过程中可以重叠进行，提高导出的效率。</li>
+</ul>
+</li>
+<li>SQL<em>Loader :使用SQL</em>Loader 实用程序可以将来自外部文件的数据加载到Oracle 数据库。</li>
+<li>命令行工具</li>
+</ul>
+<p>##ORACLE监听服务##<br>Oracle监听器Listener是一个重要的数据库服务器组件，在整个Oracle体系结构中，扮演着重要的作用。它负责管理 Oracle 数据库和客户端之间的通讯，它在一个特定的网卡端口（默认是TCP 1521端口）上监听连接请求，并将连接转发给数据库。</p>
+<p>###几个重要功能：###</p>
+<ul>
+<li>监听客户端请求。监听器在服务器指定端口（默认为：1521），监听客户端的请求。</li>
+<li>为客户端请求分配服务进程。</li>
+<li>注册实例服务。Listener 是建立实例和客户端进程之间联系的桥梁。Listener 与实例之间的联系，就是通过注册的过程来实现的。注册的过程就是实例告诉监听器，它的数据库数据库实例名称 <code>instance_name</code> 和服务名<code>service_names</code>。监听器注册上这样的信息，对客户端请求根据监听注册信息，找到正确的服务实例名称。目前 Oracle 版本中，提供动态注册和静态注册两种方式。</li>
+</ul>
+<p>###ORACLE监听服务-命令###</p>
+<figure class="highlight bash"><pre><div class="line">lsnrctl status：查看监听服务的状态。</div><div class="line">lsnrctl start：启动监听</div><div class="line">lsnrctl stop：关闭监听</div><div class="line">lsnrctl service：查看监听详细信息</div><div class="line">lsnrctl reload:重新启动</div><div class="line">lsnrctl show：查看监听参数信息</div></pre></figure>
+
+<p><img src="/image/lsnrctl.png" alt="lsnrctl"></p>
+<p>###ORACLE监听服务-静态注册###</p>
+<ul>
+<li>什么是注册？<br>注册就是将数据库作为一个服务注册到监听程序。客户端不需要知道数据库名和实例名，只需要知道该数据库对外提供的服务名就可以申请连接到数据库。这个服务名可能与实例名一样，也有可能不一样。</li>
+<li>什么是静态注册？<br>就是实例启动时读取<code>listener.ora</code>文件的配置，将实例和服务注册到监听程序。无论何时启动一个数据库，默认地都有两条信息注册到监听器中：数据库对应的实例和服务。</li>
+<li>静态注册的好处：<ul>
+<li>不需要担心数据库重启后，注册不上</li>
+<li>监听不需要最早就打开</li>
+<li>ORACLE实例还没有打开，即可注册成功</li>
+</ul>
+</li>
+</ul>
+<p>###ORACLE监听服务-动态注册###</p>
+<ul>
+<li>动态注册是在instance启动的时候PMON(Process Monitor进程监视器)进程根据INIT.ORA中的instance_name,service_name两个参数将实例和服务注册到监听器中。</li>
+</ul>
+<figure class="highlight bash"><pre><div class="line">//file:E:\app\Administrator\product\<span class="number">11.2</span>.<span class="number">0</span>\dbhome_1\database\INITorcl.ORA</div><div class="line">orcl.__db_cache_size=<span class="number">721420288</span></div><div class="line">orcl.__java_pool_size=<span class="number">16777216</span></div><div class="line">orcl.__large_pool_size=<span class="number">16777216</span></div><div class="line">orcl.__oracle_base=<span class="string">'E:\app\Administrator'</span><span class="comment">#ORACLE_BASE set from environment</span></div><div class="line">orcl.__pga_aggregate_target=<span class="number">889192448</span></div><div class="line">orcl.__sga_target=<span class="number">1677721600</span></div><div class="line">orcl.__shared_io_pool_size=<span class="number">0</span></div><div class="line">orcl.__shared_pool_size=<span class="number">738197504</span></div><div class="line">orcl.__streams_pool_size=<span class="number">33554432</span></div><div class="line">*.audit_file_dest=<span class="string">'E:\app\Administrator\admin\orcl\adump'</span></div><div class="line">*.audit_trail=<span class="string">'db'</span></div><div class="line">*.compatible=<span class="string">'11.2.0.0.0'</span></div><div class="line">*.control_files=<span class="string">'E:\APP\ADMINISTRATOR\ORADATA\ORCL\CONTROL01.CTL'</span>,<span class="string">'E:\APP\ADMINISTRATOR\FLASH_RECOVERY_AREA\ORCL\CONTROL02.CTL'</span><span class="comment">#Restore Controlfile</span></div><div class="line">*.db_16k_cache_size=<span class="number">117440512</span></div><div class="line">*.db_block_size=<span class="number">8192</span></div><div class="line">*.db_create_file_dest=<span class="string">'E:\app\Administrator\oradata\orcl'</span></div><div class="line">*.db_domain=<span class="string">''</span></div><div class="line">*.db_name=<span class="string">'orcl'</span></div><div class="line">*.db_recovery_file_dest=<span class="string">'E:\app\Administrator\flash_recovery_area'</span></div><div class="line">*.db_recovery_file_dest_size=<span class="number">10737418240</span></div><div class="line">*.diagnostic_dest=<span class="string">'E:\app\Administrator'</span></div><div class="line">*.dispatchers=<span class="string">'(PROTOCOL=TCP) (SERVICE=orclXDB)'</span></div><div class="line">*.local_listener=<span class="string">'LISTENER_ORCL'</span></div><div class="line">*.log_archive_dest_1=<span class="string">'LOCATION=E:\app\Administrator\flash_recovery_area'</span></div><div class="line">*.log_archive_format=<span class="string">'arch_%d_%t_%r_%s.log'</span></div><div class="line">*.memory_target=<span class="number">2555379712</span></div><div class="line">*.open_cursors=<span class="number">300</span></div><div class="line">*.processes=<span class="number">150</span></div><div class="line">*.remote_login_passwordfile=<span class="string">'EXCLUSIVE'</span></div><div class="line">*.undo_tablespace=<span class="string">'UNDOTBS1'</span></div></pre></figure>
+
+<p><em>注：注册到监听器中的服务值从<code>init.ora</code>文件中的参数<code>service_names</code>取得。如果该参数没有设定值，数据库将拼接<code>init.ora</code>文件中的 <code>db_name</code>和<code>db_domain</code>的值来注册自己。如果选择提供<code>service_names</code>值，您可以使用完全限定的名称（比如 orcl.oracle.com)或缩写的名称（比如orcl）。如果选择缩写的名称并设置了<code>db_domain</code>参数，注册到监听器中的服务将是 <code>service_name</code>值和<code>db_domain</code>值的拼接。例如下面的设置将导致服务orcl.oracle.com被注册到监听器中：<code>db_domain=oracle.com service_names=orcl</code></em></p>
+<ul>
+<li>由于动态注册需要pmon进程，所以监听必须在数据库启动之前启动，否则动态注册将失败；在数据库运行的过程中，如果重启监听也会造成动态注册失败。如果监听器后来发生了重启，动态注册信息将会丢失。</li>
+<li>动态注册只是注册默认的监听器上（名称是listener、端口是1521、协议时TCP），如果需要向非默认的监听注册，则需要改变<code>local_listener</code>参数。<br>将监听的信息添加到<code>tnsnames.ora</code>文件中。 注意，是<code>tnsnames.ora</code>文件， 因为pmon在动态注册监听时要从<code>tnsnames.ora</code>中读取相关信息。</li>
+</ul>
+<figure class="highlight bash"><pre><div class="line">LISTENER =</div><div class="line">(DESCRIPTION =</div><div class="line">(ADDRESS = (PROTOCOL = TCP)(HOST = xxx)(PORT = <span class="number">1522</span>))</div><div class="line">)</div></pre></figure>
+
+<p>然后以sys用戶运行：</p>
+<figure class="highlight bash"><pre><div class="line">SQL&gt; alter system <span class="keyword">set</span> local_listener=listener;</div><div class="line">SQL&gt; alter system register;</div><div class="line">或者：</div><div class="line">SQL&gt; alter system <span class="keyword">set</span> LOCAL_LISTENER=<span class="string">'(ADDRESS = (PROTOCOL = TCP)(HOST = xxx)(PORT = 1522))'</span>;</div><div class="line">SQL&gt; alter system register;</div><div class="line">系统已更改。</div></pre></figure>
+
+<p>###ORACLE监听服务-动态与静态的区别###<br>可以使用命令lsnrctl status来查看某服务是静态注册还是动态注册。</p>
+<ul>
+<li>实例状态为UNKNOWN值时表明此服务是静态注册的设置。这时监听器用来表明它不知道关于该实例的任何信息，只有当客户发出连接请求时，它才检查该实例是否存在。</li>
+<li>动态注册的数据库通过状态信息中的状态READY或状态BLOCKED（对于一个备用数据库）来指明。不管关闭何时数据库，动态注册的数据库都会动态地从监听器注销，而与之相关的信息将从状态列表中消失。这样，不管数据库是在运行还是已经关闭，监听器总是知道它的状态。该信息将被用于连接请求的回退和负载平衡。</li>
+</ul>
+<p><img src="/image/lsn1.png" alt="lsn1"><br><img src="/image/lsn2.png" alt="lsn2"><br><img src="/image/lsn3.png" alt="lsn3"></p>
+<p>##oracle实例名,数据库名,服务名等概念区别与联系##</p>
+<ul>
+<li>查看数据库名<br><img src="/image/ora1.png" alt="ora1"></li>
+<li>查询当前数据库实例名<br><img src="/image/ora2.png" alt="ora2"><br>数据库实例名是用于和操作系统进行联系的标识，就是说数据库和操作系统之间的交互用的是数据库实例名。实例名也被写入参数文件中，该参数为<code>instance_name</code>。数据库名和实例名可以相同也可以不同。在一般情况下，数据库名和实例名是一对一的关系，但如果在oracle并行服务器架构(即oracle实时应用集群)中，数据库名和实例名是一对多的关系。</li>
+<li>查询当前数据库服务名<br><img src="/image/ora3.png" alt="ora3"><br>从oracle9i版本开始，引入了一个新的参数，即数据库服务名。参数名是SERVICE_NAME。如果数据库有域名，则数据库服务名就是全局数据库名；否则，数据库服务名与数据库名相同。</li>
+</ul>
+<p>##ORACLE监听常见问题##<br>1.ORA-12541: TNS: 没有监听器：显而易见，服务器端的监听器没有启动，另外检查客户端IP地址或端口填写是否正确。启动监听器： <code>$ lsnrctl start</code><br>2.ORA-12500: TNS: 监听程序无法启动专用服务器进程： 对于Windows而言，没有启动Oracle实例服务。启动实例服务：<code>oradim –startup -sid orcl</code><br>3.ORA-12535: TNS: 操作超时： 出现这个问题的原因很多，但主要跟网络有关。解决这个问题，首先检查客户端与服务端的网络是否畅通，如果网络连通，则检查两端的防火墙是否阻挡了连接。<br>4.ORA-12154: TNS: 无法处理服务名： 检 查输入的服务名与配置的服务名是否一致。另外注意生成的本地服务名文件<code>network/admin/tnsnames.ora</code><br>5.ORA-12514: TNS: 监听进程不能解析在连接描述符中给出的 SERVICE_NAME打开Net Manager，选中服务名称，检查服务标识栏里的服务名输入是否正确。该服务名必须与服务器端监听器配置的全局数据库名一致。<br>6.ORA-00119和ORA-00132的解决方案</p>
+<figure class="highlight bash"><pre><div class="line">ORA-<span class="number">00119</span>: invalid specification <span class="keyword">for</span> system parameter LOCAL_LISTENER</div><div class="line">ORA-<span class="number">00132</span>: syntax error or unresolved network name ’LISTENER_ORCL’</div></pre></figure>
+
+<p><b>解决方法一</b>：<br>修改参数文件spfile和pfile<br><img src="/image/err1.png" alt="err1"><br>修改为：<br><code>*.local_listener=‘(ADDRESS = (PROTOCOL = TCP)(HOST = localhost)(PORT = 1521))’</code><br><b>解决方法二：</b><br>修改<code>tnsname.ora</code>,在后面加一行，指定linstener启动时找不到的名字：<br>–LISTENER_ORCL这个是启动时报错找不到的listener<br><img src="/image/err2.png" alt="err2"><br>修改完后startup<br>详细原因有关Oracle启动过程中的一系列动作，可以参看<a href="http://www.zhaokongnuan.com/2015/01/03/Oracle%E5%AD%A6%E4%B9%A0%E4%BA%A4%E6%B5%81%EF%BC%88%E4%BA%8C%EF%BC%89-oracle%E4%BD%93%E7%B3%BB%E7%BB%93%E6%9E%84%E5%8F%8A%E5%90%AF%E5%8A%A8%E6%B5%81%E7%A8%8B/" target="_blank" rel="external">Oracle学习交流（二）–oracle体系结构及启动流程</a></p>
+<p>##附：##<br>ppt下载<a href="http://wenku.baidu.com/view/c8b0ffdeb9d528ea80c77950?fr=prin" target="_blank" rel="external">Oracle交流</a></p>
+
+        </section>
+        <hr/>
+        <nav class="pagination" style="width:auto" role="pagination">
+            
+            <a data-pjax class="newer-posts" href="/2015/01/03/Oracle学习交流（二）-oracle体系结构及启动流程/">← Prev Post</a>
+            
+            <a class="share-button" data-original-title title>Share this Post</a>
+            
+            <a data-pjax class="older-posts" href="/2015/01/02/Nosql知多少/">Next Post →</a>
+            
+        </nav>
+        <br/>
+        <br/>
+        <section id="comment">
+            <div id="comment-box"></div>
+        </section>
+
+
+    </article>
+</main>
+
+
+  
+<footer class="site-footer">
+<a target="_blank" href="http://mail.qq.com/cgi-bin/qm_share?t=qm_mailme&email=QS80IC8vNCAvdHQBJy45LCAoLW8iLiw" style="text-decoration:none;">给我写信</a>
+
+    
+    <div class="inner">
+        <section class="copyright"><a href="/"></a> &copy; KongnuanZhao 2014</section>
+        <section class="poweredby">Published with <a target="_blank" href="http://hexo.io/">Hexo   </a> and Theme by <a target="_blank" href="https://github.com/yuche/hexo-theme-kael">Kael</a></section>
+    </div>
+</footer>
+</div>
+</div><!-- /scroller -->
+
+</div><!-- /pusher -->
+</div><!-- /container -->
+</div>
+
+<!-- Easter eggs -->
+
+<div class="egg animated">
+    <a id="close-button" href="#">X</a>
+    <div class="block">
+        <div class="loading">
+            <span class="ball1"></span>
+            <span class="ball2"></span>
+        </div>
+    </div>
+</div>
+  
+<script src="//cdn.staticfile.org/jquery/1.11.0/jquery.min.js"></script>
+<script>
+    if (!window.jQuery) {
+        var script = document.createElement('script');
+        script.src = "/js/jquery.min.js";
+        document.body.appendChild(script);
+    }
+</script>
+<script type="text/javascript" src="/js/lib.js"></script>
+<script type="text/javascript" src="/js/main.js"></script>
+
+
+
+
+
+<link rel="stylesheet" href="/modules/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/modules/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+    (function($){
+
+        var wrapAll = function(q) {
+            $(q).each( function() {
+                var $img = $(this),
+                        href = $img.attr('src');
+                $img.wrap('<a rel="fancybox" href="' + href + '" title="' + $img.attr('alt') + '" class="link"></a>');
+            });
+        };
+
+        wrapAll('.post-content img');
+        wrapAll('.post-excerpt img');
+        $('[rel="fancybox"]').fancybox();
+    })(jQuery);
+</script>
+
+
+
+</body>
+</html>

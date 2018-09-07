@@ -1,0 +1,1081 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta name="baidu-site-verification" content="AQ0sUK7UOM" />
+  <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" >
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+  <title>LoadRunner中的关联和检查点 | KongnuanZhao</title>
+  <meta name="description" content="赵空暖" />
+  <meta name="HandheldFriendly" content="True" />
+  <meta name="MobileOptimized" content="320" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="/favicon.ico" rel="icon" type="image/x-ico">
+  <link rel="stylesheet" type="text/css" href="/css/component.css" />
+  <link rel="stylesheet" type="text/css" href="/css/screen.css" />
+  <meta name="generator" content="KongnuanZhao">
+ 
+  
+  
+  
+
+  
+
+
+
+<script type="text/javascript">window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"1","bdSize":"16"},"slide":{"type":"slide","bdImg":"3","bdPos":"left","bdTop":"300"},"image":{"viewList":["qzone","tsina","tqq","renren","weixin","douban","twi","mshare"],"viewText":"分享到：","viewSize":"16"},"selectShare":{"bdContainerClass":null,"bdSelectMiniList":["qzone","tsina","tqq","renren","weixin","douban","twi","mshare"]}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+
+</head>
+<body>
+<div class="container">
+    <div class="mp-pusher" id="mp-pusher">
+        <i id="scroll-up" class="fa fa-angle-up"></i>
+        <nav id="mp-menu" class="mp-menu">
+            <div class="mp-level">
+                <a data-pjax class="back-home" style="font-size: 20px" href="/"><h2 ><i class="fa fa-home"></i>
+                        Home</h2></a>
+                <ul class="first-level">
+                    <li>
+                        <a class="fa fa-archive" href="#"><i class="fa fa-angle-left">
+                            </i>&nbsp;&nbsp;Archive</a>
+                        <div class="mp-level page-list">
+                            <h2 ><i class="fa fa-archive"></i>
+                                Archive</h2>
+                            <a class="mp-back" href="#">back</a>
+                            <form id="search-form" action="">
+                                <input type="text" class="search search-archive" placeholder="Search.."/>
+                            </form>
+                            <ul>
+                                <div class="mp-scroll">
+                                
+                                <li class="search-archive-li mp-pjax">
+                                    <a href="/2017/09/20/jmetal01/">jmetal01</a>
+                                </li>
+                                
+                                <li class="search-archive-li mp-pjax">
+                                    <a href="/2017/03/22/read-for-better/">开卷有益</a>
+                                </li>
+                                
+                                <li class="search-archive-li mp-pjax">
+                                    <a href="/2017/02/19/gpu01/">GPU并行计算与CUDA编程01</a>
+                                </li>
+                                
+                                <li class="search-archive-li mp-pjax">
+                                    <a href="/2016/12/13/hadoop-spark/">Hadoop和Spark集群搭建</a>
+                                </li>
+                                
+                                <li class="search-archive-li mp-pjax">
+                                    <a href="/2016/02/03/direction/">晴天</a>
+                                </li>
+                                
+                                <li class="search-archive-li mp-pjax">
+                                    <a href="/2016/01/30/maven-version/">Maven(二)用MyEclipse建立Maven骨架的项目</a>
+                                </li>
+                                
+                                <li class="search-archive-li mp-pjax">
+                                    <a href="/2016/01/30/from-now/">千里之行始于足下</a>
+                                </li>
+                                
+                                <li class="search-archive-li mp-pjax">
+                                    <a href="/2015/05/27/believe-me/">世界是心的镜子</a>
+                                </li>
+                                
+                                <li class="search-archive-li mp-pjax">
+                                    <a href="/2015/04/22/about-thread/">线程的自白</a>
+                                </li>
+                                
+                                <li class="search-archive-li mp-pjax">
+                                    <a href="/2015/04/17/about-time/">尽我们所能，珍惜这段美妙的旅程</a>
+                                </li>
+                                
+                                <li class="search-archive-li mp-pjax">
+                                    <a href="/2015/04/14/Memory/">数据交流大通道-内存</a>
+                                </li>
+                                
+                                <li class="search-archive-li mp-pjax">
+                                    <a href="/2015/04/12/about-disk/">掀起你的盖头来--磁盘我来看看你</a>
+                                </li>
+                                
+                                <li class="search-archive-li mp-pjax">
+                                    <a href="/2015/04/10/warmness/">做一个有心人</a>
+                                </li>
+                                
+                                <li class="search-archive-li mp-pjax">
+                                    <a href="/2015/04/02/about-yum/">问题之yum一二三</a>
+                                </li>
+                                
+                                <li class="search-archive-li mp-pjax">
+                                    <a href="/2015/04/02/about-jvm/">性能测试之探索Java虚拟机</a>
+                                </li>
+                                
+                                <li class="search-archive-li mp-pjax">
+                                    <a href="/2015/03/28/javaVuser/">LoadRunner中的JavaVuser</a>
+                                </li>
+                                
+                                <li class="search-archive-li mp-pjax">
+                                    <a href="/2015/03/27/about-maven/">Maven初体验（一）</a>
+                                </li>
+                                
+                                <li class="search-archive-li mp-pjax">
+                                    <a href="/2015/03/27/file-recover/">数据恢复</a>
+                                </li>
+                                
+                                <li class="search-archive-li mp-pjax">
+                                    <a href="/2015/03/24/about-index/">关于索引的一些总结和思考（上）</a>
+                                </li>
+                                
+                                <li class="search-archive-li mp-pjax">
+                                    <a href="/2015/03/23/about-health/">不要等到很累的时候才去休息</a>
+                                </li>
+                                
+                                <li class="search-archive-li mp-pjax">
+                                    <a href="/2015/03/22/web-analytics/">网站分析</a>
+                                </li>
+                                
+                                <li class="search-archive-li mp-pjax">
+                                    <a href="/2015/03/21/test-report/">性能测试报告的编写</a>
+                                </li>
+                                
+                                <li class="search-archive-li mp-pjax">
+                                    <a href="/2015/03/20/oracle-exp-imp/">Oracle的导入导出</a>
+                                </li>
+                                
+                                <li class="search-archive-li mp-pjax">
+                                    <a href="/2015/03/18/thrift-maven/">Ubuntu搭建Thrift和Maven</a>
+                                </li>
+                                
+                                <li class="search-archive-li mp-pjax">
+                                    <a href="/2015/03/18/hbase-install/">Ubuntu中安装HBase</a>
+                                </li>
+                                
+                                <li class="search-archive-li mp-pjax">
+                                    <a href="/2015/03/17/ubuntu-oracle/">Linux上安装Oracle</a>
+                                </li>
+                                
+                                <li class="search-archive-li mp-pjax">
+                                    <a href="/2015/03/17/hadoop-install/">Ubuntu搭建hadoop</a>
+                                </li>
+                                
+                                <li class="search-archive-li mp-pjax">
+                                    <a href="/2015/03/17/github/">hexo博客同步到github和gitcafe(下)</a>
+                                </li>
+                                
+                                <li class="search-archive-li mp-pjax">
+                                    <a href="/2015/03/17/music-Avatar-Island-whale/">化身孤岛的鲸</a>
+                                </li>
+                                
+                                <li class="search-archive-li mp-pjax">
+                                    <a href="/2015/03/15/Controller-Analysis/">LoadRunner中的Controller和Analysis</a>
+                                </li>
+                                
+                                <li class="search-archive-li mp-pjax">
+                                    <a href="/2015/03/08/interface-performance-testing/">一个接口性能测试脚本开发案例</a>
+                                </li>
+                                
+                                <li class="search-archive-li mp-pjax">
+                                    <a href="/2015/03/01/github-gitcafe/">hexo博客同步到github和gitcafe</a>
+                                </li>
+                                
+                                <li class="search-archive-li mp-pjax">
+                                    <a href="/2015/02/21/性能测试计划的编写/">性能测试计划的编写</a>
+                                </li>
+                                
+                                <li class="search-archive-li mp-pjax">
+                                    <a href="/2015/02/21/LoadRunner中的关联/">LoadRunner中的关联和检查点</a>
+                                </li>
+                                
+                                <li class="search-archive-li mp-pjax">
+                                    <a href="/2015/01/31/LoadRunner中的事务和参数化/">LoadRunner中的事务和参数化</a>
+                                </li>
+                                
+                                <li class="search-archive-li mp-pjax">
+                                    <a href="/2015/01/20/LoadRunner脚本开发和常用函数/">LoadRunner脚本开发和常用函数</a>
+                                </li>
+                                
+                                <li class="search-archive-li mp-pjax">
+                                    <a href="/2015/01/16/我想要最好的20岁/">我想要最好的20岁</a>
+                                </li>
+                                
+                                <li class="search-archive-li mp-pjax">
+                                    <a href="/2015/01/15/初识LoadRunner/">初识LoadRunner</a>
+                                </li>
+                                
+                                <li class="search-archive-li mp-pjax">
+                                    <a href="/2015/01/12/WebServices下的三个技术基础/">WebServices下的三个技术基础</a>
+                                </li>
+                                
+                                <li class="search-archive-li mp-pjax">
+                                    <a href="/2015/01/09/操作系统之线程管理/">操作系统之线程管理</a>
+                                </li>
+                                
+                                <li class="search-archive-li mp-pjax">
+                                    <a href="/2015/01/08/操作系统之进程管理/">操作系统之进程管理</a>
+                                </li>
+                                
+                                <li class="search-archive-li mp-pjax">
+                                    <a href="/2015/01/08/操作系统之虚拟内存管理（下）/">操作系统之虚拟内存管理（下）</a>
+                                </li>
+                                
+                                <li class="search-archive-li mp-pjax">
+                                    <a href="/2015/01/08/操作系统之虚拟内存管理/">操作系统之虚拟内存管理</a>
+                                </li>
+                                
+                                <li class="search-archive-li mp-pjax">
+                                    <a href="/2015/01/07/操作系统之内存管理篇/">操作系统之内存管理篇</a>
+                                </li>
+                                
+                                <li class="search-archive-li mp-pjax">
+                                    <a href="/2015/01/07/谈谈抽象/">谈谈抽象</a>
+                                </li>
+                                
+                                <li class="search-archive-li mp-pjax">
+                                    <a href="/2015/01/07/计算机体系结构-内存结构/">计算机体系结构/内存结构</a>
+                                </li>
+                                
+                                <li class="search-archive-li mp-pjax">
+                                    <a href="/2015/01/05/未雨绸缪-性能测试工具选型/">未雨绸缪-性能测试工具选型</a>
+                                </li>
+                                
+                                <li class="search-archive-li mp-pjax">
+                                    <a href="/2015/01/05/一个人的碎碎读（二）/">一个人的碎碎读（二）</a>
+                                </li>
+                                
+                                <li class="search-archive-li mp-pjax">
+                                    <a href="/2015/01/03/Oracle学习交流（二）-oracle体系结构及启动流程/">Oracle学习交流（二）--oracle体系结构及启动流程</a>
+                                </li>
+                                
+                                <li class="search-archive-li mp-pjax">
+                                    <a href="/2015/01/02/Oracle学习交流--oracle概述及监听配置/">Oracle学习交流--oracle概述及监听配置</a>
+                                </li>
+                                
+                                <li class="search-archive-li mp-pjax">
+                                    <a href="/2015/01/02/Nosql知多少/">Nosql知多少</a>
+                                </li>
+                                
+                                <li class="search-archive-li mp-pjax">
+                                    <a href="/2015/01/02/在Win7下用XManager远程控制ubuntu/">在Win7下用XManager远程控制ubuntu</a>
+                                </li>
+                                
+                                <li class="search-archive-li mp-pjax">
+                                    <a href="/2015/01/02/DNS学习手记/">DNS学习手记</a>
+                                </li>
+                                
+                                <li class="search-archive-li mp-pjax">
+                                    <a href="/2014/12/29/性能测试的今生前世/">性能测试的今生前世</a>
+                                </li>
+                                
+                                <li class="search-archive-li mp-pjax">
+                                    <a href="/2014/12/28/潍坊物价信息数据分析及展现/">潍坊物价信息数据分析及展现</a>
+                                </li>
+                                
+                                <li class="search-archive-li mp-pjax">
+                                    <a href="/2014/12/28/论文数据分析/">论文数据分析</a>
+                                </li>
+                                
+                                <li class="search-archive-li mp-pjax">
+                                    <a href="/2014/12/28/金融时间序列结业作业/">金融时间序列结业作业</a>
+                                </li>
+                                
+                                <li class="search-archive-li mp-pjax">
+                                    <a href="/2014/12/28/一个人的碎碎读/">一个人的碎碎读</a>
+                                </li>
+                                
+                                <li class="search-archive-li mp-pjax">
+                                    <a href="/2014/12/27/关于TCP三次握手及四次挥手/">关于TCP三次握手及四次挥手</a>
+                                </li>
+                                
+                                <li class="search-archive-li mp-pjax">
+                                    <a href="/2014/12/23/为什么只有13台dns根服务器/">为什么只有13台dns根服务器</a>
+                                </li>
+                                
+                                <li class="search-archive-li mp-pjax">
+                                    <a href="/2014/12/23/性能测试之时间都去哪了/">性能测试之时间都去哪了</a>
+                                </li>
+                                
+                                <li class="search-archive-li mp-pjax">
+                                    <a href="/2014/12/22/这些年上过的课/">这些年上过的课</a>
+                                </li>
+                                
+                                <li class="search-archive-li mp-pjax">
+                                    <a href="/2014/12/21/熟悉的陌生人OS/">熟悉的陌生人OS</a>
+                                </li>
+                                
+                                <li class="search-archive-li mp-pjax">
+                                    <a href="/2014/12/15/记录总结这半学期/">记录总结这半学期</a>
+                                </li>
+                                
+                                <li class="search-archive-li mp-pjax">
+                                    <a href="/2014/12/11/抓包/">抓包</a>
+                                </li>
+                                
+                                <li class="search-archive-li mp-pjax">
+                                    <a href="/2014/12/10/通过源码学习hexo/">通过源码学习hexo</a>
+                                </li>
+                                
+                                <li class="search-archive-li mp-pjax">
+                                    <a href="/2014/12/08/新的开始/">新的开始</a>
+                                </li>
+                                
+                                </div>
+                            </ul>
+                        </div>
+                    </li>
+                    <li>
+                        <a class="fa fa-copy" href="#"><i class="fa fa-angle-left">
+                            </i>&nbsp;&nbsp;Categories</a>
+
+                        <div class="mp-level page-list">
+                            <h2 ><i class="fa fa-copy"></i>
+                                Categories</h2>
+                            <a class="mp-back" href="#">back</a>
+                            <form id="search-form" action="">
+                                <input type="text" class="search search-category" placeholder="Search.."/>
+                            </form>
+                            <ul>
+                                <div class="mp-scroll">
+                                
+                                <li class="search-category-li mp-pjax">
+                                    <a href="/categories/GPU/">&nbsp;&nbsp;&nbsp;GPU</a>
+                                    <small>1</small>
+                                </li>
+                                
+                                <li class="search-category-li mp-pjax">
+                                    <a href="/categories/Hadoop/">&nbsp;&nbsp;&nbsp;Hadoop</a>
+                                    <small>1</small>
+                                </li>
+                                
+                                <li class="search-category-li mp-pjax">
+                                    <a href="/categories/Hbase/">&nbsp;&nbsp;&nbsp;Hbase</a>
+                                    <small>1</small>
+                                </li>
+                                
+                                <li class="search-category-li mp-pjax">
+                                    <a href="/categories/Java/">&nbsp;&nbsp;&nbsp;Java</a>
+                                    <small>1</small>
+                                </li>
+                                
+                                <li class="search-category-li mp-pjax">
+                                    <a href="/categories/R/">&nbsp;&nbsp;&nbsp;R</a>
+                                    <small>2</small>
+                                </li>
+                                
+                                <li class="search-category-li mp-pjax">
+                                    <a href="/categories/github/">&nbsp;&nbsp;&nbsp;github</a>
+                                    <small>1</small>
+                                </li>
+                                
+                                <li class="search-category-li mp-pjax">
+                                    <a href="/categories/spark/hadoop/">&nbsp;&nbsp;&nbsp;hadoop</a>
+                                    <small>1</small>
+                                </li>
+                                
+                                <li class="search-category-li mp-pjax">
+                                    <a href="/categories/hbase/hadoop/">&nbsp;&nbsp;&nbsp;hadoop</a>
+                                    <small>1</small>
+                                </li>
+                                
+                                <li class="search-category-li mp-pjax">
+                                    <a href="/categories/hbase/">&nbsp;&nbsp;&nbsp;hbase</a>
+                                    <small>1</small>
+                                </li>
+                                
+                                <li class="search-category-li mp-pjax">
+                                    <a href="/categories/hexo/">&nbsp;&nbsp;&nbsp;hexo</a>
+                                    <small>2</small>
+                                </li>
+                                
+                                <li class="search-category-li mp-pjax">
+                                    <a href="/categories/java/">&nbsp;&nbsp;&nbsp;java</a>
+                                    <small>1</small>
+                                </li>
+                                
+                                <li class="search-category-li mp-pjax">
+                                    <a href="/categories/linux/">&nbsp;&nbsp;&nbsp;linux</a>
+                                    <small>2</small>
+                                </li>
+                                
+                                <li class="search-category-li mp-pjax">
+                                    <a href="/categories/maven/">&nbsp;&nbsp;&nbsp;maven</a>
+                                    <small>2</small>
+                                </li>
+                                
+                                <li class="search-category-li mp-pjax">
+                                    <a href="/categories/nosql/">&nbsp;&nbsp;&nbsp;nosql</a>
+                                    <small>1</small>
+                                </li>
+                                
+                                <li class="search-category-li mp-pjax">
+                                    <a href="/categories/Hbase/nosql/">&nbsp;&nbsp;&nbsp;nosql</a>
+                                    <small>1</small>
+                                </li>
+                                
+                                <li class="search-category-li mp-pjax">
+                                    <a href="/categories/oracle/">&nbsp;&nbsp;&nbsp;oracle</a>
+                                    <small>5</small>
+                                </li>
+                                
+                                <li class="search-category-li mp-pjax">
+                                    <a href="/categories/spark/">&nbsp;&nbsp;&nbsp;spark</a>
+                                    <small>1</small>
+                                </li>
+                                
+                                <li class="search-category-li mp-pjax">
+                                    <a href="/categories/优化算法/">&nbsp;&nbsp;&nbsp;优化算法</a>
+                                    <small>1</small>
+                                </li>
+                                
+                                <li class="search-category-li mp-pjax">
+                                    <a href="/categories/性能测试/">&nbsp;&nbsp;&nbsp;性能测试</a>
+                                    <small>15</small>
+                                </li>
+                                
+                                <li class="search-category-li mp-pjax">
+                                    <a href="/categories/Java/性能测试/">&nbsp;&nbsp;&nbsp;性能测试</a>
+                                    <small>1</small>
+                                </li>
+                                
+                                <li class="search-category-li mp-pjax">
+                                    <a href="/categories/操作系统/">&nbsp;&nbsp;&nbsp;操作系统</a>
+                                    <small>7</small>
+                                </li>
+                                
+                                <li class="search-category-li mp-pjax">
+                                    <a href="/categories/数据分析/">&nbsp;&nbsp;&nbsp;数据分析</a>
+                                    <small>1</small>
+                                </li>
+                                
+                                <li class="search-category-li mp-pjax">
+                                    <a href="/categories/R/数据分析/">&nbsp;&nbsp;&nbsp;数据分析</a>
+                                    <small>2</small>
+                                </li>
+                                
+                                <li class="search-category-li mp-pjax">
+                                    <a href="/categories/测试/">&nbsp;&nbsp;&nbsp;测试</a>
+                                    <small>2</small>
+                                </li>
+                                
+                                <li class="search-category-li mp-pjax">
+                                    <a href="/categories/点滴/">&nbsp;&nbsp;&nbsp;点滴</a>
+                                    <small>13</small>
+                                </li>
+                                
+                                <li class="search-category-li mp-pjax">
+                                    <a href="/categories/计算机网络/">&nbsp;&nbsp;&nbsp;计算机网络</a>
+                                    <small>1</small>
+                                </li>
+                                
+                                <li class="search-category-li mp-pjax">
+                                    <a href="/categories/读书有疑/">&nbsp;&nbsp;&nbsp;读书有疑</a>
+                                    <small>3</small>
+                                </li>
+                                
+                                </div>
+                            </ul>
+                        </div>
+                    </li>
+                    <li>
+                        <a class="fa fa-tags" href="#"><i class="fa fa-angle-left">
+                            </i>&nbsp;&nbsp;Tags</a>
+                        <div class="mp-level page-list">
+                            <h2 ><i class="fa fa-tags"></i>
+                                Tags</h2>
+                            <a class="mp-back" href="#">back</a>
+                            <form id="search-form" action="">
+                                <input type="text" class="search search-tag" placeholder="Search.."/>
+                            </form>
+                            <ul>
+                                <div class="mp-scroll">
+                                
+                                <li class="search-tag-li mp-pjax">
+                                    <a href="/tags/CUDA/">&nbsp;&nbsp;&nbsp;CUDA</a>
+                                    <small>1</small>
+                                </li>
+                                
+                                <li class="search-tag-li mp-pjax">
+                                    <a href="/tags/GPU/">&nbsp;&nbsp;&nbsp;GPU</a>
+                                    <small>1</small>
+                                </li>
+                                
+                                <li class="search-tag-li mp-pjax">
+                                    <a href="/tags/Hadoop/">&nbsp;&nbsp;&nbsp;Hadoop</a>
+                                    <small>1</small>
+                                </li>
+                                
+                                <li class="search-tag-li mp-pjax">
+                                    <a href="/tags/Hbase/">&nbsp;&nbsp;&nbsp;Hbase</a>
+                                    <small>1</small>
+                                </li>
+                                
+                                <li class="search-tag-li mp-pjax">
+                                    <a href="/tags/Java/">&nbsp;&nbsp;&nbsp;Java</a>
+                                    <small>1</small>
+                                </li>
+                                
+                                <li class="search-tag-li mp-pjax">
+                                    <a href="/tags/R/">&nbsp;&nbsp;&nbsp;R</a>
+                                    <small>2</small>
+                                </li>
+                                
+                                <li class="search-tag-li mp-pjax">
+                                    <a href="/tags/gitcafe/">&nbsp;&nbsp;&nbsp;gitcafe</a>
+                                    <small>1</small>
+                                </li>
+                                
+                                <li class="search-tag-li mp-pjax">
+                                    <a href="/tags/github/">&nbsp;&nbsp;&nbsp;github</a>
+                                    <small>2</small>
+                                </li>
+                                
+                                <li class="search-tag-li mp-pjax">
+                                    <a href="/tags/hadoop/">&nbsp;&nbsp;&nbsp;hadoop</a>
+                                    <small>2</small>
+                                </li>
+                                
+                                <li class="search-tag-li mp-pjax">
+                                    <a href="/tags/hbase/">&nbsp;&nbsp;&nbsp;hbase</a>
+                                    <small>1</small>
+                                </li>
+                                
+                                <li class="search-tag-li mp-pjax">
+                                    <a href="/tags/hexo/">&nbsp;&nbsp;&nbsp;hexo</a>
+                                    <small>2</small>
+                                </li>
+                                
+                                <li class="search-tag-li mp-pjax">
+                                    <a href="/tags/java/">&nbsp;&nbsp;&nbsp;java</a>
+                                    <small>1</small>
+                                </li>
+                                
+                                <li class="search-tag-li mp-pjax">
+                                    <a href="/tags/linux/">&nbsp;&nbsp;&nbsp;linux</a>
+                                    <small>2</small>
+                                </li>
+                                
+                                <li class="search-tag-li mp-pjax">
+                                    <a href="/tags/maven/">&nbsp;&nbsp;&nbsp;maven</a>
+                                    <small>2</small>
+                                </li>
+                                
+                                <li class="search-tag-li mp-pjax">
+                                    <a href="/tags/nosql/">&nbsp;&nbsp;&nbsp;nosql</a>
+                                    <small>1</small>
+                                </li>
+                                
+                                <li class="search-tag-li mp-pjax">
+                                    <a href="/tags/oracle/">&nbsp;&nbsp;&nbsp;oracle</a>
+                                    <small>5</small>
+                                </li>
+                                
+                                <li class="search-tag-li mp-pjax">
+                                    <a href="/tags/spark/">&nbsp;&nbsp;&nbsp;spark</a>
+                                    <small>1</small>
+                                </li>
+                                
+                                <li class="search-tag-li mp-pjax">
+                                    <a href="/tags/优化算法/">&nbsp;&nbsp;&nbsp;优化算法</a>
+                                    <small>1</small>
+                                </li>
+                                
+                                <li class="search-tag-li mp-pjax">
+                                    <a href="/tags/性能测试/">&nbsp;&nbsp;&nbsp;性能测试</a>
+                                    <small>16</small>
+                                </li>
+                                
+                                <li class="search-tag-li mp-pjax">
+                                    <a href="/tags/抓包/">&nbsp;&nbsp;&nbsp;抓包</a>
+                                    <small>1</small>
+                                </li>
+                                
+                                <li class="search-tag-li mp-pjax">
+                                    <a href="/tags/操作系统/">&nbsp;&nbsp;&nbsp;操作系统</a>
+                                    <small>7</small>
+                                </li>
+                                
+                                <li class="search-tag-li mp-pjax">
+                                    <a href="/tags/数据分析/">&nbsp;&nbsp;&nbsp;数据分析</a>
+                                    <small>3</small>
+                                </li>
+                                
+                                <li class="search-tag-li mp-pjax">
+                                    <a href="/tags/测试/">&nbsp;&nbsp;&nbsp;测试</a>
+                                    <small>1</small>
+                                </li>
+                                
+                                <li class="search-tag-li mp-pjax">
+                                    <a href="/tags/点滴/">&nbsp;&nbsp;&nbsp;点滴</a>
+                                    <small>13</small>
+                                </li>
+                                
+                                <li class="search-tag-li mp-pjax">
+                                    <a href="/tags/计算机网络/">&nbsp;&nbsp;&nbsp;计算机网络</a>
+                                    <small>2</small>
+                                </li>
+                                
+                                <li class="search-tag-li mp-pjax">
+                                    <a href="/tags/读书有疑/">&nbsp;&nbsp;&nbsp;读书有疑</a>
+                                    <small>3</small>
+                                </li>
+                                
+                                </div>
+                            </ul>
+                        </div>
+                    </li>
+                    
+                    <li>
+                        <a class="fa fa-weibo" href="http://weibo.com/zhaokongnuan/profile?rightmod=1&wvr=6&mod=personinfo" target="_blank">&nbsp;&nbsp;Weibo Show</a>   
+                    </li>
+                    
+                    <li class="mp-pjax"><a class="fa fa-user" href="/about">&nbsp;&nbsp;&nbsp;About me</a></li>
+                    <li><a class="fa fa-github" href="https://github.com/KongnuanZhao/KongnuanZhao.github.io.git" target="_blank">&nbsp;&nbsp;&nbsp;Github</a></li>
+                     <li><a class="fa fa-github" href="https://gitcafe.com/KongnuanZhao" target="_blank">&nbsp;&nbsp;&nbsp;GitCafe</a></li>
+
+                </ul>
+
+            </div>
+        </nav>
+        <div id="pjax">
+            <div class="pjax-hidden" style="display: none">
+                
+                    <a  data-pjax href="/2017/09/20/jmetal01/">jmetal01</a>
+                
+                    <a  data-pjax href="/2017/03/22/read-for-better/">开卷有益</a>
+                
+                    <a  data-pjax href="/2017/02/19/gpu01/">GPU并行计算与CUDA编程01</a>
+                
+                    <a  data-pjax href="/2016/12/13/hadoop-spark/">Hadoop和Spark集群搭建</a>
+                
+                    <a  data-pjax href="/2016/02/03/direction/">晴天</a>
+                
+                    <a  data-pjax href="/2016/01/30/maven-version/">Maven(二)用MyEclipse建立Maven骨架的项目</a>
+                
+                    <a  data-pjax href="/2016/01/30/from-now/">千里之行始于足下</a>
+                
+                    <a  data-pjax href="/2015/05/27/believe-me/">世界是心的镜子</a>
+                
+                    <a  data-pjax href="/2015/04/22/about-thread/">线程的自白</a>
+                
+                    <a  data-pjax href="/2015/04/17/about-time/">尽我们所能，珍惜这段美妙的旅程</a>
+                
+                    <a  data-pjax href="/2015/04/14/Memory/">数据交流大通道-内存</a>
+                
+                    <a  data-pjax href="/2015/04/12/about-disk/">掀起你的盖头来--磁盘我来看看你</a>
+                
+                    <a  data-pjax href="/2015/04/10/warmness/">做一个有心人</a>
+                
+                    <a  data-pjax href="/2015/04/02/about-yum/">问题之yum一二三</a>
+                
+                    <a  data-pjax href="/2015/04/02/about-jvm/">性能测试之探索Java虚拟机</a>
+                
+                    <a  data-pjax href="/2015/03/28/javaVuser/">LoadRunner中的JavaVuser</a>
+                
+                    <a  data-pjax href="/2015/03/27/about-maven/">Maven初体验（一）</a>
+                
+                    <a  data-pjax href="/2015/03/27/file-recover/">数据恢复</a>
+                
+                    <a  data-pjax href="/2015/03/24/about-index/">关于索引的一些总结和思考（上）</a>
+                
+                    <a  data-pjax href="/2015/03/23/about-health/">不要等到很累的时候才去休息</a>
+                
+                    <a  data-pjax href="/2015/03/22/web-analytics/">网站分析</a>
+                
+                    <a  data-pjax href="/2015/03/21/test-report/">性能测试报告的编写</a>
+                
+                    <a  data-pjax href="/2015/03/20/oracle-exp-imp/">Oracle的导入导出</a>
+                
+                    <a  data-pjax href="/2015/03/18/thrift-maven/">Ubuntu搭建Thrift和Maven</a>
+                
+                    <a  data-pjax href="/2015/03/18/hbase-install/">Ubuntu中安装HBase</a>
+                
+                    <a  data-pjax href="/2015/03/17/ubuntu-oracle/">Linux上安装Oracle</a>
+                
+                    <a  data-pjax href="/2015/03/17/hadoop-install/">Ubuntu搭建hadoop</a>
+                
+                    <a  data-pjax href="/2015/03/17/github/">hexo博客同步到github和gitcafe(下)</a>
+                
+                    <a  data-pjax href="/2015/03/17/music-Avatar-Island-whale/">化身孤岛的鲸</a>
+                
+                    <a  data-pjax href="/2015/03/15/Controller-Analysis/">LoadRunner中的Controller和Analysis</a>
+                
+                    <a  data-pjax href="/2015/03/08/interface-performance-testing/">一个接口性能测试脚本开发案例</a>
+                
+                    <a  data-pjax href="/2015/03/01/github-gitcafe/">hexo博客同步到github和gitcafe</a>
+                
+                    <a  data-pjax href="/2015/02/21/性能测试计划的编写/">性能测试计划的编写</a>
+                
+                    <a  data-pjax href="/2015/02/21/LoadRunner中的关联/">LoadRunner中的关联和检查点</a>
+                
+                    <a  data-pjax href="/2015/01/31/LoadRunner中的事务和参数化/">LoadRunner中的事务和参数化</a>
+                
+                    <a  data-pjax href="/2015/01/20/LoadRunner脚本开发和常用函数/">LoadRunner脚本开发和常用函数</a>
+                
+                    <a  data-pjax href="/2015/01/16/我想要最好的20岁/">我想要最好的20岁</a>
+                
+                    <a  data-pjax href="/2015/01/15/初识LoadRunner/">初识LoadRunner</a>
+                
+                    <a  data-pjax href="/2015/01/12/WebServices下的三个技术基础/">WebServices下的三个技术基础</a>
+                
+                    <a  data-pjax href="/2015/01/09/操作系统之线程管理/">操作系统之线程管理</a>
+                
+                    <a  data-pjax href="/2015/01/08/操作系统之进程管理/">操作系统之进程管理</a>
+                
+                    <a  data-pjax href="/2015/01/08/操作系统之虚拟内存管理（下）/">操作系统之虚拟内存管理（下）</a>
+                
+                    <a  data-pjax href="/2015/01/08/操作系统之虚拟内存管理/">操作系统之虚拟内存管理</a>
+                
+                    <a  data-pjax href="/2015/01/07/操作系统之内存管理篇/">操作系统之内存管理篇</a>
+                
+                    <a  data-pjax href="/2015/01/07/谈谈抽象/">谈谈抽象</a>
+                
+                    <a  data-pjax href="/2015/01/07/计算机体系结构-内存结构/">计算机体系结构/内存结构</a>
+                
+                    <a  data-pjax href="/2015/01/05/未雨绸缪-性能测试工具选型/">未雨绸缪-性能测试工具选型</a>
+                
+                    <a  data-pjax href="/2015/01/05/一个人的碎碎读（二）/">一个人的碎碎读（二）</a>
+                
+                    <a  data-pjax href="/2015/01/03/Oracle学习交流（二）-oracle体系结构及启动流程/">Oracle学习交流（二）--oracle体系结构及启动流程</a>
+                
+                    <a  data-pjax href="/2015/01/02/Oracle学习交流--oracle概述及监听配置/">Oracle学习交流--oracle概述及监听配置</a>
+                
+                    <a  data-pjax href="/2015/01/02/Nosql知多少/">Nosql知多少</a>
+                
+                    <a  data-pjax href="/2015/01/02/在Win7下用XManager远程控制ubuntu/">在Win7下用XManager远程控制ubuntu</a>
+                
+                    <a  data-pjax href="/2015/01/02/DNS学习手记/">DNS学习手记</a>
+                
+                    <a  data-pjax href="/2014/12/29/性能测试的今生前世/">性能测试的今生前世</a>
+                
+                    <a  data-pjax href="/2014/12/28/潍坊物价信息数据分析及展现/">潍坊物价信息数据分析及展现</a>
+                
+                    <a  data-pjax href="/2014/12/28/论文数据分析/">论文数据分析</a>
+                
+                    <a  data-pjax href="/2014/12/28/金融时间序列结业作业/">金融时间序列结业作业</a>
+                
+                    <a  data-pjax href="/2014/12/28/一个人的碎碎读/">一个人的碎碎读</a>
+                
+                    <a  data-pjax href="/2014/12/27/关于TCP三次握手及四次挥手/">关于TCP三次握手及四次挥手</a>
+                
+                    <a  data-pjax href="/2014/12/23/为什么只有13台dns根服务器/">为什么只有13台dns根服务器</a>
+                
+                    <a  data-pjax href="/2014/12/23/性能测试之时间都去哪了/">性能测试之时间都去哪了</a>
+                
+                    <a  data-pjax href="/2014/12/22/这些年上过的课/">这些年上过的课</a>
+                
+                    <a  data-pjax href="/2014/12/21/熟悉的陌生人OS/">熟悉的陌生人OS</a>
+                
+                    <a  data-pjax href="/2014/12/15/记录总结这半学期/">记录总结这半学期</a>
+                
+                    <a  data-pjax href="/2014/12/11/抓包/">抓包</a>
+                
+                    <a  data-pjax href="/2014/12/10/通过源码学习hexo/">通过源码学习hexo</a>
+                
+                    <a  data-pjax href="/2014/12/08/新的开始/">新的开始</a>
+                
+                
+                    <a data-pjax href="/categories/GPU/">&nbsp;&nbsp;GPU</a>
+                
+                    <a data-pjax href="/categories/Hadoop/">&nbsp;&nbsp;Hadoop</a>
+                
+                    <a data-pjax href="/categories/Hbase/">&nbsp;&nbsp;Hbase</a>
+                
+                    <a data-pjax href="/categories/Java/">&nbsp;&nbsp;Java</a>
+                
+                    <a data-pjax href="/categories/R/">&nbsp;&nbsp;R</a>
+                
+                    <a data-pjax href="/categories/github/">&nbsp;&nbsp;github</a>
+                
+                    <a data-pjax href="/categories/spark/hadoop/">&nbsp;&nbsp;hadoop</a>
+                
+                    <a data-pjax href="/categories/hbase/hadoop/">&nbsp;&nbsp;hadoop</a>
+                
+                    <a data-pjax href="/categories/hbase/">&nbsp;&nbsp;hbase</a>
+                
+                    <a data-pjax href="/categories/hexo/">&nbsp;&nbsp;hexo</a>
+                
+                    <a data-pjax href="/categories/java/">&nbsp;&nbsp;java</a>
+                
+                    <a data-pjax href="/categories/linux/">&nbsp;&nbsp;linux</a>
+                
+                    <a data-pjax href="/categories/maven/">&nbsp;&nbsp;maven</a>
+                
+                    <a data-pjax href="/categories/nosql/">&nbsp;&nbsp;nosql</a>
+                
+                    <a data-pjax href="/categories/Hbase/nosql/">&nbsp;&nbsp;nosql</a>
+                
+                    <a data-pjax href="/categories/oracle/">&nbsp;&nbsp;oracle</a>
+                
+                    <a data-pjax href="/categories/spark/">&nbsp;&nbsp;spark</a>
+                
+                    <a data-pjax href="/categories/优化算法/">&nbsp;&nbsp;优化算法</a>
+                
+                    <a data-pjax href="/categories/性能测试/">&nbsp;&nbsp;性能测试</a>
+                
+                    <a data-pjax href="/categories/Java/性能测试/">&nbsp;&nbsp;性能测试</a>
+                
+                    <a data-pjax href="/categories/操作系统/">&nbsp;&nbsp;操作系统</a>
+                
+                    <a data-pjax href="/categories/数据分析/">&nbsp;&nbsp;数据分析</a>
+                
+                    <a data-pjax href="/categories/R/数据分析/">&nbsp;&nbsp;数据分析</a>
+                
+                    <a data-pjax href="/categories/测试/">&nbsp;&nbsp;测试</a>
+                
+                    <a data-pjax href="/categories/点滴/">&nbsp;&nbsp;点滴</a>
+                
+                    <a data-pjax href="/categories/计算机网络/">&nbsp;&nbsp;计算机网络</a>
+                
+                    <a data-pjax href="/categories/读书有疑/">&nbsp;&nbsp;读书有疑</a>
+                
+                
+                    <a data-pjax href="/tags/CUDA/">&nbsp;&nbsp;CUDA</a>
+                
+                    <a data-pjax href="/tags/GPU/">&nbsp;&nbsp;GPU</a>
+                
+                    <a data-pjax href="/tags/Hadoop/">&nbsp;&nbsp;Hadoop</a>
+                
+                    <a data-pjax href="/tags/Hbase/">&nbsp;&nbsp;Hbase</a>
+                
+                    <a data-pjax href="/tags/Java/">&nbsp;&nbsp;Java</a>
+                
+                    <a data-pjax href="/tags/R/">&nbsp;&nbsp;R</a>
+                
+                    <a data-pjax href="/tags/gitcafe/">&nbsp;&nbsp;gitcafe</a>
+                
+                    <a data-pjax href="/tags/github/">&nbsp;&nbsp;github</a>
+                
+                    <a data-pjax href="/tags/hadoop/">&nbsp;&nbsp;hadoop</a>
+                
+                    <a data-pjax href="/tags/hbase/">&nbsp;&nbsp;hbase</a>
+                
+                    <a data-pjax href="/tags/hexo/">&nbsp;&nbsp;hexo</a>
+                
+                    <a data-pjax href="/tags/java/">&nbsp;&nbsp;java</a>
+                
+                    <a data-pjax href="/tags/linux/">&nbsp;&nbsp;linux</a>
+                
+                    <a data-pjax href="/tags/maven/">&nbsp;&nbsp;maven</a>
+                
+                    <a data-pjax href="/tags/nosql/">&nbsp;&nbsp;nosql</a>
+                
+                    <a data-pjax href="/tags/oracle/">&nbsp;&nbsp;oracle</a>
+                
+                    <a data-pjax href="/tags/spark/">&nbsp;&nbsp;spark</a>
+                
+                    <a data-pjax href="/tags/优化算法/">&nbsp;&nbsp;优化算法</a>
+                
+                    <a data-pjax href="/tags/性能测试/">&nbsp;&nbsp;性能测试</a>
+                
+                    <a data-pjax href="/tags/抓包/">&nbsp;&nbsp;抓包</a>
+                
+                    <a data-pjax href="/tags/操作系统/">&nbsp;&nbsp;操作系统</a>
+                
+                    <a data-pjax href="/tags/数据分析/">&nbsp;&nbsp;数据分析</a>
+                
+                    <a data-pjax href="/tags/测试/">&nbsp;&nbsp;测试</a>
+                
+                    <a data-pjax href="/tags/点滴/">&nbsp;&nbsp;点滴</a>
+                
+                    <a data-pjax href="/tags/计算机网络/">&nbsp;&nbsp;计算机网络</a>
+                
+                    <a data-pjax href="/tags/读书有疑/">&nbsp;&nbsp;读书有疑</a>
+                
+                <a data-pjax class="fa fa-user" href="/about">&nbsp;&nbsp;&nbsp;About me</a>
+            </div>
+            <nav class="nexus">
+                <li  style="border-left: 1px solid #c6d0da;">
+                    <a id="trigger" href="#"><i class="fa fa-bars"></i></a>
+                </li>
+                <li ><a id="nexus-back" data-pjax href="/">KongnuanZhao</a></li>
+                
+                <div id="nav-container">
+                    <div class="post-navbar" style="line-height: 63px;display:none">
+                        <li id="navbar-title"><a href="#">LoadRunner中的关联和检查点</a></li>
+                        <li id="navbar-toc" style="border-left: none">
+                            <a style="padding-right: 15px">
+                                <span id="toc-content" >Introduction</span><i class="fa fa-chevron-down" ></i>
+                            </a>
+                            <div class="hidden-box">
+                                <ul id="toc"></ul>
+                            </div>
+                        </li>
+                    </div>
+                </div>
+                
+            </nav>
+
+            <div class="scroller">
+            <div class="scroller-inner">
+
+
+<!-- -->
+<!--<body class="post-template">-->
+<!---->
+  
+
+<main class="content" role="main">
+    <article class="post" >
+    <span class="post-meta">
+                  <div class="tag-tile">
+                      
+                      
+                      <a data-pjax href='/tags/性能测试/' style='color:#D5D5D5'>性能测试</a>
+                      
+                      
+                  </div>
+                <h1 class="post-title" style="margin: 14px 0;color:#50585D">LoadRunner中的关联和检查点</h1>
+
+                    <div class="post-meta">
+                        Post on<span class="fa fa-clock-o"></span>
+                        <time datetime="2015-02-21T12:03:26.000Z"
+                              itemprop="datePublished">Feb 21 2015</time>
+                        By 赵空暖
+                    </div>
+    </span>
+
+        <section class="post-content">
+            <p>#课堂笔记#</p>
+<p>##目的##<br>目的：掌握LoadRunner中的关联的基本概念和使用方法</p>
+<p>##概念之关联##</p>
+<ul>
+<li>关联的定义<br>  因为LoadRunner录制的时候SessionID是写死的，会话结束后该SessionID便会失效，脚本回访就会报错，所以我们需要对类似SessionID从服务器返回动态变化的值进行关联。所以在脚本回放过程中，客户端发出请求，通过关联函数所定义的左右边界值，在服务器所响应的内容中查找，得到相应的值，以变量的形式替换录制时的静态值，从而向服务器发出正确的请求，这种动态获得服务器响应内容的方法被称作关联。</li>
+<li>关联和参数化的区别<br>  参数化是在客户端可以预先定义的，一般来自于一个文件、一个定义的table、通过sql写的一个结果集等，而关联是从服务器获取动态变化的，如SessionID.</li>
+<li>什么时候需要关联<br>  服务器返回的动态变化且对业务有影响的.</li>
+<li>举个栗子<br>首次，关联的方法<br><img src="/image/correlation.png" alt="correlation"></li>
+</ul>
+<figure class="highlight c"><pre><div class="line"><span class="comment">//Correlation comment - Do not change! Original value='115392.831834751fQDffVipHiHfDfzVDpVVcHcf' Name ='CorrelationParameter_1'</span></div><div class="line"></div><div class="line">	web_reg_save_param_ex(</div><div class="line">		<span class="string">"ParamName=CorrelationParameter_1"</span>,</div><div class="line">		<span class="string">"LB=userSession value="</span>,</div><div class="line">		<span class="string">"RB=&gt;\n&lt;table border"</span>,</div><div class="line">		SEARCH_FILTERS,</div><div class="line">		<span class="string">"Scope=All"</span>,</div><div class="line">		<span class="string">"IgnoreRedirections=Yes"</span>,</div><div class="line">		<span class="string">"RequestUrl=*/nav.pl*"</span>,</div><div class="line">		LAST);</div><div class="line">……</div><div class="line">	lr_think_time(<span class="number">5</span>);</div><div class="line"></div><div class="line">	web_submit_data(<span class="string">"login.pl"</span>,</div><div class="line">		<span class="string">"Action=http://127.0.0.1:1080/WebTours/login.pl"</span>,</div><div class="line">		<span class="string">"Method=POST"</span>,</div><div class="line">		<span class="string">"RecContentType=text/html"</span>,</div><div class="line">		<span class="string">"Referer=http://127.0.0.1:1080/WebTours/nav.pl?in=home"</span>,</div><div class="line">		<span class="string">"Snapshot=t13.inf"</span>,</div><div class="line">		<span class="string">"Mode=HTTP"</span>,</div><div class="line">		ITEMDATA,</div><div class="line">		<span class="string">"Name=userSession"</span>, <span class="string">"Value={CorrelationParameter_1}"</span>, ENDITEM,</div><div class="line">		<span class="string">"Name=username"</span>, <span class="string">"Value=jojo"</span>, ENDITEM,</div><div class="line">		<span class="string">"Name=password"</span>, <span class="string">"Value=bean"</span>, ENDITEM,</div><div class="line">		<span class="string">"Name=login.x"</span>, <span class="string">"Value=50"</span>, ENDITEM,</div><div class="line">		<span class="string">"Name=login.y"</span>, <span class="string">"Value=12"</span>, ENDITEM,</div><div class="line">		<span class="string">"Name=JSFormSubmit"</span>, <span class="string">"Value=off"</span>, ENDITEM,</div><div class="line">		LAST);</div></pre></figure>
+
+<ul>
+<li>注：<code>web_reg_save_param_ex</code>这个函数是通过左右边界来取出相应的值，如<code>SessionID</code>的<code>value</code>是<code>115392.831834751fQDffVipHiHfDfzVDpVVcHcf</code>要从服务器返回的HTML代码中取出<code>&lt;input type=hidden name=userSession value=115392.929688133fQDffcDpicAiDDDDDfzVDpVtcQcf&gt;</code> 它的左边LB是<code>userSession value=</code>,右边RB为<code>&gt;</code></li>
+<li><code>web_reg_save_param</code>用于web_submit_form.用法：<code>web_reg_save_param(&quot;outFlightVal&quot;, &quot;LB=outboundFlight value=&quot;, &quot;RB= checked &gt;&quot;, LAST );</code></li>
+<li>Scope 的值可以为ALL、HEADER、Body、Cookies 是值搜索的范围<br><img src="/image/zhuabao.png" alt="Scope"></li>
+</ul>
+<p>##概念补充之集合点##</p>
+<ul>
+<li>集合点的概念<br>  集合点的意思时等到特定的用户数后再一起执行某个操作，比如一起保存，一起提交。比如说某个促销品的促销时间在8点到8点30，这样的话，就可能出现在8点时很多人一起提交的场景，这个时候需要用到集合点。</li>
+<li>解析集合点函数 <code>lr_rendezvous(&quot;test&quot;)</code></li>
+<li>只能在Action中添加集合点</li>
+<li>一般不要在事务中添加集合点，会拉长事务完成的时间。</li>
+</ul>
+<p>##概念补充之检查点##</p>
+<ul>
+<li>检查点的概念<br>  至于为什么要用检查点可以用个小例子做个测试，例如一个登陆脚本登陆的账号为jojo，密码为jojo，可以正确登陆，当把账号或密码改掉再执行，发现脚本并没有报错，也顺利执行下来了。原因是什么呢 ？Loadrunner以用户角色向服务器发送一个登陆请求，却不会判断请求的返回消息是什么，只要有返回，即使这是个拒绝登陆的返回，Loadrunner也认为登陆成功了。所以在登录或者其他有重要页面跳转的地方，很有必要做检查点。</li>
+<li>实例<br>  使用上面关联的例子：</li>
+</ul>
+<figure class="highlight c"><pre><div class="line">Action()</div><div class="line">{	</div><div class="line"></div><div class="line"><span class="comment">//Correlation comment - Do not change! Original value='115393.197731875fQDffDHpzAiDDDDDDfzVDpccfzf' Name ='CorrelationParameter_1'</span></div><div class="line"></div><div class="line">	web_reg_save_param_ex(</div><div class="line">		<span class="string">"ParamName=CorrelationParameter_1"</span>,</div><div class="line">		<span class="string">"LB=userSession value="</span>,</div><div class="line">		<span class="string">"RB=&gt;\n&lt;table border"</span>,</div><div class="line">		SEARCH_FILTERS,</div><div class="line">		<span class="string">"Scope=All"</span>,</div><div class="line">		<span class="string">"IgnoreRedirections=Yes"</span>,</div><div class="line">		<span class="string">"RequestUrl=*/nav.pl*"</span>,</div><div class="line">		LAST);</div><div class="line"></div><div class="line">	web_url(<span class="string">"nav.pl"</span>,</div><div class="line">		<span class="string">"URL=http://127.0.0.1:1080/WebTours/nav.pl?in=home"</span>,</div><div class="line">		<span class="string">"Resource=0"</span>,</div><div class="line">		<span class="string">"RecContentType=text/html"</span>,</div><div class="line">		<span class="string">"Referer=http://127.0.0.1:1080/WebTours/welcome.pl?signOff=true"</span>,</div><div class="line">		<span class="string">"Snapshot=t22.inf"</span>,</div><div class="line">		<span class="string">"Mode=HTTP"</span>,</div><div class="line">		LAST);</div><div class="line"></div><div class="line">	web_submit_data(<span class="string">"login.pl"</span>,</div><div class="line">		<span class="string">"Action=http://127.0.0.1:1080/WebTours/login.pl"</span>,</div><div class="line">		<span class="string">"Method=POST"</span>,</div><div class="line">		<span class="string">"RecContentType=text/html"</span>,</div><div class="line">		<span class="string">"Referer=http://127.0.0.1:1080/WebTours/nav.pl?in=home"</span>,</div><div class="line">		<span class="string">"Snapshot=t23.inf"</span>,</div><div class="line">		<span class="string">"Mode=HTTP"</span>,</div><div class="line">		ITEMDATA,</div><div class="line">		<span class="string">"Name=userSession"</span>, <span class="string">"Value={CorrelationParameter_1}"</span>, ENDITEM,</div><div class="line">		<span class="string">"Name=username"</span>, <span class="string">"Value=jojo"</span>, ENDITEM,</div><div class="line">		<span class="string">"Name=password"</span>, <span class="string">"Value=bean"</span>, ENDITEM,</div><div class="line">		<span class="string">"Name=login.x"</span>, <span class="string">"Value=65"</span>, ENDITEM,</div><div class="line">		<span class="string">"Name=login.y"</span>, <span class="string">"Value=8"</span>, ENDITEM,</div><div class="line">		<span class="string">"Name=JSFormSubmit"</span>, <span class="string">"Value=off"</span>, ENDITEM,</div><div class="line">		LAST);</div><div class="line"></div><div class="line"></div><div class="line">	web_url(<span class="string">"login.pl_2"</span>,</div><div class="line">		<span class="string">"URL=http://127.0.0.1:1080/WebTours/login.pl?intro=true"</span>,</div><div class="line">		<span class="string">"Resource=0"</span>,</div><div class="line">		<span class="string">"RecContentType=text/html"</span>,</div><div class="line">		<span class="string">"Referer=http://127.0.0.1:1080/WebTours/login.pl"</span>,</div><div class="line">		<span class="string">"Snapshot=t24.inf"</span>,</div><div class="line">		<span class="string">"Mode=HTTP"</span>,</div><div class="line">		LAST);</div><div class="line"><span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">}</div></pre></figure>
+
+<p>输出结果：</p>
+<figure class="highlight bash"><pre><div class="line">Running Vuser...</div><div class="line">Starting iteration <span class="number">1</span>.</div><div class="line">Starting action Action.</div><div class="line">Action.c(<span class="number">12</span>): Registering web_reg_save_param_ex was successful  	[MsgId: MMSG-<span class="number">26390</span>]</div><div class="line">Action.c(<span class="number">22</span>): Notify: Saving Parameter <span class="string">"CorrelationParameter_1 = 0AA"</span>.</div><div class="line">Action.c(<span class="number">22</span>): web_url(<span class="string">"nav.pl"</span>) was successful, <span class="number">1354</span> body bytes, <span class="number">253</span> header bytes  	[MsgId: MMSG-<span class="number">26386</span>]</div><div class="line">Action.c(<span class="number">33</span>): Notify: Parameter Substitution: parameter <span class="string">"CorrelationParameter_1"</span> =  <span class="string">"0AA"</span></div><div class="line">Action.c(<span class="number">33</span>): web_submit_data(<span class="string">"login.pl"</span>) was successful, <span class="number">437</span> body bytes, <span class="number">404</span> header bytes  	[MsgId: MMSG-<span class="number">26386</span>]</div><div class="line">Action.c(<span class="number">50</span>): web_url(<span class="string">"login.pl_2"</span>) was successful, <span class="number">912</span> body bytes, <span class="number">225</span> header bytes  	[MsgId: MMSG-<span class="number">26386</span>]</div><div class="line">Ending action Action.</div><div class="line">Ending iteration <span class="number">1</span>.</div><div class="line">Ending Vuser...</div><div class="line">Starting action vuser_end.</div><div class="line">Ending action vuser_end.</div><div class="line">Vuser Terminated.</div></pre></figure>
+
+<p>可以看到was successful！登陆成功的页面是显示用户名的如下图<br><img src="/image/jojo.png" alt="jojo"><br>修改用户名和密码</p>
+<figure class="highlight c"><pre><div class="line">web_submit_data(<span class="string">"login.pl"</span>,</div><div class="line">		<span class="string">"Action=http://127.0.0.1:1080/WebTours/login.pl"</span>,</div><div class="line">		<span class="string">"Method=POST"</span>,</div><div class="line">		<span class="string">"RecContentType=text/html"</span>,</div><div class="line">		<span class="string">"Referer=http://127.0.0.1:1080/WebTours/nav.pl?in=home"</span>,</div><div class="line">		<span class="string">"Snapshot=t23.inf"</span>,</div><div class="line">		<span class="string">"Mode=HTTP"</span>,</div><div class="line">		ITEMDATA,</div><div class="line">		<span class="string">"Name=userSession"</span>, <span class="string">"Value={CorrelationParameter_1}"</span>, ENDITEM,</div><div class="line">		<span class="string">"Name=username"</span>, <span class="string">"Value=aaa"</span>, ENDITEM,</div><div class="line">		<span class="string">"Name=password"</span>, <span class="string">"Value=aaa"</span>, ENDITEM,</div><div class="line">		<span class="string">"Name=login.x"</span>, <span class="string">"Value=65"</span>, ENDITEM,</div><div class="line">		<span class="string">"Name=login.y"</span>, <span class="string">"Value=8"</span>, ENDITEM,</div><div class="line">		<span class="string">"Name=JSFormSubmit"</span>, <span class="string">"Value=off"</span>, ENDITEM,</div><div class="line">		LAST);</div></pre></figure>
+
+<p>输出结果：</p>
+<figure class="highlight bash"><pre><div class="line">Starting action Action.</div><div class="line">Action.c(<span class="number">6</span>): Registering web_reg_save_param_ex was successful  	[MsgId: MMSG-<span class="number">26390</span>]</div><div class="line">Action.c(<span class="number">16</span>): Notify: Saving Parameter <span class="string">"CorrelationParameter_1 = 0AA"</span>.</div><div class="line">Action.c(<span class="number">16</span>): web_url(<span class="string">"nav.pl"</span>) was successful, <span class="number">1354</span> body bytes, <span class="number">253</span> header bytes  	[MsgId: MMSG-<span class="number">26386</span>]</div><div class="line">Action.c(<span class="number">25</span>): Notify: Parameter Substitution: parameter <span class="string">"CorrelationParameter_1"</span> =  <span class="string">"0AA"</span></div><div class="line">Action.c(<span class="number">25</span>): web_submit_data(<span class="string">"login.pl"</span>) was successful, <span class="number">406</span> body bytes, <span class="number">225</span> header bytes  	[MsgId: MMSG-<span class="number">26386</span>]</div><div class="line">Action.c(<span class="number">42</span>): web_url(<span class="string">"login.pl_2"</span>) was successful, <span class="number">908</span> body bytes, <span class="number">225</span> header bytes  	[MsgId: MMSG-<span class="number">26386</span>]</div><div class="line">Ending action Action.</div><div class="line">Ending iteration <span class="number">1</span>.</div><div class="line">Ending Vuser...</div><div class="line">Starting action vuser_end.</div><div class="line">Ending action vuser_end.</div><div class="line">Vuser Terminated.</div></pre></figure>
+
+<p>还是successful！所以就有问题了。检查点应运而生。<br>在提交数据的前面加上检查点<code>web_reg_find(&quot;Text=jojo&quot;,LAST);</code></p>
+<figure class="highlight bash"><pre><div class="line"><span class="function"><span class="title">Action</span></span>()</div><div class="line">{	</div><div class="line"></div><div class="line">//Correlation comment - Do not change! Original value=<span class="string">'115393.197731875fQDffDHpzAiDDDDDDfzVDpccfzf'</span> Name =<span class="string">'CorrelationParameter_1'</span></div><div class="line"></div><div class="line">	web_reg_save_param_ex(</div><div class="line">		<span class="string">"ParamName=CorrelationParameter_1"</span>,</div><div class="line">		<span class="string">"LB=userSession value="</span>,</div><div class="line">		<span class="string">"RB=&gt;\n&lt;table border"</span>,</div><div class="line">		SEARCH_FILTERS,</div><div class="line">		<span class="string">"Scope=All"</span>,</div><div class="line">		<span class="string">"IgnoreRedirections=Yes"</span>,</div><div class="line">		<span class="string">"RequestUrl=*/nav.pl*"</span>,</div><div class="line">		LAST);</div><div class="line">	web_url(<span class="string">"nav.pl"</span>,</div><div class="line">		<span class="string">"URL=http://127.0.0.1:1080/WebTours/nav.pl?in=home"</span>,</div><div class="line">		<span class="string">"Resource=0"</span>,</div><div class="line">		<span class="string">"RecContentType=text/html"</span>,</div><div class="line">		<span class="string">"Referer=http://127.0.0.1:1080/WebTours/welcome.pl?signOff=true"</span>,</div><div class="line">		<span class="string">"Snapshot=t22.inf"</span>,</div><div class="line">		<span class="string">"Mode=HTTP"</span>,</div><div class="line">		LAST);	</div><div class="line">	web_submit_data(<span class="string">"login.pl"</span>,</div><div class="line">		<span class="string">"Action=http://127.0.0.1:1080/WebTours/login.pl"</span>,</div><div class="line">		<span class="string">"Method=POST"</span>,</div><div class="line">		<span class="string">"RecContentType=text/html"</span>,</div><div class="line">		<span class="string">"Referer=http://127.0.0.1:1080/WebTours/nav.pl?in=home"</span>,</div><div class="line">		<span class="string">"Snapshot=t23.inf"</span>,</div><div class="line">		<span class="string">"Mode=HTTP"</span>,</div><div class="line">		ITEMDATA,</div><div class="line">		<span class="string">"Name=userSession"</span>, <span class="string">"Value={CorrelationParameter_1}"</span>, ENDITEM,</div><div class="line">		<span class="string">"Name=username"</span>, <span class="string">"Value=aaa"</span>, ENDITEM,</div><div class="line">		<span class="string">"Name=password"</span>, <span class="string">"Value=aaa"</span>, ENDITEM,</div><div class="line">		<span class="string">"Name=login.x"</span>, <span class="string">"Value=65"</span>, ENDITEM,</div><div class="line">		<span class="string">"Name=login.y"</span>, <span class="string">"Value=8"</span>, ENDITEM,</div><div class="line">		<span class="string">"Name=JSFormSubmit"</span>, <span class="string">"Value=off"</span>, ENDITEM,</div><div class="line">		LAST);</div><div class="line">		web_reg_find(<span class="string">"Text=jojo"</span>,</div><div class="line">				 LAST);</div><div class="line">	web_url(<span class="string">"login.pl_2"</span>,</div><div class="line">		<span class="string">"URL=http://127.0.0.1:1080/WebTours/login.pl?intro=true"</span>,</div><div class="line">		<span class="string">"Resource=0"</span>,</div><div class="line">		<span class="string">"RecContentType=text/html"</span>,</div><div class="line">		<span class="string">"Referer=http://127.0.0.1:1080/WebTours/login.pl"</span>,</div><div class="line">		<span class="string">"Snapshot=t24.inf"</span>,</div><div class="line">		<span class="string">"Mode=HTTP"</span>,</div><div class="line">		LAST);</div><div class="line"><span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">}</div></pre></figure>
+
+<p>输出结果：</p>
+<figure class="highlight bash"><pre><div class="line">Starting iteration <span class="number">1</span>.</div><div class="line">Starting action Action.</div><div class="line">Action.c(<span class="number">6</span>): Registering web_reg_save_param_ex was successful  	[MsgId: MMSG-<span class="number">26390</span>]</div><div class="line">Action.c(<span class="number">15</span>): Registering web_reg_find was successful  	[MsgId: MMSG-<span class="number">26390</span>]</div><div class="line">Action.c(<span class="number">17</span>): Notify: Saving Parameter <span class="string">"CorrelationParameter_1 = 0AA"</span>.</div><div class="line">Action.c(<span class="number">17</span>): Error -<span class="number">26366</span>: <span class="string">"Text=jojo"</span> not found <span class="keyword">for</span> web_reg_find  	[MsgId: MERR-<span class="number">26366</span>]</div><div class="line">Action.c(<span class="number">40</span>): web_url(<span class="string">"login.pl_2"</span>) highest severity level was <span class="string">"ERROR"</span>, <span class="number">908</span> body bytes, <span class="number">225</span> header bytes  	[MsgId: MMSG-<span class="number">26388</span>]</div><div class="line">Ending action Action.</div><div class="line">Ending iteration <span class="number">1</span>.</div></pre></figure>
+
+<p>可以看到有ERROR,<code>Text=jojo&quot; not found for web_reg_find。</code><b>所以通过检查点得到的警示：一定要在业务层面判断是否成功，不能单单从协议层面判断。</b></p>
+<figure class="highlight c"><pre><div class="line">Action()</div><div class="line">{	</div><div class="line"></div><div class="line"><span class="comment">//Correlation comment - Do not change! Original value='115393.197731875fQDffDHpzAiDDDDDDfzVDpccfzf' Name ='CorrelationParameter_1'</span></div><div class="line"></div><div class="line">	web_reg_save_param_ex(</div><div class="line">		<span class="string">"ParamName=CorrelationParameter_1"</span>,</div><div class="line">		<span class="string">"LB=userSession value="</span>,</div><div class="line">		<span class="string">"RB=&gt;\n&lt;table border"</span>,</div><div class="line">		SEARCH_FILTERS,</div><div class="line">		<span class="string">"Scope=All"</span>,</div><div class="line">		<span class="string">"IgnoreRedirections=Yes"</span>,</div><div class="line">		<span class="string">"RequestUrl=*/nav.pl*"</span>,</div><div class="line">		LAST);</div><div class="line">	web_url(<span class="string">"nav.pl"</span>,</div><div class="line">		<span class="string">"URL=http://127.0.0.1:1080/WebTours/nav.pl?in=home"</span>,</div><div class="line">		<span class="string">"Resource=0"</span>,</div><div class="line">		<span class="string">"RecContentType=text/html"</span>,</div><div class="line">		<span class="string">"Referer=http://127.0.0.1:1080/WebTours/welcome.pl?signOff=true"</span>,</div><div class="line">		<span class="string">"Snapshot=t22.inf"</span>,</div><div class="line">		<span class="string">"Mode=HTTP"</span>,</div><div class="line">		LAST);	</div><div class="line">	web_submit_data(<span class="string">"login.pl"</span>,</div><div class="line">		<span class="string">"Action=http://127.0.0.1:1080/WebTours/login.pl"</span>,</div><div class="line">		<span class="string">"Method=POST"</span>,</div><div class="line">		<span class="string">"RecContentType=text/html"</span>,</div><div class="line">		<span class="string">"Referer=http://127.0.0.1:1080/WebTours/nav.pl?in=home"</span>,</div><div class="line">		<span class="string">"Snapshot=t23.inf"</span>,</div><div class="line">		<span class="string">"Mode=HTTP"</span>,</div><div class="line">		ITEMDATA,</div><div class="line">		<span class="string">"Name=userSession"</span>, <span class="string">"Value={CorrelationParameter_1}"</span>, ENDITEM,</div><div class="line">		<span class="string">"Name=username"</span>, <span class="string">"Value=jojo"</span>, ENDITEM,</div><div class="line">		<span class="string">"Name=password"</span>, <span class="string">"Value=bean"</span>, ENDITEM,</div><div class="line">		<span class="string">"Name=login.x"</span>, <span class="string">"Value=65"</span>, ENDITEM,</div><div class="line">		<span class="string">"Name=login.y"</span>, <span class="string">"Value=8"</span>, ENDITEM,</div><div class="line">		<span class="string">"Name=JSFormSubmit"</span>, <span class="string">"Value=off"</span>, ENDITEM,</div><div class="line">		LAST);</div><div class="line"></div><div class="line">	web_reg_find(<span class="string">"Text=jojo"</span>,</div><div class="line">				 LAST);	</div><div class="line">	web_url(<span class="string">"login.pl_2"</span>,</div><div class="line">		<span class="string">"URL=http://127.0.0.1:1080/WebTours/login.pl?intro=true"</span>,</div><div class="line">		<span class="string">"Resource=0"</span>,</div><div class="line">		<span class="string">"RecContentType=text/html"</span>,</div><div class="line">		<span class="string">"Referer=http://127.0.0.1:1080/WebTours/login.pl"</span>,</div><div class="line">		<span class="string">"Snapshot=t24.inf"</span>,</div><div class="line">		<span class="string">"Mode=HTTP"</span>,</div><div class="line">		LAST);</div><div class="line"><span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">}</div></pre></figure>
+
+<p>输出结果:</p>
+<figure class="highlight bash"><pre><div class="line">Starting iteration <span class="number">1</span>.</div><div class="line">Starting action Action.</div><div class="line">Action.c(<span class="number">6</span>): Registering web_reg_save_param_ex was successful  	[MsgId: MMSG-<span class="number">26390</span>]</div><div class="line">Action.c(<span class="number">15</span>): Notify: Saving Parameter <span class="string">"CorrelationParameter_1 = 0AA"</span>.</div><div class="line">Action.c(<span class="number">15</span>): web_url(<span class="string">"nav.pl"</span>) was successful, <span class="number">1354</span> body bytes, <span class="number">253</span> header bytes  	[MsgId: MMSG-<span class="number">26386</span>]</div><div class="line">Action.c(<span class="number">23</span>): Notify: Parameter Substitution: parameter <span class="string">"CorrelationParameter_1"</span> =  <span class="string">"0AA"</span></div><div class="line">Action.c(<span class="number">23</span>): web_submit_data(<span class="string">"login.pl"</span>) was successful, <span class="number">437</span> body bytes, <span class="number">404</span> header bytes  	[MsgId: MMSG-<span class="number">26386</span>]</div><div class="line">Action.c(<span class="number">39</span>): Registering web_reg_find was successful  	[MsgId: MMSG-<span class="number">26390</span>]</div><div class="line">Action.c(<span class="number">41</span>): Registered web_reg_find successful <span class="keyword">for</span> <span class="string">"Text=jojo"</span> (count=<span class="number">1</span>)  	[MsgId: MMSG-<span class="number">26364</span>]</div><div class="line">Action.c(<span class="number">41</span>): web_url(<span class="string">"login.pl_2"</span>) was successful, <span class="number">912</span> body bytes, <span class="number">225</span> header bytes  	[MsgId: MMSG-<span class="number">26386</span>]</div><div class="line">Ending action Action.</div><div class="line">Ending iteration <span class="number">1</span>.</div></pre></figure>
+
+<p>可以看到<code>Registered web_reg_find successful for &quot;Text=jojo&quot; (count=1)</code><br><img src="/image/jojojo.png" alt="jojojo"></p>
+<ul>
+<li>检查点需要注意的事项<br>  1）尽量使用web_reg_find函数<br>  Web_reg_find是注册类型函数，它本身并不执行，不能通过它的返回值来作为事务的判断条件（因为web_reg_find()的返回值0和1表示web_reg_find()是否注册成功，并不代表查找的内容是否存在，也就是说无论查找的文本内容是否存在，都返回0。它是从返回的缓冲区扫描而不是在接收的页面中查找。这是比web_find更高效的一个函数。web_reg_save_param也是注册类函数，需要放到请求的页面之前，而且查找的内容是服务器返回的缓冲数据中查找，所以查找内容应该看html源代码的内容。<br>  2）检查的字符串尽量不要是中文，避免不必要的麻烦<br>  3）运行时设置中的检查点选项对注册函数无效<br><img src="/image/checkpoint.png" alt="checkpoint"></li>
+</ul>
+<hr>
+<p>学习的课程来自<a href="http://www.dataguru.cn/" target="_blank" rel="external">炼数成金</a>广州八神王磊老师的软件性能测试（第二期）^_^</p>
+
+        </section>
+        <hr/>
+        <nav class="pagination" style="width:auto" role="pagination">
+            
+            <a data-pjax class="newer-posts" href="/2015/02/21/性能测试计划的编写/">← Prev Post</a>
+            
+            <a class="share-button" data-original-title title>Share this Post</a>
+            
+            <a data-pjax class="older-posts" href="/2015/01/31/LoadRunner中的事务和参数化/">Next Post →</a>
+            
+        </nav>
+        <br/>
+        <br/>
+        <section id="comment">
+            <div id="comment-box"></div>
+        </section>
+
+
+    </article>
+</main>
+
+
+  
+<footer class="site-footer">
+<a target="_blank" href="http://mail.qq.com/cgi-bin/qm_share?t=qm_mailme&email=QS80IC8vNCAvdHQBJy45LCAoLW8iLiw" style="text-decoration:none;">给我写信</a>
+
+    
+    <div class="inner">
+        <section class="copyright"><a href="/"></a> &copy; KongnuanZhao 2014</section>
+        <section class="poweredby">Published with <a target="_blank" href="http://hexo.io/">Hexo   </a> and Theme by <a target="_blank" href="https://github.com/yuche/hexo-theme-kael">Kael</a></section>
+    </div>
+</footer>
+</div>
+</div><!-- /scroller -->
+
+</div><!-- /pusher -->
+</div><!-- /container -->
+</div>
+
+<!-- Easter eggs -->
+
+<div class="egg animated">
+    <a id="close-button" href="#">X</a>
+    <div class="block">
+        <div class="loading">
+            <span class="ball1"></span>
+            <span class="ball2"></span>
+        </div>
+    </div>
+</div>
+  
+<script src="//cdn.staticfile.org/jquery/1.11.0/jquery.min.js"></script>
+<script>
+    if (!window.jQuery) {
+        var script = document.createElement('script');
+        script.src = "/js/jquery.min.js";
+        document.body.appendChild(script);
+    }
+</script>
+<script type="text/javascript" src="/js/lib.js"></script>
+<script type="text/javascript" src="/js/main.js"></script>
+
+
+
+
+
+<link rel="stylesheet" href="/modules/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/modules/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+    (function($){
+
+        var wrapAll = function(q) {
+            $(q).each( function() {
+                var $img = $(this),
+                        href = $img.attr('src');
+                $img.wrap('<a rel="fancybox" href="' + href + '" title="' + $img.attr('alt') + '" class="link"></a>');
+            });
+        };
+
+        wrapAll('.post-content img');
+        wrapAll('.post-excerpt img');
+        $('[rel="fancybox"]').fancybox();
+    })(jQuery);
+</script>
+
+
+
+</body>
+</html>
