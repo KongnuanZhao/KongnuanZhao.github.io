@@ -957,28 +957,50 @@
 <li>描述：新建一张表，插入些许数据，将这些数据导入到hdfs</li>
 <li>实践：环境本地伪分布式</li>
 </ul>
-<p>mysql:创建库’catalan’，创建表’sqooptest’，插入数据:<br><img src="/image/sqoop01.png" alt="sqoop"><br>查看数据：<br><img src="/image/sqoop02.png" alt="sqoop"><br>执行命令：<br>sqoop import \<br>–connect jdbc:mysql://localhost:3306/catalan \<br>–username root \<br>–password cloudera \<br>–as-textfile \<br>–table sqooptest \<br>–target-dir /tmp/sqoop/sqooptest \<br>-m 1</p>
-<p>查看结果：<br><img src="/image/sqoop03.png" alt="sqoop"></p>
+<p>mysql:创建库’catalan’，创建表’sqooptest’，插入数据:<br><img src="/image/sqoop01.png" alt="sqoop"><br>查看数据：<br><img src="/image/sqoop02.png" alt="sqoop"><br>执行命令：</p>
+<figure class="highlight bash"><pre><div class="line">sqoop import \</div><div class="line">--connect jdbc:mysql://localhost:<span class="number">3306</span>/catalan \</div><div class="line">--username root \</div><div class="line">--password cloudera \</div><div class="line">--as-textfile \</div><div class="line">--table sqooptest \</div><div class="line">--target-dir /tmp/sqoop/sqooptest \</div><div class="line">-m <span class="number">1</span></div></pre></figure>
+
+<p><img src="/image/sqoop03.png" alt="sqoop"><br>查看结果：<br><img src="/image/sqoop04.png" alt="sqoop"></p>
 <p>##2、Free-form Query Imports##</p>
 <ul>
 <li>描述：新建一张表，插入些许数据，数据中包含换行符，null值，将这些表中的部分数据导入hdfs，null值替换为横杠 ‘-‘，换行符删除掉。</li>
-<li>实践：先插入数据：<br>insert into sqooptest values(5,’\n’,1,’ctrl’);<br>insert into sqooptest values(6,’’,1,’last’);<br>insert into sqooptest values(7,’all’,1,’end’);<br><img src="/image/sqoop04.png" alt="sqoop"><br>sqoop import \<br>–connect jdbc:mysql://localhost:3306/catalan \<br>–username root \<br>–password cloudera \<br>–as-textfile \<br>–query “select * from sqooptest where id &gt;= 3 and \$CONDITIONS” \<br>–null-non-string ‘-‘ \<br>–hive-drop-import-delims \<br>–target-dir /tmp/sqoop/sqooptest2 \<br>–delete-target-dir \<br>–split-by id<br>-m 5<br><img src="/image/sqoop05.png" alt="sqoop"><br>插入一个带NULL的行：<br><img src="/image/sqoop06.png" alt="sqoop"><br>重新执行上述命令，查看结果，可以看到输出结果将String为NULL值的替换成了’-’：<br><img src="/image/sqoop07.png" alt="sqoop"></li>
+<li>实践：先插入数据：</li>
 </ul>
+<figure class="highlight"><pre><div class="line"><span class="operator"><span class="keyword">insert</span> <span class="keyword">into</span> sqooptest <span class="keyword">values</span>(<span class="number">5</span>,<span class="string">'\n'</span>,<span class="number">1</span>,<span class="string">'ctrl'</span>);</span></div><div class="line"><span class="operator"><span class="keyword">insert</span> <span class="keyword">into</span> sqooptest <span class="keyword">values</span>(<span class="number">6</span>,<span class="string">''</span>,<span class="number">1</span>,<span class="string">'last'</span>);</span></div><div class="line"><span class="operator"><span class="keyword">insert</span> <span class="keyword">into</span> sqooptest <span class="keyword">values</span>(<span class="number">7</span>,<span class="string">'all'</span>,<span class="number">1</span>,<span class="string">'end'</span>);</span></div></pre></figure>
+
+<p><img src="/image/sqoop05.png" alt="sqoop"></p>
+<figure class="highlight bash"><pre><div class="line">sqoop import \</div><div class="line">--connect jdbc:mysql://localhost:<span class="number">3306</span>/catalan \</div><div class="line">--username root \</div><div class="line">--password cloudera \</div><div class="line">--as-textfile \</div><div class="line">--query <span class="string">"select * from sqooptest where id &gt;= 3 and \$CONDITIONS"</span> \</div><div class="line">--null-non-string <span class="string">'-'</span> \</div><div class="line">--hive-drop-import-delims \</div><div class="line">--target-dir /tmp/sqoop/sqooptest2 \</div><div class="line">--delete-target-dir \</div><div class="line">--split-by id</div><div class="line">-m <span class="number">5</span></div></pre></figure>
+
+<p><img src="/image/sqoop06.png" alt="sqoop"><br>插入一个带NULL的行：<br><img src="/image/sqoop07.png" alt="sqoop"><br>重新执行上述命令，查看结果，可以看到输出结果将String为NULL值的替换成了’-’：<br><img src="/image/sqoop08.png" alt="sqoop"></p>
 <p>##3、Hive import##</p>
 <ul>
 <li>描述：将MySQL中的数据导入到hive表</li>
-<li>实践：<br>sudo -u hive  \<br>sqoop import \<br>–connect jdbc:mysql://localhost:3306/catalan \<br>–username root \<br>–password cloudera \<br>–hive-import \<br>–table sqooptest \<br>–split-by id \<br>–delete-target-dir \<br>-m 5<br><img src="/image/sqoop08.png" alt="sqoop"><br>查看结果：<br><img src="/image/sqoop09.png" alt="sqoop"><br>可以看到id=5的因为原数据有’\n’所以换行了，加上参数–hive-drop-import-delims \ 去掉换行，重新执行，导入成功。<br><img src="/image/sqoop10.png" alt="sqoop"></li>
+<li>实践：</li>
 </ul>
+<figure class="highlight bash"><pre><div class="line"><span class="built_in">sudo</span> -u hive  \</div><div class="line">sqoop import \</div><div class="line">--connect jdbc:mysql://localhost:<span class="number">3306</span>/catalan \</div><div class="line">--username root \</div><div class="line">--password cloudera \</div><div class="line">--hive-import \</div><div class="line">--table sqooptest \</div><div class="line">--split-by id \</div><div class="line">--delete-target-dir \</div><div class="line">-m <span class="number">5</span></div></pre></figure>
+
+<p><img src="/image/sqoop09.png" alt="sqoop"><br>查看结果：<br><img src="/image/sqoop10.png" alt="sqoop"><br>可以看到id=5的因为原数据有’\n’所以换行了，加上参数–hive-drop-import-delims \ 去掉换行，重新执行，导入成功。<br><img src="/image/sqoop11.png" alt="sqoop"></p>
 <p>##4、HDFS数据export到MySQL##</p>
 <ul>
 <li>描述：生成数据文件，字段间用冒号分割 “:”，上传到hdfs，MySQL建表，表包含一个主键，将数据到入到MySQL表。</li>
-<li>实践：建表和主键<br><img src="/image/sqoop11.png" alt="sqoop"><br>生成数据文件，字段间用冒号分割 “:”，<br><img src="/image/sqoop12.png" alt="sqoop"><br>将数据到入到MySQL表：<br>sudo -u hdfs \<br>sqoop export \<br>–connect jdbc:mysql://localhost:3306/catalan \<br>–username root \<br>–password cloudera \<br>–export-dir /input \<br>–table sqoop_export_table \<br>–input-fields-terminated-by ‘:’ \<br>–input-lines-terminated-by ‘\n’<br><img src="/image/sqoop13.png" alt="sqoop"><br>就插进去了两行，报错了：<br><img src="/image/sqoop14.png" alt="sqoop"><br>本地环境搭各种问题，用上海的环境,编辑文件上传：<br><img src="/image/sqoop15.png" alt="sqoop"><br>建表，并从HDFS导入数据到mysql：<br><img src="/image/sqoop16.png" alt="sqoop"><br>sqoop export \<br>–connect jdbc:mysql://172.30.81.111:3306/sqooptrain \<br>–username root \<br>–password 1QAZxsw@localroot \<br>–export-dir /tmp/catalanfile \<br>–table sqoop_exp_catalan \<br>–input-fields-terminated-by ‘:’ \<br>–input-lines-terminated-by ‘\n’<br>执行最后一行导不进去orz<br><img src="/image/sqoop17.png" alt="sqoop"></li>
+<li>实践：建表和主键<br><img src="/image/sqoop12.png" alt="sqoop"><br>生成数据文件，字段间用冒号分割 “:”，<br><img src="/image/sqoop13.png" alt="sqoop"><br>将数据到入到MySQL表：</li>
 </ul>
+<figure class="highlight bash"><pre><div class="line"><span class="built_in">sudo</span> -u hdfs \</div><div class="line">sqoop <span class="keyword">export</span> \</div><div class="line">--connect jdbc:mysql://localhost:<span class="number">3306</span>/catalan \</div><div class="line">--username root \</div><div class="line">--password cloudera \</div><div class="line">--export-dir /input \</div><div class="line">--table sqoop_<span class="keyword">export</span>_table \</div><div class="line">--input-fields-terminated-by <span class="string">':'</span> \</div><div class="line">--input-lines-terminated-by <span class="string">'\n'</span></div></pre></figure>
+
+<p><img src="/image/sqoop14.png" alt="sqoop"><br>就插进去了两行，报错了：<br><img src="/image/sqoop15.png" alt="sqoop"><br>本地环境搭各种问题，用上海的环境,编辑文件上传：<br><img src="/image/sqoop16.png" alt="sqoop"><br>建表，并从HDFS导入数据到mysql：<br><img src="/image/sqoop17.png" alt="sqoop"></p>
+<figure class="highlight bash"><pre><div class="line">sqoop <span class="keyword">export</span> \</div><div class="line">--connect jdbc:mysql://<span class="number">172.30</span>.<span class="number">81.111</span>:<span class="number">3306</span>/sqooptrain \</div><div class="line">--username root \</div><div class="line">--password <span class="number">1</span>QAZxsw@localroot \</div><div class="line">--export-dir /tmp/catalanfile \</div><div class="line">--table sqoop_exp_catalan \</div><div class="line">--input-fields-terminated-by <span class="string">':'</span> \</div><div class="line">--input-lines-terminated-by <span class="string">'\n'</span></div></pre></figure>
+
+
+<p>执行最后一行导不进去orz<br><img src="/image/sqoop18.png" alt="sqoop"></p>
 <p>##5、在4基础上，新生成一些数据##</p>
 <ul>
 <li>描述：主键一部分重合，一部分不一样，主键重合记录其他字段有更新，将这部分数据merge进4步生成的表中（主键重合更新，不重合插入）</li>
-<li>实践：<br>执行：<br>sqoop export \<br>–connect jdbc:mysql://172.30.81.111:3306/catalantest \<br>–username root \<br>–password 1QAZxsw@localroot \<br>–export-dir /tmp/catalanfile2 \<br>–table sqoop_exp_catalan \<br>–input-fields-terminated-by ‘:’ \<br>–input-lines-terminated-by ‘\n’ \<br>–update-key id \<br>–update-mode allowinsert<br><img src="/image/sqoop18.png" alt="sqoop"><br>在报错的路上越走越远<br>查看日志：<br><img src="/image/sqoop19.png" alt="sqoop"><br>在mysql上执行，<br><img src="/image/sqoop20.png" alt="sqoop"><br>后来，终于插进去了<br><img src="/image/sqoop21.png" alt="sqoop"></li>
+<li>实践：<br>执行：</li>
 </ul>
+<figure class="highlight bash"><pre><div class="line">sqoop <span class="keyword">export</span> \</div><div class="line">--connect jdbc:mysql://<span class="number">172.30</span>.<span class="number">81.111</span>:<span class="number">3306</span>/catalantest \</div><div class="line">--username root \</div><div class="line">--password <span class="number">1</span>QAZxsw@localroot \</div><div class="line">--export-dir /tmp/catalanfile2 \</div><div class="line">--table sqoop_exp_catalan \</div><div class="line">--input-fields-terminated-by <span class="string">':'</span> \</div><div class="line">--input-lines-terminated-by <span class="string">'\n'</span> \</div><div class="line">--update-key id \</div><div class="line">--update-mode allowinsert</div></pre></figure>
+
+
+<p><img src="/image/sqoop19.png" alt="sqoop"><br>在报错的路上越走越远<br>查看日志：<br><img src="/image/sqoop20.png" alt="sqoop"><br>在mysql上执行，<br><img src="/image/sqoop21.png" alt="sqoop"><br>后来，终于插进去了<br><img src="/image/sqoop22.png" alt="sqoop"></p>
 
         </section>
         <hr/>
