@@ -49,6 +49,10 @@
                                 <div class="mp-scroll">
                                 
                                 <li class="search-archive-li mp-pjax">
+                                    <a href="/2018/12/23/flume/">Sample notes on Flume+Kafka</a>
+                                </li>
+                                
+                                <li class="search-archive-li mp-pjax">
                                     <a href="/2018/12/19/sqoop/">Sample notes on sqoop</a>
                                 </li>
                                 
@@ -364,6 +368,11 @@
                                 </li>
                                 
                                 <li class="search-category-li mp-pjax">
+                                    <a href="/categories/flume/">&nbsp;&nbsp;&nbsp;flume</a>
+                                    <small>1</small>
+                                </li>
+                                
+                                <li class="search-category-li mp-pjax">
                                     <a href="/categories/github/">&nbsp;&nbsp;&nbsp;github</a>
                                     <small>1</small>
                                 </li>
@@ -404,12 +413,12 @@
                                 </li>
                                 
                                 <li class="search-category-li mp-pjax">
-                                    <a href="/categories/Hbase/nosql/">&nbsp;&nbsp;&nbsp;nosql</a>
+                                    <a href="/categories/nosql/">&nbsp;&nbsp;&nbsp;nosql</a>
                                     <small>1</small>
                                 </li>
                                 
                                 <li class="search-category-li mp-pjax">
-                                    <a href="/categories/nosql/">&nbsp;&nbsp;&nbsp;nosql</a>
+                                    <a href="/categories/Hbase/nosql/">&nbsp;&nbsp;&nbsp;nosql</a>
                                     <small>1</small>
                                 </li>
                                 
@@ -434,13 +443,13 @@
                                 </li>
                                 
                                 <li class="search-category-li mp-pjax">
-                                    <a href="/categories/性能测试/">&nbsp;&nbsp;&nbsp;性能测试</a>
-                                    <small>15</small>
+                                    <a href="/categories/Java/性能测试/">&nbsp;&nbsp;&nbsp;性能测试</a>
+                                    <small>1</small>
                                 </li>
                                 
                                 <li class="search-category-li mp-pjax">
-                                    <a href="/categories/Java/性能测试/">&nbsp;&nbsp;&nbsp;性能测试</a>
-                                    <small>1</small>
+                                    <a href="/categories/性能测试/">&nbsp;&nbsp;&nbsp;性能测试</a>
+                                    <small>15</small>
                                 </li>
                                 
                                 <li class="search-category-li mp-pjax">
@@ -523,6 +532,11 @@
                                 <li class="search-tag-li mp-pjax">
                                     <a href="/tags/R/">&nbsp;&nbsp;&nbsp;R</a>
                                     <small>2</small>
+                                </li>
+                                
+                                <li class="search-tag-li mp-pjax">
+                                    <a href="/tags/flume/">&nbsp;&nbsp;&nbsp;flume</a>
+                                    <small>1</small>
                                 </li>
                                 
                                 <li class="search-tag-li mp-pjax">
@@ -649,6 +663,8 @@
         </nav>
         <div id="pjax">
             <div class="pjax-hidden" style="display: none">
+                
+                    <a  data-pjax href="/2018/12/23/flume/">Sample notes on Flume+Kafka</a>
                 
                     <a  data-pjax href="/2018/12/19/sqoop/">Sample notes on sqoop</a>
                 
@@ -797,6 +813,8 @@
                 
                     <a data-pjax href="/categories/R/">&nbsp;&nbsp;R</a>
                 
+                    <a data-pjax href="/categories/flume/">&nbsp;&nbsp;flume</a>
+                
                     <a data-pjax href="/categories/github/">&nbsp;&nbsp;github</a>
                 
                     <a data-pjax href="/categories/hbase/hadoop/">&nbsp;&nbsp;hadoop</a>
@@ -813,9 +831,9 @@
                 
                     <a data-pjax href="/categories/maven/">&nbsp;&nbsp;maven</a>
                 
-                    <a data-pjax href="/categories/Hbase/nosql/">&nbsp;&nbsp;nosql</a>
-                
                     <a data-pjax href="/categories/nosql/">&nbsp;&nbsp;nosql</a>
+                
+                    <a data-pjax href="/categories/Hbase/nosql/">&nbsp;&nbsp;nosql</a>
                 
                     <a data-pjax href="/categories/oracle/">&nbsp;&nbsp;oracle</a>
                 
@@ -825,9 +843,9 @@
                 
                     <a data-pjax href="/categories/优化算法/">&nbsp;&nbsp;优化算法</a>
                 
-                    <a data-pjax href="/categories/性能测试/">&nbsp;&nbsp;性能测试</a>
-                
                     <a data-pjax href="/categories/Java/性能测试/">&nbsp;&nbsp;性能测试</a>
+                
+                    <a data-pjax href="/categories/性能测试/">&nbsp;&nbsp;性能测试</a>
                 
                     <a data-pjax href="/categories/操作系统/">&nbsp;&nbsp;操作系统</a>
                 
@@ -855,6 +873,8 @@
                     <a data-pjax href="/tags/Java/">&nbsp;&nbsp;Java</a>
                 
                     <a data-pjax href="/tags/R/">&nbsp;&nbsp;R</a>
+                
+                    <a data-pjax href="/tags/flume/">&nbsp;&nbsp;flume</a>
                 
                     <a data-pjax href="/tags/gitcafe/">&nbsp;&nbsp;gitcafe</a>
                 
@@ -932,6 +952,50 @@
   
 <main class="content" role="main">
 
+    
+    <article class="post">
+
+        <header class="post-header">
+            <div class="tag-tile">
+                
+                
+                <a data-pjax href='/tags/flume/'>flume</a>
+                
+                
+                <span class="fa fa-bookmark" style="float:right;color:#fa8072"></span>
+            </div>
+            <h1 class="post-title"><a data-pjax href="/2018/12/23/flume/">Sample notes on Flume+Kafka</a>
+            </h1>
+
+            <div class="post-meta">
+                Post on<span class="fa fa-clock-o"></span>
+                <time datetime="2018-12-23T08:48:56.000Z"
+                      itemprop="datePublished">Dec 23 2018</time>
+            </div>
+        </header>
+        <section class="post-excerpt">
+            <p>
+                
+                Flume
+
+查看flume版本
+
+flume-ng version
+
+
+Flume写HDFS
+source文件编写配置文件catal_flume.conf
+# Define a memory channel called ch1 on agent1agent1.channels.ch1.type = memoryagent1.channels.ch1.capacity = 100000agent1.channels.ch1.trans
+                
+            </p>
+            
+            <p>
+                <a data-pjax href="/2018/12/23/flume/"
+                   class="excerpt-link">Read More...</a>
+            </p>
+            
+        </section>
+    </article>
     
     <article class="post">
 
@@ -1271,45 +1335,6 @@ Administrator@PC-NUAN ~ (gitcafe-pages)$ git remote add origin git@github.com:Ko
             
             <p>
                 <a data-pjax href="/2015/05/27/believe-me/"
-                   class="excerpt-link">Read More...</a>
-            </p>
-            
-        </section>
-    </article>
-    
-    <article class="post">
-
-        <header class="post-header">
-            <div class="tag-tile">
-                
-                
-                <a data-pjax href='/tags/性能测试/'>性能测试</a>
-                
-                
-                <span class="fa fa-bookmark" style="float:right;color:#fa8072"></span>
-            </div>
-            <h1 class="post-title"><a data-pjax href="/2015/04/22/about-thread/">线程的自白</a>
-            </h1>
-
-            <div class="post-meta">
-                Post on<span class="fa fa-clock-o"></span>
-                <time datetime="2015-04-22T11:36:56.000Z"
-                      itemprop="datePublished">Apr 22 2015</time>
-            </div>
-        </header>
-        <section class="post-excerpt">
-            <p>
-                
-                #课堂笔记#目的：了解进程和线程的基本概念。了解操作系统线程模型的演化，加深对线程概念的理解。
-回顾之前做的笔记：操作系统之线程管理操作系统之进程管理
-多核多线程  查看多核多线程top ps -efL pstree -c | grep 进程名字
-#课堂作业#1、Linux操作系统中ps命令如何查看线程？其中输出的各列的含义都是什么？
-[zkn@hadoop1 Desktop]$ ps -auxWarning: bad syntax, 
-                
-            </p>
-            
-            <p>
-                <a data-pjax href="/2015/04/22/about-thread/"
                    class="excerpt-link">Read More...</a>
             </p>
             
