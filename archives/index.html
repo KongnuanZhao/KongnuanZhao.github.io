@@ -49,6 +49,10 @@
                                 <div class="mp-scroll">
                                 
                                 <li class="search-archive-li mp-pjax">
+                                    <a href="/2018/12/19/sqoop/">Sample notes on sqoop</a>
+                                </li>
+                                
+                                <li class="search-archive-li mp-pjax">
                                     <a href="/2017/09/20/jmetal01/">jmetal01</a>
                                 </li>
                                 
@@ -365,12 +369,12 @@
                                 </li>
                                 
                                 <li class="search-category-li mp-pjax">
-                                    <a href="/categories/spark/hadoop/">&nbsp;&nbsp;&nbsp;hadoop</a>
+                                    <a href="/categories/hbase/hadoop/">&nbsp;&nbsp;&nbsp;hadoop</a>
                                     <small>1</small>
                                 </li>
                                 
                                 <li class="search-category-li mp-pjax">
-                                    <a href="/categories/hbase/hadoop/">&nbsp;&nbsp;&nbsp;hadoop</a>
+                                    <a href="/categories/spark/hadoop/">&nbsp;&nbsp;&nbsp;hadoop</a>
                                     <small>1</small>
                                 </li>
                                 
@@ -400,12 +404,12 @@
                                 </li>
                                 
                                 <li class="search-category-li mp-pjax">
-                                    <a href="/categories/nosql/">&nbsp;&nbsp;&nbsp;nosql</a>
+                                    <a href="/categories/Hbase/nosql/">&nbsp;&nbsp;&nbsp;nosql</a>
                                     <small>1</small>
                                 </li>
                                 
                                 <li class="search-category-li mp-pjax">
-                                    <a href="/categories/Hbase/nosql/">&nbsp;&nbsp;&nbsp;nosql</a>
+                                    <a href="/categories/nosql/">&nbsp;&nbsp;&nbsp;nosql</a>
                                     <small>1</small>
                                 </li>
                                 
@@ -416,6 +420,11 @@
                                 
                                 <li class="search-category-li mp-pjax">
                                     <a href="/categories/spark/">&nbsp;&nbsp;&nbsp;spark</a>
+                                    <small>1</small>
+                                </li>
+                                
+                                <li class="search-category-li mp-pjax">
+                                    <a href="/categories/sqoop/">&nbsp;&nbsp;&nbsp;sqoop</a>
                                     <small>1</small>
                                 </li>
                                 
@@ -572,6 +581,11 @@
                                 </li>
                                 
                                 <li class="search-tag-li mp-pjax">
+                                    <a href="/tags/sqoop/">&nbsp;&nbsp;&nbsp;sqoop</a>
+                                    <small>1</small>
+                                </li>
+                                
+                                <li class="search-tag-li mp-pjax">
                                     <a href="/tags/优化算法/">&nbsp;&nbsp;&nbsp;优化算法</a>
                                     <small>1</small>
                                 </li>
@@ -635,6 +649,8 @@
         </nav>
         <div id="pjax">
             <div class="pjax-hidden" style="display: none">
+                
+                    <a  data-pjax href="/2018/12/19/sqoop/">Sample notes on sqoop</a>
                 
                     <a  data-pjax href="/2017/09/20/jmetal01/">jmetal01</a>
                 
@@ -783,9 +799,9 @@
                 
                     <a data-pjax href="/categories/github/">&nbsp;&nbsp;github</a>
                 
-                    <a data-pjax href="/categories/spark/hadoop/">&nbsp;&nbsp;hadoop</a>
-                
                     <a data-pjax href="/categories/hbase/hadoop/">&nbsp;&nbsp;hadoop</a>
+                
+                    <a data-pjax href="/categories/spark/hadoop/">&nbsp;&nbsp;hadoop</a>
                 
                     <a data-pjax href="/categories/hbase/">&nbsp;&nbsp;hbase</a>
                 
@@ -797,13 +813,15 @@
                 
                     <a data-pjax href="/categories/maven/">&nbsp;&nbsp;maven</a>
                 
-                    <a data-pjax href="/categories/nosql/">&nbsp;&nbsp;nosql</a>
-                
                     <a data-pjax href="/categories/Hbase/nosql/">&nbsp;&nbsp;nosql</a>
+                
+                    <a data-pjax href="/categories/nosql/">&nbsp;&nbsp;nosql</a>
                 
                     <a data-pjax href="/categories/oracle/">&nbsp;&nbsp;oracle</a>
                 
                     <a data-pjax href="/categories/spark/">&nbsp;&nbsp;spark</a>
+                
+                    <a data-pjax href="/categories/sqoop/">&nbsp;&nbsp;sqoop</a>
                 
                     <a data-pjax href="/categories/优化算法/">&nbsp;&nbsp;优化算法</a>
                 
@@ -860,6 +878,8 @@
                 
                     <a data-pjax href="/tags/spark/">&nbsp;&nbsp;spark</a>
                 
+                    <a data-pjax href="/tags/sqoop/">&nbsp;&nbsp;sqoop</a>
+                
                     <a data-pjax href="/tags/优化算法/">&nbsp;&nbsp;优化算法</a>
                 
                     <a data-pjax href="/tags/性能测试/">&nbsp;&nbsp;性能测试</a>
@@ -912,6 +932,46 @@
   
 <main class="content" role="main">
 
+    
+    <article class="post">
+
+        <header class="post-header">
+            <div class="tag-tile">
+                
+                
+                <a data-pjax href='/tags/sqoop/'>sqoop</a>
+                
+                
+                <span class="fa fa-bookmark" style="float:right;color:#fa8072"></span>
+            </div>
+            <h1 class="post-title"><a data-pjax href="/2018/12/19/sqoop/">Sample notes on sqoop</a>
+            </h1>
+
+            <div class="post-meta">
+                Post on<span class="fa fa-clock-o"></span>
+                <time datetime="2018-12-19T06:37:52.000Z"
+                      itemprop="datePublished">Dec 19 2018</time>
+            </div>
+        </header>
+        <section class="post-excerpt">
+            <p>
+                
+                ##1、mysql导入hdfs##
+
+描述：新建一张表，插入些许数据，将这些数据导入到hdfs
+实践：环境本地伪分布式
+
+mysql:创建库’catalan’，创建表’sqooptest’，插入数据:查看数据：执行命令：sqoop import \–connect jdbc:mysql://localhost:3306/catalan \–username root \–password cloudera \–as-textfile \
+                
+            </p>
+            
+            <p>
+                <a data-pjax href="/2018/12/19/sqoop/"
+                   class="excerpt-link">Read More...</a>
+            </p>
+            
+        </section>
+    </article>
     
     <article class="post">
 
@@ -1249,43 +1309,6 @@ Administrator@PC-NUAN ~ (gitcafe-pages)$ git remote add origin git@github.com:Ko
             
             <p>
                 <a data-pjax href="/2015/04/22/about-thread/"
-                   class="excerpt-link">Read More...</a>
-            </p>
-            
-        </section>
-    </article>
-    
-    <article class="post">
-
-        <header class="post-header">
-            <div class="tag-tile">
-                
-                
-                <a data-pjax href='/tags/点滴/'>点滴</a>
-                
-                
-                <span class="fa fa-bookmark" style="float:right;color:#fa8072"></span>
-            </div>
-            <h1 class="post-title"><a data-pjax href="/2015/04/17/about-time/">尽我们所能，珍惜这段美妙的旅程</a>
-            </h1>
-
-            <div class="post-meta">
-                Post on<span class="fa fa-clock-o"></span>
-                <time datetime="2015-04-17T06:12:49.000Z"
-                      itemprop="datePublished">Apr 17 2015</time>
-            </div>
-        </header>
-        <section class="post-excerpt">
-            <p>
-                
-                之前，同学推荐的一部电影《About Time》，无心的看过之后却温润的留在了记忆里。简介：
-
-Tim（多姆纳尔·格利森 Domhnall Gleeson 饰）21岁了，他的老爸（比尔·奈伊 Bill Nighy 饰）告诉他，他们家族的男人都有时光旅行的超能力，可以回到过去。于是Tim将信就疑地试了一下，回到了夏天，在那里他试图改变和暗恋对象的关系，却发现怎么穿越时空都不能让不爱你的人爱上你。之后Tim来到了伦敦，成为了一个律师。他爱上
-                
-            </p>
-            
-            <p>
-                <a data-pjax href="/2015/04/17/about-time/"
                    class="excerpt-link">Read More...</a>
             </p>
             
