@@ -952,7 +952,7 @@
     </span>
 
         <section class="post-content">
-            <p>##1、mysql导入hdfs##</p>
+            <h2 id="1、mysql导入hdfs">1、mysql导入hdfs</h2>
 <ul>
 <li>描述：新建一张表，插入些许数据，将这些数据导入到hdfs</li>
 <li>实践：环境本地伪分布式</li>
@@ -961,7 +961,7 @@
 <figure class="highlight bash"><pre><div class="line">sqoop import \</div><div class="line">--connect jdbc:mysql://localhost:<span class="number">3306</span>/catalan \</div><div class="line">--username root \</div><div class="line">--password cloudera \</div><div class="line">--as-textfile \</div><div class="line">--table sqooptest \</div><div class="line">--target-dir /tmp/sqoop/sqooptest \</div><div class="line">-m <span class="number">1</span></div></pre></figure>
 
 <p><img src="/image/sqoop03.png" alt="sqoop"><br>查看结果：<br><img src="/image/sqoop04.png" alt="sqoop"></p>
-<p>##2、Free-form Query Imports##</p>
+<h2 id="2、Free-form_Query_Imports">2、Free-form Query Imports</h2>
 <ul>
 <li>描述：新建一张表，插入些许数据，数据中包含换行符，null值，将这些表中的部分数据导入hdfs，null值替换为横杠 ‘-‘，换行符删除掉。</li>
 <li>实践：先插入数据：</li>
@@ -972,7 +972,7 @@
 <figure class="highlight bash"><pre><div class="line">sqoop import \</div><div class="line">--connect jdbc:mysql://localhost:<span class="number">3306</span>/catalan \</div><div class="line">--username root \</div><div class="line">--password cloudera \</div><div class="line">--as-textfile \</div><div class="line">--query <span class="string">"select * from sqooptest where id &gt;= 3 and \$CONDITIONS"</span> \</div><div class="line">--null-non-string <span class="string">'-'</span> \</div><div class="line">--hive-drop-import-delims \</div><div class="line">--target-dir /tmp/sqoop/sqooptest2 \</div><div class="line">--delete-target-dir \</div><div class="line">--split-by id</div><div class="line">-m <span class="number">5</span></div></pre></figure>
 
 <p><img src="/image/sqoop06.png" alt="sqoop"><br>插入一个带NULL的行：<br><img src="/image/sqoop07.png" alt="sqoop"><br>重新执行上述命令，查看结果，可以看到输出结果将String为NULL值的替换成了’-’：<br><img src="/image/sqoop08.png" alt="sqoop"></p>
-<p>##3、Hive import##</p>
+<h2 id="3、Hive_import">3、Hive import</h2>
 <ul>
 <li>描述：将MySQL中的数据导入到hive表</li>
 <li>实践：</li>
@@ -980,7 +980,7 @@
 <figure class="highlight bash"><pre><div class="line"><span class="built_in">sudo</span> -u hive  \</div><div class="line">sqoop import \</div><div class="line">--connect jdbc:mysql://localhost:<span class="number">3306</span>/catalan \</div><div class="line">--username root \</div><div class="line">--password cloudera \</div><div class="line">--hive-import \</div><div class="line">--table sqooptest \</div><div class="line">--split-by id \</div><div class="line">--delete-target-dir \</div><div class="line">-m <span class="number">5</span></div></pre></figure>
 
 <p><img src="/image/sqoop09.png" alt="sqoop"><br>查看结果：<br><img src="/image/sqoop10.png" alt="sqoop"><br>可以看到id=5的因为原数据有’\n’所以换行了，加上参数–hive-drop-import-delims \ 去掉换行，重新执行，导入成功。<br><img src="/image/sqoop11.png" alt="sqoop"></p>
-<p>##4、HDFS数据export到MySQL##</p>
+<h2 id="4、HDFS数据export到MySQL">4、HDFS数据export到MySQL</h2>
 <ul>
 <li>描述：生成数据文件，字段间用冒号分割 “:”，上传到hdfs，MySQL建表，表包含一个主键，将数据到入到MySQL表。</li>
 <li>实践：建表和主键<br><img src="/image/sqoop12.png" alt="sqoop"><br>生成数据文件，字段间用冒号分割 “:”，<br><img src="/image/sqoop13.png" alt="sqoop"><br>将数据到入到MySQL表：</li>
@@ -992,7 +992,7 @@
 
 
 <p>执行最后一行导不进去orz<br><img src="/image/sqoop18.png" alt="sqoop"></p>
-<p>##5、在4基础上，新生成一些数据##</p>
+<h2 id="5、在4基础上，新生成一些数据">5、在4基础上，新生成一些数据</h2>
 <ul>
 <li>描述：主键一部分重合，一部分不一样，主键重合记录其他字段有更新，将这部分数据merge进4步生成的表中（主键重合更新，不重合插入）</li>
 <li>实践：<br>执行：</li>
