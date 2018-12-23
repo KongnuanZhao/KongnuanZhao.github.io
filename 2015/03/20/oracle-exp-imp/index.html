@@ -81,7 +81,7 @@
                                 </li>
                                 
                                 <li class="search-archive-li mp-pjax">
-                                    <a href="/2016/01/30/from-now/">千里之行始于足下</a>
+                                    <a href="/2016/01/30/from-now/">始于记下</a>
                                 </li>
                                 
                                 <li class="search-archive-li mp-pjax">
@@ -134,10 +134,6 @@
                                 
                                 <li class="search-archive-li mp-pjax">
                                     <a href="/2015/03/23/about-health/">不要等到很累的时候才去休息</a>
-                                </li>
-                                
-                                <li class="search-archive-li mp-pjax">
-                                    <a href="/2015/03/22/web-analytics/">网站分析</a>
                                 </li>
                                 
                                 <li class="search-archive-li mp-pjax">
@@ -298,10 +294,6 @@
                                 
                                 <li class="search-archive-li mp-pjax">
                                     <a href="/2014/12/23/性能测试之时间都去哪了/">性能测试之时间都去哪了</a>
-                                </li>
-                                
-                                <li class="search-archive-li mp-pjax">
-                                    <a href="/2014/12/22/这些年上过的课/">这些年上过的课</a>
                                 </li>
                                 
                                 <li class="search-archive-li mp-pjax">
@@ -474,7 +466,7 @@
                                 
                                 <li class="search-category-li mp-pjax">
                                     <a href="/categories/点滴/">&nbsp;&nbsp;&nbsp;点滴</a>
-                                    <small>13</small>
+                                    <small>12</small>
                                 </li>
                                 
                                 <li class="search-category-li mp-pjax">
@@ -631,7 +623,7 @@
                                 
                                 <li class="search-tag-li mp-pjax">
                                     <a href="/tags/点滴/">&nbsp;&nbsp;&nbsp;点滴</a>
-                                    <small>13</small>
+                                    <small>12</small>
                                 </li>
                                 
                                 <li class="search-tag-li mp-pjax">
@@ -680,7 +672,7 @@
                 
                     <a  data-pjax href="/2016/01/30/maven-version/">Maven(二)用MyEclipse建立Maven骨架的项目</a>
                 
-                    <a  data-pjax href="/2016/01/30/from-now/">千里之行始于足下</a>
+                    <a  data-pjax href="/2016/01/30/from-now/">始于记下</a>
                 
                     <a  data-pjax href="/2015/05/27/believe-me/">世界是心的镜子</a>
                 
@@ -707,8 +699,6 @@
                     <a  data-pjax href="/2015/03/24/about-index/">关于索引的一些总结和思考（上）</a>
                 
                     <a  data-pjax href="/2015/03/23/about-health/">不要等到很累的时候才去休息</a>
-                
-                    <a  data-pjax href="/2015/03/22/web-analytics/">网站分析</a>
                 
                     <a  data-pjax href="/2015/03/21/test-report/">性能测试报告的编写</a>
                 
@@ -789,8 +779,6 @@
                     <a  data-pjax href="/2014/12/23/为什么只有13台dns根服务器/">为什么只有13台dns根服务器</a>
                 
                     <a  data-pjax href="/2014/12/23/性能测试之时间都去哪了/">性能测试之时间都去哪了</a>
-                
-                    <a  data-pjax href="/2014/12/22/这些年上过的课/">这些年上过的课</a>
                 
                     <a  data-pjax href="/2014/12/21/熟悉的陌生人OS/">熟悉的陌生人OS</a>
                 
@@ -973,7 +961,7 @@
 
         <section class="post-content">
             <p>从Oracle10g往后导入导出就有两种方式，一种是传统的exp/imp,另一种则是更为高效的expdp/impdp。</p>
-<p>#为什么有#</p>
+<h1 id="为什么有">为什么有</h1>
 <ul>
 <li>传统的imp/exp更简单一点点。</li>
 <li>数据泵:使用数据泵可以在数据库之间高速传输数据。<ul>
@@ -990,9 +978,9 @@
 </ul>
 </li>
 </ul>
-<p>#实际操作#</p>
-<p>##exp/imp方式##</p>
-<p>###exp导出###</p>
+<h1 id="实际操作">实际操作</h1>
+<h2 id="exp/imp方式">exp/imp方式</h2>
+<h3 id="exp导出">exp导出</h3>
 <ul>
 <li>将数据库orcl完全导出,用户名zkn 密码zkn 导出到D:\zkn.dmp中</li>
 </ul>
@@ -1011,7 +999,7 @@
 </ul>
 <figure class="highlight bash"><pre><div class="line">exp system/zkn@orcl file=d:\tables.dmp tables=(table1,table2)</div></pre></figure>
 
-<p>###导入imp###</p>
+<h3 id="导入imp">导入imp</h3>
 <ul>
 <li>将D:\zkn.dmp 中的数据导入 TEST数据库中。</li>
 </ul>
@@ -1032,8 +1020,8 @@
 </ul>
 <figure class="highlight bash"><pre><div class="line">imp zkn/zkn@orcl  file=d:\tables.dmp  tables=(table1)</div></pre></figure>
 
-<p>##数据泵expdp/impdp##</p>
-<p>###导出empdp###</p>
+<h2 id="数据泵expdp/impdp">数据泵expdp/impdp</h2>
+<h3 id="导出empdp">导出empdp</h3>
 <ul>
 <li>创建DIRECTORY</li>
 </ul>
@@ -1073,7 +1061,7 @@
 <p>导出整个数据库：</p>
 <figure class="highlight bash"><pre><div class="line">expdp test/test@orcl dumpfile =full.dmp full=y logfile=full.log directory=dir_dp job_name=my_job</div></pre></figure>
 
-<p>###导入impdp###</p>
+<h3 id="导入impdp">导入impdp</h3>
 <ul>
 <li>按表导入</li>
 </ul>

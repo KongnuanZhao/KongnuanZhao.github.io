@@ -81,7 +81,7 @@
                                 </li>
                                 
                                 <li class="search-archive-li mp-pjax">
-                                    <a href="/2016/01/30/from-now/">千里之行始于足下</a>
+                                    <a href="/2016/01/30/from-now/">始于记下</a>
                                 </li>
                                 
                                 <li class="search-archive-li mp-pjax">
@@ -134,10 +134,6 @@
                                 
                                 <li class="search-archive-li mp-pjax">
                                     <a href="/2015/03/23/about-health/">不要等到很累的时候才去休息</a>
-                                </li>
-                                
-                                <li class="search-archive-li mp-pjax">
-                                    <a href="/2015/03/22/web-analytics/">网站分析</a>
                                 </li>
                                 
                                 <li class="search-archive-li mp-pjax">
@@ -298,10 +294,6 @@
                                 
                                 <li class="search-archive-li mp-pjax">
                                     <a href="/2014/12/23/性能测试之时间都去哪了/">性能测试之时间都去哪了</a>
-                                </li>
-                                
-                                <li class="search-archive-li mp-pjax">
-                                    <a href="/2014/12/22/这些年上过的课/">这些年上过的课</a>
                                 </li>
                                 
                                 <li class="search-archive-li mp-pjax">
@@ -474,7 +466,7 @@
                                 
                                 <li class="search-category-li mp-pjax">
                                     <a href="/categories/点滴/">&nbsp;&nbsp;&nbsp;点滴</a>
-                                    <small>13</small>
+                                    <small>12</small>
                                 </li>
                                 
                                 <li class="search-category-li mp-pjax">
@@ -631,7 +623,7 @@
                                 
                                 <li class="search-tag-li mp-pjax">
                                     <a href="/tags/点滴/">&nbsp;&nbsp;&nbsp;点滴</a>
-                                    <small>13</small>
+                                    <small>12</small>
                                 </li>
                                 
                                 <li class="search-tag-li mp-pjax">
@@ -680,7 +672,7 @@
                 
                     <a  data-pjax href="/2016/01/30/maven-version/">Maven(二)用MyEclipse建立Maven骨架的项目</a>
                 
-                    <a  data-pjax href="/2016/01/30/from-now/">千里之行始于足下</a>
+                    <a  data-pjax href="/2016/01/30/from-now/">始于记下</a>
                 
                     <a  data-pjax href="/2015/05/27/believe-me/">世界是心的镜子</a>
                 
@@ -707,8 +699,6 @@
                     <a  data-pjax href="/2015/03/24/about-index/">关于索引的一些总结和思考（上）</a>
                 
                     <a  data-pjax href="/2015/03/23/about-health/">不要等到很累的时候才去休息</a>
-                
-                    <a  data-pjax href="/2015/03/22/web-analytics/">网站分析</a>
                 
                     <a  data-pjax href="/2015/03/21/test-report/">性能测试报告的编写</a>
                 
@@ -789,8 +779,6 @@
                     <a  data-pjax href="/2014/12/23/为什么只有13台dns根服务器/">为什么只有13台dns根服务器</a>
                 
                     <a  data-pjax href="/2014/12/23/性能测试之时间都去哪了/">性能测试之时间都去哪了</a>
-                
-                    <a  data-pjax href="/2014/12/22/这些年上过的课/">这些年上过的课</a>
                 
                     <a  data-pjax href="/2014/12/21/熟悉的陌生人OS/">熟悉的陌生人OS</a>
                 
@@ -972,14 +960,15 @@
     </span>
 
         <section class="post-content">
-            <p>#web services的三个技术基础#</p>
+            <h1 id="web_services的三个技术基础">web services的三个技术基础</h1>
 <ul>
 <li>SOAP(Simple Object Access Protocol) - 简单对象访问协议</li>
 <li>WSDL(Web Services Definition Language) - WEB SERVICES定义语言</li>
 <li>UDDI(Universal Description,Discovery and Integration) - 统一描述、发现、集成</li>
 </ul>
 <p>下面分开来说，</p>
-<p>##SOAP##<br><img src="/image/soap.png" alt="soap"><br>是一个基于XML的协议，其定义了一套编码规则，该规则定义如何将数据表示为消息，以及怎样通过http协议来传输SOAP消息，它主要由以下四部分组成:</p>
+<h2 id="SOAP">SOAP</h2>
+<p><img src="/image/soap.png" alt="soap"><br>是一个基于XML的协议，其定义了一套编码规则，该规则定义如何将数据表示为消息，以及怎样通过http协议来传输SOAP消息，它主要由以下四部分组成:</p>
 <ul>
 <li>SOAP信封（Envelope）定义了一个框架，该框架描述了消息中的内容是什么，包括消息的内容、发送者、接受者、处理者以及如何处理等信息。</li>
 <li>SOAP编码规则，它定义了一种序列化的机制，用于交换应用程序所定义的数据类型的实例。</li>
@@ -1006,7 +995,8 @@
 
 <figure class="highlight bash"><pre><div class="line">HTTP/<span class="number">1.1</span> <span class="number">200</span> OK</div><div class="line">Content-Type: text/xml; charset=utf-<span class="number">8</span></div><div class="line">Content-Length: length</div><div class="line"></div><div class="line">&lt;?xml version=<span class="string">"1.0"</span> encoding=<span class="string">"utf-8"</span>?&gt;</div><div class="line">&lt;string xmlns=<span class="string">"http://WebXml.com.cn/"</span>&gt;string&lt;/string&gt;</div></pre></figure>
 
-<p>##WSDL##<br><img src="/image/webservices.png" alt="webservices"><br>一次Web Services的调用实际上是发送SOAP消息（即XML文档），以一个<a href="http://webservice.webxml.com.cn/WebServices/MobileCodeWS.asmx?wsdl" target="_blank" rel="external">国内手机号码归属地查询WEB服务 通讯和通信</a>Services为例：<br>分析一个portType结点</p>
+<h2 id="WSDL">WSDL</h2>
+<p><img src="/image/webservices.png" alt="webservices"><br>一次Web Services的调用实际上是发送SOAP消息（即XML文档），以一个<a href="http://webservice.webxml.com.cn/WebServices/MobileCodeWS.asmx?wsdl" target="_blank" rel="external">国内手机号码归属地查询WEB服务 通讯和通信</a>Services为例：<br>分析一个portType结点</p>
 <figure class="highlight xml"><pre><div class="line"><span class="tag">&lt;<span class="title">wsdl:portType</span> <span class="attribute">name</span>=<span class="value">"MobileCodeWSSoap"</span>&gt;</span></div><div class="line"> <span class="tag">&lt;<span class="title">wsdl:operation</span> <span class="attribute">name</span>=<span class="value">"getMobileCodeInfo"</span>&gt;</span></div><div class="line">   <span class="tag">&lt;<span class="title">wsdl:documentation</span> <span class="attribute">xmlns:wsdl</span>=<span class="value">"http://schemas.xmlsoap.org/wsdl/"</span>&gt;</span>...<span class="tag">&lt;/<span class="title">wsdl:documentation</span>&gt;</span></div><div class="line">   <span class="tag">&lt;<span class="title">wsdl:input</span> <span class="attribute">message</span>=<span class="value">"tns:getMobileCodeInfoSoapIn"</span>/&gt;</span></div><div class="line">   <span class="tag">&lt;<span class="title">wsdl:output</span> <span class="attribute">message</span>=<span class="value">"tns:getMobileCodeInfoSoapOut"</span>/&gt;</span></div><div class="line"> <span class="tag">&lt;/<span class="title">wsdl:operation</span>&gt;</span></div><div class="line"> <span class="tag">&lt;<span class="title">wsdl:operation</span> <span class="attribute">name</span>=<span class="value">"getDatabaseInfo"</span>&gt;</span></div><div class="line">   <span class="tag">&lt;<span class="title">wsdl:documentation</span> <span class="attribute">xmlns:wsdl</span>=<span class="value">"http://schemas.xmlsoap.org/wsdl/"</span>&gt;</span></div><div class="line">   <span class="tag">&lt;<span class="title">br</span> /&gt;</span><span class="tag">&lt;<span class="title">h3</span>&gt;</span>获得国内手机号码归属地数据库信息<span class="tag">&lt;/<span class="title">h3</span>&gt;</span><span class="tag">&lt;<span class="title">p</span>&gt;</span>输入参数：无；返回数据：一维字符串数组（省份 城市 记录数量）。<span class="tag">&lt;/<span class="title">p</span>&gt;</span><span class="tag">&lt;<span class="title">br</span> /&gt;</span></div><div class="line">  <span class="tag">&lt;/<span class="title">wsdl:documentation</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="title">wsdl:input</span> <span class="attribute">message</span>=<span class="value">"tns:getDatabaseInfoSoapIn"</span>/&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="title">wsdl:output</span> <span class="attribute">message</span>=<span class="value">"tns:getDatabaseInfoSoapOut"</span>/&gt;</span></div><div class="line"> <span class="tag">&lt;/<span class="title">wsdl:operation</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="title">wsdl:portType</span>&gt;</span></div></pre></figure>
 
 <p>该结点里面有两个operation结点，分别为<code>getMobileCodeInfo</code>和<code>getDatabaseInfo</code>,子节点<code>getMobileCodeInfo</code>下有input和output即输入和输出，怎么知道输入的是什么呢？往上面去找message元素，即</p>
@@ -1031,7 +1021,8 @@
 <li>where：该web services的服务地址</li>
 </ul>
 <p>即只要得到了web services的WSDL文档，程序就可以调用web services。</p>
-<p>##UDDI##<br>要调用一个web Service需要几方面的信息。首先需要找到满足需要的Web Service,还需要了解传送请求的模式，即如何调用这个Web Service。web是一个不固定的环境，新的web service在不断增加，旧的web service在不断删除，已有的web service的调用方式可能会随时发生变化，所系客观上需要在web service的发布者和调用者之间建立一种便于查找和发布的机制。UDDI规范为解决这些问题提供了一种途径，web Service的发布者可以将其注册到注册中心，是一种目录服务，web service的调用者可以从注册中心查找到需要的web service并进行调用。</p>
+<h2 id="UDDI">UDDI</h2>
+<p>要调用一个web Service需要几方面的信息。首先需要找到满足需要的Web Service,还需要了解传送请求的模式，即如何调用这个Web Service。web是一个不固定的环境，新的web service在不断增加，旧的web service在不断删除，已有的web service的调用方式可能会随时发生变化，所系客观上需要在web service的发布者和调用者之间建立一种便于查找和发布的机制。UDDI规范为解决这些问题提供了一种途径，web Service的发布者可以将其注册到注册中心，是一种目录服务，web service的调用者可以从注册中心查找到需要的web service并进行调用。</p>
 
         </section>
         <hr/>

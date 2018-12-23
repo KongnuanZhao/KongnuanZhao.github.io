@@ -81,7 +81,7 @@
                                 </li>
                                 
                                 <li class="search-archive-li mp-pjax">
-                                    <a href="/2016/01/30/from-now/">千里之行始于足下</a>
+                                    <a href="/2016/01/30/from-now/">始于记下</a>
                                 </li>
                                 
                                 <li class="search-archive-li mp-pjax">
@@ -134,10 +134,6 @@
                                 
                                 <li class="search-archive-li mp-pjax">
                                     <a href="/2015/03/23/about-health/">不要等到很累的时候才去休息</a>
-                                </li>
-                                
-                                <li class="search-archive-li mp-pjax">
-                                    <a href="/2015/03/22/web-analytics/">网站分析</a>
                                 </li>
                                 
                                 <li class="search-archive-li mp-pjax">
@@ -298,10 +294,6 @@
                                 
                                 <li class="search-archive-li mp-pjax">
                                     <a href="/2014/12/23/性能测试之时间都去哪了/">性能测试之时间都去哪了</a>
-                                </li>
-                                
-                                <li class="search-archive-li mp-pjax">
-                                    <a href="/2014/12/22/这些年上过的课/">这些年上过的课</a>
                                 </li>
                                 
                                 <li class="search-archive-li mp-pjax">
@@ -474,7 +466,7 @@
                                 
                                 <li class="search-category-li mp-pjax">
                                     <a href="/categories/点滴/">&nbsp;&nbsp;&nbsp;点滴</a>
-                                    <small>13</small>
+                                    <small>12</small>
                                 </li>
                                 
                                 <li class="search-category-li mp-pjax">
@@ -631,7 +623,7 @@
                                 
                                 <li class="search-tag-li mp-pjax">
                                     <a href="/tags/点滴/">&nbsp;&nbsp;&nbsp;点滴</a>
-                                    <small>13</small>
+                                    <small>12</small>
                                 </li>
                                 
                                 <li class="search-tag-li mp-pjax">
@@ -680,7 +672,7 @@
                 
                     <a  data-pjax href="/2016/01/30/maven-version/">Maven(二)用MyEclipse建立Maven骨架的项目</a>
                 
-                    <a  data-pjax href="/2016/01/30/from-now/">千里之行始于足下</a>
+                    <a  data-pjax href="/2016/01/30/from-now/">始于记下</a>
                 
                     <a  data-pjax href="/2015/05/27/believe-me/">世界是心的镜子</a>
                 
@@ -707,8 +699,6 @@
                     <a  data-pjax href="/2015/03/24/about-index/">关于索引的一些总结和思考（上）</a>
                 
                     <a  data-pjax href="/2015/03/23/about-health/">不要等到很累的时候才去休息</a>
-                
-                    <a  data-pjax href="/2015/03/22/web-analytics/">网站分析</a>
                 
                     <a  data-pjax href="/2015/03/21/test-report/">性能测试报告的编写</a>
                 
@@ -789,8 +779,6 @@
                     <a  data-pjax href="/2014/12/23/为什么只有13台dns根服务器/">为什么只有13台dns根服务器</a>
                 
                     <a  data-pjax href="/2014/12/23/性能测试之时间都去哪了/">性能测试之时间都去哪了</a>
-                
-                    <a  data-pjax href="/2014/12/22/这些年上过的课/">这些年上过的课</a>
                 
                     <a  data-pjax href="/2014/12/21/熟悉的陌生人OS/">熟悉的陌生人OS</a>
                 
@@ -973,10 +961,13 @@
 
         <section class="post-content">
             <p><img src="/image/about_index.jpg" alt="about_index"></p>
-<p>#索引之基础#</p>
-<p>##什么是索引##<br>数据库的索引类似于书籍的索引。在书籍中，索引允许用户不必翻阅完整个书就能迅速地找到所需要的信息。在数据库中，索引也允许数据库程序迅速地找到表中的数据，而不必扫描整张表。<br>在Oracle中索引和表一样，是段的一种，当我们建一个表，就产生一个表的segment，当在表上的某些列上建索引，就产生一个索引的segment。索引的目的就是让表的查询更快。</p>
-<p>##如何实现##<br>这是因为索引最低级的块（叶块）存储了索引键跟rowid来实现快速获取记录的。查询时的条件（索引键)定位到rowid即数据行的物理地址，从而通过rowid读取到目标数据。<br><img src="/image/index.png" alt="index"><br>这个树底层的块称为叶子节点/叶子块(leaf)，其中分别包含各个索引列具体值（key column value）以及能具体定位到数据块所在位置的rowid(它是指向所索引的行)。叶子节点之上的内部块称为分支块(branch block)/导航块，这些节点用于实现导航。例如，如果想在索引中找到值20，要从树顶开始，找到左分支，我们检查这个块，并发现需要找到范围”20..25”的块，这个块将是叶子块，其中会指示包含数20的行。<br>《收获，不止oracle》中的一个例子<br>如果我们要执行<code>select * from t where id=12;</code>该t表有10050条记录，而id=12仅仅返回一条，t表的id列建了一个索引，通过索引是如何快速的检索到数据的呢？如下图所示，<br><img src="/image/index_select.png" alt="index_select"><br>在这个索引高度下，定位到<code>select * from t where id=12</code>需要三次IO找到id=12所在的行的rowid。假设Oracle全表扫描，遍历所有的数据块，IO的次数必然会超过3次。所以有了这个索引，Oracle就只会去定位扫描部分索引块，提高了效率。<br>（这里 <code>select *</code>中的<code>*</code>是指一行，而该索引只是对id列建索引，因此查询到rowid后必然通过rowid去访问数据块，取出该条数据共4次IO ）</p>
-<p>##索引的特点##<br>还是如上图所示，最底层的叶子块因为装具体的数据，所以比较容易填满，特别是对长度很长的列建索引时更是如此。但在第一层之上的第二层的索引块就不容易填满了，因为第二层只是装第一层的指针而已，而第三层是装第二层的索引块的指针……<br>索引是顺序从表里取数据，再顺序插入到块里形成索引块的，所以说索引块是有序的。所以总结索引的特点：</p>
+<h1 id="索引之基础">索引之基础</h1>
+<h2 id="什么是索引">什么是索引</h2>
+<p>数据库的索引类似于书籍的索引。在书籍中，索引允许用户不必翻阅完整个书就能迅速地找到所需要的信息。在数据库中，索引也允许数据库程序迅速地找到表中的数据，而不必扫描整张表。<br>在Oracle中索引和表一样，是段的一种，当我们建一个表，就产生一个表的segment，当在表上的某些列上建索引，就产生一个索引的segment。索引的目的就是让表的查询更快。</p>
+<h2 id="如何实现">如何实现</h2>
+<p>这是因为索引最低级的块（叶块）存储了索引键跟rowid来实现快速获取记录的。查询时的条件（索引键)定位到rowid即数据行的物理地址，从而通过rowid读取到目标数据。<br><img src="/image/index.png" alt="index"><br>这个树底层的块称为叶子节点/叶子块(leaf)，其中分别包含各个索引列具体值（key column value）以及能具体定位到数据块所在位置的rowid(它是指向所索引的行)。叶子节点之上的内部块称为分支块(branch block)/导航块，这些节点用于实现导航。例如，如果想在索引中找到值20，要从树顶开始，找到左分支，我们检查这个块，并发现需要找到范围”20..25”的块，这个块将是叶子块，其中会指示包含数20的行。<br>《收获，不止oracle》中的一个例子<br>如果我们要执行<code>select * from t where id=12;</code>该t表有10050条记录，而id=12仅仅返回一条，t表的id列建了一个索引，通过索引是如何快速的检索到数据的呢？如下图所示，<br><img src="/image/index_select.png" alt="index_select"><br>在这个索引高度下，定位到<code>select * from t where id=12</code>需要三次IO找到id=12所在的行的rowid。假设Oracle全表扫描，遍历所有的数据块，IO的次数必然会超过3次。所以有了这个索引，Oracle就只会去定位扫描部分索引块，提高了效率。<br>（这里 <code>select *</code>中的<code>*</code>是指一行，而该索引只是对id列建索引，因此查询到rowid后必然通过rowid去访问数据块，取出该条数据共4次IO ）</p>
+<h2 id="索引的特点">索引的特点</h2>
+<p>还是如上图所示，最底层的叶子块因为装具体的数据，所以比较容易填满，特别是对长度很长的列建索引时更是如此。但在第一层之上的第二层的索引块就不容易填满了，因为第二层只是装第一层的指针而已，而第三层是装第二层的索引块的指针……<br>索引是顺序从表里取数据，再顺序插入到块里形成索引块的，所以说索引块是有序的。所以总结索引的特点：</p>
 <ul>
 <li>索引主要有三大特点<ul>
 <li>索引树的高度一般都比较低。</li>
@@ -985,7 +976,7 @@
 </ul>
 </li>
 </ul>
-<p>#索引之实验#</p>
+<h1 id="索引之实验">索引之实验</h1>
 <figure class="highlight bash"><pre><div class="line">C:\Users\Administrator\Desktop&gt;sqlplus / as sysdba</div><div class="line"></div><div class="line">SQL*Plus: Release <span class="number">11.2</span>.<span class="number">0.1</span>.<span class="number">0</span> Production on 星期二 <span class="number">3</span>月 <span class="number">24</span> <span class="number">19</span>:<span class="number">07</span>:<span class="number">38</span> <span class="number">2015</span></div><div class="line"></div><div class="line">Copyright (c) <span class="number">1982</span>, <span class="number">2010</span>, Oracle.  All rights reserved.</div><div class="line"></div><div class="line">连接到:</div><div class="line">Oracle Database <span class="number">11</span>g Enterprise Edition Release <span class="number">11.2</span>.<span class="number">0.1</span>.<span class="number">0</span> - <span class="number">64</span>bit Production</div><div class="line">With the Partitioning, Oracle Label Security, OLAP, Data Mining</div><div class="line">and Real Application Testing options</div><div class="line"></div><div class="line">SQL&gt; create table t1 as select rownum as id ,rownum+<span class="number">1</span> as id2 from dual connect by level&lt;=<span class="number">5</span>;</div><div class="line"></div><div class="line">表已创建。</div><div class="line"></div><div class="line">SQL&gt; create table t2 as select rownum as id ,rownum+<span class="number">1</span> as id2 from dual connect by level&lt;=<span class="number">50</span>;</div><div class="line"></div><div class="line">表已创建。</div><div class="line"></div><div class="line">SQL&gt; create table t3 as select rownum as id ,rownum+<span class="number">1</span> as id2 from dual connect by level&lt;=<span class="number">500</span>;</div><div class="line"></div><div class="line">表已创建。</div><div class="line"></div><div class="line">SQL&gt; create table t4 as select rownum as id ,rownum+<span class="number">1</span> as id2 from dual connect by level&lt;=<span class="number">5000</span>;</div><div class="line"></div><div class="line">表已创建。</div><div class="line"></div><div class="line">SQL&gt; create table t5 as select rownum as id ,rownum+<span class="number">1</span> as id2 from dual connect by level&lt;=<span class="number">50000</span>;</div><div class="line"></div><div class="line">表已创建。</div><div class="line"></div><div class="line">SQL&gt; create table t6 as select rownum as id ,rownum+<span class="number">1</span> as id2 from dual connect by level&lt;=<span class="number">500000</span>;</div><div class="line"></div><div class="line">表已创建。</div><div class="line"></div><div class="line">SQL&gt; create table t7 as select rownum as id ,rownum+<span class="number">1</span> as id2 from dual connect by level&lt;=<span class="number">5000000</span>;</div><div class="line">create table t7 as select rownum as id ,rownum+<span class="number">1</span> as id2 from dual connect by level&lt;=<span class="number">5000000</span></div><div class="line">                                                             *</div><div class="line">第 <span class="number">1</span> 行出现错误:</div><div class="line">ORA-<span class="number">30009</span>: CONNECT BY 操作内存不足</div><div class="line"></div><div class="line">SQL&gt; create index idx_id_t1 on t1(id);</div><div class="line"></div><div class="line">索引已创建。</div><div class="line"></div><div class="line">SQL&gt; create index idx_id_t2 on t2(id);</div><div class="line"></div><div class="line">索引已创建。</div><div class="line"></div><div class="line">SQL&gt; create index idx_id_t3 on t3(id);</div><div class="line"></div><div class="line">索引已创建。</div><div class="line"></div><div class="line">SQL&gt; create index idx_id_t4 on t4(id);</div><div class="line"></div><div class="line">索引已创建。</div><div class="line"></div><div class="line">SQL&gt; create index idx_id_t5 on t5(id);</div><div class="line"></div><div class="line">索引已创建。</div><div class="line"></div><div class="line">SQL&gt; create index idx_id_t6 on t6(id);</div><div class="line"></div><div class="line">索引已创建。</div></pre></figure>
 
 <p>查看这些索引的大小</p>

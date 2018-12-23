@@ -81,7 +81,7 @@
                                 </li>
                                 
                                 <li class="search-archive-li mp-pjax">
-                                    <a href="/2016/01/30/from-now/">千里之行始于足下</a>
+                                    <a href="/2016/01/30/from-now/">始于记下</a>
                                 </li>
                                 
                                 <li class="search-archive-li mp-pjax">
@@ -134,10 +134,6 @@
                                 
                                 <li class="search-archive-li mp-pjax">
                                     <a href="/2015/03/23/about-health/">不要等到很累的时候才去休息</a>
-                                </li>
-                                
-                                <li class="search-archive-li mp-pjax">
-                                    <a href="/2015/03/22/web-analytics/">网站分析</a>
                                 </li>
                                 
                                 <li class="search-archive-li mp-pjax">
@@ -298,10 +294,6 @@
                                 
                                 <li class="search-archive-li mp-pjax">
                                     <a href="/2014/12/23/性能测试之时间都去哪了/">性能测试之时间都去哪了</a>
-                                </li>
-                                
-                                <li class="search-archive-li mp-pjax">
-                                    <a href="/2014/12/22/这些年上过的课/">这些年上过的课</a>
                                 </li>
                                 
                                 <li class="search-archive-li mp-pjax">
@@ -474,7 +466,7 @@
                                 
                                 <li class="search-category-li mp-pjax">
                                     <a href="/categories/点滴/">&nbsp;&nbsp;&nbsp;点滴</a>
-                                    <small>13</small>
+                                    <small>12</small>
                                 </li>
                                 
                                 <li class="search-category-li mp-pjax">
@@ -631,7 +623,7 @@
                                 
                                 <li class="search-tag-li mp-pjax">
                                     <a href="/tags/点滴/">&nbsp;&nbsp;&nbsp;点滴</a>
-                                    <small>13</small>
+                                    <small>12</small>
                                 </li>
                                 
                                 <li class="search-tag-li mp-pjax">
@@ -680,7 +672,7 @@
                 
                     <a  data-pjax href="/2016/01/30/maven-version/">Maven(二)用MyEclipse建立Maven骨架的项目</a>
                 
-                    <a  data-pjax href="/2016/01/30/from-now/">千里之行始于足下</a>
+                    <a  data-pjax href="/2016/01/30/from-now/">始于记下</a>
                 
                     <a  data-pjax href="/2015/05/27/believe-me/">世界是心的镜子</a>
                 
@@ -707,8 +699,6 @@
                     <a  data-pjax href="/2015/03/24/about-index/">关于索引的一些总结和思考（上）</a>
                 
                     <a  data-pjax href="/2015/03/23/about-health/">不要等到很累的时候才去休息</a>
-                
-                    <a  data-pjax href="/2015/03/22/web-analytics/">网站分析</a>
                 
                     <a  data-pjax href="/2015/03/21/test-report/">性能测试报告的编写</a>
                 
@@ -789,8 +779,6 @@
                     <a  data-pjax href="/2014/12/23/为什么只有13台dns根服务器/">为什么只有13台dns根服务器</a>
                 
                     <a  data-pjax href="/2014/12/23/性能测试之时间都去哪了/">性能测试之时间都去哪了</a>
-                
-                    <a  data-pjax href="/2014/12/22/这些年上过的课/">这些年上过的课</a>
                 
                     <a  data-pjax href="/2014/12/21/熟悉的陌生人OS/">熟悉的陌生人OS</a>
                 
@@ -972,10 +960,12 @@
     </span>
 
         <section class="post-content">
-            <p>#课堂笔记#<br>目的：了解进程和线程的基本概念。了解操作系统线程模型的演化，加深对线程概念的理解。</p>
+            <h1 id="课堂笔记">课堂笔记</h1>
+<p>目的：了解进程和线程的基本概念。了解操作系统线程模型的演化，加深对线程概念的理解。</p>
 <p>回顾之前做的笔记：<br><a href="http://www.zhaokongnuan.com/2015/01/09/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E4%B9%8B%E7%BA%BF%E7%A8%8B%E7%AE%A1%E7%90%86/" target="_blank" rel="external">操作系统之线程管理</a><br><a href="http://www.zhaokongnuan.com/2015/01/08/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E4%B9%8B%E8%BF%9B%E7%A8%8B%E7%AE%A1%E7%90%86/" target="_blank" rel="external">操作系统之进程管理</a></p>
 <p>多核多线程  查看多核多线程<br>top ps -efL pstree -c | grep 进程名字</p>
-<p>#课堂作业#<br><b>1、Linux操作系统中ps命令如何查看线程？其中输出的各列的含义都是什么？</b></p>
+<h1 id="课堂作业">课堂作业</h1>
+<p><b>1、Linux操作系统中ps命令如何查看线程？其中输出的各列的含义都是什么？</b></p>
 <figure class="highlight bash"><pre><div class="line">[zkn@hadoop1 Desktop]$ ps -aux</div><div class="line">Warning: bad syntax, perhaps a bogus <span class="string">'-'</span>? See /usr/share/doc/procps-<span class="number">3.2</span>.<span class="number">8</span>/FAQ</div><div class="line">USER       PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND</div><div class="line">root         <span class="number">1</span>  <span class="number">0.9</span>  <span class="number">0.1</span>  <span class="number">19352</span>  <span class="number">1540</span> ?        Ss   <span class="number">08</span>:<span class="number">26</span>   <span class="number">0</span>:<span class="number">02</span> /sbin/init</div><div class="line">root         <span class="number">2</span>  <span class="number">0.0</span>  <span class="number">0.0</span>      <span class="number">0</span>     <span class="number">0</span> ?        S    <span class="number">08</span>:<span class="number">26</span>   <span class="number">0</span>:<span class="number">00</span> [kthreadd]</div><div class="line">root         <span class="number">3</span>  <span class="number">0.0</span>  <span class="number">0.0</span>      <span class="number">0</span>     <span class="number">0</span> ?        S    <span class="number">08</span>:<span class="number">26</span>   <span class="number">0</span>:<span class="number">00</span> [migration/<span class="number">0</span>]</div><div class="line">root         <span class="number">4</span>  <span class="number">0.0</span>  <span class="number">0.0</span>      <span class="number">0</span>     <span class="number">0</span> ?        S    <span class="number">08</span>:<span class="number">26</span>   <span class="number">0</span>:<span class="number">00</span> [ksoftirqd/<span class="number">0</span>]</div><div class="line">……</div></pre></figure>
 
 <p>USER：该程序的属主<br>PID：进程的ID<br>%CPU：进程占用的CPU百分比<br>%MEM：占用内存的百分比<br>VSZ： 该进程使用的虚拟內存量（KB）<br>RSS：  该进程占用的固定內存量（KB）（驻留中页的数量）<br>TTY：是否为登入者执行的程序？若为 tty1-tty6 则为本机登入者，若为 pts/?? 则为远程登入者执行的程序<br>STAT：该程序的状态（ “S”:进程处在睡眠状态,表明这些进程在等待某些事件发生–可能是用户输入或者系统资源的可用性）<br>START：该程序启动时间<br>TIME：该程序运行的时间<br>COMMAND：命令的名称和参数</p>

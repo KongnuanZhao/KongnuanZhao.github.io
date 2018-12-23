@@ -81,7 +81,7 @@
                                 </li>
                                 
                                 <li class="search-archive-li mp-pjax">
-                                    <a href="/2016/01/30/from-now/">千里之行始于足下</a>
+                                    <a href="/2016/01/30/from-now/">始于记下</a>
                                 </li>
                                 
                                 <li class="search-archive-li mp-pjax">
@@ -134,10 +134,6 @@
                                 
                                 <li class="search-archive-li mp-pjax">
                                     <a href="/2015/03/23/about-health/">不要等到很累的时候才去休息</a>
-                                </li>
-                                
-                                <li class="search-archive-li mp-pjax">
-                                    <a href="/2015/03/22/web-analytics/">网站分析</a>
                                 </li>
                                 
                                 <li class="search-archive-li mp-pjax">
@@ -298,10 +294,6 @@
                                 
                                 <li class="search-archive-li mp-pjax">
                                     <a href="/2014/12/23/性能测试之时间都去哪了/">性能测试之时间都去哪了</a>
-                                </li>
-                                
-                                <li class="search-archive-li mp-pjax">
-                                    <a href="/2014/12/22/这些年上过的课/">这些年上过的课</a>
                                 </li>
                                 
                                 <li class="search-archive-li mp-pjax">
@@ -474,7 +466,7 @@
                                 
                                 <li class="search-category-li mp-pjax">
                                     <a href="/categories/点滴/">&nbsp;&nbsp;&nbsp;点滴</a>
-                                    <small>13</small>
+                                    <small>12</small>
                                 </li>
                                 
                                 <li class="search-category-li mp-pjax">
@@ -631,7 +623,7 @@
                                 
                                 <li class="search-tag-li mp-pjax">
                                     <a href="/tags/点滴/">&nbsp;&nbsp;&nbsp;点滴</a>
-                                    <small>13</small>
+                                    <small>12</small>
                                 </li>
                                 
                                 <li class="search-tag-li mp-pjax">
@@ -680,7 +672,7 @@
                 
                     <a  data-pjax href="/2016/01/30/maven-version/">Maven(二)用MyEclipse建立Maven骨架的项目</a>
                 
-                    <a  data-pjax href="/2016/01/30/from-now/">千里之行始于足下</a>
+                    <a  data-pjax href="/2016/01/30/from-now/">始于记下</a>
                 
                     <a  data-pjax href="/2015/05/27/believe-me/">世界是心的镜子</a>
                 
@@ -707,8 +699,6 @@
                     <a  data-pjax href="/2015/03/24/about-index/">关于索引的一些总结和思考（上）</a>
                 
                     <a  data-pjax href="/2015/03/23/about-health/">不要等到很累的时候才去休息</a>
-                
-                    <a  data-pjax href="/2015/03/22/web-analytics/">网站分析</a>
                 
                     <a  data-pjax href="/2015/03/21/test-report/">性能测试报告的编写</a>
                 
@@ -789,8 +779,6 @@
                     <a  data-pjax href="/2014/12/23/为什么只有13台dns根服务器/">为什么只有13台dns根服务器</a>
                 
                     <a  data-pjax href="/2014/12/23/性能测试之时间都去哪了/">性能测试之时间都去哪了</a>
-                
-                    <a  data-pjax href="/2014/12/22/这些年上过的课/">这些年上过的课</a>
                 
                     <a  data-pjax href="/2014/12/21/熟悉的陌生人OS/">熟悉的陌生人OS</a>
                 
@@ -973,9 +961,11 @@
 
         <section class="post-content">
             <p><img src="/image/who.png" alt="who"><br>甚是怀念当时一点也不懂oracle然后一股脑认真学习，一笔一划做笔记的样子，所以决定重新一点一滴整理下学过的点点滴滴。</p>
-<p>#Oracle初相识#<br>Oracle Database 11g：“g”代表网格<br>全球网格论坛(GGF)<br>请访问<a href="http://www.gridforum.org" target="_blank" rel="external">GGF网站</a><br><img src="/image/oracle.png" alt="oracle"></p>
-<p>##数据库安装（略）##</p>
-<p>##Oracle 服务##<br>Oracle 在 windows 中安装完成后，会安装很多服务，下面介绍几个主要的服务。<br><img src="/image/oracle2.png" alt="oracle2"></p>
+<h1 id="Oracle初相识">Oracle初相识</h1>
+<p>Oracle Database 11g：“g”代表网格<br>全球网格论坛(GGF)<br>请访问<a href="http://www.gridforum.org" target="_blank" rel="external">GGF网站</a><br><img src="/image/oracle.png" alt="oracle"></p>
+<h2 id="数据库安装（略）">数据库安装（略）</h2>
+<h2 id="Oracle服务">Oracle服务</h2>
+<p>Oracle 在 windows 中安装完成后，会安装很多服务，下面介绍几个主要的服务。<br><img src="/image/oracle2.png" alt="oracle2"></p>
 <ul>
 <li>OracleService+服务名:该服务是数据库启动的基础，只有该服务启动了，Oracle 数据库才能正常启动。这是必须启动的服务。</li>
 <li>OracleOraDb11g_home1TNSListener:该服务是监听服务，只有该服务在服务器上正常启动，客户端才能连接到服务器。该监听服务服务器端为客户端提供的接收客户<br>端发出的请求，然后将请求传递给数据库服务器。一旦建立了连接，客户端和数据库服务器就能直接通信了。</li>
@@ -983,7 +973,8 @@
 <li>OracleJobSchedulerORCL：Oracle作业调度服务，ORCL是Oracle实例标识。此服务被默认设置为禁用状态。</li>
 <li>OracleMTSRecoveryService：服务端控制。该服务允许数据库充当一个微软事务服务器MTS、COM/COM+对象和分布式环境下的事务的资源管理器。（非必须启动）</li>
 </ul>
-<p>##Oracle 客户端工具##<br>Oracle 服务器安装成功后，就可以通过客户端工具连接 Oracle 服务器了，可以到 Oracle官方下载 Oracle 专用的客户端软件，大多客户端工具都是基于 Oracle 客户端软件的。接下来介绍几种常用的 Oracle 客户端工具。</p>
+<h2 id="Oracle_客户端工具">Oracle 客户端工具</h2>
+<p>Oracle 服务器安装成功后，就可以通过客户端工具连接 Oracle 服务器了，可以到 Oracle官方下载 Oracle 专用的客户端软件，大多客户端工具都是基于 Oracle 客户端软件的。接下来介绍几种常用的 Oracle 客户端工具。</p>
 <ul>
 <li>SQL*Plus 工具</li>
 <li>PL/SQL Developer 工具</li>
@@ -997,7 +988,8 @@
 <li>SERVICE_NAME：在服务器端，用system用户登陆后，<code>sqlplus&gt; show parameter service_name</code>命令察看。　　 </li>
 </ul>
 <p><img src="/image/oracle3.png" alt="oracle3"></p>
-<p>##用于管理Oracle 数据库的工具##<br><img src="/image/oracle4.png" alt="oracle4"></p>
+<h2 id="用于管理Oracle_数据库的工具">用于管理Oracle 数据库的工具</h2>
+<p><img src="/image/oracle4.png" alt="oracle4"></p>
 <ul>
 <li>Oracle Universal Installer (OUI)：Oracle Universal Installer 用于安装Oracle 软件和选件。它可以自动启动Database Configuration Assistant (DBCA) 来创建数据库。</li>
 <li>Database Configuration Assistant (DBCA)：DBCA会根据Oracle提供的模板创建数据库。因此，可以复制预配置的种子数据库，或者，也可以创建自己的数据库和模板。</li>
@@ -1026,18 +1018,19 @@
 <li>SQL<em>Loader :使用SQL</em>Loader 实用程序可以将来自外部文件的数据加载到Oracle 数据库。</li>
 <li>命令行工具</li>
 </ul>
-<p>##ORACLE监听服务##<br>Oracle监听器Listener是一个重要的数据库服务器组件，在整个Oracle体系结构中，扮演着重要的作用。它负责管理 Oracle 数据库和客户端之间的通讯，它在一个特定的网卡端口（默认是TCP 1521端口）上监听连接请求，并将连接转发给数据库。</p>
-<p>###几个重要功能：###</p>
+<h2 id="ORACLE监听服务">ORACLE监听服务</h2>
+<p>Oracle监听器Listener是一个重要的数据库服务器组件，在整个Oracle体系结构中，扮演着重要的作用。它负责管理 Oracle 数据库和客户端之间的通讯，它在一个特定的网卡端口（默认是TCP 1521端口）上监听连接请求，并将连接转发给数据库。</p>
+<h3 id="几个重要功能：">几个重要功能：</h3>
 <ul>
 <li>监听客户端请求。监听器在服务器指定端口（默认为：1521），监听客户端的请求。</li>
 <li>为客户端请求分配服务进程。</li>
 <li>注册实例服务。Listener 是建立实例和客户端进程之间联系的桥梁。Listener 与实例之间的联系，就是通过注册的过程来实现的。注册的过程就是实例告诉监听器，它的数据库数据库实例名称 <code>instance_name</code> 和服务名<code>service_names</code>。监听器注册上这样的信息，对客户端请求根据监听注册信息，找到正确的服务实例名称。目前 Oracle 版本中，提供动态注册和静态注册两种方式。</li>
 </ul>
-<p>###ORACLE监听服务-命令###</p>
+<h3 id="ORACLE监听服务-命令">ORACLE监听服务-命令</h3>
 <figure class="highlight bash"><pre><div class="line">lsnrctl status：查看监听服务的状态。</div><div class="line">lsnrctl start：启动监听</div><div class="line">lsnrctl stop：关闭监听</div><div class="line">lsnrctl service：查看监听详细信息</div><div class="line">lsnrctl reload:重新启动</div><div class="line">lsnrctl show：查看监听参数信息</div></pre></figure>
 
 <p><img src="/image/lsnrctl.png" alt="lsnrctl"></p>
-<p>###ORACLE监听服务-静态注册###</p>
+<h3 id="ORACLE监听服务-静态注册">ORACLE监听服务-静态注册</h3>
 <ul>
 <li>什么是注册？<br>注册就是将数据库作为一个服务注册到监听程序。客户端不需要知道数据库名和实例名，只需要知道该数据库对外提供的服务名就可以申请连接到数据库。这个服务名可能与实例名一样，也有可能不一样。</li>
 <li>什么是静态注册？<br>就是实例启动时读取<code>listener.ora</code>文件的配置，将实例和服务注册到监听程序。无论何时启动一个数据库，默认地都有两条信息注册到监听器中：数据库对应的实例和服务。</li>
@@ -1048,7 +1041,7 @@
 </ul>
 </li>
 </ul>
-<p>###ORACLE监听服务-动态注册###</p>
+<h3 id="ORACLE监听服务-动态注册">ORACLE监听服务-动态注册</h3>
 <ul>
 <li>动态注册是在instance启动的时候PMON(Process Monitor进程监视器)进程根据INIT.ORA中的instance_name,service_name两个参数将实例和服务注册到监听器中。</li>
 </ul>
@@ -1070,17 +1063,19 @@
 <li>动态注册的数据库通过状态信息中的状态READY或状态BLOCKED（对于一个备用数据库）来指明。不管关闭何时数据库，动态注册的数据库都会动态地从监听器注销，而与之相关的信息将从状态列表中消失。这样，不管数据库是在运行还是已经关闭，监听器总是知道它的状态。该信息将被用于连接请求的回退和负载平衡。</li>
 </ul>
 <p><img src="/image/lsn1.png" alt="lsn1"><br><img src="/image/lsn2.png" alt="lsn2"><br><img src="/image/lsn3.png" alt="lsn3"></p>
-<p>##oracle实例名,数据库名,服务名等概念区别与联系##</p>
+<h2 id="ORACLE实例名,数据库名,服务名等概念区别与联系">ORACLE实例名,数据库名,服务名等概念区别与联系</h2>
 <ul>
 <li>查看数据库名<br><img src="/image/ora1.png" alt="ora1"></li>
 <li>查询当前数据库实例名<br><img src="/image/ora2.png" alt="ora2"><br>数据库实例名是用于和操作系统进行联系的标识，就是说数据库和操作系统之间的交互用的是数据库实例名。实例名也被写入参数文件中，该参数为<code>instance_name</code>。数据库名和实例名可以相同也可以不同。在一般情况下，数据库名和实例名是一对一的关系，但如果在oracle并行服务器架构(即oracle实时应用集群)中，数据库名和实例名是一对多的关系。</li>
 <li>查询当前数据库服务名<br><img src="/image/ora3.png" alt="ora3"><br>从oracle9i版本开始，引入了一个新的参数，即数据库服务名。参数名是SERVICE_NAME。如果数据库有域名，则数据库服务名就是全局数据库名；否则，数据库服务名与数据库名相同。</li>
 </ul>
-<p>##ORACLE监听常见问题##<br>1.ORA-12541: TNS: 没有监听器：显而易见，服务器端的监听器没有启动，另外检查客户端IP地址或端口填写是否正确。启动监听器： <code>$ lsnrctl start</code><br>2.ORA-12500: TNS: 监听程序无法启动专用服务器进程： 对于Windows而言，没有启动Oracle实例服务。启动实例服务：<code>oradim –startup -sid orcl</code><br>3.ORA-12535: TNS: 操作超时： 出现这个问题的原因很多，但主要跟网络有关。解决这个问题，首先检查客户端与服务端的网络是否畅通，如果网络连通，则检查两端的防火墙是否阻挡了连接。<br>4.ORA-12154: TNS: 无法处理服务名： 检 查输入的服务名与配置的服务名是否一致。另外注意生成的本地服务名文件<code>network/admin/tnsnames.ora</code><br>5.ORA-12514: TNS: 监听进程不能解析在连接描述符中给出的 SERVICE_NAME打开Net Manager，选中服务名称，检查服务标识栏里的服务名输入是否正确。该服务名必须与服务器端监听器配置的全局数据库名一致。<br>6.ORA-00119和ORA-00132的解决方案</p>
+<h2 id="ORACLE监听常见问题">ORACLE监听常见问题</h2>
+<p>1.ORA-12541: TNS: 没有监听器：显而易见，服务器端的监听器没有启动，另外检查客户端IP地址或端口填写是否正确。启动监听器： <code>$ lsnrctl start</code><br>2.ORA-12500: TNS: 监听程序无法启动专用服务器进程： 对于Windows而言，没有启动Oracle实例服务。启动实例服务：<code>oradim –startup -sid orcl</code><br>3.ORA-12535: TNS: 操作超时： 出现这个问题的原因很多，但主要跟网络有关。解决这个问题，首先检查客户端与服务端的网络是否畅通，如果网络连通，则检查两端的防火墙是否阻挡了连接。<br>4.ORA-12154: TNS: 无法处理服务名： 检 查输入的服务名与配置的服务名是否一致。另外注意生成的本地服务名文件<code>network/admin/tnsnames.ora</code><br>5.ORA-12514: TNS: 监听进程不能解析在连接描述符中给出的 SERVICE_NAME打开Net Manager，选中服务名称，检查服务标识栏里的服务名输入是否正确。该服务名必须与服务器端监听器配置的全局数据库名一致。<br>6.ORA-00119和ORA-00132的解决方案</p>
 <figure class="highlight bash"><pre><div class="line">ORA-<span class="number">00119</span>: invalid specification <span class="keyword">for</span> system parameter LOCAL_LISTENER</div><div class="line">ORA-<span class="number">00132</span>: syntax error or unresolved network name ’LISTENER_ORCL’</div></pre></figure>
 
 <p><b>解决方法一</b>：<br>修改参数文件spfile和pfile<br><img src="/image/err1.png" alt="err1"><br>修改为：<br><code>*.local_listener=‘(ADDRESS = (PROTOCOL = TCP)(HOST = localhost)(PORT = 1521))’</code><br><b>解决方法二：</b><br>修改<code>tnsname.ora</code>,在后面加一行，指定linstener启动时找不到的名字：<br>–LISTENER_ORCL这个是启动时报错找不到的listener<br><img src="/image/err2.png" alt="err2"><br>修改完后startup<br>详细原因有关Oracle启动过程中的一系列动作，可以参看<a href="http://www.zhaokongnuan.com/2015/01/03/Oracle%E5%AD%A6%E4%B9%A0%E4%BA%A4%E6%B5%81%EF%BC%88%E4%BA%8C%EF%BC%89-oracle%E4%BD%93%E7%B3%BB%E7%BB%93%E6%9E%84%E5%8F%8A%E5%90%AF%E5%8A%A8%E6%B5%81%E7%A8%8B/" target="_blank" rel="external">Oracle学习交流（二）–oracle体系结构及启动流程</a></p>
-<p>##附：##<br>ppt下载<a href="http://wenku.baidu.com/view/c8b0ffdeb9d528ea80c77950?fr=prin" target="_blank" rel="external">Oracle交流</a></p>
+<h2 id="附：">附：</h2>
+<p>ppt下载<a href="http://wenku.baidu.com/view/c8b0ffdeb9d528ea80c77950?fr=prin" target="_blank" rel="external">Oracle交流</a></p>
 
         </section>
         <hr/>

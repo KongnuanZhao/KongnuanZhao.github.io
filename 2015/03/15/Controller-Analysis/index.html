@@ -81,7 +81,7 @@
                                 </li>
                                 
                                 <li class="search-archive-li mp-pjax">
-                                    <a href="/2016/01/30/from-now/">千里之行始于足下</a>
+                                    <a href="/2016/01/30/from-now/">始于记下</a>
                                 </li>
                                 
                                 <li class="search-archive-li mp-pjax">
@@ -134,10 +134,6 @@
                                 
                                 <li class="search-archive-li mp-pjax">
                                     <a href="/2015/03/23/about-health/">不要等到很累的时候才去休息</a>
-                                </li>
-                                
-                                <li class="search-archive-li mp-pjax">
-                                    <a href="/2015/03/22/web-analytics/">网站分析</a>
                                 </li>
                                 
                                 <li class="search-archive-li mp-pjax">
@@ -298,10 +294,6 @@
                                 
                                 <li class="search-archive-li mp-pjax">
                                     <a href="/2014/12/23/性能测试之时间都去哪了/">性能测试之时间都去哪了</a>
-                                </li>
-                                
-                                <li class="search-archive-li mp-pjax">
-                                    <a href="/2014/12/22/这些年上过的课/">这些年上过的课</a>
                                 </li>
                                 
                                 <li class="search-archive-li mp-pjax">
@@ -474,7 +466,7 @@
                                 
                                 <li class="search-category-li mp-pjax">
                                     <a href="/categories/点滴/">&nbsp;&nbsp;&nbsp;点滴</a>
-                                    <small>13</small>
+                                    <small>12</small>
                                 </li>
                                 
                                 <li class="search-category-li mp-pjax">
@@ -631,7 +623,7 @@
                                 
                                 <li class="search-tag-li mp-pjax">
                                     <a href="/tags/点滴/">&nbsp;&nbsp;&nbsp;点滴</a>
-                                    <small>13</small>
+                                    <small>12</small>
                                 </li>
                                 
                                 <li class="search-tag-li mp-pjax">
@@ -680,7 +672,7 @@
                 
                     <a  data-pjax href="/2016/01/30/maven-version/">Maven(二)用MyEclipse建立Maven骨架的项目</a>
                 
-                    <a  data-pjax href="/2016/01/30/from-now/">千里之行始于足下</a>
+                    <a  data-pjax href="/2016/01/30/from-now/">始于记下</a>
                 
                     <a  data-pjax href="/2015/05/27/believe-me/">世界是心的镜子</a>
                 
@@ -707,8 +699,6 @@
                     <a  data-pjax href="/2015/03/24/about-index/">关于索引的一些总结和思考（上）</a>
                 
                     <a  data-pjax href="/2015/03/23/about-health/">不要等到很累的时候才去休息</a>
-                
-                    <a  data-pjax href="/2015/03/22/web-analytics/">网站分析</a>
                 
                     <a  data-pjax href="/2015/03/21/test-report/">性能测试报告的编写</a>
                 
@@ -789,8 +779,6 @@
                     <a  data-pjax href="/2014/12/23/为什么只有13台dns根服务器/">为什么只有13台dns根服务器</a>
                 
                     <a  data-pjax href="/2014/12/23/性能测试之时间都去哪了/">性能测试之时间都去哪了</a>
-                
-                    <a  data-pjax href="/2014/12/22/这些年上过的课/">这些年上过的课</a>
                 
                     <a  data-pjax href="/2014/12/21/熟悉的陌生人OS/">熟悉的陌生人OS</a>
                 
@@ -972,9 +960,9 @@
     </span>
 
         <section class="post-content">
-            <p>#课堂笔记#</p>
-<p>##Controller##</p>
-<p>###Controller的引入###</p>
+            <h1 id="课堂笔记">课堂笔记</h1>
+<h2 id="Controller">Controller</h2>
+<h3 id="Controller的引入">Controller的引入</h3>
 <ul>
 <li>需要Controller的原因？<br>做性能测试需要模拟比如一个网站数以万计的用户级的数量，如果要手工测试这是不可能的，所以需要LoadRunner来完成。Controller用来管理和维护场景，可以在一台工作站控制一个场景中的所有虚拟用户Vuser。执行场景时，Controller会将该场景中的每个Vuser分配给一个负载生成器。负载生成器执行脚本，从而使Vuser可以模拟真实用户操作计算机。解决了手工操作不同步和人力、物力、资源浪费的问题。</li>
 <li><p>Controller的启动方式</p>
@@ -1012,7 +1000,7 @@
 </ul>
 </li>
 </ul>
-<p>###负载生成器###</p>
+<h3 id="负载生成器">负载生成器</h3>
 <ul>
 <li>为什么有<br>负载是需要消耗系统资源的，如：CPU、内存、磁盘空间等，模拟越多的用户，也就意味着消耗更多的资源，当一台机器资源模拟不了太多的虚拟用户时，负载机就成为了性能测试的瓶颈。针对这个问题，LoadRunner提供了负载生成器（LoadGenerator）来解决。Load Generator是在场景运行中运行虚拟用户脚本的计算机。它将负载的虚拟用户分配给多个负载机，利用这些机器的硬件资源模拟大量的虚拟用户对被测系统施加更大的压力。</li>
 <li>负载生成器和Controller的关系<br>Controller发号施令，Load Generator负责实施和执行。一个Controller可以控制多台机器上的Load Generator，只需要在其他机器上装有Load Generator启动agent并在网络上找到它，让他们听从指挥，共同完成任务。负载生成器(Load Generators)的使用要保证负载生成器自己不要成为瓶颈。</li>
@@ -1030,7 +1018,7 @@
 </ul>
 </li>
 </ul>
-<p>###IP Spoofer和集合点###</p>
+<h3 id="IP_Spoofer和集合点">IP Spoofer和集合点</h3>
 <ul>
 <li><p>IP欺骗（IP Spoofer）</p>
 <ul>
@@ -1065,7 +1053,7 @@
 </ul>
 </li>
 </ul>
-<p>##Analysis##</p>
+<h2 id="Analysis">Analysis</h2>
 <ul>
 <li>首先必须明确：光靠Analysis是不行的，只要能通过Analysis分析出部分问题就已经很不错了，善于利用它才是最关键的。</li>
 <li>如何启动Analysis？<ul>
@@ -1080,7 +1068,8 @@
 <li>图表的合并（必须X轴的单位是一致的（X轴的度量单位一致））</li>
 <li>拐点<br><img src="/image/point.jpg" alt="point"></li>
 </ul>
-<p>#课堂作业#<br><b>1、详细阐述Controller中面向目的的场景的含义、运行原理和使用方法。</b><br>面向目的场景(Goal-Oriented Scenario)：在面向目标场景中，先定义测试要达到的目标，然后LoadRunner自动基于这些目标创建场景，运行过程中，会不断地把结果和目标相比较，以决定下一步怎么走。</p>
+<h1 id="课堂作业">课堂作业</h1>
+<p><b>1、详细阐述Controller中面向目的的场景的含义、运行原理和使用方法。</b><br>面向目的场景(Goal-Oriented Scenario)：在面向目标场景中，先定义测试要达到的目标，然后LoadRunner自动基于这些目标创建场景，运行过程中，会不断地把结果和目标相比较，以决定下一步怎么走。</p>
 <ul>
 <li>使用方法<br>单击【新建】 ，打开【新建场景】对话框。<br><img src="/image/newScenario.png" alt="newScenario"><br>Controller 面向目的窗口的【Design视图】包含两个主要部分：</li>
 <li>场景目标：可以看到测试目标、达到该目标要使用的用户数、场景持续时间和负载行为。使用【编辑场景目标】对话框可以对目标设置进<br>行定义。<br><img src="/image/scenariogoal.png" alt="scenariogoal"></li>

@@ -81,7 +81,7 @@
                                 </li>
                                 
                                 <li class="search-archive-li mp-pjax">
-                                    <a href="/2016/01/30/from-now/">千里之行始于足下</a>
+                                    <a href="/2016/01/30/from-now/">始于记下</a>
                                 </li>
                                 
                                 <li class="search-archive-li mp-pjax">
@@ -134,10 +134,6 @@
                                 
                                 <li class="search-archive-li mp-pjax">
                                     <a href="/2015/03/23/about-health/">不要等到很累的时候才去休息</a>
-                                </li>
-                                
-                                <li class="search-archive-li mp-pjax">
-                                    <a href="/2015/03/22/web-analytics/">网站分析</a>
                                 </li>
                                 
                                 <li class="search-archive-li mp-pjax">
@@ -298,10 +294,6 @@
                                 
                                 <li class="search-archive-li mp-pjax">
                                     <a href="/2014/12/23/性能测试之时间都去哪了/">性能测试之时间都去哪了</a>
-                                </li>
-                                
-                                <li class="search-archive-li mp-pjax">
-                                    <a href="/2014/12/22/这些年上过的课/">这些年上过的课</a>
                                 </li>
                                 
                                 <li class="search-archive-li mp-pjax">
@@ -474,7 +466,7 @@
                                 
                                 <li class="search-category-li mp-pjax">
                                     <a href="/categories/点滴/">&nbsp;&nbsp;&nbsp;点滴</a>
-                                    <small>13</small>
+                                    <small>12</small>
                                 </li>
                                 
                                 <li class="search-category-li mp-pjax">
@@ -631,7 +623,7 @@
                                 
                                 <li class="search-tag-li mp-pjax">
                                     <a href="/tags/点滴/">&nbsp;&nbsp;&nbsp;点滴</a>
-                                    <small>13</small>
+                                    <small>12</small>
                                 </li>
                                 
                                 <li class="search-tag-li mp-pjax">
@@ -680,7 +672,7 @@
                 
                     <a  data-pjax href="/2016/01/30/maven-version/">Maven(二)用MyEclipse建立Maven骨架的项目</a>
                 
-                    <a  data-pjax href="/2016/01/30/from-now/">千里之行始于足下</a>
+                    <a  data-pjax href="/2016/01/30/from-now/">始于记下</a>
                 
                     <a  data-pjax href="/2015/05/27/believe-me/">世界是心的镜子</a>
                 
@@ -707,8 +699,6 @@
                     <a  data-pjax href="/2015/03/24/about-index/">关于索引的一些总结和思考（上）</a>
                 
                     <a  data-pjax href="/2015/03/23/about-health/">不要等到很累的时候才去休息</a>
-                
-                    <a  data-pjax href="/2015/03/22/web-analytics/">网站分析</a>
                 
                     <a  data-pjax href="/2015/03/21/test-report/">性能测试报告的编写</a>
                 
@@ -789,8 +779,6 @@
                     <a  data-pjax href="/2014/12/23/为什么只有13台dns根服务器/">为什么只有13台dns根服务器</a>
                 
                     <a  data-pjax href="/2014/12/23/性能测试之时间都去哪了/">性能测试之时间都去哪了</a>
-                
-                    <a  data-pjax href="/2014/12/22/这些年上过的课/">这些年上过的课</a>
                 
                     <a  data-pjax href="/2014/12/21/熟悉的陌生人OS/">熟悉的陌生人OS</a>
                 
@@ -972,8 +960,8 @@
     </span>
 
         <section class="post-content">
-            <p>#物理层#</p>
-<p>#域名解析#<br>域名系统等级结构解析流程<br><img src="/image/dns.jpg" alt="dns"></p>
+            <h1 id="域名解析">域名解析</h1>
+<p>域名系统等级结构解析流程<br><img src="/image/dns.jpg" alt="dns"></p>
 <ul>
 <li>假如没有自己的本地DNS服务器，就要找DNS提供商的主机如电信、网通。</li>
 <li>第一步是ns找自己区域内的DNS服务器，如果没有ns就去找根服务器，然后根让ns找com,com让ns去找163.com</li>
@@ -1000,14 +988,15 @@
 <ul>
 <li>P记录，PTR ,POINTER指针记录常被用于反向地址解析，主要应用在电子邮件系统中用于邮件交换。</li>
 </ul>
-<p>#附#<br>关于<a href="https://www.dnspod.cn/" target="_blank" rel="external">DNSPod</a>官网</p>
+<h1 id="附">附</h1>
+<p>关于<a href="https://www.dnspod.cn/" target="_blank" rel="external">DNSPod</a>官网</p>
 <blockquote>
 <p>DNSPod 建立于2006年3月份，是一款免费智能DNS产品。 DNSPod 可以为同时有电信、网通、教育网服务器的网站提供智能的解析，让电信用户访问电信的服务器，网通的用户访问网通的服务器，教育网的用户访问教育网的服务器，达到互联互通的效果。DNSPod是中国第一大DNS解析服务提供商、第一大域名托管商。它除了实时生效、不限制用户添加的域名和记录数量、提供URL转发、搜索引擎优化、域名共享管理、域名锁定、IPv6的支持、动态域名解析、API接口、批量修改管理等先进功能外，还拥有：云DNS、DNSPod DNS Protector（DNSPod 自主研发的DNS 防护软件）、宕机监控、安全中心、7*24小时专业技术支持。并且所有功能都是免费向所有用户提供。</p>
 </blockquote>
 <p>买了国外的域名和空间之后要做的就是把域名解析到国内，这个用什么解析呢？这里就用到了dnspod，一个国内的免费的域名解析。注册账号添加域名之后dnspod会给我们两个国内的解析地址，如下图<br><img src="/image/dnspod1.png" alt="dnspod1"><br>这两个地址是你要在你的域名上绑定的，这一步你要打开你的域名商给你提供的后台，里面有解析到别的地址，比如说<a href="https://www.godaddy.com/?isc=bsfndom4&amp;ci=90231" target="_blank" rel="external">godaddy</a>，进入我的设置然后如下图,设置域名的DNS,在相应域名的Custom DNS里，设置DNS service,添加两条记录即dnspod提供给我们的f1g1ns1.dnspod.net和f1g1ns2.dnspod.net<br><img src="/image/nameserver.png" alt="nameserver"><br>最后等待一段时间之后ping一下自己的设置对不对<br><img src="/image/4.png" alt="4"></p>
 <p>关于github(<a href="https://github.com/" target="_blank" rel="external">https://github.com/</a>)</p>
 <blockquote>
-<p>GitHub 是一个用于使用Git版本控制系统的项目的基于互联网的存取服务,Github虽然是一个代码仓库，但是Github还免费为大家提供一个免费开源Github Pages空间，利用这个空间可以搭建轻量级的博客系统，绑定自己的域名，存放一些图片和文件等等。<br>想要加快博客访问的速度 ，可以移步这篇文章<a href="http://www.zhaokongnuan.com/2015/03/01/github-gitcafe" target="_blank" rel="external">hexo博客同步到github和gitcafe</a></p>
+<p>GitHub 是一个用于使用Git版本控制系统的项目的基于互联网的存取服务,Github虽然是一个代码仓库，但是Github还免费为大家提供一个免费开源Github Pages空间，利用这个空间可以搭建轻量级的博客系统，绑定自己的域名，存放一些图片和文件等等。<br>想要加快博客访问的速度 ，可以移步这篇文章<a href="http://www.catalannuan.com/2015/03/01/github-gitcafe" target="_blank" rel="external">hexo博客同步到github和gitcafe</a></p>
 </blockquote>
 
         </section>

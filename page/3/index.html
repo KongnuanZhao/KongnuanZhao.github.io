@@ -81,7 +81,7 @@
                                 </li>
                                 
                                 <li class="search-archive-li mp-pjax">
-                                    <a href="/2016/01/30/from-now/">千里之行始于足下</a>
+                                    <a href="/2016/01/30/from-now/">始于记下</a>
                                 </li>
                                 
                                 <li class="search-archive-li mp-pjax">
@@ -134,10 +134,6 @@
                                 
                                 <li class="search-archive-li mp-pjax">
                                     <a href="/2015/03/23/about-health/">不要等到很累的时候才去休息</a>
-                                </li>
-                                
-                                <li class="search-archive-li mp-pjax">
-                                    <a href="/2015/03/22/web-analytics/">网站分析</a>
                                 </li>
                                 
                                 <li class="search-archive-li mp-pjax">
@@ -298,10 +294,6 @@
                                 
                                 <li class="search-archive-li mp-pjax">
                                     <a href="/2014/12/23/性能测试之时间都去哪了/">性能测试之时间都去哪了</a>
-                                </li>
-                                
-                                <li class="search-archive-li mp-pjax">
-                                    <a href="/2014/12/22/这些年上过的课/">这些年上过的课</a>
                                 </li>
                                 
                                 <li class="search-archive-li mp-pjax">
@@ -474,7 +466,7 @@
                                 
                                 <li class="search-category-li mp-pjax">
                                     <a href="/categories/点滴/">&nbsp;&nbsp;&nbsp;点滴</a>
-                                    <small>13</small>
+                                    <small>12</small>
                                 </li>
                                 
                                 <li class="search-category-li mp-pjax">
@@ -631,7 +623,7 @@
                                 
                                 <li class="search-tag-li mp-pjax">
                                     <a href="/tags/点滴/">&nbsp;&nbsp;&nbsp;点滴</a>
-                                    <small>13</small>
+                                    <small>12</small>
                                 </li>
                                 
                                 <li class="search-tag-li mp-pjax">
@@ -680,7 +672,7 @@
                 
                     <a  data-pjax href="/2016/01/30/maven-version/">Maven(二)用MyEclipse建立Maven骨架的项目</a>
                 
-                    <a  data-pjax href="/2016/01/30/from-now/">千里之行始于足下</a>
+                    <a  data-pjax href="/2016/01/30/from-now/">始于记下</a>
                 
                     <a  data-pjax href="/2015/05/27/believe-me/">世界是心的镜子</a>
                 
@@ -707,8 +699,6 @@
                     <a  data-pjax href="/2015/03/24/about-index/">关于索引的一些总结和思考（上）</a>
                 
                     <a  data-pjax href="/2015/03/23/about-health/">不要等到很累的时候才去休息</a>
-                
-                    <a  data-pjax href="/2015/03/22/web-analytics/">网站分析</a>
                 
                     <a  data-pjax href="/2015/03/21/test-report/">性能测试报告的编写</a>
                 
@@ -789,8 +779,6 @@
                     <a  data-pjax href="/2014/12/23/为什么只有13台dns根服务器/">为什么只有13台dns根服务器</a>
                 
                     <a  data-pjax href="/2014/12/23/性能测试之时间都去哪了/">性能测试之时间都去哪了</a>
-                
-                    <a  data-pjax href="/2014/12/22/这些年上过的课/">这些年上过的课</a>
                 
                     <a  data-pjax href="/2014/12/21/熟悉的陌生人OS/">熟悉的陌生人OS</a>
                 
@@ -977,9 +965,11 @@
             <p>
                 
                 
-#索引之基础#
-##什么是索引##数据库的索引类似于书籍的索引。在书籍中，索引允许用户不必翻阅完整个书就能迅速地找到所需要的信息。在数据库中，索引也允许数据库程序迅速地找到表中的数据，而不必扫描整张表。在Oracle中索引和表一样，是段的一种，当我们建一个表，就产生一个表的segment，当在表上的某些列上建索引，就产生一个索引的segment。索引的目的就是让表的查询更快。
-##如何实现##这是因为索引最低级的块（叶块）存储了索引键
+索引之基础
+什么是索引
+数据库的索引类似于书籍的索引。在书籍中，索引允许用户不必翻阅完整个书就能迅速地找到所需要的信息。在数据库中，索引也允许数据库程序迅速地找到表中的数据，而不必扫描整张表。在Oracle中索引和表一样，是段的一种，当我们建一个表，就产生一个表的segment，当在表上的某些列上建索引，就产生一个索引的segment。索引的目的就是让表的查询更快。
+如何实现
+这是因为索引最低级的块（叶块）存储了索引键跟rowid来实
                 
             </p>
             
@@ -1016,44 +1006,13 @@
                 
                 最近几天一直觉得很累，像昨天下午睡了一下午，起来之后觉得舒服了很多，但过不了两个小时，那种很累，头脑昏胀的感觉又回来了，于是就在思考，是因为自己不注意休息的问题呢，查阅了相关的资料：
 以下这篇是来自百度知道：
-##凡是不会休息的人，都是不会工作的人## 休息（rest）是指在一定时间内相对地减少活动，使人从生理上和心理上得到松弛，消除或减轻疲劳，恢复精力的过程。“不懂得休息，就不懂得工作。”这句话恐伯是众所周知的了。然而，要如何休息才好
+凡是不会休息的人，都是不会工作的人
+ 休息（rest）是指在一定时间内相对地减少活动，使人从生理上和心理上得到松弛，消除或减轻疲劳，恢复精力的过程。“不懂得休息，就不懂得工作。”这句话恐伯是众所周知的了。然而，要如何休息才好，恐怕
                 
             </p>
             
             <p>
                 <a data-pjax href="/2015/03/23/about-health/"
-                   class="excerpt-link">Read More...</a>
-            </p>
-            
-        </section>
-    </article>
-    
-    <article class="post">
-
-        <header class="post-header">
-            <div class="tag-tile">
-                
-                <span class="fa fa-bookmark" style="float:right;color:#fa8072"></span>
-            </div>
-            <h1 class="post-title"><a data-pjax href="/2015/03/22/web-analytics/">网站分析</a>
-            </h1>
-
-            <div class="post-meta">
-                Post on<span class="fa fa-clock-o"></span>
-                <time datetime="2015-03-22T12:17:58.000Z"
-                      itemprop="datePublished">Mar 22 2015</time>
-            </div>
-        </header>
-        <section class="post-excerpt">
-            <p>
-                
-                （还没有开始整理）扩展阅读：网站统计中的数据收集原理及实现
-
-                
-            </p>
-            
-            <p>
-                <a data-pjax href="/2015/03/22/web-analytics/"
                    class="excerpt-link">Read More...</a>
             </p>
             
@@ -1083,7 +1042,7 @@
         <section class="post-excerpt">
             <p>
                 
-                #课堂笔记#
+                课堂笔记
 
 编写性能测试方案的方法和技巧仍然有效。性能测试计划的编写准确、清晰、完整。
 需要注意的是：
@@ -1093,7 +1052,8 @@
 
 
 没有统一的、标准的报告格式，只需根据实际情况选取适合自身项目的即可。
-#课后作业#1、详细阐述数据库中索引的概念和具体使用场景用户对数据库最频繁的操作是进行数据查询
+课后作业
+1、详细阐述数据库中索引的概念和具体使用场景用户对数据库最频繁的操作是进行数据查询。一般
                 
             </p>
             
@@ -1129,13 +1089,13 @@
             <p>
                 
                 从Oracle10g往后导入导出就有两种方式，一种是传统的exp/imp,另一种则是更为高效的expdp/impdp。
-#为什么有#
+为什么有
 
 传统的imp/exp更简单一点点。
 数据泵:使用数据泵可以在数据库之间高速传输数据。
 用于替代老的exp/imp,速度更快，机制上不同于老的 exp/imp，提供更多的功能。
 始于Oracle10g,从Oracle11g开始，不再提供老的imp/exp的支持。
-expdp差不多2倍于传统的exp操作，i
+expdp差不多2倍于传统的exp操作，imp
                 
             </p>
             
@@ -1172,9 +1132,9 @@ expdp差不多2倍于传统的exp操作，i
         <section class="post-excerpt">
             <p>
                 
-                #关于thrift和maven简介#
+                关于thrift和maven简介
 
-Thrift简介目前流行的服务调用方式有很多种，例如基于 SOAP 消息格式的 Web Service，基于 JSON 消息格式的 RESTful 服务等。其中所用到的数据传输方式包括 XML，JSON 等，然而 XML 相对体积太大，传输效率低，JSON 体积较小，新颖，但还不够完善。由 Facebook 开发的远程服务调用框架 Apache Thrift，它采用接口描述语言定义并创建服务，支持
+Thrift简介目前流行的服务调用方式有很多种，例如基于 SOAP 消息格式的 Web Service，基于 JSON 消息格式的 RESTful 服务等。其中所用到的数据传输方式包括 XML，JSON 等，然而 XML 相对体积太大，传输效率低，JSON 体积较小，新颖，但还不够完善。由 Facebook 开发的远程服务调用框架 Apache Thrift，它采用接口描述语言定义并创建服务，支持可扩
                 
             </p>
             
@@ -1209,7 +1169,7 @@ Thrift简介目前流行的服务调用方式有很多种，例如基于 SOAP �
         <section class="post-excerpt">
             <p>
                 
-                #环境准备#
+                环境准备
 
 Ubuntu
 
@@ -1217,7 +1177,7 @@ ubu@ubuntu:~$ uname -aLinux ubuntu 3.13.0-32-generic #57-Ubuntu SMP Tue Jul 15 0
 
 
 
-ubu@ubuntu:~$ java -versionjava version "1.7.0_75"OpenJDK Runtime Environ
+ubu@ubuntu:~$ java -versionjava version "1.7.0_75"OpenJDK Runtime Environme
                 
             </p>
             
@@ -1287,8 +1247,8 @@ ubu@ubuntu:~$ java -versionjava version "1.7.0_75"OpenJDK Runtime Environ
         <section class="post-excerpt">
             <p>
                 
-                #Hadoop单机模式#
-##安装准备##
+                Hadoop单机模式
+安装准备
 
 Ubuntu
 
@@ -1297,7 +1257,7 @@ ubu@ubuntu:~$ uname -aLinux ubuntu 3.13.0-32-generic #57-Ubuntu SMP Tue Jul 15 0
 
 JDK
 
-sudo gedit ~/.bashrc （注：修改根目录下的bashrc文件，以便设置java环境变量）在
+sudo gedit ~/.bashrc （注：修改根目录下的bashrc文件，以便设置java环境变量）在bashrc
                 
             </p>
             
@@ -1341,6 +1301,44 @@ git statusn branch masternothing to commit, working directory cleangit push gitc
             
             <p>
                 <a data-pjax href="/2015/03/17/github/"
+                   class="excerpt-link">Read More...</a>
+            </p>
+            
+        </section>
+    </article>
+    
+    <article class="post">
+
+        <header class="post-header">
+            <div class="tag-tile">
+                
+                
+                <a data-pjax href='/tags/点滴/'>点滴</a>
+                
+                
+                <span class="fa fa-bookmark" style="float:right;color:#fa8072"></span>
+            </div>
+            <h1 class="post-title"><a data-pjax href="/2015/03/17/music-Avatar-Island-whale/">化身孤岛的鲸</a>
+            </h1>
+
+            <div class="post-meta">
+                Post on<span class="fa fa-clock-o"></span>
+                <time datetime="2015-03-17T04:52:26.000Z"
+                      itemprop="datePublished">Mar 17 2015</time>
+            </div>
+        </header>
+        <section class="post-excerpt">
+            <p>
+                
+                
+
+
+《化身孤岛的鲸》，沃特艾文儿填词作品。原曲为谢安琪的《我们都被忘了》。一首很美的歌~歌词：我是只化身孤岛的蓝鲸有着最巨大的身影鱼虾在身侧穿行也有飞鸟在背上停我路过太多太美的奇景如同伊甸般的仙境而大海太平太静多少故事无人倾听我爱地中海的天晴爱西伯利亚的雪景爱万丈高空的鹰爱肚皮下的藻荇我在尽心尽力地多情直到那一天你的衣衫破旧而歌声却温柔陪我漫无目的地四处漂流我的背脊如荒丘而你却微笑摆首把它当成整个宇宙你与太阳挥手也同海鸥问候陪我爱天爱
+                
+            </p>
+            
+            <p>
+                <a data-pjax href="/2015/03/17/music-Avatar-Island-whale/"
                    class="excerpt-link">Read More...</a>
             </p>
             

@@ -81,7 +81,7 @@
                                 </li>
                                 
                                 <li class="search-archive-li mp-pjax">
-                                    <a href="/2016/01/30/from-now/">千里之行始于足下</a>
+                                    <a href="/2016/01/30/from-now/">始于记下</a>
                                 </li>
                                 
                                 <li class="search-archive-li mp-pjax">
@@ -134,10 +134,6 @@
                                 
                                 <li class="search-archive-li mp-pjax">
                                     <a href="/2015/03/23/about-health/">不要等到很累的时候才去休息</a>
-                                </li>
-                                
-                                <li class="search-archive-li mp-pjax">
-                                    <a href="/2015/03/22/web-analytics/">网站分析</a>
                                 </li>
                                 
                                 <li class="search-archive-li mp-pjax">
@@ -298,10 +294,6 @@
                                 
                                 <li class="search-archive-li mp-pjax">
                                     <a href="/2014/12/23/性能测试之时间都去哪了/">性能测试之时间都去哪了</a>
-                                </li>
-                                
-                                <li class="search-archive-li mp-pjax">
-                                    <a href="/2014/12/22/这些年上过的课/">这些年上过的课</a>
                                 </li>
                                 
                                 <li class="search-archive-li mp-pjax">
@@ -474,7 +466,7 @@
                                 
                                 <li class="search-category-li mp-pjax">
                                     <a href="/categories/点滴/">&nbsp;&nbsp;&nbsp;点滴</a>
-                                    <small>13</small>
+                                    <small>12</small>
                                 </li>
                                 
                                 <li class="search-category-li mp-pjax">
@@ -631,7 +623,7 @@
                                 
                                 <li class="search-tag-li mp-pjax">
                                     <a href="/tags/点滴/">&nbsp;&nbsp;&nbsp;点滴</a>
-                                    <small>13</small>
+                                    <small>12</small>
                                 </li>
                                 
                                 <li class="search-tag-li mp-pjax">
@@ -680,7 +672,7 @@
                 
                     <a  data-pjax href="/2016/01/30/maven-version/">Maven(二)用MyEclipse建立Maven骨架的项目</a>
                 
-                    <a  data-pjax href="/2016/01/30/from-now/">千里之行始于足下</a>
+                    <a  data-pjax href="/2016/01/30/from-now/">始于记下</a>
                 
                     <a  data-pjax href="/2015/05/27/believe-me/">世界是心的镜子</a>
                 
@@ -707,8 +699,6 @@
                     <a  data-pjax href="/2015/03/24/about-index/">关于索引的一些总结和思考（上）</a>
                 
                     <a  data-pjax href="/2015/03/23/about-health/">不要等到很累的时候才去休息</a>
-                
-                    <a  data-pjax href="/2015/03/22/web-analytics/">网站分析</a>
                 
                     <a  data-pjax href="/2015/03/21/test-report/">性能测试报告的编写</a>
                 
@@ -789,8 +779,6 @@
                     <a  data-pjax href="/2014/12/23/为什么只有13台dns根服务器/">为什么只有13台dns根服务器</a>
                 
                     <a  data-pjax href="/2014/12/23/性能测试之时间都去哪了/">性能测试之时间都去哪了</a>
-                
-                    <a  data-pjax href="/2014/12/22/这些年上过的课/">这些年上过的课</a>
                 
                     <a  data-pjax href="/2014/12/21/熟悉的陌生人OS/">熟悉的陌生人OS</a>
                 
@@ -972,9 +960,10 @@
     </span>
 
         <section class="post-content">
-            <p>#课堂笔记#</p>
-<p>##目的##<br>目的：掌握LoadRunner中的关联的基本概念和使用方法</p>
-<p>##概念之关联##</p>
+            <h1 id="课堂笔记">课堂笔记</h1>
+<h2 id="目的">目的</h2>
+<p>目的：掌握LoadRunner中的关联的基本概念和使用方法</p>
+<h2 id="概念之关联">概念之关联</h2>
 <ul>
 <li>关联的定义<br>  因为LoadRunner录制的时候SessionID是写死的，会话结束后该SessionID便会失效，脚本回访就会报错，所以我们需要对类似SessionID从服务器返回动态变化的值进行关联。所以在脚本回放过程中，客户端发出请求，通过关联函数所定义的左右边界值，在服务器所响应的内容中查找，得到相应的值，以变量的形式替换录制时的静态值，从而向服务器发出正确的请求，这种动态获得服务器响应内容的方法被称作关联。</li>
 <li>关联和参数化的区别<br>  参数化是在客户端可以预先定义的，一般来自于一个文件、一个定义的table、通过sql写的一个结果集等，而关联是从服务器获取动态变化的，如SessionID.</li>
@@ -988,14 +977,14 @@
 <li><code>web_reg_save_param</code>用于web_submit_form.用法：<code>web_reg_save_param(&quot;outFlightVal&quot;, &quot;LB=outboundFlight value=&quot;, &quot;RB= checked &gt;&quot;, LAST );</code></li>
 <li>Scope 的值可以为ALL、HEADER、Body、Cookies 是值搜索的范围<br><img src="/image/zhuabao.png" alt="Scope"></li>
 </ul>
-<p>##概念补充之集合点##</p>
+<h2 id="概念补充之集合点">概念补充之集合点</h2>
 <ul>
 <li>集合点的概念<br>  集合点的意思时等到特定的用户数后再一起执行某个操作，比如一起保存，一起提交。比如说某个促销品的促销时间在8点到8点30，这样的话，就可能出现在8点时很多人一起提交的场景，这个时候需要用到集合点。</li>
 <li>解析集合点函数 <code>lr_rendezvous(&quot;test&quot;)</code></li>
 <li>只能在Action中添加集合点</li>
 <li>一般不要在事务中添加集合点，会拉长事务完成的时间。</li>
 </ul>
-<p>##概念补充之检查点##</p>
+<h2 id="概念补充之检查点">概念补充之检查点</h2>
 <ul>
 <li>检查点的概念<br>  至于为什么要用检查点可以用个小例子做个测试，例如一个登陆脚本登陆的账号为jojo，密码为jojo，可以正确登陆，当把账号或密码改掉再执行，发现脚本并没有报错，也顺利执行下来了。原因是什么呢 ？Loadrunner以用户角色向服务器发送一个登陆请求，却不会判断请求的返回消息是什么，只要有返回，即使这是个拒绝登陆的返回，Loadrunner也认为登陆成功了。所以在登录或者其他有重要页面跳转的地方，很有必要做检查点。</li>
 <li>实例<br>  使用上面关联的例子：</li>

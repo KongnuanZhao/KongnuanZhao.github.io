@@ -81,7 +81,7 @@
                                 </li>
                                 
                                 <li class="search-archive-li mp-pjax">
-                                    <a href="/2016/01/30/from-now/">千里之行始于足下</a>
+                                    <a href="/2016/01/30/from-now/">始于记下</a>
                                 </li>
                                 
                                 <li class="search-archive-li mp-pjax">
@@ -134,10 +134,6 @@
                                 
                                 <li class="search-archive-li mp-pjax">
                                     <a href="/2015/03/23/about-health/">不要等到很累的时候才去休息</a>
-                                </li>
-                                
-                                <li class="search-archive-li mp-pjax">
-                                    <a href="/2015/03/22/web-analytics/">网站分析</a>
                                 </li>
                                 
                                 <li class="search-archive-li mp-pjax">
@@ -298,10 +294,6 @@
                                 
                                 <li class="search-archive-li mp-pjax">
                                     <a href="/2014/12/23/性能测试之时间都去哪了/">性能测试之时间都去哪了</a>
-                                </li>
-                                
-                                <li class="search-archive-li mp-pjax">
-                                    <a href="/2014/12/22/这些年上过的课/">这些年上过的课</a>
                                 </li>
                                 
                                 <li class="search-archive-li mp-pjax">
@@ -474,7 +466,7 @@
                                 
                                 <li class="search-category-li mp-pjax">
                                     <a href="/categories/点滴/">&nbsp;&nbsp;&nbsp;点滴</a>
-                                    <small>13</small>
+                                    <small>12</small>
                                 </li>
                                 
                                 <li class="search-category-li mp-pjax">
@@ -631,7 +623,7 @@
                                 
                                 <li class="search-tag-li mp-pjax">
                                     <a href="/tags/点滴/">&nbsp;&nbsp;&nbsp;点滴</a>
-                                    <small>13</small>
+                                    <small>12</small>
                                 </li>
                                 
                                 <li class="search-tag-li mp-pjax">
@@ -680,7 +672,7 @@
                 
                     <a  data-pjax href="/2016/01/30/maven-version/">Maven(二)用MyEclipse建立Maven骨架的项目</a>
                 
-                    <a  data-pjax href="/2016/01/30/from-now/">千里之行始于足下</a>
+                    <a  data-pjax href="/2016/01/30/from-now/">始于记下</a>
                 
                     <a  data-pjax href="/2015/05/27/believe-me/">世界是心的镜子</a>
                 
@@ -707,8 +699,6 @@
                     <a  data-pjax href="/2015/03/24/about-index/">关于索引的一些总结和思考（上）</a>
                 
                     <a  data-pjax href="/2015/03/23/about-health/">不要等到很累的时候才去休息</a>
-                
-                    <a  data-pjax href="/2015/03/22/web-analytics/">网站分析</a>
                 
                     <a  data-pjax href="/2015/03/21/test-report/">性能测试报告的编写</a>
                 
@@ -789,8 +779,6 @@
                     <a  data-pjax href="/2014/12/23/为什么只有13台dns根服务器/">为什么只有13台dns根服务器</a>
                 
                     <a  data-pjax href="/2014/12/23/性能测试之时间都去哪了/">性能测试之时间都去哪了</a>
-                
-                    <a  data-pjax href="/2014/12/22/这些年上过的课/">这些年上过的课</a>
                 
                     <a  data-pjax href="/2014/12/21/熟悉的陌生人OS/">熟悉的陌生人OS</a>
                 
@@ -973,7 +961,7 @@
 
         <section class="post-content">
             <p><img src="/image/my.png" alt="my"></p>
-<p>#课堂笔记#</p>
+<h1 id="课堂笔记">课堂笔记</h1>
 <p>目的：构建起性能测试的基本概念和基本思想</p>
 <blockquote>
 <p>任何事物发展都有一个过程</p>
@@ -983,10 +971,11 @@
 <li>性能关注</li>
 <li>安全关注</li>
 </ul>
-<p>##软件性能##</p>
+<h2 id="软件性能">软件性能</h2>
 <ul>
 <li>用户视角：软件性能就是软件对用户操作的响应时间快，好用，舒服，交互性强。</li>
-<li>系统管理员：<ul>
+<li><p>系统管理员：</p>
+<ul>
 <li>系统的响应时间；</li>
 <li>系统运行时服务器的状态，如CPU利用情况、内存使用情况等；</li>
 <li>系统能否能够实现拓展；</li>
@@ -995,9 +984,10 @@
 <li>系统是否支持7*24小时的业务访问。</li>
 </ul>
 </li>
-<li>性能测试人员：全面的性能–全程性能→全程性能测试。从前台到后台，从现象到本质。</li>
+<li><p>性能测试人员：全面的性能–全程性能→全程性能测试。从前台到后台，从现象到本质。</p>
+</li>
 </ul>
-<p>##性能测试概念##</p>
+<h2 id="性能测试概念">性能测试概念</h2>
 <ul>
 <li>性能测试：在一定负载情况下，系统的响应时间等特性是否满足特定的性能需求。</li>
 <li>负载测试：通过测试系统在资源超负荷情况下的表现，以发现设计上的错误或验证系统的负载能力。</li>
@@ -1005,8 +995,9 @@
 <li>可靠性测试 ：被测系统在长时间运行下的运行情况。</li>
 <li>配置测试：通过调整被测试系统软硬件的不同配置，找到一个最适合被测系统的配置或者获得被测系统在不同配置下的运行情况。</li>
 </ul>
-<p>##性能测试的流程##<br><img src="/image/liucheng.png" alt="liucheng"></p>
-<p>##基本概念##</p>
+<h2 id="性能测试的流程">性能测试的流程</h2>
+<p><img src="/image/liucheng.png" alt="liucheng"></p>
+<h2 id="基本概念">基本概念</h2>
 <ul>
 <li>并发与并行<br>并行：真正的同时进行，比如多核CPU<br>并发：单CPU单核可以并发但不是真正意义上的并行。中断机制。</li>
 <li>并发用户数和在线用户数<br>并发用户数：实际用户对系统造成负载施加压力的。<br>在线用户数：论坛在线用户数10万既包括在操作的人也包括挂着的人即没有对论坛进行操作。</li>
@@ -1016,7 +1007,7 @@
 <li>资源使用率：</li>
 <li>PV和UV<br>PV：PageView:访问一个URL，产生一个PV（页面访问量），每日每个网站的PV量是形容一个网站规模的重要指标。<br>UV:Unique Visitor用户访问，作为一个独立的用户，访问站点的所有页面均算作一个UV。</li>
 </ul>
-<p>##习惯和注意的事项##</p>
+<h2 id="习惯和注意的事项">习惯和注意的事项</h2>
 <ul>
 <li>切忌个人英雄主义，多沟通。</li>
 <li>遇到问题要冷静，先尝试独立分析，养成看日志的习惯。</li>
@@ -1025,7 +1016,7 @@
 <li>尽量在明确性能需求的情况下开始性能测试。</li>
 <li>性能调优的时候，不要一次改变多个配置和条件，一次变一个，这样能更清晰的判定问题的原因。</li>
 </ul>
-<p>#课堂作业#</p>
+<h1 id="课堂作业">课堂作业</h1>
 <p>1.性能测试的概念是什么？负载测试、压力测试、配置测试呢？</p>
 <ul>
 <li>性能测试：在一定负载情况下，系统的响应时间等特性是否满足特定的性能需求。</li>

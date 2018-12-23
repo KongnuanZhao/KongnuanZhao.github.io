@@ -81,7 +81,7 @@
                                 </li>
                                 
                                 <li class="search-archive-li mp-pjax">
-                                    <a href="/2016/01/30/from-now/">千里之行始于足下</a>
+                                    <a href="/2016/01/30/from-now/">始于记下</a>
                                 </li>
                                 
                                 <li class="search-archive-li mp-pjax">
@@ -134,10 +134,6 @@
                                 
                                 <li class="search-archive-li mp-pjax">
                                     <a href="/2015/03/23/about-health/">不要等到很累的时候才去休息</a>
-                                </li>
-                                
-                                <li class="search-archive-li mp-pjax">
-                                    <a href="/2015/03/22/web-analytics/">网站分析</a>
                                 </li>
                                 
                                 <li class="search-archive-li mp-pjax">
@@ -298,10 +294,6 @@
                                 
                                 <li class="search-archive-li mp-pjax">
                                     <a href="/2014/12/23/性能测试之时间都去哪了/">性能测试之时间都去哪了</a>
-                                </li>
-                                
-                                <li class="search-archive-li mp-pjax">
-                                    <a href="/2014/12/22/这些年上过的课/">这些年上过的课</a>
                                 </li>
                                 
                                 <li class="search-archive-li mp-pjax">
@@ -474,7 +466,7 @@
                                 
                                 <li class="search-category-li mp-pjax">
                                     <a href="/categories/点滴/">&nbsp;&nbsp;&nbsp;点滴</a>
-                                    <small>13</small>
+                                    <small>12</small>
                                 </li>
                                 
                                 <li class="search-category-li mp-pjax">
@@ -631,7 +623,7 @@
                                 
                                 <li class="search-tag-li mp-pjax">
                                     <a href="/tags/点滴/">&nbsp;&nbsp;&nbsp;点滴</a>
-                                    <small>13</small>
+                                    <small>12</small>
                                 </li>
                                 
                                 <li class="search-tag-li mp-pjax">
@@ -680,7 +672,7 @@
                 
                     <a  data-pjax href="/2016/01/30/maven-version/">Maven(二)用MyEclipse建立Maven骨架的项目</a>
                 
-                    <a  data-pjax href="/2016/01/30/from-now/">千里之行始于足下</a>
+                    <a  data-pjax href="/2016/01/30/from-now/">始于记下</a>
                 
                     <a  data-pjax href="/2015/05/27/believe-me/">世界是心的镜子</a>
                 
@@ -707,8 +699,6 @@
                     <a  data-pjax href="/2015/03/24/about-index/">关于索引的一些总结和思考（上）</a>
                 
                     <a  data-pjax href="/2015/03/23/about-health/">不要等到很累的时候才去休息</a>
-                
-                    <a  data-pjax href="/2015/03/22/web-analytics/">网站分析</a>
                 
                     <a  data-pjax href="/2015/03/21/test-report/">性能测试报告的编写</a>
                 
@@ -789,8 +779,6 @@
                     <a  data-pjax href="/2014/12/23/为什么只有13台dns根服务器/">为什么只有13台dns根服务器</a>
                 
                     <a  data-pjax href="/2014/12/23/性能测试之时间都去哪了/">性能测试之时间都去哪了</a>
-                
-                    <a  data-pjax href="/2014/12/22/这些年上过的课/">这些年上过的课</a>
                 
                     <a  data-pjax href="/2014/12/21/熟悉的陌生人OS/">熟悉的陌生人OS</a>
                 
@@ -972,8 +960,8 @@
     </span>
 
         <section class="post-content">
-            <p>#Hadoop单机模式#</p>
-<p>##安装准备##</p>
+            <h1 id="Hadoop单机模式">Hadoop单机模式</h1>
+<h2 id="安装准备">安装准备</h2>
 <ul>
 <li>Ubuntu</li>
 </ul>
@@ -988,7 +976,7 @@
 <p>查看java版本以及环境变量</p>
 <figure class="highlight bash"><pre><div class="line">ubu@ubuntu:~$ java -version</div><div class="line">java version <span class="string">"1.7.0_75"</span></div><div class="line">OpenJDK Runtime Environment (IcedTea <span class="number">2.5</span>.<span class="number">4</span>) (<span class="number">7</span>u75-<span class="number">2.5</span>.<span class="number">4</span>-<span class="number">1</span>~trusty1)</div><div class="line">OpenJDK <span class="number">64</span>-Bit Server VM (build <span class="number">24.75</span>-b04, mixed mode)</div><div class="line"></div><div class="line">ubu@ubuntu:~$ <span class="built_in">echo</span> <span class="variable">$JAVA_HOME</span></div><div class="line">/home/ubu/java/jdk1.<span class="number">7.0</span>_75</div></pre></figure>
 
-<p>##安装Hadoop##</p>
+<h2 id="安装Hadoop">安装Hadoop</h2>
 <ul>
 <li>创建hadoop目录</li>
 </ul>
@@ -1010,7 +998,7 @@
 <figure class="highlight bash"><pre><div class="line"><span class="built_in">cd</span> hadoop-<span class="number">1.2</span>.<span class="number">1</span>/bin</div><div class="line">./hadoop version</div><div class="line">ubu@ubuntu:~/java$ hadoop version</div><div class="line">Hadoop <span class="number">1.2</span>.<span class="number">1</span></div><div class="line">Subversion https://svn.apache.org/repos/asf/hadoop/common/branches/branch-<span class="number">1.2</span> -r <span class="number">1503152</span></div><div class="line">Compiled by mattf on Mon Jul <span class="number">22</span> <span class="number">15</span>:<span class="number">23</span>:<span class="number">09</span> PDT <span class="number">2013</span></div><div class="line">From <span class="built_in">source</span> with checksum <span class="number">6923</span>c86528809c4e7e6f493b6b413a9a</div><div class="line">This command was run using /home/ubu/hadoop/hadoop-<span class="number">1.2</span>.<span class="number">1</span>/hadoop-core-<span class="number">1.2</span>.<span class="number">1</span>.jar</div></pre></figure>
 
 <p>至此hadoop单机模式安装已经安装完成，可以配置好HADOOP_HOME方面以后启动查看hadoop<br><code>export PATH=$PATH:/home/ubu/hadoop/hadoop-1.2.1/bin</code></p>
-<p>#Hadoop伪分布模式配置#</p>
+<h1 id="Hadoop伪分布模式配置">Hadoop伪分布模式配置</h1>
 <ul>
 <li>修改<code>conf/core-site.xml</code>，执行命令<code>gedit core-site.xml</code></li>
 </ul>

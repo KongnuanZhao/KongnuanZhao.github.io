@@ -81,7 +81,7 @@
                                 </li>
                                 
                                 <li class="search-archive-li mp-pjax">
-                                    <a href="/2016/01/30/from-now/">千里之行始于足下</a>
+                                    <a href="/2016/01/30/from-now/">始于记下</a>
                                 </li>
                                 
                                 <li class="search-archive-li mp-pjax">
@@ -134,10 +134,6 @@
                                 
                                 <li class="search-archive-li mp-pjax">
                                     <a href="/2015/03/23/about-health/">不要等到很累的时候才去休息</a>
-                                </li>
-                                
-                                <li class="search-archive-li mp-pjax">
-                                    <a href="/2015/03/22/web-analytics/">网站分析</a>
                                 </li>
                                 
                                 <li class="search-archive-li mp-pjax">
@@ -298,10 +294,6 @@
                                 
                                 <li class="search-archive-li mp-pjax">
                                     <a href="/2014/12/23/性能测试之时间都去哪了/">性能测试之时间都去哪了</a>
-                                </li>
-                                
-                                <li class="search-archive-li mp-pjax">
-                                    <a href="/2014/12/22/这些年上过的课/">这些年上过的课</a>
                                 </li>
                                 
                                 <li class="search-archive-li mp-pjax">
@@ -474,7 +466,7 @@
                                 
                                 <li class="search-category-li mp-pjax">
                                     <a href="/categories/点滴/">&nbsp;&nbsp;&nbsp;点滴</a>
-                                    <small>13</small>
+                                    <small>12</small>
                                 </li>
                                 
                                 <li class="search-category-li mp-pjax">
@@ -631,7 +623,7 @@
                                 
                                 <li class="search-tag-li mp-pjax">
                                     <a href="/tags/点滴/">&nbsp;&nbsp;&nbsp;点滴</a>
-                                    <small>13</small>
+                                    <small>12</small>
                                 </li>
                                 
                                 <li class="search-tag-li mp-pjax">
@@ -680,7 +672,7 @@
                 
                     <a  data-pjax href="/2016/01/30/maven-version/">Maven(二)用MyEclipse建立Maven骨架的项目</a>
                 
-                    <a  data-pjax href="/2016/01/30/from-now/">千里之行始于足下</a>
+                    <a  data-pjax href="/2016/01/30/from-now/">始于记下</a>
                 
                     <a  data-pjax href="/2015/05/27/believe-me/">世界是心的镜子</a>
                 
@@ -707,8 +699,6 @@
                     <a  data-pjax href="/2015/03/24/about-index/">关于索引的一些总结和思考（上）</a>
                 
                     <a  data-pjax href="/2015/03/23/about-health/">不要等到很累的时候才去休息</a>
-                
-                    <a  data-pjax href="/2015/03/22/web-analytics/">网站分析</a>
                 
                     <a  data-pjax href="/2015/03/21/test-report/">性能测试报告的编写</a>
                 
@@ -789,8 +779,6 @@
                     <a  data-pjax href="/2014/12/23/为什么只有13台dns根服务器/">为什么只有13台dns根服务器</a>
                 
                     <a  data-pjax href="/2014/12/23/性能测试之时间都去哪了/">性能测试之时间都去哪了</a>
-                
-                    <a  data-pjax href="/2014/12/22/这些年上过的课/">这些年上过的课</a>
                 
                     <a  data-pjax href="/2014/12/21/熟悉的陌生人OS/">熟悉的陌生人OS</a>
                 
@@ -974,11 +962,12 @@
     </span>
 
         <section class="post-content">
-            <p>##1 CPU与GPU的区别##</p>
+            <h2 id="1_CPU与GPU的区别">1 CPU与GPU的区别</h2>
 <p>GPU 采用了数量众多的计算单元和超长流水线，但只有非常简单的控制逻辑并省去了Cache。而CPU不仅被Cache占据了大量空间，而且还有复杂的控制逻辑和诸多优化电路，相比之下计算能力只是CPU很小的一部分。</p>
 <p>CPU的发展：处理器越来越小，处理速度越来越快，处理核变多。<br>从芯片上说：<br>性能：低延时性（Latency）与吞吐量（Throughput）<br>低延时性 — 在最短的时间内处理完尽可能多的数据。<br>吞吐量 — </p>
 <p>CPU – 最大化速度上的优化，处理的越快越好（芯片设计理念、模式、散热……）<br>GPU – 最大化吞吐量，处理的越多越好</p>
-<p>###CPU###<br>ALU：CPU有强大的ALU（算术运算单元），它可以在很少的时钟周期内完成算术计算。</p>
+<h3 id="CPU">CPU</h3>
+<p>ALU：CPU有强大的ALU（算术运算单元），它可以在很少的时钟周期内完成算术计算。</p>
 <ul>
 <li>现在的CPU</li>
 </ul>
@@ -987,14 +976,17 @@
 <li>当程序含有多个分支的时候，它通过提供分支预测的能力来降低延时。</li>
 <li>数据转发。</li>
 </ul>
-<p>###GPU###<br>ALU,Cache:GPU的特点是有很多的ALU和很少的Cache.缓存的目的不是保存后面需要访问的数据，和CPU不同，而是为Thread提高服务的。<br>Control:控制单元可以把多个的访问合并成少的访问。</p>
+<h3 id="GPU">GPU</h3>
+<p>ALU,Cache:GPU的特点是有很多的ALU和很少的Cache.缓存的目的不是保存后面需要访问的数据，和CPU不同，而是为Thread提高服务的。<br>Control:控制单元可以把多个的访问合并成少的访问。</p>
 <ul>
 <li>GPU虽然有dram延时，却又非常多的ALU和非常多的thread.为了平衡内存延时的问题，我们可以充分利用多ALU的特性达到一个非常大吞吐量的效果。尽可能多的分配多的Threads.通常GPU ALU会有非常重的pipeline。</li>
 <li>CPU擅长逻辑控制，串行的运算。和通用类型数据运算不同，GPU擅长的是大规模并发计算，这也正是密码破译等所需要的。所以GPU除了图像处理，也越来越多的参与到计算当中来。</li>
 </ul>
-<p>##2 GPU并行计算的原理与意义##<br>什么类型的程序适合在GPU上运行？<br>1.计算密集型的程序。<br>2.易于并行的程序。GPU是一种SIMD（Single Instruction Multiple Data）架构。</p>
-<p>##3 CUDA硬件环境与体系结构##<br>常见的显卡型号与性能，显卡的选择与显存需求估计</p>
-<p>##4 本地机器的环境搭建步骤##</p>
+<h2 id="2_GPU并行计算的原理与意义">2 GPU并行计算的原理与意义</h2>
+<p>什么类型的程序适合在GPU上运行？<br>1.计算密集型的程序。<br>2.易于并行的程序。GPU是一种SIMD（Single Instruction Multiple Data）架构。</p>
+<h2 id="3_CUDA硬件环境与体系结构">3 CUDA硬件环境与体系结构</h2>
+<p>常见的显卡型号与性能，显卡的选择与显存需求估计</p>
+<h2 id="4_本地机器的环境搭建步骤">4 本地机器的环境搭建步骤</h2>
 <p>待补充..</p>
 
         </section>

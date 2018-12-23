@@ -81,7 +81,7 @@
                                 </li>
                                 
                                 <li class="search-archive-li mp-pjax">
-                                    <a href="/2016/01/30/from-now/">千里之行始于足下</a>
+                                    <a href="/2016/01/30/from-now/">始于记下</a>
                                 </li>
                                 
                                 <li class="search-archive-li mp-pjax">
@@ -134,10 +134,6 @@
                                 
                                 <li class="search-archive-li mp-pjax">
                                     <a href="/2015/03/23/about-health/">不要等到很累的时候才去休息</a>
-                                </li>
-                                
-                                <li class="search-archive-li mp-pjax">
-                                    <a href="/2015/03/22/web-analytics/">网站分析</a>
                                 </li>
                                 
                                 <li class="search-archive-li mp-pjax">
@@ -298,10 +294,6 @@
                                 
                                 <li class="search-archive-li mp-pjax">
                                     <a href="/2014/12/23/性能测试之时间都去哪了/">性能测试之时间都去哪了</a>
-                                </li>
-                                
-                                <li class="search-archive-li mp-pjax">
-                                    <a href="/2014/12/22/这些年上过的课/">这些年上过的课</a>
                                 </li>
                                 
                                 <li class="search-archive-li mp-pjax">
@@ -474,7 +466,7 @@
                                 
                                 <li class="search-category-li mp-pjax">
                                     <a href="/categories/点滴/">&nbsp;&nbsp;&nbsp;点滴</a>
-                                    <small>13</small>
+                                    <small>12</small>
                                 </li>
                                 
                                 <li class="search-category-li mp-pjax">
@@ -631,7 +623,7 @@
                                 
                                 <li class="search-tag-li mp-pjax">
                                     <a href="/tags/点滴/">&nbsp;&nbsp;&nbsp;点滴</a>
-                                    <small>13</small>
+                                    <small>12</small>
                                 </li>
                                 
                                 <li class="search-tag-li mp-pjax">
@@ -680,7 +672,7 @@
                 
                     <a  data-pjax href="/2016/01/30/maven-version/">Maven(二)用MyEclipse建立Maven骨架的项目</a>
                 
-                    <a  data-pjax href="/2016/01/30/from-now/">千里之行始于足下</a>
+                    <a  data-pjax href="/2016/01/30/from-now/">始于记下</a>
                 
                     <a  data-pjax href="/2015/05/27/believe-me/">世界是心的镜子</a>
                 
@@ -707,8 +699,6 @@
                     <a  data-pjax href="/2015/03/24/about-index/">关于索引的一些总结和思考（上）</a>
                 
                     <a  data-pjax href="/2015/03/23/about-health/">不要等到很累的时候才去休息</a>
-                
-                    <a  data-pjax href="/2015/03/22/web-analytics/">网站分析</a>
                 
                     <a  data-pjax href="/2015/03/21/test-report/">性能测试报告的编写</a>
                 
@@ -789,8 +779,6 @@
                     <a  data-pjax href="/2014/12/23/为什么只有13台dns根服务器/">为什么只有13台dns根服务器</a>
                 
                     <a  data-pjax href="/2014/12/23/性能测试之时间都去哪了/">性能测试之时间都去哪了</a>
-                
-                    <a  data-pjax href="/2014/12/22/这些年上过的课/">这些年上过的课</a>
                 
                     <a  data-pjax href="/2014/12/21/熟悉的陌生人OS/">熟悉的陌生人OS</a>
                 
@@ -978,7 +966,7 @@
 <li>连续内存分配</li>
 <li>非连续内存分配</li>
 </ul>
-<p>##连续内存分配##</p>
+<h2 id="连续内存分配">连续内存分配</h2>
 <ul>
 <li>内存碎片：空闲内存不能被利用<ul>
 <li>外部碎片:分配单元之间的未被使用内存</li>
@@ -1007,9 +995,10 @@
 </ul>
 </li>
 </ul>
-<p>##简单适配策略的比较##</p>
+<h2 id="简单适配策略的比较">简单适配策略的比较</h2>
 <p><table><tr><th>适配策略</th><th>优点</th><th>缺点</th></tr><tr><td>首次适配分配机制First Fit Allocation</td><td>简单/在高地址空间有大块的空闲分区</td><td>外部碎片</td></tr><tr><td>最佳适配分配机制Best Fit Allocation</td><td>避免大的空闲块被拆分/减小外部碎片的大小/大部分分配属于尺寸较小的情况下，效果很好</td><td>释放分区较慢/容易产生很多无用的小碎片</td></tr><tr><td>最差适配机制 Worst Fit Allocation</td><td>大部分分配，属于中等尺寸的时候，效果最好</td><td>释放分区较慢/容易破坏大的空闲块，因此后续难以分配大的分区</td></tr></table><br>无论采用何种算法都会产生碎片，那么如何减少碎片呢？</p>
-<p>##碎片整理##<br><img src="/image/pcopy.png" alt="pcopy"></p>
+<h2 id="碎片整理">碎片整理</h2>
+<p><img src="/image/pcopy.png" alt="pcopy"></p>
 <ul>
 <li>碎片整理 – Compaction(压实)<ul>
 <li>移动拷贝应用程序，把碎片合并起来</li>
@@ -1027,7 +1016,7 @@
 </ul>
 </li>
 </ul>
-<p>##非连续内存分配##</p>
+<h2 id="非连续内存分配">非连续内存分配</h2>
 <ul>
 <li>为什么需要非连续内存分配<br>因为前面提到的连续内存分配有以下几种缺点，<ul>
 <li>分配给一个程序的物理内存是连续的</li>
@@ -1054,7 +1043,8 @@
 </ul>
 </li>
 </ul>
-<p>##非连续分配：分段##<br>程序包含多个段，例如：</p>
+<h2 id="非连续分配：分段">非连续分配：分段</h2>
+<p>程序包含多个段，例如：</p>
 <ul>
 <li>主程序（main prog）</li>
 <li>子程序（subroutines）</li>
@@ -1065,7 +1055,8 @@
 <li>s：段号</li>
 <li>addr：段内偏移<br><img src="/image/pair.png" alt="pair"><br>硬件方案：<br><img src="/image/phyfangan.png" alt="phyfangan"><br>段表正是由操作系统建立的。</li>
 </ul>
-<p>##非连续分配：分页##<br>和分段的主要区别是</p>
+<h2 id="非连续分配：分页">非连续分配：分页</h2>
+<p>和分段的主要区别是</p>
 <ul>
 <li>分页是把物理内存分割为大小合适的帧（Frame, Page Frame）<br>2的n次方，如512, 4096, 8192</li>
 <li>把逻辑地址空间也划分为相同大小的页（Page）<br>2的n次方，如512, 4096, 8192</li>
@@ -1075,9 +1066,11 @@
 </ul>
 </li>
 </ul>
-<p>###帧###<br>物理内存被分割为大小相等的帧。<br><img src="/image/zhen.png" alt="zhen"><br>一个内存物理地址是一个pair(f,o)<br>f — 帧号(F位, 共有2^F个帧)  frame<br>o — 帧内偏移(S位,每帧有2^S字节) offsize<br>物理地址=2^S*f+o<br><img src="/image/zhenphyadd.png" alt="zhenphyadd"></p>
+<h3 id="帧">帧</h3>
+<p>物理内存被分割为大小相等的帧。<br><img src="/image/zhen.png" alt="zhen"><br>一个内存物理地址是一个pair(f,o)<br>f — 帧号(F位, 共有2^F个帧)  frame<br>o — 帧内偏移(S位,每帧有2^S字节) offsize<br>物理地址=2^S*f+o<br><img src="/image/zhenphyadd.png" alt="zhenphyadd"></p>
 <p>物理地址计算的例子<br><img src="/image/example.png" alt="example"></p>
-<p>###页###<br>一个程序的逻辑地址空间被划分为大小相等的页。<br><img src="/image/pageoffsize.png" alt="pageoffsize"></p>
+<h3 id="页">页</h3>
+<p>一个程序的逻辑地址空间被划分为大小相等的页。<br><img src="/image/pageoffsize.png" alt="pageoffsize"></p>
 <ul>
 <li>页内偏移的大小= 帧内偏移的大小</li>
 <li>页号大小&lt;&gt; 帧号大小</li>
@@ -1088,7 +1081,8 @@
 <li>不是所有的页都有对应的帧，一般是逻辑地址空间大于物理地址空间</li>
 <li>页是连续的虚拟内存，帧是不连续的物理地址，这样的好处有助于减少碎片。</li>
 </ul>
-<p>##页表##<br><img src="/image/pagestructs.png" alt="pagestructs"><br>标志位用来标识此映射关系是否存在、此页被读取过？写过？等等<br><img src="/image/pagestruts2.png" alt="pagestruts2"><br>resident bit 为0 代表没有此对应关系，抛出异常由操作系统处理。</p>
+<h2 id="页表">页表</h2>
+<p><img src="/image/pagestructs.png" alt="pagestructs"><br>标志位用来标识此映射关系是否存在、此页被读取过？写过？等等<br><img src="/image/pagestruts2.png" alt="pagestruts2"><br>resident bit 为0 代表没有此对应关系，抛出异常由操作系统处理。</p>
 <ul>
 <li>分页机制的性能问题<ul>
 <li>页表可能非常大<ul>
@@ -1109,13 +1103,15 @@
 </ul>
 </li>
 </ul>
-<p>###解决之道之一：Translation Look-aside Buffer (TLB)###<br>缓存近期访问的页帧转换表项</p>
+<h3 id="解决之道之一：Translation_Look-aside_Buffer_(TLB)">解决之道之一：Translation Look-aside Buffer (TLB)</h3>
+<p>缓存近期访问的页帧转换表项</p>
 <ul>
 <li>TLB 使用associative memory(关联内存)实现，具备快速访问性能</li>
 <li>如果TLB命中，物理页号可以很快被获取</li>
 <li>如果TLB未命中，对应的表项被更新到TLB中<br><img src="/image/cpuTLB.png" alt="cpuTLB"></li>
 </ul>
-<p>###解决之道之二：二级/多级页表###<br><img src="/image/erjipage.png" alt="erjipage"></p>
+<h3 id="解决之道之二：二级/多级页表">解决之道之二：二级/多级页表</h3>
+<p><img src="/image/erjipage.png" alt="erjipage"></p>
 <ul>
 <li>如此这样，需要三次访问内存，开销增加了，但是好处是一些没有对应关系的行可以不放在页表中了，减少了空间。<br>推而广之，多级页表如下：<br><img src="/image/treepagetable.png" alt="treepagetable"></li>
 </ul>

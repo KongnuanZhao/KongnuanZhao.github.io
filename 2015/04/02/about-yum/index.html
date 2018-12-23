@@ -81,7 +81,7 @@
                                 </li>
                                 
                                 <li class="search-archive-li mp-pjax">
-                                    <a href="/2016/01/30/from-now/">千里之行始于足下</a>
+                                    <a href="/2016/01/30/from-now/">始于记下</a>
                                 </li>
                                 
                                 <li class="search-archive-li mp-pjax">
@@ -134,10 +134,6 @@
                                 
                                 <li class="search-archive-li mp-pjax">
                                     <a href="/2015/03/23/about-health/">不要等到很累的时候才去休息</a>
-                                </li>
-                                
-                                <li class="search-archive-li mp-pjax">
-                                    <a href="/2015/03/22/web-analytics/">网站分析</a>
                                 </li>
                                 
                                 <li class="search-archive-li mp-pjax">
@@ -298,10 +294,6 @@
                                 
                                 <li class="search-archive-li mp-pjax">
                                     <a href="/2014/12/23/性能测试之时间都去哪了/">性能测试之时间都去哪了</a>
-                                </li>
-                                
-                                <li class="search-archive-li mp-pjax">
-                                    <a href="/2014/12/22/这些年上过的课/">这些年上过的课</a>
                                 </li>
                                 
                                 <li class="search-archive-li mp-pjax">
@@ -474,7 +466,7 @@
                                 
                                 <li class="search-category-li mp-pjax">
                                     <a href="/categories/点滴/">&nbsp;&nbsp;&nbsp;点滴</a>
-                                    <small>13</small>
+                                    <small>12</small>
                                 </li>
                                 
                                 <li class="search-category-li mp-pjax">
@@ -631,7 +623,7 @@
                                 
                                 <li class="search-tag-li mp-pjax">
                                     <a href="/tags/点滴/">&nbsp;&nbsp;&nbsp;点滴</a>
-                                    <small>13</small>
+                                    <small>12</small>
                                 </li>
                                 
                                 <li class="search-tag-li mp-pjax">
@@ -680,7 +672,7 @@
                 
                     <a  data-pjax href="/2016/01/30/maven-version/">Maven(二)用MyEclipse建立Maven骨架的项目</a>
                 
-                    <a  data-pjax href="/2016/01/30/from-now/">千里之行始于足下</a>
+                    <a  data-pjax href="/2016/01/30/from-now/">始于记下</a>
                 
                     <a  data-pjax href="/2015/05/27/believe-me/">世界是心的镜子</a>
                 
@@ -707,8 +699,6 @@
                     <a  data-pjax href="/2015/03/24/about-index/">关于索引的一些总结和思考（上）</a>
                 
                     <a  data-pjax href="/2015/03/23/about-health/">不要等到很累的时候才去休息</a>
-                
-                    <a  data-pjax href="/2015/03/22/web-analytics/">网站分析</a>
                 
                     <a  data-pjax href="/2015/03/21/test-report/">性能测试报告的编写</a>
                 
@@ -789,8 +779,6 @@
                     <a  data-pjax href="/2014/12/23/为什么只有13台dns根服务器/">为什么只有13台dns根服务器</a>
                 
                     <a  data-pjax href="/2014/12/23/性能测试之时间都去哪了/">性能测试之时间都去哪了</a>
-                
-                    <a  data-pjax href="/2014/12/22/这些年上过的课/">这些年上过的课</a>
                 
                     <a  data-pjax href="/2014/12/21/熟悉的陌生人OS/">熟悉的陌生人OS</a>
                 
@@ -972,7 +960,8 @@
     </span>
 
         <section class="post-content">
-            <p>#yum和rpm是什么#<br>yum，是Yellow dog Updater, Modified 的简称。黄狗~挺有意思，贴一段百科解释：</p>
+            <h1 id="yum和rpm是什么">yum和rpm是什么</h1>
+<p>yum，是Yellow dog Updater, Modified 的简称。黄狗~挺有意思，贴一段百科解释：</p>
 <blockquote>
 <p>yum，是Yellow dog Updater, Modified 的简称，是杜克大学为了提高RPM软件包安装性而开发的一种软件包管理器。起初是由yellow dog 这一发行版的开发者Terra Soft 研发，用python 写成，那时还叫做yup(yellow dog updater)，后经杜克大学的Linux@Duke 开发团队进行改进，遂有此名。yum的宗旨是自动化地升级，安装/移除rpm 包，收集rpm 包的相关信息，检查依赖性并自动提示用户解决。yum 的关键之处是要有可靠的repository，顾名思义，这是软件的仓库，它可以是http 或ftp 站点，也可以是本地软件池，但必须包含rpm 的header，header 包括了rpm包的各种信息，包括描述，功能，提供的文件，依赖性等。正是收集了这些header并加以分析，才能自动化地完成余下的任务。</p>
 </blockquote>
@@ -980,12 +969,13 @@
 <blockquote>
 <p>rpm是由红帽公司开发的软件包管理方式，使用rpm我们可以方便的进行软件的安装、查询、卸载、升级等工作。但是rpm软件包之间的依赖性问题往往会很繁琐,尤其是软件由多个rpm包组成时。</p>
 </blockquote>
-<p>##区别：##</p>
+<h2 id="区别：">区别：</h2>
 <ul>
 <li>.rpm是安装本地存在的rpm包，如果存在依赖也需要安装上,如果某个rpm是自己修改编译的，那么只能用rpm安装了</li>
 <li>yum是通过yum库（可以理解为一个软件库，网络上或者是本地），通过yum命令，让系统自动下载相关组件库及程序文件，可以新全新安装或者是升级安装（具体的多熟悉yum命令）</li>
 </ul>
-<p>#问题#<br>前几天装Oracle安装一系列的依赖包，遇到yum 失败（This system is not registered with RHN.）,由于 redhat的yum在线更新是收费的，如果没有注册的话不能使用，如果要使用，需将redhat的yum卸载后，重启安装，再配置其他源，以下为详细过程：<br>1.卸载redhat自带的yum组件</p>
+<h1 id="问题">问题</h1>
+<p>前几天装Oracle安装一系列的依赖包，遇到yum 失败（This system is not registered with RHN.）,由于 redhat的yum在线更新是收费的，如果没有注册的话不能使用，如果要使用，需将redhat的yum卸载后，重启安装，再配置其他源，以下为详细过程：<br>1.卸载redhat自带的yum组件</p>
 <figure class="highlight bash"><pre><div class="line">[root@localhost ~]<span class="comment"># rpm -qa|grep yum|xargs rpm -e --nodeps</span></div></pre></figure>
 
 <p>2.安装CentOS的yum包</p>
@@ -1000,7 +990,6 @@
 <p>虽然说是RHEL的克隆，但并不是一模一样，所说的克隆是具有100%的互换性。但并不保障对应RHEL的软件在CentOS上面能也够100%的正常工作。并且安全漏洞的修正和软件包的升级对应RHEL的有偿服务和技术支持来说，数日数星期数个月的延迟情况也有。</p>
 <p>redhat企业版若要适用yum源等于是适用了红帽的商业支持，需要付费注册。但 Red Hat Enterprise版和centOS从实质上说是一回事，只不过前者会获得redhat提供的商业服务。那么，我们只需要将 Red Hat Enterprise版中的yum配置成centOS的即可。</p>
 <p>参考文章：<br><a href="http://www.linuxidc.com/Linux/2012-06/63619.htm" target="_blank" rel="external">yum失败解决方法</a><br><a href="http://www.cnblogs.com/mchina/archive/2013/01/04/2842275.html" target="_blank" rel="external">CentOS yum 源的配置与使用</a></p>
-<p>(未完待续)</p>
 
         </section>
         <hr/>

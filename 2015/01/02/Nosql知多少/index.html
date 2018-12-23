@@ -81,7 +81,7 @@
                                 </li>
                                 
                                 <li class="search-archive-li mp-pjax">
-                                    <a href="/2016/01/30/from-now/">千里之行始于足下</a>
+                                    <a href="/2016/01/30/from-now/">始于记下</a>
                                 </li>
                                 
                                 <li class="search-archive-li mp-pjax">
@@ -134,10 +134,6 @@
                                 
                                 <li class="search-archive-li mp-pjax">
                                     <a href="/2015/03/23/about-health/">不要等到很累的时候才去休息</a>
-                                </li>
-                                
-                                <li class="search-archive-li mp-pjax">
-                                    <a href="/2015/03/22/web-analytics/">网站分析</a>
                                 </li>
                                 
                                 <li class="search-archive-li mp-pjax">
@@ -298,10 +294,6 @@
                                 
                                 <li class="search-archive-li mp-pjax">
                                     <a href="/2014/12/23/性能测试之时间都去哪了/">性能测试之时间都去哪了</a>
-                                </li>
-                                
-                                <li class="search-archive-li mp-pjax">
-                                    <a href="/2014/12/22/这些年上过的课/">这些年上过的课</a>
                                 </li>
                                 
                                 <li class="search-archive-li mp-pjax">
@@ -474,7 +466,7 @@
                                 
                                 <li class="search-category-li mp-pjax">
                                     <a href="/categories/点滴/">&nbsp;&nbsp;&nbsp;点滴</a>
-                                    <small>13</small>
+                                    <small>12</small>
                                 </li>
                                 
                                 <li class="search-category-li mp-pjax">
@@ -631,7 +623,7 @@
                                 
                                 <li class="search-tag-li mp-pjax">
                                     <a href="/tags/点滴/">&nbsp;&nbsp;&nbsp;点滴</a>
-                                    <small>13</small>
+                                    <small>12</small>
                                 </li>
                                 
                                 <li class="search-tag-li mp-pjax">
@@ -680,7 +672,7 @@
                 
                     <a  data-pjax href="/2016/01/30/maven-version/">Maven(二)用MyEclipse建立Maven骨架的项目</a>
                 
-                    <a  data-pjax href="/2016/01/30/from-now/">千里之行始于足下</a>
+                    <a  data-pjax href="/2016/01/30/from-now/">始于记下</a>
                 
                     <a  data-pjax href="/2015/05/27/believe-me/">世界是心的镜子</a>
                 
@@ -707,8 +699,6 @@
                     <a  data-pjax href="/2015/03/24/about-index/">关于索引的一些总结和思考（上）</a>
                 
                     <a  data-pjax href="/2015/03/23/about-health/">不要等到很累的时候才去休息</a>
-                
-                    <a  data-pjax href="/2015/03/22/web-analytics/">网站分析</a>
                 
                     <a  data-pjax href="/2015/03/21/test-report/">性能测试报告的编写</a>
                 
@@ -789,8 +779,6 @@
                     <a  data-pjax href="/2014/12/23/为什么只有13台dns根服务器/">为什么只有13台dns根服务器</a>
                 
                     <a  data-pjax href="/2014/12/23/性能测试之时间都去哪了/">性能测试之时间都去哪了</a>
-                
-                    <a  data-pjax href="/2014/12/22/这些年上过的课/">这些年上过的课</a>
                 
                     <a  data-pjax href="/2014/12/21/熟悉的陌生人OS/">熟悉的陌生人OS</a>
                 
@@ -972,19 +960,20 @@
     </span>
 
         <section class="post-content">
-            <p>#数据时代的特征#<br>3V——Volume（海量）、Variety（多样）、Velocity（实时）</p>
+            <h1 id="数据时代的特征">数据时代的特征</h1>
+<p>3V——Volume（海量）、Variety（多样）、Velocity（实时）</p>
 <ul>
 <li>海量——数据量巨大，对TB、PB数据级的处理， 已经成为基本配置。</li>
 <li>多样——处理多样性的数据类型，结构化数据和非结构化数据，能处理Web数据，能处理语音数据甚至是图像、视频数据。</li>
 <li>实时——在客户每次浏览页面，每次下订单的过程中都存在，都会需要对用户进行实时的推荐，决策已经变得实时</li>
 </ul>
-<p>##数据时代下的系统需求##</p>
+<h2 id="数据时代下的系统需求">数据时代下的系统需求</h2>
 <ul>
 <li>High performance –高并发读写的需求,高并发、实时动态获取和更新数据</li>
 <li>Huge Storage –海量数据的高效率存储和访问的需求,类似SNS网站，海量用户信息的高效率实时存储和查询</li>
 <li>High Scalability &amp;&amp; High Availability –高可扩展性和高可用性的需求,需要拥有快速横向扩展能力、提供7*24小时不间断服务</li>
 </ul>
-<p>##关系数据库如何应对##</p>
+<h2 id="关系数据库如何应对">关系数据库如何应对</h2>
 <ul>
 <li><p>High performance –高并发读写的需求<br>问题：数据库读写压力巨大，硬盘IO无法承受。<br>解决方案：Master-Slave（主从复制），主从分离，分库、分表，缓解写压力，增强读库的可扩展性。<br><a href="http://www.cnblogs.com/luckcs/articles/2543607.html" target="_blank" rel="external">MySQL主从复制与读写分离</a><br><img src="/image/mysql.jpg" alt="mysql"></p>
 </li>
@@ -997,14 +986,15 @@
 <li>Master-Slave缺点<br>（1）Slave实时性的保障，对于实时性很高的场合可能需要做一些处理<br>（2）高可用性问题，Master就是那个致命点，容易产生单点故障</li>
 <li>MMM缺点<br> 本身扩展性差，一次只能一个Master可以写入，只能解决有限数据量下的可用性</li>
 </ol>
-<p>#NoSQL以及其优势#<br>什么是NoSQL？<br>NoSQL是Not Only SQL的缩写，而不是Not  SQL，它不一定遵循传统数据库的一些基本要求，比如说遵循SQL标准、ACID属性、表结构等等。相比传统数据库，叫它分布式数据管理系统更贴切，数据存储被简化更灵活，重点被放在了分布式数据管理上。<br>与关系型数据库的关系—-互补<br><img src="/image/nosql.jpg" alt="nosql"></p>
+<h1 id="NoSQL以及其优势">NoSQL以及其优势</h1>
+<p>什么是NoSQL？<br>NoSQL是Not Only SQL的缩写，而不是Not  SQL，它不一定遵循传统数据库的一些基本要求，比如说遵循SQL标准、ACID属性、表结构等等。相比传统数据库，叫它分布式数据管理系统更贴切，数据存储被简化更灵活，重点被放在了分布式数据管理上。<br>与关系型数据库的关系—-互补<br><img src="/image/nosql.jpg" alt="nosql"></p>
 <ul>
 <li>易扩展<br>NoSQL数据库种类繁多，但是一个共同的特点都是去掉关系数据库的关系型特性。数据之间无关系，这样就非常容易扩展。也无形之间，在架构的层面上带来了可扩展的能力。甚至有多种NoSQL之间的整合。</li>
 <li>灵活的数据模型<br>NoSQL无需事先为要存储的数据建立字段，随时可以存储自定义的数据格式。适合在字段不固定的时候用，而在关系型要更改表结构麻烦。</li>
 <li>高可用<br>NoSQL在不太影响性能的情况，就可以方便的实现高可用的架构。比如Cassandra，HBase模型，通过复制模型也能实现高可用。</li>
 <li>大数据量，高性能<br>NoSQL数据库都具有非常高的读写性能，尤其在大数据量下，同样表现优秀。这得益于它的无关系性，数据库的结构简单。</li>
 </ul>
-<p>#CAP原理#</p>
+<h1 id="CAP原理">CAP原理</h1>
 <ul>
 <li>一致性(Consistency)又称为原子性或事务性。表示一个事务的操作是不可分割的，要不然这个事务完成，要不然这个事务不完成，不会出现这个事务完成了一半这样的情况。这种事务的原子性使得数据具有一致性。</li>
 <li>可用性(Availability)好的可用性主要是指系统能够很好的为用户服务，不出现用户操作失败或者访问超时等用户体验不好的情况。</li>
@@ -1012,10 +1002,11 @@
 <li>对于分布式数据系统，分区容忍性是基本要求</li>
 <li>对于大多数web应用，牺牲一致性而换取高可用性，是目前多数分布式数据库产品的方向。<br><img src="/image/cap.jpg" alt="cap"></li>
 </ul>
-<p>#NoSQL数据模型及分类#</p>
+<h1 id="NoSQL数据模型及分类">NoSQL数据模型及分类</h1>
 <p><div><table><tr><th>类   型</th><th>部分代表</th><th>特点</th></tr><tr><td>列存储</td><td>Hbase/Cassandra/Hypertable</td><td>顾名思义，是按列存储数据的。最大的特点是方便存储结构化和半结构化数据，方便做数据压缩，对针对某一列或者某几列的查询有非常大的IO优势。高扩展性</td></tr><tr><td>文档存储</td><td>MongoDB、CouchDB</td><td>文档存储一般用类似json的格式存储，存储的内容是文档型的。这样也就有有机会对某些字段建立索引，实现关系数据库的某些功能。</td></tr><tr><td>key-value存储</td><td>Tokyo Cabinet / Tyrant/MemcacheDB/Redis</td><td>可以通过key快速查询到其value。</td></tr><tr><td>图存储</td><td>Neo4J/FlockDB/InfoGrid</td><td>图形关系的最佳存储。使用传统关系数据库来解决的话性能低下，而且设计使用不方便。</td></tr><tr><td>对象存储</td><td>db4o/Versant</td><td>通过类似面向对象语言的语法操作数据库，通过对象的方式存取数据。</td></tr><tr><td>xml数据库</td><td>Berkeley DB XML/BaseX</td><td>高效的存储XML数据，并支持XML的内部查询语法，比如XQuery,Xpath。</td></tr><br></table></div><br>参见《NoSQL Data Modeling Techniques》<br><img src="/image/nosql1.png" alt="nosql1"></p>
-<p>#几种主流NoSQL数据库#</p>
-<p>##Cassandra##<br><img src="/image/cassandra.png" alt="cassandra"></p>
+<h1 id="几种主流NoSQL数据库">几种主流NoSQL数据库</h1>
+<h2 id="Cassandra">Cassandra</h2>
+<p><img src="/image/cassandra.png" alt="cassandra"></p>
 <ul>
 <li>简介<br>Apache Cassandra 是一套开源分布式NoSQL数据库系统。它最初由Facebook开发，用于储存收件箱等简单格式数据，集Google BigTable的数据模型与Amazon Dynamo的完全分布式的架构于一身。Facebook于2008将 Cassandra开源，此后，由于Cassandra良好的可扩放性，被Digg、Twitter等知名Web 2.0网站所采纳，成为了一种流行的分布式结构化数据存储方案。</li>
 <li>突出特点<ul>
@@ -1035,7 +1026,8 @@
 </ul>
 </li>
 </ul>
-<p>##Redis##<br><img src="/image/redis.png" alt="redis"></p>
+<h2 id="Redis">Redis</h2>
+<p><img src="/image/redis.png" alt="redis"></p>
 <ul>
 <li>简介<br>redis是一个key-value存储系统。 和Memcached类似，它支持存储的value类型相对更多，包括string(字符串)、list(链表)、set(集合)、zset(有序集 合)和hash（hash表）。这些数据类型都支持push/pop、add/remove及取交集并集和差集及更丰富的操作，而且这些操作都是原子性的。在此基础上，redis 支持各种不同方式的排序。 Redis本质上是一个Key-Value类型的内存数据库，很像memcached，整个数据库统统加载在内存当中进行操作，区别是定期通过异步操作把数据库数据flush到硬盘上进行保存并在此基础上实现了master-slave(主从)同步。因为是纯内存操作，Redis的性能非常出色，每秒可以处理超过 10万次读写操作，是已知性能最快的Key-Value DB。</li>
 <li>相比memcached的优势<ul>
@@ -1047,7 +1039,8 @@
 <li>应用：<br>非常支持需要表达时间线的web服务<br>参看报告：唐福林：新浪微博的Redis大数据之路</li>
 <li>缺点<br>Redis的主要缺点是数据库容量受到物理内存的限制，不能用作海量数据的高性能读写，因此Redis适合的场景主要局限在较小数据量的高性能操作和运算上。</li>
 </ul>
-<p>##Mongodb##<br><img src="/image/mongodb.jpg" alt="mongodb"></p>
+<h2 id="Mongodb">Mongodb</h2>
+<p><img src="/image/mongodb.jpg" alt="mongodb"></p>
 <ul>
 <li>简介<br>MongoDB是一个基于分布式文件存储的数据库。由C++语言编写。旨在为的高性能数据存储解决方案。特点是高性能、易部署、易WEB应用提供可扩展使用，存储数据方便。<br>MongoDB是一个介于关系数据库和非关系数据库之间的产品，是非关系数据库当中功能最丰富，最像关系数据库的。他支持的数据结构非常松散，是类似json的bjson格式，因此可以存储比较复杂的数据类型。Mongo最大的特点是他支持的查询语言非常强大，其语法有点类似于面向对象的查询语言，几乎可以实现类似关系数据库单表查询的绝大部分功能，而且还支持对数据建立索引。</li>
 <li>主要特点<ul>

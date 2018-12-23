@@ -81,7 +81,7 @@
                                 </li>
                                 
                                 <li class="search-archive-li mp-pjax">
-                                    <a href="/2016/01/30/from-now/">千里之行始于足下</a>
+                                    <a href="/2016/01/30/from-now/">始于记下</a>
                                 </li>
                                 
                                 <li class="search-archive-li mp-pjax">
@@ -134,10 +134,6 @@
                                 
                                 <li class="search-archive-li mp-pjax">
                                     <a href="/2015/03/23/about-health/">不要等到很累的时候才去休息</a>
-                                </li>
-                                
-                                <li class="search-archive-li mp-pjax">
-                                    <a href="/2015/03/22/web-analytics/">网站分析</a>
                                 </li>
                                 
                                 <li class="search-archive-li mp-pjax">
@@ -298,10 +294,6 @@
                                 
                                 <li class="search-archive-li mp-pjax">
                                     <a href="/2014/12/23/性能测试之时间都去哪了/">性能测试之时间都去哪了</a>
-                                </li>
-                                
-                                <li class="search-archive-li mp-pjax">
-                                    <a href="/2014/12/22/这些年上过的课/">这些年上过的课</a>
                                 </li>
                                 
                                 <li class="search-archive-li mp-pjax">
@@ -474,7 +466,7 @@
                                 
                                 <li class="search-category-li mp-pjax">
                                     <a href="/categories/点滴/">&nbsp;&nbsp;&nbsp;点滴</a>
-                                    <small>13</small>
+                                    <small>12</small>
                                 </li>
                                 
                                 <li class="search-category-li mp-pjax">
@@ -631,7 +623,7 @@
                                 
                                 <li class="search-tag-li mp-pjax">
                                     <a href="/tags/点滴/">&nbsp;&nbsp;&nbsp;点滴</a>
-                                    <small>13</small>
+                                    <small>12</small>
                                 </li>
                                 
                                 <li class="search-tag-li mp-pjax">
@@ -680,7 +672,7 @@
                 
                     <a  data-pjax href="/2016/01/30/maven-version/">Maven(二)用MyEclipse建立Maven骨架的项目</a>
                 
-                    <a  data-pjax href="/2016/01/30/from-now/">千里之行始于足下</a>
+                    <a  data-pjax href="/2016/01/30/from-now/">始于记下</a>
                 
                     <a  data-pjax href="/2015/05/27/believe-me/">世界是心的镜子</a>
                 
@@ -707,8 +699,6 @@
                     <a  data-pjax href="/2015/03/24/about-index/">关于索引的一些总结和思考（上）</a>
                 
                     <a  data-pjax href="/2015/03/23/about-health/">不要等到很累的时候才去休息</a>
-                
-                    <a  data-pjax href="/2015/03/22/web-analytics/">网站分析</a>
                 
                     <a  data-pjax href="/2015/03/21/test-report/">性能测试报告的编写</a>
                 
@@ -789,8 +779,6 @@
                     <a  data-pjax href="/2014/12/23/为什么只有13台dns根服务器/">为什么只有13台dns根服务器</a>
                 
                     <a  data-pjax href="/2014/12/23/性能测试之时间都去哪了/">性能测试之时间都去哪了</a>
-                
-                    <a  data-pjax href="/2014/12/22/这些年上过的课/">这些年上过的课</a>
                 
                     <a  data-pjax href="/2014/12/21/熟悉的陌生人OS/">熟悉的陌生人OS</a>
                 
@@ -974,13 +962,14 @@
     </span>
 
         <section class="post-content">
-            <p>#结业测试大作业#</p>
+            <h1 id="结业测试大作业">结业测试大作业</h1>
 <blockquote>
 <p>内容：使用在课程中学过的各种时间序列模型为某实际场景建模，并且诠释你的结果的意义。<br>要求：<br>1.要解决的问题有意义，业务背景要有详细的介绍与解释<br>2.数据真实，标明数据来源，可以使用参考书的数据，但不得与书上的例子一致，即可以使用书上的数据构建新的模型（注：新的模型是指另一个种类的模型，如AR（1）与AR（3）看做同一个模型）<br>3.数学建模和数学工具运用正确及有效，要求对同一数据尝试2种或以上的时间序列模型，或采用2种或以上的不同参数估计方法<br>4.使用R其它各种工具进行实际计算验证，程序和结果正确<br>5.对模型结果要结合业务背景进行详细解释，不得只有代码结果而没有相应解释 </p>
 </blockquote>
 <p>问题意义以及数据来源移步<a href="http://www.zhaokongnuan.com/2014/12/28/%E6%BD%8D%E5%9D%8A%E7%89%A9%E4%BB%B7%E4%BF%A1%E6%81%AF%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%E5%8F%8A%E5%B1%95%E7%8E%B0/" target="_blank" rel="external">之前自己写的这篇文章</a><br>这是在炼数成金上学完rapidminer这门课假期里完成的，那么这次作业要求对同一数据尝试两种以上的时间序列模型或两种以上的不同参数估计方法，所以还是用这里面抓取的数据，尝试使用R进行实际计算验证。</p>
-<p>###环境准备：###<br>win7 64bit<br>R version 3.1.1 (2014-07-10)<br>mysqk Server version: 5.5.20-log MySQL Community Server (GPL)</p>
-<p>##通过ODBC进行R和mysql的连接##</p>
+<h3 id="环境准备：">环境准备：</h3>
+<p>win7 64bit<br>R version 3.1.1 (2014-07-10)<br>mysqk Server version: 5.5.20-log MySQL Community Server (GPL)</p>
+<h2 id="通过ODBC进行R和mysql的连接">通过ODBC进行R和mysql的连接</h2>
 <figure class="highlight r"><pre><div class="line">&gt;install.packages(<span class="string">"RODBC"</span>)</div><div class="line">trying URL <span class="string">'http://cran.rstudio.com/bin/windows/contrib/3.1/RODBC_1.3-10.zip'</span></div><div class="line">Content type <span class="string">'application/zip'</span> length <span class="number">828501</span> bytes (<span class="number">809</span> Kb)</div><div class="line">opened URL</div><div class="line">downloaded <span class="number">809</span> Kb</div><div class="line"></div><div class="line">package ‘RODBC’ successfully unpacked and MD5 sums checked</div><div class="line"></div><div class="line">The downloaded binary packages are <span class="keyword">in</span></div><div class="line">	C:\Users\Administrator\AppData\Local\Temp\Rtmp2H55eL\downloaded_packages</div><div class="line">&gt;<span class="keyword">library</span>(RODBC)</div><div class="line">&gt;channel &lt;- odbcConnect(<span class="string">"rmysql"</span>, uid=<span class="string">"root"</span>, pwd=<span class="string">""</span>);</div><div class="line">&gt;sqlTables(channel)<span class="comment">#查看数据中的表</span></div><div class="line">   TABLE_CAT TABLE_SCHEM   TABLE_NAME TABLE_TYPE REMARKS</div><div class="line"><span class="number">1</span>       test                  foodcpi      TABLE        </div><div class="line"><span class="number">2</span>       test                  from_to      TABLE        </div><div class="line"><span class="number">3</span>       test                globalcpi      TABLE        </div><div class="line"><span class="number">4</span>       test                    goods      TABLE        </div><div class="line"><span class="number">5</span>       test                 monthcpi      TABLE        </div><div class="line"><span class="number">6</span>       test                    place      TABLE        </div><div class="line"><span class="number">7</span>       test                  pre_cab      TABLE        </div><div class="line"><span class="number">8</span>       test                    price      TABLE        </div><div class="line"><span class="number">9</span>       test             reservations      TABLE        </div><div class="line"><span class="number">10</span>      test                   sheet9      TABLE        </div><div class="line"><span class="number">11</span>      test               userdetail      TABLE        </div><div class="line"><span class="number">12</span>      test               yujingdata      TABLE        </div><div class="line"><span class="number">13</span>      test                      zkn      TABLE </div><div class="line">&gt;data&lt;-sqlFetch(channel,<span class="string">"foodcpi"</span>)<span class="comment"># 查看表的内容，存到数据框里</span></div><div class="line">&gt;head(data)</div><div class="line">        日期 食品类 粮食类 肉禽及其制品类  蛋类 水产品类 鲜菜类 鲜果类</div><div class="line"><span class="number">1</span> <span class="number">2014</span>-<span class="number">06</span>-<span class="number">01</span>  <span class="number">103.7</span>  <span class="number">103.2</span>          <span class="number">101.9</span> <span class="number">113.1</span>    <span class="number">104.0</span>   <span class="number">98.2</span>  <span class="number">119.8</span></div><div class="line"><span class="number">2</span> <span class="number">2014</span>-<span class="number">05</span>-<span class="number">01</span>  <span class="number">104.1</span>  <span class="number">103.0</span>          <span class="number">103.2</span> <span class="number">117.6</span>    <span class="number">105.0</span>   <span class="number">97.5</span>  <span class="number">120.0</span></div><div class="line"><span class="number">3</span> <span class="number">2014</span>-<span class="number">04</span>-<span class="number">01</span>  <span class="number">102.3</span>  <span class="number">102.8</span>           <span class="number">99.3</span> <span class="number">107.0</span>    <span class="number">105.7</span>   <span class="number">92.1</span>  <span class="number">118.6</span></div><div class="line"><span class="number">4</span> <span class="number">2014</span>-<span class="number">03</span>-<span class="number">01</span>  <span class="number">104.1</span>  <span class="number">102.7</span>           <span class="number">98.2</span> <span class="number">100.4</span>    <span class="number">107.7</span>  <span class="number">112.9</span>  <span class="number">117.3</span></div><div class="line"><span class="number">5</span> <span class="number">2014</span>-<span class="number">02</span>-<span class="number">01</span>  <span class="number">102.7</span>  <span class="number">102.8</span>           <span class="number">97.0</span>  <span class="number">94.2</span>    <span class="number">104.7</span>  <span class="number">103.3</span>  <span class="number">119.7</span></div><div class="line"><span class="number">6</span> <span class="number">2014</span>-<span class="number">01</span>-<span class="number">01</span>  <span class="number">103.7</span>  <span class="number">103.1</span>          <span class="number">100.3</span>  <span class="number">96.2</span>    <span class="number">106.3</span>  <span class="number">102.1</span>  <span class="number">123.0</span></div></pre></figure>
 
 <p>需要载入的包</p>
@@ -1866,7 +1855,6 @@
 <figure class="highlight r"><pre><div class="line">&gt; <span class="comment">#加载时间序列包</span></div><div class="line">&gt; <span class="keyword">library</span>(forecast)</div><div class="line">&gt; <span class="comment">#向前预测12期，默认情况下24期</span></div><div class="line">&gt; cabb.forecast &lt;- forecast(cabb.fit,<span class="number">12</span>)</div><div class="line">&gt; plot.forecast(cabb.forecast)</div></pre></figure>
 
 <p><img src="/image/home3.png" alt="home3"></p>
-<p>—-不知道咋回事，嵌入js之后就评论框就不见了%&gt;_&lt;%—-</p>
 
         </section>
         <hr/>

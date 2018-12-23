@@ -81,7 +81,7 @@
                                 </li>
                                 
                                 <li class="search-archive-li mp-pjax">
-                                    <a href="/2016/01/30/from-now/">千里之行始于足下</a>
+                                    <a href="/2016/01/30/from-now/">始于记下</a>
                                 </li>
                                 
                                 <li class="search-archive-li mp-pjax">
@@ -134,10 +134,6 @@
                                 
                                 <li class="search-archive-li mp-pjax">
                                     <a href="/2015/03/23/about-health/">不要等到很累的时候才去休息</a>
-                                </li>
-                                
-                                <li class="search-archive-li mp-pjax">
-                                    <a href="/2015/03/22/web-analytics/">网站分析</a>
                                 </li>
                                 
                                 <li class="search-archive-li mp-pjax">
@@ -298,10 +294,6 @@
                                 
                                 <li class="search-archive-li mp-pjax">
                                     <a href="/2014/12/23/性能测试之时间都去哪了/">性能测试之时间都去哪了</a>
-                                </li>
-                                
-                                <li class="search-archive-li mp-pjax">
-                                    <a href="/2014/12/22/这些年上过的课/">这些年上过的课</a>
                                 </li>
                                 
                                 <li class="search-archive-li mp-pjax">
@@ -474,7 +466,7 @@
                                 
                                 <li class="search-category-li mp-pjax">
                                     <a href="/categories/点滴/">&nbsp;&nbsp;&nbsp;点滴</a>
-                                    <small>13</small>
+                                    <small>12</small>
                                 </li>
                                 
                                 <li class="search-category-li mp-pjax">
@@ -631,7 +623,7 @@
                                 
                                 <li class="search-tag-li mp-pjax">
                                     <a href="/tags/点滴/">&nbsp;&nbsp;&nbsp;点滴</a>
-                                    <small>13</small>
+                                    <small>12</small>
                                 </li>
                                 
                                 <li class="search-tag-li mp-pjax">
@@ -680,7 +672,7 @@
                 
                     <a  data-pjax href="/2016/01/30/maven-version/">Maven(二)用MyEclipse建立Maven骨架的项目</a>
                 
-                    <a  data-pjax href="/2016/01/30/from-now/">千里之行始于足下</a>
+                    <a  data-pjax href="/2016/01/30/from-now/">始于记下</a>
                 
                     <a  data-pjax href="/2015/05/27/believe-me/">世界是心的镜子</a>
                 
@@ -707,8 +699,6 @@
                     <a  data-pjax href="/2015/03/24/about-index/">关于索引的一些总结和思考（上）</a>
                 
                     <a  data-pjax href="/2015/03/23/about-health/">不要等到很累的时候才去休息</a>
-                
-                    <a  data-pjax href="/2015/03/22/web-analytics/">网站分析</a>
                 
                     <a  data-pjax href="/2015/03/21/test-report/">性能测试报告的编写</a>
                 
@@ -789,8 +779,6 @@
                     <a  data-pjax href="/2014/12/23/为什么只有13台dns根服务器/">为什么只有13台dns根服务器</a>
                 
                     <a  data-pjax href="/2014/12/23/性能测试之时间都去哪了/">性能测试之时间都去哪了</a>
-                
-                    <a  data-pjax href="/2014/12/22/这些年上过的课/">这些年上过的课</a>
                 
                     <a  data-pjax href="/2014/12/21/熟悉的陌生人OS/">熟悉的陌生人OS</a>
                 
@@ -973,9 +961,11 @@
 
         <section class="post-content">
             <p><img src="/image/disk_title.jpg" alt="disk_title"></p>
-<p>#课堂笔记#</p>
-<p>##目的##<br>了解并熟悉磁盘的基本结构和运行原理，进而提升对整个计算机体系的进一步理解。</p>
-<p>##认识磁盘##<br><img src="/image/disk_look.jpg" alt="disk_look"></p>
+<h1 id="课堂笔记">课堂笔记</h1>
+<h2 id="目的">目的</h2>
+<p>了解并熟悉磁盘的基本结构和运行原理，进而提升对整个计算机体系的进一步理解。</p>
+<h2 id="认识磁盘">认识磁盘</h2>
+<p><img src="/image/disk_look.jpg" alt="disk_look"></p>
 <blockquote>
 <p>嗨，兄弟，你太慢了！<br><img src="/image/disk_speed2.png" alt="disk_speed2"><br>这能全怪我吗？磁盘抱怨说。</p>
 </blockquote>
@@ -984,19 +974,20 @@
 <li>数字时代中的机械运行</li>
 <li>基于成本和现实的考虑 - -目前机械磁盘使用仍然非常普遍。<br><img src="/image/disk_speed.png" alt="disk_speed"></li>
 </ul>
-<p>##磁盘表示和存储数据##</p>
+<h2 id="磁盘表示和存储数据">磁盘表示和存储数据</h2>
 <ul>
 <li>磁盘如何表示和存储数据 ？<br>磁头磁化盘面用有磁和无磁来磁化盘面，表示0和1</li>
 <li>一块新的磁盘上面有数据吗？<br>有的。因为盘面上磁的状态只有两种，有磁或者没有。</li>
 <li>500G的磁盘有多大？<br>硬件厂商在生产时是按1MB=1000KB来算的,这样生产出来的500G实际容量为500<em>1000</em>1000<em>1000B,而windows系统是按1MB=1024KB来计算的,这样以来标称256MB的内存在windows下显示的容量就应该为500</em>1000<em>1000</em>1000/1024/1024/1024=465.6612873077392578125</li>
 </ul>
 <p>来看一看卡当你按了Power后–开机后磁盘的运行过程：<br>从打开电源到开始操作，计算机的启动是一个非常复杂的过程。，参考文章<a href="http://www.ruanyifeng.com/blog/2013/02/booting.html" target="_blank" rel="external">计算机是如何启动的？</a><br>那我们看一看磁盘的运行过程：<br><img src="/image/innerdisk.png" alt="innerdisk"><br>磁头在开始的时候放在起停区，磁头并不直接接触盘面。传动手臂来回摆动到盘面上来读取数据。详细参考文章<a href="http://www.doc88.com/p-078194549983.html" target="_blank" rel="external">硬盘工作原理</a></p>
-<p>##关于格式化你知道吗##</p>
+<h2 id="关于格式化你知道吗">关于格式化你知道吗</h2>
 <ul>
 <li>低级格式化：是将空白的磁盘划分出柱面和磁道，再将磁道划分为若干个扇区。</li>
 <li>高级格式化：创建未来操作系统给使用的文件系统。</li>
 </ul>
-<p>##磁盘结构##<br><img src="/image/disk-structure.png" alt="disk-structure"><br>磁道、柱面、扇区<br><img src="/image/disk2.png" alt="disk2"><br>早期的硬盘盘片的盘面以圆心开始向外放射状将磁道分割成等分的弧段，这些弧段便是硬盘的扇区(如图)。每个扇区一般规定大小为512byte，这里大家应该和我一样比较疑惑，外圈周长很明显比内圈要长，怎么可能每个扇区都是512byte?其实答案早期硬盘外圈存储比内圈存储密度低一些，所以外圈很长但是仍然只能存储512byte，因此如果我们知道了柱面数(磁道数)Cylinders、磁头数Heads、扇区数Sectors，基本上硬盘的容量我们能够计算出来 硬盘总容量= Cylinders <em> Heads </em> Sectors * 512byte。 但是由于早期硬盘外圈密度低，导致盘片利用率不高，现在的硬盘盘片则采用内外存储密度一致的方式，每个磁道都划分成以512byte大小的弧段，这样也造成了内外磁道上扇区数量会不一样，外圈上的扇区数要多于内圈扇区数。</p>
+<h2 id="磁盘结构">磁盘结构</h2>
+<p><img src="/image/disk-structure.png" alt="disk-structure"><br>磁道、柱面、扇区<br><img src="/image/disk2.png" alt="disk2"><br>早期的硬盘盘片的盘面以圆心开始向外放射状将磁道分割成等分的弧段，这些弧段便是硬盘的扇区(如图)。每个扇区一般规定大小为512byte，这里大家应该和我一样比较疑惑，外圈周长很明显比内圈要长，怎么可能每个扇区都是512byte?其实答案早期硬盘外圈存储比内圈存储密度低一些，所以外圈很长但是仍然只能存储512byte，因此如果我们知道了柱面数(磁道数)Cylinders、磁头数Heads、扇区数Sectors，基本上硬盘的容量我们能够计算出来 硬盘总容量= Cylinders <em> Heads </em> Sectors * 512byte。 但是由于早期硬盘外圈密度低，导致盘片利用率不高，现在的硬盘盘片则采用内外存储密度一致的方式，每个磁道都划分成以512byte大小的弧段，这样也造成了内外磁道上扇区数量会不一样，外圈上的扇区数要多于内圈扇区数。</p>
 <ul>
 <li>需要注意的是<ul>
 <li>0扇区的重要意思：第0面的第一个扇区。BIOS启动后，读取硬盘第一个扇区MBR中的引导加载程序。</li>
@@ -1015,7 +1006,7 @@
 </ul>
 </li>
 </ul>
-<p>##影响磁盘性能的4个因素##</p>
+<h2 id="影响磁盘性能的4个因素">影响磁盘性能的4个因素</h2>
 <ul>
 <li>转速：当读写数据时，磁头是不会动的，全靠盘片的转动来讲对应删去中的数据感应给磁头，所以磁盘的转速越快，数据传输的时间久越短，也就是我们说的速度传输快。不过增加转速会提高产品热量，同时噪声也会成倍增长，所以7200转到现在依然是绝对主流。</li>
 <li>寻道速度:其实寻道时间就是磁头到达目标数据所在磁道的平均时间，影响性能最关键的因素。（固态硬盘没有寻道速度，所以快一些）<a href="http://v.ku6.com/show/F28kplfMQUKA_7H3.html" target="_blank" rel="external">计算机磁盘寻道演示视频</a></li>
@@ -1035,13 +1026,13 @@
 </ul>
 </li>
 </ul>
-<p>##操作系统如何看待磁盘##</p>
+<h2 id="操作系统如何看待磁盘">操作系统如何看待磁盘</h2>
 <ul>
 <li>操作系统系统在保证性能和效率的情况下，进行上下层面的沟通、组织、协调。</li>
 <li>对上，通过格式化，创建文件系统，上层应用程序对文件系统进行操作，达到进一步的封装。</li>
 <li>对下，通过磁盘驱动程序直接操作磁盘，为上层提供安全、可靠的数据。</li>
 </ul>
-<p>##Linux IO调度算法解析##</p>
+<h2 id="Linux_IO调度算法解析">Linux IO调度算法解析</h2>
 <ul>
 <li>在资源充足情况下，写是很快的。</li>
 <li>写的多种方式</li>
@@ -1050,7 +1041,8 @@
 <li>查看当前系统正在使用的IO调度算法 <code>cat /sys/block/sda/queue/scheduler</code></li>
 </ul>
 <p>一篇比较好的文章<a href="http://www.cnblogs.com/zhenjing/archive/2012/06/20/linux_writeback.html" target="_blank" rel="external">linux的IO调度算法和回写机制</a></p>
-<p>##监控磁盘##<br>iostat 解析</p>
+<h2 id="监控磁盘">监控磁盘</h2>
+<p>iostat 解析</p>
 <p>#课后作业#<br><b>1、DMA模式的具体含义是什么？</b></p>
 <ul>
 <li>DMA模式：DMA(Direct Memory Access，直接内存存取) 是一种不经过CPU而直接从内存存取数据的数据交换模式。在DMA模式下，CPU只须向DMA控制器下达指令，让DMA控制器来处理数据的传送，数据传送完毕再把信息反馈给CPU，这样就很大程度上减轻了CPU资源占有率，可以大大节省系统资源。<br><img src="/image/dma.png" alt="dma"></li>

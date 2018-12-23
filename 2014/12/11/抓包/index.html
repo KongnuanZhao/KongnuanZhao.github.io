@@ -81,7 +81,7 @@
                                 </li>
                                 
                                 <li class="search-archive-li mp-pjax">
-                                    <a href="/2016/01/30/from-now/">千里之行始于足下</a>
+                                    <a href="/2016/01/30/from-now/">始于记下</a>
                                 </li>
                                 
                                 <li class="search-archive-li mp-pjax">
@@ -134,10 +134,6 @@
                                 
                                 <li class="search-archive-li mp-pjax">
                                     <a href="/2015/03/23/about-health/">不要等到很累的时候才去休息</a>
-                                </li>
-                                
-                                <li class="search-archive-li mp-pjax">
-                                    <a href="/2015/03/22/web-analytics/">网站分析</a>
                                 </li>
                                 
                                 <li class="search-archive-li mp-pjax">
@@ -298,10 +294,6 @@
                                 
                                 <li class="search-archive-li mp-pjax">
                                     <a href="/2014/12/23/性能测试之时间都去哪了/">性能测试之时间都去哪了</a>
-                                </li>
-                                
-                                <li class="search-archive-li mp-pjax">
-                                    <a href="/2014/12/22/这些年上过的课/">这些年上过的课</a>
                                 </li>
                                 
                                 <li class="search-archive-li mp-pjax">
@@ -474,7 +466,7 @@
                                 
                                 <li class="search-category-li mp-pjax">
                                     <a href="/categories/点滴/">&nbsp;&nbsp;&nbsp;点滴</a>
-                                    <small>13</small>
+                                    <small>12</small>
                                 </li>
                                 
                                 <li class="search-category-li mp-pjax">
@@ -631,7 +623,7 @@
                                 
                                 <li class="search-tag-li mp-pjax">
                                     <a href="/tags/点滴/">&nbsp;&nbsp;&nbsp;点滴</a>
-                                    <small>13</small>
+                                    <small>12</small>
                                 </li>
                                 
                                 <li class="search-tag-li mp-pjax">
@@ -680,7 +672,7 @@
                 
                     <a  data-pjax href="/2016/01/30/maven-version/">Maven(二)用MyEclipse建立Maven骨架的项目</a>
                 
-                    <a  data-pjax href="/2016/01/30/from-now/">千里之行始于足下</a>
+                    <a  data-pjax href="/2016/01/30/from-now/">始于记下</a>
                 
                     <a  data-pjax href="/2015/05/27/believe-me/">世界是心的镜子</a>
                 
@@ -707,8 +699,6 @@
                     <a  data-pjax href="/2015/03/24/about-index/">关于索引的一些总结和思考（上）</a>
                 
                     <a  data-pjax href="/2015/03/23/about-health/">不要等到很累的时候才去休息</a>
-                
-                    <a  data-pjax href="/2015/03/22/web-analytics/">网站分析</a>
                 
                     <a  data-pjax href="/2015/03/21/test-report/">性能测试报告的编写</a>
                 
@@ -789,8 +779,6 @@
                     <a  data-pjax href="/2014/12/23/为什么只有13台dns根服务器/">为什么只有13台dns根服务器</a>
                 
                     <a  data-pjax href="/2014/12/23/性能测试之时间都去哪了/">性能测试之时间都去哪了</a>
-                
-                    <a  data-pjax href="/2014/12/22/这些年上过的课/">这些年上过的课</a>
                 
                     <a  data-pjax href="/2014/12/21/熟悉的陌生人OS/">熟悉的陌生人OS</a>
                 
@@ -977,7 +965,8 @@
             <p><img src="/image/hehe.png" alt="hehe"></p>
 <p>#抓包工具之比较#</p>
 <p>##Httpwatch##<br>1）基本使用和技巧<br>2）HTTP请求时间分段分析</p>
-<p>###时间轴###<br>(图片点击放大)</p>
+<h3 id="时间轴">时间轴</h3>
+<p>(图片点击放大)</p>
 <p><img src="/image/watch1.png" alt="watch1.png"></p>
 <ul>
 <li>Blocked<blockquote>
@@ -1005,7 +994,7 @@
 </blockquote>
 </li>
 </ul>
-<p>##Fiddler##</p>
+<h2 id="Fiddler">Fiddler</h2>
 <ul>
 <li>Fiddler是一个使用本地 127.0.0.1:8888 的 HTTP 代理，任何能够设置 HTTP 代理为 127.0.0.1:8888的浏览器和应用程序都可以使用 Fiddler。代理是指客户端的所有请求都要先经过Fiddler，然后转发到相应的服务器，反之，服务器端的所有响应，也都会先经过Fiddler然后发送到客户端。如下图：<br><img src="/image/FIDDLER.png" alt="fiddler"></li>
 <li>https的抓取 关于fiddler的更多详细介绍 → <a href="http://blog.csdn.net/ohmygirl/article/details/17846199" target="_blank" rel="external">Fiddler简介</a></li>
@@ -1018,9 +1007,12 @@
 </li>
 <li>另外的一个方便的功能即过滤功能，Filter标签则可以设置Fiddler的过滤规则，来达到过滤http请求的目的。最简单如：过滤内网http请求而只抓取http请求，或则过滤相应域名的http请求。Fiddler的过滤器非常强大，可以过滤特定http状态码的请求，可以过滤特定请求类型的http请求（如css请求，image请求，js请求等），可以过滤请求报文大于或则小于指定大小（byte）的请求。<br><img src="/image/filters.png" alt="filters"></li>
 </ul>
-<p>##firefox和firebug##<br>1)简单介绍firefox和功能强大的firebug<br>参看<a href="http://jingyan.baidu.com/article/fd8044fa97e08c5030137a6c.html" target="_blank" rel="external">firebug详细使用方法</a></p>
-<p>##科来网络分析工具的介绍##<br>1）过滤器的使用和多种协议包的抓取<br>参看<a href="http://wenku.baidu.com/view/b94402fcf61fb7360b4c6589.html" target="_blank" rel="external">科来网络分析系统抓包简明教程</a></p>
-<p>#课程作业#<br>1.本课程介绍的4种抓包工具除了都能抓包外，他们各自都有什么独特的特点？</p>
+<h2 id="firefox和firebug">firefox和firebug</h2>
+<p>1)简单介绍firefox和功能强大的firebug<br>参看<a href="http://jingyan.baidu.com/article/fd8044fa97e08c5030137a6c.html" target="_blank" rel="external">firebug详细使用方法</a></p>
+<h2 id="科来网络分析工具的介绍">科来网络分析工具的介绍</h2>
+<p>1）过滤器的使用和多种协议包的抓取<br>参看<a href="http://wenku.baidu.com/view/b94402fcf61fb7360b4c6589.html" target="_blank" rel="external">科来网络分析系统抓包简明教程</a></p>
+<h1 id="课程作业">课程作业</h1>
+<p>1.本课程介绍的4种抓包工具除了都能抓包外，他们各自都有什么独特的特点？</p>
 <ul>
 <li>Httpwatch：主要特点详细的时间轴</li>
 <li>Fiddler： 构造自定义请求和自定义服务器返回</li>

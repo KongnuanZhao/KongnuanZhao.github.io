@@ -81,7 +81,7 @@
                                 </li>
                                 
                                 <li class="search-archive-li mp-pjax">
-                                    <a href="/2016/01/30/from-now/">千里之行始于足下</a>
+                                    <a href="/2016/01/30/from-now/">始于记下</a>
                                 </li>
                                 
                                 <li class="search-archive-li mp-pjax">
@@ -134,10 +134,6 @@
                                 
                                 <li class="search-archive-li mp-pjax">
                                     <a href="/2015/03/23/about-health/">不要等到很累的时候才去休息</a>
-                                </li>
-                                
-                                <li class="search-archive-li mp-pjax">
-                                    <a href="/2015/03/22/web-analytics/">网站分析</a>
                                 </li>
                                 
                                 <li class="search-archive-li mp-pjax">
@@ -298,10 +294,6 @@
                                 
                                 <li class="search-archive-li mp-pjax">
                                     <a href="/2014/12/23/性能测试之时间都去哪了/">性能测试之时间都去哪了</a>
-                                </li>
-                                
-                                <li class="search-archive-li mp-pjax">
-                                    <a href="/2014/12/22/这些年上过的课/">这些年上过的课</a>
                                 </li>
                                 
                                 <li class="search-archive-li mp-pjax">
@@ -474,7 +466,7 @@
                                 
                                 <li class="search-category-li mp-pjax">
                                     <a href="/categories/点滴/">&nbsp;&nbsp;&nbsp;点滴</a>
-                                    <small>13</small>
+                                    <small>12</small>
                                 </li>
                                 
                                 <li class="search-category-li mp-pjax">
@@ -631,7 +623,7 @@
                                 
                                 <li class="search-tag-li mp-pjax">
                                     <a href="/tags/点滴/">&nbsp;&nbsp;&nbsp;点滴</a>
-                                    <small>13</small>
+                                    <small>12</small>
                                 </li>
                                 
                                 <li class="search-tag-li mp-pjax">
@@ -680,7 +672,7 @@
                 
                     <a  data-pjax href="/2016/01/30/maven-version/">Maven(二)用MyEclipse建立Maven骨架的项目</a>
                 
-                    <a  data-pjax href="/2016/01/30/from-now/">千里之行始于足下</a>
+                    <a  data-pjax href="/2016/01/30/from-now/">始于记下</a>
                 
                     <a  data-pjax href="/2015/05/27/believe-me/">世界是心的镜子</a>
                 
@@ -707,8 +699,6 @@
                     <a  data-pjax href="/2015/03/24/about-index/">关于索引的一些总结和思考（上）</a>
                 
                     <a  data-pjax href="/2015/03/23/about-health/">不要等到很累的时候才去休息</a>
-                
-                    <a  data-pjax href="/2015/03/22/web-analytics/">网站分析</a>
                 
                     <a  data-pjax href="/2015/03/21/test-report/">性能测试报告的编写</a>
                 
@@ -789,8 +779,6 @@
                     <a  data-pjax href="/2014/12/23/为什么只有13台dns根服务器/">为什么只有13台dns根服务器</a>
                 
                     <a  data-pjax href="/2014/12/23/性能测试之时间都去哪了/">性能测试之时间都去哪了</a>
-                
-                    <a  data-pjax href="/2014/12/22/这些年上过的课/">这些年上过的课</a>
                 
                     <a  data-pjax href="/2014/12/21/熟悉的陌生人OS/">熟悉的陌生人OS</a>
                 
@@ -977,9 +965,11 @@
             <p>
                 
                 
-#索引之基础#
-##什么是索引##数据库的索引类似于书籍的索引。在书籍中，索引允许用户不必翻阅完整个书就能迅速地找到所需要的信息。在数据库中，索引也允许数据库程序迅速地找到表中的数据，而不必扫描整张表。在Oracle中索引和表一样，是段的一种，当我们建一个表，就产生一个表的segment，当在表上的某些列上建索引，就产生一个索引的segment。索引的目的就是让表的查询更快。
-##如何实现##这是因为索引最低级的块（叶块）存储了索引键
+索引之基础
+什么是索引
+数据库的索引类似于书籍的索引。在书籍中，索引允许用户不必翻阅完整个书就能迅速地找到所需要的信息。在数据库中，索引也允许数据库程序迅速地找到表中的数据，而不必扫描整张表。在Oracle中索引和表一样，是段的一种，当我们建一个表，就产生一个表的segment，当在表上的某些列上建索引，就产生一个索引的segment。索引的目的就是让表的查询更快。
+如何实现
+这是因为索引最低级的块（叶块）存储了索引键跟rowid来实
                 
             </p>
             
@@ -1015,13 +1005,13 @@
             <p>
                 
                 从Oracle10g往后导入导出就有两种方式，一种是传统的exp/imp,另一种则是更为高效的expdp/impdp。
-#为什么有#
+为什么有
 
 传统的imp/exp更简单一点点。
 数据泵:使用数据泵可以在数据库之间高速传输数据。
 用于替代老的exp/imp,速度更快，机制上不同于老的 exp/imp，提供更多的功能。
 始于Oracle10g,从Oracle11g开始，不再提供老的imp/exp的支持。
-expdp差不多2倍于传统的exp操作，i
+expdp差不多2倍于传统的exp操作，imp
                 
             </p>
             
@@ -1091,7 +1081,8 @@ expdp差不多2倍于传统的exp操作，i
         <section class="post-excerpt">
             <p>
                 
-                #Oracle体系结构#首先回顾一下Oracle的体系结构每一个运行的Oracle 数据库都与一个Oracle 实例关联。在数据库服务器上启动数据库后，Oracle 软件会分配一个称为系统全局区(SGA) 的共享内存区，还会启动若干个Oracle 后台进程。这种SGA 和Oracle 进程的组合就称为一个Oracle 实例。启动实例后，Oracle 软件会将实例与特定的数据库关联。这个过程称为装载数据库。接下来可以打开数据库，以便授权用
+                Oracle体系结构
+首先回顾一下Oracle的体系结构每一个运行的Oracle 数据库都与一个Oracle 实例关联。在数据库服务器上启动数据库后，Oracle 软件会分配一个称为系统全局区(SGA) 的共享内存区，还会启动若干个Oracle 后台进程。这种SGA 和Oracle 进程的组合就称为一个Oracle 实例。启动实例后，Oracle 软件会将实例与特定的数据库关联。这个过程称为装载数据库。接下来可以打开数据库，以便授权用户
                 
             </p>
             
@@ -1127,11 +1118,13 @@ expdp差不多2倍于传统的exp操作，i
             <p>
                 
                 甚是怀念当时一点也不懂oracle然后一股脑认真学习，一笔一划做笔记的样子，所以决定重新一点一滴整理下学过的点点滴滴。
-#Oracle初相识#Oracle Database 11g：“g”代表网格全球网格论坛(GGF)请访问GGF网站
-##数据库安装（略）##
-##Oracle 服务##Oracle 在 windows 中安装完成后，会安装很多服务，下面介绍几个主要的服务。
+Oracle初相识
+Oracle Database 11g：“g”代表网格全球网格论坛(GGF)请访问GGF网站
+数据库安装（略）
+Oracle服务
+Oracle 在 windows 中安装完成后，会安装很多服务，下面介绍几个主要的服务。
 
-OracleService+服务名:该服务是数据库启动的基础
+OracleService+服务名:该服务是数据库启动的基础，只有该服务启动了
                 
             </p>
             

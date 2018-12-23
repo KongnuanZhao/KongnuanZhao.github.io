@@ -81,7 +81,7 @@
                                 </li>
                                 
                                 <li class="search-archive-li mp-pjax">
-                                    <a href="/2016/01/30/from-now/">千里之行始于足下</a>
+                                    <a href="/2016/01/30/from-now/">始于记下</a>
                                 </li>
                                 
                                 <li class="search-archive-li mp-pjax">
@@ -134,10 +134,6 @@
                                 
                                 <li class="search-archive-li mp-pjax">
                                     <a href="/2015/03/23/about-health/">不要等到很累的时候才去休息</a>
-                                </li>
-                                
-                                <li class="search-archive-li mp-pjax">
-                                    <a href="/2015/03/22/web-analytics/">网站分析</a>
                                 </li>
                                 
                                 <li class="search-archive-li mp-pjax">
@@ -298,10 +294,6 @@
                                 
                                 <li class="search-archive-li mp-pjax">
                                     <a href="/2014/12/23/性能测试之时间都去哪了/">性能测试之时间都去哪了</a>
-                                </li>
-                                
-                                <li class="search-archive-li mp-pjax">
-                                    <a href="/2014/12/22/这些年上过的课/">这些年上过的课</a>
                                 </li>
                                 
                                 <li class="search-archive-li mp-pjax">
@@ -474,7 +466,7 @@
                                 
                                 <li class="search-category-li mp-pjax">
                                     <a href="/categories/点滴/">&nbsp;&nbsp;&nbsp;点滴</a>
-                                    <small>13</small>
+                                    <small>12</small>
                                 </li>
                                 
                                 <li class="search-category-li mp-pjax">
@@ -631,7 +623,7 @@
                                 
                                 <li class="search-tag-li mp-pjax">
                                     <a href="/tags/点滴/">&nbsp;&nbsp;&nbsp;点滴</a>
-                                    <small>13</small>
+                                    <small>12</small>
                                 </li>
                                 
                                 <li class="search-tag-li mp-pjax">
@@ -680,7 +672,7 @@
                 
                     <a  data-pjax href="/2016/01/30/maven-version/">Maven(二)用MyEclipse建立Maven骨架的项目</a>
                 
-                    <a  data-pjax href="/2016/01/30/from-now/">千里之行始于足下</a>
+                    <a  data-pjax href="/2016/01/30/from-now/">始于记下</a>
                 
                     <a  data-pjax href="/2015/05/27/believe-me/">世界是心的镜子</a>
                 
@@ -707,8 +699,6 @@
                     <a  data-pjax href="/2015/03/24/about-index/">关于索引的一些总结和思考（上）</a>
                 
                     <a  data-pjax href="/2015/03/23/about-health/">不要等到很累的时候才去休息</a>
-                
-                    <a  data-pjax href="/2015/03/22/web-analytics/">网站分析</a>
                 
                     <a  data-pjax href="/2015/03/21/test-report/">性能测试报告的编写</a>
                 
@@ -789,8 +779,6 @@
                     <a  data-pjax href="/2014/12/23/为什么只有13台dns根服务器/">为什么只有13台dns根服务器</a>
                 
                     <a  data-pjax href="/2014/12/23/性能测试之时间都去哪了/">性能测试之时间都去哪了</a>
-                
-                    <a  data-pjax href="/2014/12/22/这些年上过的课/">这些年上过的课</a>
                 
                     <a  data-pjax href="/2014/12/21/熟悉的陌生人OS/">熟悉的陌生人OS</a>
                 
@@ -972,8 +960,10 @@
     </span>
 
         <section class="post-content">
-            <p>#Oracle体系结构#<br>首先回顾一下Oracle的体系结构<br><img src="/image/oraclestruts.png" alt="oraclestruts"><br>每一个运行的Oracle 数据库都与一个Oracle 实例关联。在数据库服务器上启动数据库后，<br>Oracle 软件会分配一个称为系统全局区(SGA) 的共享内存区，还会启动若干个Oracle 后<br>台进程。这种SGA 和Oracle 进程的组合就称为一个Oracle 实例。<br>启动实例后，Oracle 软件会将实例与特定的数据库关联。这个过程称为装载数据库。接下<br>来可以打开数据库，以便授权用户访问数据库。在同一台计算机上可以并发执行多个实例，<br>每一个实例只访问自己的物理数据库。<br>这里要联系oracle 启动的三个过程,分为三个阶段：<br>1.启动实例，包括以下操作：1）读取参数文件  2）根据参数文件分配SGA  3）启动后台进程<br><img src="/image/startora.png" alt="startora"><br>2.装载数据库 :根据读取参数文件获得控制文件的位置加载控制文件,让实例和数据库相关联<br><img src="/image/mount.png" alt="mount"><br>3.打开数据库：根据控制文件找到并打开数据文件和日志文件，从而打开数据库<br><img src="/image/openora.png" alt="open"><br>4.关闭数据库<br><img src="/image/shutdown.png" alt="shutdown"></p>
-<p>#物理数据结构#<br>这里说一下物理数据结构里面的参数文件也就是oracle启动实例的第一步要读取参数文件。</p>
+            <h1 id="Oracle体系结构">Oracle体系结构</h1>
+<p>首先回顾一下Oracle的体系结构<br><img src="/image/oraclestruts.png" alt="oraclestruts"><br>每一个运行的Oracle 数据库都与一个Oracle 实例关联。在数据库服务器上启动数据库后，<br>Oracle 软件会分配一个称为系统全局区(SGA) 的共享内存区，还会启动若干个Oracle 后<br>台进程。这种SGA 和Oracle 进程的组合就称为一个Oracle 实例。<br>启动实例后，Oracle 软件会将实例与特定的数据库关联。这个过程称为装载数据库。接下<br>来可以打开数据库，以便授权用户访问数据库。在同一台计算机上可以并发执行多个实例，<br>每一个实例只访问自己的物理数据库。<br>这里要联系oracle 启动的三个过程,分为三个阶段：<br>1.启动实例，包括以下操作：1）读取参数文件  2）根据参数文件分配SGA  3）启动后台进程<br><img src="/image/startora.png" alt="startora"><br>2.装载数据库 :根据读取参数文件获得控制文件的位置加载控制文件,让实例和数据库相关联<br><img src="/image/mount.png" alt="mount"><br>3.打开数据库：根据控制文件找到并打开数据文件和日志文件，从而打开数据库<br><img src="/image/openora.png" alt="open"><br>4.关闭数据库<br><img src="/image/shutdown.png" alt="shutdown"></p>
+<h1 id="物理数据结构">物理数据结构</h1>
+<p>这里说一下物理数据结构里面的参数文件也就是oracle启动实例的第一步要读取参数文件。</p>
 <ul>
 <li>参数文件：存储ORACLE数据库的配置信息。记录控制文件的保存地址。<ul>
 <li>pfile：可编辑，位置：$ORACLE_HOME/database/init<sid>.ora</sid></li>
@@ -1007,7 +997,8 @@
 <li>归档日志文件：简单的说就是联机日志文件的备份。属于可选择项，一般情况下，测试环境中不会开启归档模式，在生产库中，为了保证数据可恢复性，都是开启归档模式。归档模式也有一定缺点，因为是保存先前的日志信息，所以很占用硬盘空间，所以管理员一般会做定期的处理，对归档日志进行删除工作，保留最新的归档日志文件。<br><img src="/image/archive.png" alt="archive"><br>打开归档模式命令：首先需要将数据库关闭，然后启动到mount状态下，输入命令：<code>SQL&gt;alter database archivelog;</code><br>关闭归档模式命令：在mount状态下输入命令：<code>SQL&gt;alter database noarchivelog;</code></li>
 <li>告警日志alert.log<br>告警日志，在产生错误时，启动和关闭实例时，都会记录信息到告警日志中，此外还记录了不同于默认值的初始参数的列表，alter system，alter database命令，对表空间，数据文件的操作，空间不足，损坏的文件等。告警日志也会变得很大，可在任意时间重命名或删除告警日志，但是告警日志记录了数据库的各种安全信息，维护和恢复等信息，因此可根据时间先后来选择性删除。</li>
 </ul>
-<p>#Oracle内存结构#<br><img src="/image/oraclecache.png" alt="oraclecache"><br>与Oracle 实例关联的基本内存结构包括：</p>
+<h1 id="Oracle内存结构">Oracle内存结构</h1>
+<p><img src="/image/oraclecache.png" alt="oraclecache"><br>与Oracle 实例关联的基本内存结构包括：</p>
 <ul>
 <li>系统全局区(SGA)：由所有服务器进程和后台进程共享</li>
 <li>程序全局区(PGA)：专用于每一个服务器进程或后台进程。每一个进程使用一个PGA 。</li>
@@ -1029,7 +1020,7 @@
 <li>SMON：系统监视进程。负责在实例启动时恢复实例。恢复因系统崩溃而中断的事务。</li>
 <li>CKPT：检查点进程。向DBWR进程发送信号，执行一次检查点，更新数据库的所有数据和控制文件。</li>
 </ul>
-<p>#逻辑数据结构#</p>
+<h1 id="逻辑数据结构">逻辑数据结构</h1>
 <ul>
 <li>表空间<br><img src="/image/tablespace.png" alt="tablespace"></li>
 <li>段:在Oracle中，凡是分配了空间的对象，都称之为段。<br><img src="/image/segment.png" alt="segment"></li>

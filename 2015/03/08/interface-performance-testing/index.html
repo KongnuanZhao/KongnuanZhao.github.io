@@ -81,7 +81,7 @@
                                 </li>
                                 
                                 <li class="search-archive-li mp-pjax">
-                                    <a href="/2016/01/30/from-now/">千里之行始于足下</a>
+                                    <a href="/2016/01/30/from-now/">始于记下</a>
                                 </li>
                                 
                                 <li class="search-archive-li mp-pjax">
@@ -134,10 +134,6 @@
                                 
                                 <li class="search-archive-li mp-pjax">
                                     <a href="/2015/03/23/about-health/">不要等到很累的时候才去休息</a>
-                                </li>
-                                
-                                <li class="search-archive-li mp-pjax">
-                                    <a href="/2015/03/22/web-analytics/">网站分析</a>
                                 </li>
                                 
                                 <li class="search-archive-li mp-pjax">
@@ -298,10 +294,6 @@
                                 
                                 <li class="search-archive-li mp-pjax">
                                     <a href="/2014/12/23/性能测试之时间都去哪了/">性能测试之时间都去哪了</a>
-                                </li>
-                                
-                                <li class="search-archive-li mp-pjax">
-                                    <a href="/2014/12/22/这些年上过的课/">这些年上过的课</a>
                                 </li>
                                 
                                 <li class="search-archive-li mp-pjax">
@@ -474,7 +466,7 @@
                                 
                                 <li class="search-category-li mp-pjax">
                                     <a href="/categories/点滴/">&nbsp;&nbsp;&nbsp;点滴</a>
-                                    <small>13</small>
+                                    <small>12</small>
                                 </li>
                                 
                                 <li class="search-category-li mp-pjax">
@@ -631,7 +623,7 @@
                                 
                                 <li class="search-tag-li mp-pjax">
                                     <a href="/tags/点滴/">&nbsp;&nbsp;&nbsp;点滴</a>
-                                    <small>13</small>
+                                    <small>12</small>
                                 </li>
                                 
                                 <li class="search-tag-li mp-pjax">
@@ -680,7 +672,7 @@
                 
                     <a  data-pjax href="/2016/01/30/maven-version/">Maven(二)用MyEclipse建立Maven骨架的项目</a>
                 
-                    <a  data-pjax href="/2016/01/30/from-now/">千里之行始于足下</a>
+                    <a  data-pjax href="/2016/01/30/from-now/">始于记下</a>
                 
                     <a  data-pjax href="/2015/05/27/believe-me/">世界是心的镜子</a>
                 
@@ -707,8 +699,6 @@
                     <a  data-pjax href="/2015/03/24/about-index/">关于索引的一些总结和思考（上）</a>
                 
                     <a  data-pjax href="/2015/03/23/about-health/">不要等到很累的时候才去休息</a>
-                
-                    <a  data-pjax href="/2015/03/22/web-analytics/">网站分析</a>
                 
                     <a  data-pjax href="/2015/03/21/test-report/">性能测试报告的编写</a>
                 
@@ -789,8 +779,6 @@
                     <a  data-pjax href="/2014/12/23/为什么只有13台dns根服务器/">为什么只有13台dns根服务器</a>
                 
                     <a  data-pjax href="/2014/12/23/性能测试之时间都去哪了/">性能测试之时间都去哪了</a>
-                
-                    <a  data-pjax href="/2014/12/22/这些年上过的课/">这些年上过的课</a>
                 
                     <a  data-pjax href="/2014/12/21/熟悉的陌生人OS/">熟悉的陌生人OS</a>
                 
@@ -972,8 +960,10 @@
     </span>
 
         <section class="post-content">
-            <p>#课堂笔记#<br>开发人员开发出来的接口，提供给测试人员详细的接口使用说明书,然后测试人员根据文档的描述在LoadRunner书写相应的接口测试脚本。</p>
-<p>#课堂作业#<br><b>1、在互联网上找到LoadRunner使用md5加密的函数并放入脚本中，拼接以下字符串并使用md5加密：待加密的字符串是 = 自己名字的全拼 + 当前时间到1970年的秒数 + 当前主机的hostname将要加密的字符串打印出来。</b><br>当前时间到1970年的秒数,用到的一个函数：</p>
+            <h1 id="课堂笔记">课堂笔记</h1>
+<p>开发人员开发出来的接口，提供给测试人员详细的接口使用说明书,然后测试人员根据文档的描述在LoadRunner书写相应的接口测试脚本。</p>
+<h1 id="课堂作业">课堂作业</h1>
+<p><b>1、在互联网上找到LoadRunner使用md5加密的函数并放入脚本中，拼接以下字符串并使用md5加密：待加密的字符串是 = 自己名字的全拼 + 当前时间到1970年的秒数 + 当前主机的hostname将要加密的字符串打印出来。</b><br>当前时间到1970年的秒数,用到的一个函数：</p>
 <figure class="highlight bash"><pre><div class="line">time_t time( time_t *timeptr ); </div><div class="line">timeptr  Pointer to long integer that will store the time.  </div><div class="line">The time function returns the number of seconds elapsed since midnight (<span class="number">00</span>:<span class="number">00</span>:<span class="number">00</span>), January <span class="number">1</span>, <span class="number">1970</span>, coordinated universal time (UTC), according to the system clock. The <span class="keyword">return</span> value is stored <span class="keyword">in</span> the location given by timeptr. If timeptr is NULL the value is not stored.</div></pre></figure>
 
 <p>网上找的MD5算法代码,将以下代码保存为md5.h文件导入到loadrunner中，然后在<code>globals.h</code>中引入头文件<code>#include &quot;md5.h&quot;</code></p>

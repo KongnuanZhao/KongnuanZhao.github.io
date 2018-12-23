@@ -81,7 +81,7 @@
                                 </li>
                                 
                                 <li class="search-archive-li mp-pjax">
-                                    <a href="/2016/01/30/from-now/">千里之行始于足下</a>
+                                    <a href="/2016/01/30/from-now/">始于记下</a>
                                 </li>
                                 
                                 <li class="search-archive-li mp-pjax">
@@ -134,10 +134,6 @@
                                 
                                 <li class="search-archive-li mp-pjax">
                                     <a href="/2015/03/23/about-health/">不要等到很累的时候才去休息</a>
-                                </li>
-                                
-                                <li class="search-archive-li mp-pjax">
-                                    <a href="/2015/03/22/web-analytics/">网站分析</a>
                                 </li>
                                 
                                 <li class="search-archive-li mp-pjax">
@@ -298,10 +294,6 @@
                                 
                                 <li class="search-archive-li mp-pjax">
                                     <a href="/2014/12/23/性能测试之时间都去哪了/">性能测试之时间都去哪了</a>
-                                </li>
-                                
-                                <li class="search-archive-li mp-pjax">
-                                    <a href="/2014/12/22/这些年上过的课/">这些年上过的课</a>
                                 </li>
                                 
                                 <li class="search-archive-li mp-pjax">
@@ -474,7 +466,7 @@
                                 
                                 <li class="search-category-li mp-pjax">
                                     <a href="/categories/点滴/">&nbsp;&nbsp;&nbsp;点滴</a>
-                                    <small>13</small>
+                                    <small>12</small>
                                 </li>
                                 
                                 <li class="search-category-li mp-pjax">
@@ -631,7 +623,7 @@
                                 
                                 <li class="search-tag-li mp-pjax">
                                     <a href="/tags/点滴/">&nbsp;&nbsp;&nbsp;点滴</a>
-                                    <small>13</small>
+                                    <small>12</small>
                                 </li>
                                 
                                 <li class="search-tag-li mp-pjax">
@@ -680,7 +672,7 @@
                 
                     <a  data-pjax href="/2016/01/30/maven-version/">Maven(二)用MyEclipse建立Maven骨架的项目</a>
                 
-                    <a  data-pjax href="/2016/01/30/from-now/">千里之行始于足下</a>
+                    <a  data-pjax href="/2016/01/30/from-now/">始于记下</a>
                 
                     <a  data-pjax href="/2015/05/27/believe-me/">世界是心的镜子</a>
                 
@@ -707,8 +699,6 @@
                     <a  data-pjax href="/2015/03/24/about-index/">关于索引的一些总结和思考（上）</a>
                 
                     <a  data-pjax href="/2015/03/23/about-health/">不要等到很累的时候才去休息</a>
-                
-                    <a  data-pjax href="/2015/03/22/web-analytics/">网站分析</a>
                 
                     <a  data-pjax href="/2015/03/21/test-report/">性能测试报告的编写</a>
                 
@@ -789,8 +779,6 @@
                     <a  data-pjax href="/2014/12/23/为什么只有13台dns根服务器/">为什么只有13台dns根服务器</a>
                 
                     <a  data-pjax href="/2014/12/23/性能测试之时间都去哪了/">性能测试之时间都去哪了</a>
-                
-                    <a  data-pjax href="/2014/12/22/这些年上过的课/">这些年上过的课</a>
                 
                     <a  data-pjax href="/2014/12/21/熟悉的陌生人OS/">熟悉的陌生人OS</a>
                 
@@ -972,15 +960,17 @@
     </span>
 
         <section class="post-content">
-            <p>#内存条的相关参数#<br>用鲁大师检测了自己本本的内存信息,好简略</p>
+            <h1 id="内存条的相关参数">内存条的相关参数</h1>
+<p>用鲁大师检测了自己本本的内存信息,好简略</p>
 <figure class="highlight bash"><pre><div class="line">DIMM <span class="number">0</span>:	海力士 DDR3 <span class="number">1600</span>MHz <span class="number">2</span>GB</div><div class="line">制造日期	<span class="number">2012</span> 年 <span class="number">02</span> 月</div><div class="line">型号	AD HMT325S6CFR8C-PB  N0</div><div class="line">序列号	<span class="number">0311</span>CE68</div><div class="line">	</div><div class="line">DIMM <span class="number">2</span>:	三星 DDR3 <span class="number">1600</span>MHz <span class="number">4</span>GB</div><div class="line">制造日期	<span class="number">2013</span> 年 <span class="number">06</span> 月</div><div class="line">型号	CE Samsung4G1600A9</div><div class="line">序列号	<span class="number">20131319</span></div></pre></figure>
 
-<p>#名词解释#</p>
+<h1 id="名词解释">名词解释</h1>
 <ul>
 <li>SDRAM: Synchronous Dynamic Random Access Memory，同步动态随机存储器，同步是指Memory工作需要同步时钟，内部的命令的发送与数据的传输都以它为基准；动态是指存储阵<br>列需要不断的刷新来保证数据不丢失；随机是指数据不是线性依次存储，而是自由指定地址进行数据读写。<br>(为什么要刷新？由于动态存储器存储单元存在漏电现象，为了保持每个存储单元数据的正确性，必须保证在64ms内对所有的存储单元刷新一遍。)</li>
 <li>DDR内存：SDRAM在一个时钟周期内只传输一次数据，它是在时钟的上升期进行数据传输；而DDR内存则是一个时钟周期内传输两次数据，它能够在时钟的上升期和下降期各传输一次数据，因此称为双倍速率同步动态随机存储器。DDR内存可以在与SDRAM相同的总线频率下达到更高的数据传输率。</li>
 </ul>
-<p>#操作系统与内存#<br>操作系统是永远绕不过去的，操作系统的主要功能之一就是内存管理。<br>早期，例如dos直接操作物理内存,风险大,程序简单,规模小.<br>现在，实际上用户从来没有主导过物理内存的分配（即使有也是极其有限的），具体分配多少是基于操作系统的分配和调度策略。</p>
+<h1 id="操作系统与内存">操作系统与内存</h1>
+<p>操作系统是永远绕不过去的，操作系统的主要功能之一就是内存管理。<br>早期，例如dos直接操作物理内存,风险大,程序简单,规模小.<br>现在，实际上用户从来没有主导过物理内存的分配（即使有也是极其有限的），具体分配多少是基于操作系统的分配和调度策略。</p>
 <ul>
 <li>看看进程怎么说<br>进程如何看待计算机？ 计算机完全由自己控制的，自己使用了计算机的所有资源。<br>进程认为整个系统只有自己在运行。如果是32位的，那么我完全占用了4G的内存（虚拟地址空间），如果是64位的，那就是2的64次方的地址空间。实质被操作系统欺骗了。</li>
 <li>看看操作系统怎么说<ul>
@@ -991,16 +981,18 @@
 </li>
 </ul>
 <p>最后，大家都很满意。都认为自己是胜利者。</p>
-<p>#内存的地址#</p>
+<h1 id="内存的地址">内存的地址</h1>
 <ul>
 <li>物理地址</li>
 <li>虚拟地址（逻辑地址）</li>
 <li>虚拟地址空间</li>
 </ul>
 <p><img src="/image/memoryaddress.png" alt="memoryaddress"><br>对于计算机来说，开机后操作系统会对物理内存进行初始化，进行分页。这个是对物理内存的操作。<br>物理地址到逻辑地址的转换需要操作系统和CPU高效的配合。<br>我们的操作的比如取地址、分配堆 等都是分配多大的虚拟地址空间而不是分配多大的物理内存。用户程序仅仅看到的是虚拟地址。<br><img src="/image/maddress.png" alt="maddress"></p>
-<p>#一个进程-一个世界#<br><img src="/image/processspace.png" alt="processspace"><br><img src="/image/vmspace.png" alt="vmspace"><br>每个进程通过系统调用进入内核，Linux内核空间由系统内的所有进程共享。从进程的角度来看，每个进程拥有4GB的虚拟地址空间。每个进程有各自的私有用户空间（0-3G）,这个空间对系统中的其他进程是不可见的。最高的1GB内核空间则为所有进程以及内核所共享。</p>
+<h1 id="一个进程">一个进程</h1>
+<p><img src="/image/processspace.png" alt="processspace"><br><img src="/image/vmspace.png" alt="vmspace"><br>每个进程通过系统调用进入内核，Linux内核空间由系统内的所有进程共享。从进程的角度来看，每个进程拥有4GB的虚拟地址空间。每个进程有各自的私有用户空间（0-3G）,这个空间对系统中的其他进程是不可见的。最高的1GB内核空间则为所有进程以及内核所共享。</p>
 <p>程序在执行时，使用一种 paging on demand的方式进行分配内存，产生中断。<br>例如一个非常大的文件，不可能一次性全部载入的，根据运行过程中的情况去载入。同时，在一定条件下，也会从物理内存中淘汰一些的页。</p>
-<p>#课后作业#<br><b>1、写时复制的具体含义是什么？</b><br>很喜欢老师上课讲的小例子，跟着实验了下体会一把：<br>编写源文件<code>vi malloc.c</code></p>
+<h1 id="课后作业">课后作业</h1>
+<p><b>1、写时复制的具体含义是什么？</b><br>很喜欢老师上课讲的小例子，跟着实验了下体会一把：<br>编写源文件<code>vi malloc.c</code></p>
 <figure class="highlight c"><pre><div class="line"><span class="preprocessor">#<span class="keyword">include</span>&lt;stdlib.h&gt;</span></div><div class="line"><span class="preprocessor">#<span class="keyword">include</span>&lt;stdio.h&gt;</span></div><div class="line"><span class="keyword">int</span> main(<span class="keyword">void</span>){</div><div class="line"> <span class="keyword">char</span> *ptr;</div><div class="line"> <span class="keyword">while</span>(<span class="number">1</span>){</div><div class="line">   ptr=(<span class="keyword">char</span> *)<span class="built_in">malloc</span>(<span class="number">1024</span>*<span class="number">1024</span>);</div><div class="line">   sleep(<span class="number">1</span>);</div><div class="line"> }</div><div class="line"> <span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">}</div></pre></figure>
 
 <p>执行 <code>gcc -o malloc malloc.c</code>，然后<code>./malloc</code></p>
@@ -1012,7 +1004,7 @@
 <p>然后重复上述步骤，可以看到，RES物理内存变化明显加快。</p>
 <p>查阅了相关资料：<br>Linux内核定义了“零页面”（内容全为0的一个物理页，且物理地址固定），应用层的内存分配请求，如栈扩展、堆分配、静态分配等，分配线性地址后，就将页表项条目指向“零页面”（指定初始值的情况除外），这样“零页面”就被所有进程共享，当向页面执行写入操作时，内核就会新分配一个物理页，实行“写时拷贝（写时复制）”操作，这样就实现了物理页面的延迟分配（如果只有读没有写，则无需另分配物理页）。<br>当系统可分配内存不足时，且有进程要求分配新页面，内核会Kill该进程，并打印类似“Out of Memory: Killed process xx (xxx).”的信息。这就是Linux的“OOM Killer”特性。</p>
 <p><b>2、内存物理地址、内存虚拟地址的区别是什么？</b><br>虚拟地址空间：在32位的i386 CPU的地址总线的是32位的，也就是说可以寻找到4G的地址空间。我们的程序被CPU执行，就是在0x00000000到0xFFFFFFFF这一段地址中。对于linux来说高1G的空间为内核空间，由操作系统调用，低3G的空间为用户空间，由用户使用。windows是高2G的空间为内核空间，由操作系统调用，低2G的空间为用户空间，由用户使用。<br>如图所示：<br><img src="/image/vmspace.png" alt="vmspace"><br> CPU在寻址的时候，是按照虚拟地址来寻址，然后通过MMU(内存管理单元)将虚拟地址转换为物理地址。因为只有程序的一部分加入到内存中，所以会出现所寻找的地址不在内存中的情况（CPU产生缺页异常），如果在内存不足的情况下，就会通过页面调度算法来将内存中的页面置换出来，然后将在外存中的页面加入到内存中，使程序继续正常运行。<br><img src="/image/va-pa.jpg" alt="va-pa"><br><b>3、操作系统的换页机制是什么？</b><br>操作系统将磁盘的一部分划出来，作为虚拟内存，由于内存的速度要比磁盘快得多，所以操作系统要按照某种换页机制将不需要的页面换到磁盘中，将需要的页面调到内存中，这就是换页。也叫系统换页。</p>
-<p>之前做的一篇笔记回顾一下<a href="http://www.zhaokongnuan.com/2015/01/08/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E4%B9%8B%E8%99%9A%E6%8B%9F%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86/" target="_blank" rel="external">操作系统之虚拟内存管理</a></p>
+<p>之前做的一篇笔记回顾一下<a href="http://www.catalannuan.com/2015/01/08/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E4%B9%8B%E8%99%9A%E6%8B%9F%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86/" target="_blank" rel="external">操作系统之虚拟内存管理</a></p>
 
         </section>
         <hr/>

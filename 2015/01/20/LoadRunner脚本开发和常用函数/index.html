@@ -81,7 +81,7 @@
                                 </li>
                                 
                                 <li class="search-archive-li mp-pjax">
-                                    <a href="/2016/01/30/from-now/">千里之行始于足下</a>
+                                    <a href="/2016/01/30/from-now/">始于记下</a>
                                 </li>
                                 
                                 <li class="search-archive-li mp-pjax">
@@ -134,10 +134,6 @@
                                 
                                 <li class="search-archive-li mp-pjax">
                                     <a href="/2015/03/23/about-health/">不要等到很累的时候才去休息</a>
-                                </li>
-                                
-                                <li class="search-archive-li mp-pjax">
-                                    <a href="/2015/03/22/web-analytics/">网站分析</a>
                                 </li>
                                 
                                 <li class="search-archive-li mp-pjax">
@@ -298,10 +294,6 @@
                                 
                                 <li class="search-archive-li mp-pjax">
                                     <a href="/2014/12/23/性能测试之时间都去哪了/">性能测试之时间都去哪了</a>
-                                </li>
-                                
-                                <li class="search-archive-li mp-pjax">
-                                    <a href="/2014/12/22/这些年上过的课/">这些年上过的课</a>
                                 </li>
                                 
                                 <li class="search-archive-li mp-pjax">
@@ -474,7 +466,7 @@
                                 
                                 <li class="search-category-li mp-pjax">
                                     <a href="/categories/点滴/">&nbsp;&nbsp;&nbsp;点滴</a>
-                                    <small>13</small>
+                                    <small>12</small>
                                 </li>
                                 
                                 <li class="search-category-li mp-pjax">
@@ -631,7 +623,7 @@
                                 
                                 <li class="search-tag-li mp-pjax">
                                     <a href="/tags/点滴/">&nbsp;&nbsp;&nbsp;点滴</a>
-                                    <small>13</small>
+                                    <small>12</small>
                                 </li>
                                 
                                 <li class="search-tag-li mp-pjax">
@@ -680,7 +672,7 @@
                 
                     <a  data-pjax href="/2016/01/30/maven-version/">Maven(二)用MyEclipse建立Maven骨架的项目</a>
                 
-                    <a  data-pjax href="/2016/01/30/from-now/">千里之行始于足下</a>
+                    <a  data-pjax href="/2016/01/30/from-now/">始于记下</a>
                 
                     <a  data-pjax href="/2015/05/27/believe-me/">世界是心的镜子</a>
                 
@@ -707,8 +699,6 @@
                     <a  data-pjax href="/2015/03/24/about-index/">关于索引的一些总结和思考（上）</a>
                 
                     <a  data-pjax href="/2015/03/23/about-health/">不要等到很累的时候才去休息</a>
-                
-                    <a  data-pjax href="/2015/03/22/web-analytics/">网站分析</a>
                 
                     <a  data-pjax href="/2015/03/21/test-report/">性能测试报告的编写</a>
                 
@@ -789,8 +779,6 @@
                     <a  data-pjax href="/2014/12/23/为什么只有13台dns根服务器/">为什么只有13台dns根服务器</a>
                 
                     <a  data-pjax href="/2014/12/23/性能测试之时间都去哪了/">性能测试之时间都去哪了</a>
-                
-                    <a  data-pjax href="/2014/12/22/这些年上过的课/">这些年上过的课</a>
                 
                     <a  data-pjax href="/2014/12/21/熟悉的陌生人OS/">熟悉的陌生人OS</a>
                 
@@ -972,7 +960,7 @@
     </span>
 
         <section class="post-content">
-            <p>#课堂笔记#</p>
+            <h1 id="课堂笔记">课堂笔记</h1>
 <blockquote>
 <p>脚本开发的原则：简单、正确、高效</p>
 </blockquote>
@@ -986,7 +974,7 @@
 <li>编译型语言，编译完成之后执行速度快，效率高；依赖编译器 如C,C++,Delphi,Fortran.</li>
 <li>解释型语言，执行速度慢，效率低；依赖解释器；如java、Basic.<br>总结：编译型语言在编译成目标程序后是可以通过操作系统直接运行，而解释语言的执行则需要一个解释环境（相当于一台虚拟机）,解释器在程序执行期间一直随之运行，在这里LoadRunner充当了解释器的角色，一般来说，解释器比编译有更好的灵活性，而编译有着很好的性能。<br>其中java是特殊的，java程序也需要编译，但是没有直接编译成为机器语言，而是编译成字节码。<br>java字节码的执行有两种方式：<br>1.即时编译方式：解释器先将字节码编译成机器码，然后再执行该机器码。<br>2.解释执行方式：解释器通过每次解释并执行一段代码来完成java字节码程序的所有操作。<br>通常采用的是第二种党法，由于JVM具有较好的灵活性，使字节码翻译为机器码效率较高。对于那些对于执行速度要求较高的应用程序，解释器可将java字节码即时编译为机器码，从而很好的保证了java代码的可移植性和高性能。<br><img src="/image/java.jpg" alt="java"></li>
 </ul>
-<p>##局部变量和全局变量##</p>
+<h2 id="局部变量和全局变量">局部变量和全局变量</h2>
 <ul>
 <li>局部变量</li>
 </ul>
@@ -1020,7 +1008,8 @@
 <li>什么时候定义全局变量?<br>整个过程中固定不变的，例如URL地址、KEY、其他</li>
 <li>支持指针、数组、控制流等</li>
 </ul>
-<p>##函数##<br>LoadRunner中的几种类型的函数：</p>
+<h2 id="函数">函数</h2>
+<p>LoadRunner中的几种类型的函数：</p>
 <ul>
 <li>通用函数lr开头的（例如日志函数，思考时间函数…）</li>
 <li>与编程语言相关的函数</li>

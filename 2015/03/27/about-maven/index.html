@@ -81,7 +81,7 @@
                                 </li>
                                 
                                 <li class="search-archive-li mp-pjax">
-                                    <a href="/2016/01/30/from-now/">千里之行始于足下</a>
+                                    <a href="/2016/01/30/from-now/">始于记下</a>
                                 </li>
                                 
                                 <li class="search-archive-li mp-pjax">
@@ -134,10 +134,6 @@
                                 
                                 <li class="search-archive-li mp-pjax">
                                     <a href="/2015/03/23/about-health/">不要等到很累的时候才去休息</a>
-                                </li>
-                                
-                                <li class="search-archive-li mp-pjax">
-                                    <a href="/2015/03/22/web-analytics/">网站分析</a>
                                 </li>
                                 
                                 <li class="search-archive-li mp-pjax">
@@ -298,10 +294,6 @@
                                 
                                 <li class="search-archive-li mp-pjax">
                                     <a href="/2014/12/23/性能测试之时间都去哪了/">性能测试之时间都去哪了</a>
-                                </li>
-                                
-                                <li class="search-archive-li mp-pjax">
-                                    <a href="/2014/12/22/这些年上过的课/">这些年上过的课</a>
                                 </li>
                                 
                                 <li class="search-archive-li mp-pjax">
@@ -474,7 +466,7 @@
                                 
                                 <li class="search-category-li mp-pjax">
                                     <a href="/categories/点滴/">&nbsp;&nbsp;&nbsp;点滴</a>
-                                    <small>13</small>
+                                    <small>12</small>
                                 </li>
                                 
                                 <li class="search-category-li mp-pjax">
@@ -631,7 +623,7 @@
                                 
                                 <li class="search-tag-li mp-pjax">
                                     <a href="/tags/点滴/">&nbsp;&nbsp;&nbsp;点滴</a>
-                                    <small>13</small>
+                                    <small>12</small>
                                 </li>
                                 
                                 <li class="search-tag-li mp-pjax">
@@ -680,7 +672,7 @@
                 
                     <a  data-pjax href="/2016/01/30/maven-version/">Maven(二)用MyEclipse建立Maven骨架的项目</a>
                 
-                    <a  data-pjax href="/2016/01/30/from-now/">千里之行始于足下</a>
+                    <a  data-pjax href="/2016/01/30/from-now/">始于记下</a>
                 
                     <a  data-pjax href="/2015/05/27/believe-me/">世界是心的镜子</a>
                 
@@ -707,8 +699,6 @@
                     <a  data-pjax href="/2015/03/24/about-index/">关于索引的一些总结和思考（上）</a>
                 
                     <a  data-pjax href="/2015/03/23/about-health/">不要等到很累的时候才去休息</a>
-                
-                    <a  data-pjax href="/2015/03/22/web-analytics/">网站分析</a>
                 
                     <a  data-pjax href="/2015/03/21/test-report/">性能测试报告的编写</a>
                 
@@ -789,8 +779,6 @@
                     <a  data-pjax href="/2014/12/23/为什么只有13台dns根服务器/">为什么只有13台dns根服务器</a>
                 
                     <a  data-pjax href="/2014/12/23/性能测试之时间都去哪了/">性能测试之时间都去哪了</a>
-                
-                    <a  data-pjax href="/2014/12/22/这些年上过的课/">这些年上过的课</a>
                 
                     <a  data-pjax href="/2014/12/21/熟悉的陌生人OS/">熟悉的陌生人OS</a>
                 
@@ -972,8 +960,9 @@
     </span>
 
         <section class="post-content">
-            <p>#Maven简介#<br>是一个采用纯Java编写的开 源项目管理工具。Maven采用了一种被称之为project object model (POM)概念来管理项目，所有的项目配置信息都被定义在一个叫做POM.xml的文件中，通过该文件，Maven可以管理项目的整个声明周期，包括编译，构建，测试，发布，报告等等。目前Apache下绝大多数项目都已经采用Maven进行管理。</p>
-<p>#实践环境#</p>
+            <h1 id="Maven简介">Maven简介</h1>
+<p>是一个采用纯Java编写的开 源项目管理工具。Maven采用了一种被称之为project object model (POM)概念来管理项目，所有的项目配置信息都被定义在一个叫做POM.xml的文件中，通过该文件，Maven可以管理项目的整个声明周期，包括编译，构建，测试，发布，报告等等。目前Apache下绝大多数项目都已经采用Maven进行管理。</p>
+<h1 id="实践环境">实践环境</h1>
 <figure class="highlight bash"><pre><div class="line">C:\Users\Administrator\Desktop&gt;java -version</div><div class="line">java version <span class="string">"1.7.0_51"</span></div><div class="line">Java(TM) SE Runtime Environment (build <span class="number">1.7</span>.<span class="number">0</span>_51-b13)</div><div class="line">Java HotSpot(TM) Client VM (build <span class="number">24.51</span>-b03, mixed mode, sharing)</div><div class="line"></div><div class="line">C:\Users\Administrator\Desktop&gt;<span class="built_in">echo</span> %JAVA_HOME%</div><div class="line">C:\Program Files (x86)\Java\jdk1.<span class="number">7.0</span>_51</div></pre></figure>
 
 <p>下载maven并解压</p>
@@ -986,16 +975,18 @@
 <figure class="highlight bash"><pre><div class="line">C:\Users\Administrator\Desktop&gt;<span class="built_in">echo</span> %M2_HOME%</div><div class="line">G:\apache-maven-<span class="number">3.3</span>.<span class="number">1</span></div><div class="line"></div><div class="line">C:\Users\Administrator\Desktop&gt;mvn -v</div><div class="line">Apache Maven <span class="number">3.3</span>.<span class="number">1</span> (cab6659f9874fa96462afef40fcf6bc033d58c1c; <span class="number">2015</span>-<span class="number">03</span>-<span class="number">14</span>T04:<span class="number">10</span>:<span class="number">27</span>+<span class="number">08</span>:<span class="number">00</span>)</div><div class="line">Maven home: G:\apache-maven-<span class="number">3.3</span>.<span class="number">1</span></div><div class="line">Java version: <span class="number">1.7</span>.<span class="number">0</span>_51, vendor: Oracle Corporation</div><div class="line">Java home: C:\Program Files (x86)\Java\jdk1.<span class="number">7.0</span>_51\jre</div><div class="line">Default locale: zh_CN, platform encoding: GBK</div><div class="line">OS name: <span class="string">"windows 7"</span>, version: <span class="string">"6.1"</span>, arch: <span class="string">"x86"</span>, family: <span class="string">"windows"</span></div></pre></figure>
 
 <p>基于linux的Maven的安装可以参看<a href="http://www.zhaokongnuan.com/2015/03/18/thrift-maven/" target="_blank" rel="external">Ubuntu搭建Thrift和Maven</a></p>
-<p>#Maven初体验#</p>
-<p>##Maven目录结构##<br><img src="/image/maven-dir.jpg" alt="maven-dir"></p>
-<p>##简单的例子##<br>首先简单编写<code>pom.xml</code>配置文件</p>
+<h1 id="Maven初体验">Maven初体验</h1>
+<h2 id="Maven目录结构">Maven目录结构</h2>
+<p><img src="/image/maven-dir.jpg" alt="maven-dir"></p>
+<h2 id="简单的例子">简单的例子</h2>
+<p>首先简单编写<code>pom.xml</code>配置文件</p>
 <figure class="highlight xml"><pre><div class="line"><span class="pi">&lt;?xml version="1.0" encoding="UTF-8"?&gt;</span></div><div class="line"><span class="tag">&lt;<span class="title">project</span> <span class="attribute">xmlns</span>=<span class="value">"http://maven.apache.org/POM/4.0.0"</span>  </span></div><div class="line">  <span class="attribute">xmlns:xsi</span>=<span class="value">"http://www.w3.org/2001/XMLSchema-instance"</span>  </div><div class="line">  <span class="attribute">xsi:schemaLocation</span>=<span class="value">"http://maven.apache.org/POM/4.0.0  </span></div><div class="line">                      http://maven.apache.org/maven-v4_0_0.xsd"&gt; </div><div class="line">					  <span class="tag">&lt;<span class="title">modelVersion</span>&gt;</span>4.0.0<span class="tag">&lt;/<span class="title">modelVersion</span>&gt;</span></div><div class="line">					  <span class="tag">&lt;<span class="title">groupId</span>&gt;</span>com.zkn.mavenstudy<span class="tag">&lt;/<span class="title">groupId</span>&gt;</span></div><div class="line">					  <span class="tag">&lt;<span class="title">artifactId</span>&gt;</span>hellomaven<span class="tag">&lt;/<span class="title">artifactId</span>&gt;</span></div><div class="line">					  <span class="tag">&lt;<span class="title">version</span>&gt;</span>1.0-SNAPSHOT<span class="tag">&lt;/<span class="title">version</span>&gt;</span></div><div class="line">					  <span class="tag">&lt;<span class="title">name</span>&gt;</span>Maven Study<span class="tag">&lt;/<span class="title">name</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="title">project</span>&gt;</span></div></pre></figure>
 
 <p>编写java代码</p>
 <figure class="highlight java"><pre><div class="line">G:\maven-study\Hello-maven&gt;mvn clean compile</div><div class="line">[INFO] Scanning <span class="keyword">for</span> projects...</div><div class="line">[INFO]</div><div class="line">[INFO] ------------------------------------------------------------------------</div><div class="line">[INFO] Building Maven Study <span class="number">1.0</span>-SNAPSHOT</div><div class="line">[INFO] ------------------------------------------------------------------------</div><div class="line">[INFO]</div><div class="line">[INFO] --- maven-clean-plugin:<span class="number">2.5</span>:clean (<span class="keyword">default</span>-clean) @ hellomaven ---</div><div class="line">[INFO] Deleting G:\maven-study\Hello-maven\target</div><div class="line">[INFO]</div><div class="line">[INFO] --- maven-resources-plugin:<span class="number">2.6</span>:resources (<span class="keyword">default</span>-resources) @ hellomaven ---</div><div class="line">[WARNING] Using platform encoding (GBK actually) to copy filtered resources, i.e. build is platform</div><div class="line">dependent!</div><div class="line">[INFO] skip non existing resourceDirectory G:\maven-study\Hello-maven\src\main\resources</div><div class="line">[INFO]</div><div class="line">[INFO] --- maven-compiler-plugin:<span class="number">3.1</span>:compile (<span class="keyword">default</span>-compile) @ hellomaven ---</div><div class="line">[INFO] Changes detected - recompiling the module!</div><div class="line">[WARNING] File encoding has not been set, using platform encoding GBK, i.e. build is platform depend</div><div class="line">ent!</div><div class="line">[INFO] Compiling <span class="number">1</span> source file to G:\maven-study\Hello-maven\target\classes</div><div class="line">[INFO] ------------------------------------------------------------------------</div><div class="line">[INFO] BUILD SUCCESS</div><div class="line">[INFO] ------------------------------------------------------------------------</div><div class="line">[INFO] Total time: <span class="number">1.448</span> s</div><div class="line">[INFO] Finished at: <span class="number">2015</span>-<span class="number">03</span>-<span class="number">27</span>T14:<span class="number">26</span>:<span class="number">27</span>+<span class="number">08</span>:<span class="number">00</span></div><div class="line">[INFO] Final Memory: <span class="number">9</span>M/<span class="number">23</span>M</div><div class="line">[INFO] ------------------------------------------------------------------------</div></pre></figure>
 
 <p>可以看到输出没有错误，编译成功！接下来对HelloMaven类进行测试。</p>
-<p>##Maven测试##</p>
+<h2 id="Maven测试">Maven测试</h2>
 <figure class="highlight xml"><pre><div class="line"><span class="pi">&lt;?xml version="1.0" encoding="UTF-8"?&gt;</span></div><div class="line"><span class="tag">&lt;<span class="title">project</span> <span class="attribute">xmlns</span>=<span class="value">"http://maven.apache.org/POM/4.0.0"</span>  </span></div><div class="line">  <span class="attribute">xmlns:xsi</span>=<span class="value">"http://www.w3.org/2001/XMLSchema-instance"</span>  </div><div class="line">  <span class="attribute">xsi:schemaLocation</span>=<span class="value">"http://maven.apache.org/POM/4.0.0  </span></div><div class="line">                      http://maven.apache.org/maven-v4_0_0.xsd"&gt; </div><div class="line">	<span class="tag">&lt;<span class="title">modelVersion</span>&gt;</span>4.0.0<span class="tag">&lt;/<span class="title">modelVersion</span>&gt;</span></div><div class="line">	<span class="tag">&lt;<span class="title">groupId</span>&gt;</span>com.zkn.mavenstudy<span class="tag">&lt;/<span class="title">groupId</span>&gt;</span></div><div class="line">	<span class="tag">&lt;<span class="title">artifactId</span>&gt;</span>hellomaven<span class="tag">&lt;/<span class="title">artifactId</span>&gt;</span></div><div class="line">	<span class="tag">&lt;<span class="title">version</span>&gt;</span>1.0-SNAPSHOT<span class="tag">&lt;/<span class="title">version</span>&gt;</span></div><div class="line">	<span class="tag">&lt;<span class="title">name</span>&gt;</span>Maven Study<span class="tag">&lt;/<span class="title">name</span>&gt;</span></div><div class="line">	<span class="tag">&lt;<span class="title">dependencies</span>&gt;</span></div><div class="line">	<span class="tag">&lt;<span class="title">dependency</span>&gt;</span></div><div class="line">	<span class="tag">&lt;<span class="title">groupId</span>&gt;</span>junit<span class="tag">&lt;/<span class="title">groupId</span>&gt;</span></div><div class="line">	<span class="tag">&lt;<span class="title">artifactId</span>&gt;</span>junit<span class="tag">&lt;/<span class="title">artifactId</span>&gt;</span></div><div class="line">	<span class="tag">&lt;<span class="title">version</span>&gt;</span>4.7<span class="tag">&lt;/<span class="title">version</span>&gt;</span></div><div class="line">	<span class="tag">&lt;<span class="title">scope</span>&gt;</span>test<span class="tag">&lt;/<span class="title">scope</span>&gt;</span></div><div class="line">	<span class="tag">&lt;/<span class="title">dependency</span>&gt;</span></div><div class="line">	<span class="tag">&lt;/<span class="title">dependencies</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="title">project</span>&gt;</span></div></pre></figure>
 
 <p>测试java代码</p>
@@ -1005,11 +996,11 @@
 <figure class="highlight bash"><pre><div class="line">G:\maven-study\Hello-maven&gt;mvn clean test</div><div class="line">这里是省略号……</div><div class="line">-------------------------------------------------------</div><div class="line"> T E S T S</div><div class="line">-------------------------------------------------------</div><div class="line">Running com.zkn.mavenstudy.hellomaven.HelloMavenTest</div><div class="line">Tests run: <span class="number">1</span>, Failures: <span class="number">0</span>, Errors: <span class="number">0</span>, Skipped: <span class="number">0</span>, Time elapsed: <span class="number">0.039</span> sec</div><div class="line"></div><div class="line">Results :</div><div class="line"></div><div class="line">Tests run: <span class="number">1</span>, Failures: <span class="number">0</span>, Errors: <span class="number">0</span>, Skipped: <span class="number">0</span></div><div class="line"></div><div class="line">[INFO] ------------------------------------------------------------------------</div><div class="line">[INFO] BUILD SUCCESS</div><div class="line">[INFO] ------------------------------------------------------------------------</div><div class="line">[INFO] Total time: <span class="number">19.410</span> s</div><div class="line">[INFO] Finished at: <span class="number">2015</span>-<span class="number">03</span>-<span class="number">27</span>T14:<span class="number">42</span>:<span class="number">14</span>+<span class="number">08</span>:<span class="number">00</span></div><div class="line">[INFO] Final Memory: <span class="number">12</span>M/<span class="number">29</span>M</div><div class="line">[INFO] ------------------------------------------------------------------------</div></pre></figure>
 
 <p>测试成功，没有错误。下面学习一下打包.</p>
-<p>##Maven打包##</p>
+<h2 id="Maven打包">Maven打包</h2>
 <figure class="highlight bash"><pre><div class="line">G:\maven-study\Hello-maven&gt;mvn clean package</div><div class="line">这里是省略号……</div><div class="line">[INFO] Building jar: G:\maven-study\Hello-maven\target\hellomaven-<span class="number">1.0</span>-SNAPSHOT.jar</div><div class="line">[INFO] ------------------------------------------------------------------------</div><div class="line">[INFO] BUILD SUCCESS</div><div class="line">[INFO] ------------------------------------------------------------------------</div><div class="line">[INFO] Total time: <span class="number">9.272</span> s</div><div class="line">[INFO] Finished at: <span class="number">2015</span>-<span class="number">03</span>-<span class="number">27</span>T14:<span class="number">46</span>:<span class="number">05</span>+<span class="number">08</span>:<span class="number">00</span></div><div class="line">[INFO] Final Memory: <span class="number">13</span>M/<span class="number">32</span>M</div><div class="line">[INFO] ------------------------------------------------------------------------</div></pre></figure>
 
 <p>打包完了如何让其他的maven项目直接引用这个jar呢，需要安装。</p>
-<p>##Maven安装##</p>
+<h2 id="Maven安装">Maven安装</h2>
 <figure class="highlight bash"><pre><div class="line">G:\maven-study\Hello-maven&gt;mvn clean install</div><div class="line">这里是省略号……</div><div class="line">[INFO] Installing G:\maven-study\Hello-maven\target\hellomaven-<span class="number">1.0</span>-SNAPSHOT.jar to C:\Users\Administ</div><div class="line">rator\.m2\repository\com\zkn\mavenstudy\hellomaven\<span class="number">1.0</span>-SNAPSHOT\hellomaven-<span class="number">1.0</span>-SNAPSHOT.jar</div><div class="line">[INFO] Installing G:\maven-study\Hello-maven\pom.xml to C:\Users\Administrator\.m2\repository\com\zk</div><div class="line">n\mavenstudy\hellomaven\<span class="number">1.0</span>-SNAPSHOT\hellomaven-<span class="number">1.0</span>-SNAPSHOT.pom</div><div class="line">[INFO] ------------------------------------------------------------------------</div><div class="line">[INFO] BUILD SUCCESS</div><div class="line">[INFO] ------------------------------------------------------------------------</div><div class="line">[INFO] Total time: <span class="number">10.898</span> s</div><div class="line">[INFO] Finished at: <span class="number">2015</span>-<span class="number">03</span>-<span class="number">27</span>T14:<span class="number">48</span>:<span class="number">14</span>+<span class="number">08</span>:<span class="number">00</span></div><div class="line">[INFO] Final Memory: <span class="number">12</span>M/<span class="number">29</span>M</div><div class="line">[INFO] ------------------------------------------------------------------------</div></pre></figure>
 
 <p>可以看到把这个项目输出的jar文件安装到了Maven本地仓库<code>C:\Users\Administ
@@ -1028,11 +1019,11 @@ rator\.m2\repository</code>当中。<br>查看本地仓库<code>hellomaven-1.0-S
 <figure class="highlight java"><pre><div class="line">G:\maven-study\Hello-maven&gt;java -jar target\hellomaven-<span class="number">1.0</span>-SNAPSHOT.jar</div><div class="line">Hello Maven</div></pre></figure>
 
 <p>可以运行，完成测试！</p>
-<p>##Archetype骨架构建##<br>Maven为我们提供了archetype可以帮助我们迅速勾勒出项目文件目录骨架。</p>
+<h2 id="Archetype骨架构建">Archetype骨架构建</h2>
+<p>Maven为我们提供了archetype可以帮助我们迅速勾勒出项目文件目录骨架。</p>
 <figure class="highlight bash"><pre><div class="line">G:\maven-study\Hello-archetype&gt;mvn archetype:generate</div><div class="line">这里是省略号……</div><div class="line">Choose a number or apply filter (format: [groupId:]artifactId, <span class="keyword">case</span> sensitive contains): <span class="number">574</span>:</div><div class="line">Choose org.apache.maven.archetypes:maven-archetype-quickstart version:</div><div class="line"><span class="number">1</span>: <span class="number">1.0</span>-alpha-<span class="number">1</span></div><div class="line"><span class="number">2</span>: <span class="number">1.0</span>-alpha-<span class="number">2</span></div><div class="line"><span class="number">3</span>: <span class="number">1.0</span>-alpha-<span class="number">3</span></div><div class="line"><span class="number">4</span>: <span class="number">1.0</span>-alpha-<span class="number">4</span></div><div class="line"><span class="number">5</span>: <span class="number">1.0</span></div><div class="line"><span class="number">6</span>: <span class="number">1.1</span></div><div class="line">Choose a number: <span class="number">6</span>:</div><div class="line">Define value <span class="keyword">for</span> property <span class="string">'groupId'</span>: : com.zkn.archetypetest</div><div class="line">Define value <span class="keyword">for</span> property <span class="string">'artifactId'</span>: : archTest</div><div class="line">Define value <span class="keyword">for</span> property <span class="string">'version'</span>:  <span class="number">1.0</span>-SNAPSHOT: :</div><div class="line">Define value <span class="keyword">for</span> property <span class="string">'package'</span>:  com.zkn.archetypetest: :  com.zkn.archetypetest.archTest</div><div class="line">Confirm properties configuration:</div><div class="line">groupId: com.zkn.archetypetest</div><div class="line">artifactId: archTest</div><div class="line">version: <span class="number">1.0</span>-SNAPSHOT</div><div class="line">package:  com.zkn.archetypetest.archTest</div><div class="line"> Y: :</div><div class="line">[INFO] ----------------------------------------------------------------------------</div><div class="line">[INFO] Using following parameters <span class="keyword">for</span> creating project from Old (<span class="number">1</span>.x) Archetype: maven-archetype-qui</div><div class="line">ckstart:<span class="number">1.1</span></div><div class="line">[INFO] ----------------------------------------------------------------------------</div><div class="line">[INFO] Parameter: groupId, Value: com.zkn.archetypetest</div><div class="line">[INFO] Parameter: packageName, Value:  com.zkn.archetypetest.archTest</div><div class="line">[INFO] Parameter: package, Value:  com.zkn.archetypetest.archTest</div><div class="line">[INFO] Parameter: artifactId, Value: archTest</div><div class="line">[INFO] Parameter: basedir, Value: G:\maven-study\Hello-archetype</div><div class="line">[INFO] Parameter: version, Value: <span class="number">1.0</span>-SNAPSHOT</div><div class="line">[INFO] project created from Old (<span class="number">1</span>.x) Archetype <span class="keyword">in</span> dir: G:\maven-study\Hello-archetype\archTest</div><div class="line">[INFO] ------------------------------------------------------------------------</div><div class="line">[INFO] BUILD SUCCESS</div><div class="line">[INFO] ------------------------------------------------------------------------</div><div class="line">[INFO] Total time: <span class="number">18</span>:<span class="number">25</span> min</div><div class="line">[INFO] Finished at: <span class="number">2015</span>-<span class="number">03</span>-<span class="number">27</span>T15:<span class="number">31</span>:<span class="number">51</span>+<span class="number">08</span>:<span class="number">00</span></div><div class="line">[INFO] Final Memory: <span class="number">10</span>M/<span class="number">31</span>M</div><div class="line">[INFO] ------------------------------------------------------------------------</div></pre></figure>
 
 <p>构建成功。</p>
-<p>Maven初体验结束，酷酷哒！</p>
 
         </section>
         <hr/>
